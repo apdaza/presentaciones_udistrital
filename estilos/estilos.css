@@ -127,6 +127,19 @@ code {
   padding-top: 1em;
 }
 
+.img-column {
+  color: #777;
+  width: 50%;
+  height: 92%;
+  float: left;
+}
+
+.text-column {
+  width: 45%;
+  float: right;
+  padding-top: 1em;
+}
+
 img {
   max-width: 100%;
   display: block;
