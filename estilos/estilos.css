@@ -28,7 +28,9 @@ h1, h2, h3 {
   bottom: 3em;
 }
 
-li { margin-bottom: 15px; }
+li { margin-bottom: 15px; list-style-image: url("../media/li.png")}
+
+li li { font-style: italic;}
 
 li p { line-height: 1.25em; }
 .red { color: #fa0000; }
@@ -139,7 +141,6 @@ code {
   float: right;
   padding-top: 1em;
 }
-
 img {
   max-width: 100%;
   display: block;
