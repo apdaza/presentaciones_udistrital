@@ -115,18 +115,13 @@ code {
 
 /* Two-column layout */
 .left-column {
-  color: #777;
-  width: 20%;
-  height: 92%;
+  width: 48%;
   float: left;
 }
-  .left-column h2:last-of-type, .left-column h3:last-child {
-    color: #000;
-  }
+
 .right-column {
-  width: 75%;
+  width: 48%;
   float: right;
-  padding-top: 1em;
 }
 
 .img-column {
