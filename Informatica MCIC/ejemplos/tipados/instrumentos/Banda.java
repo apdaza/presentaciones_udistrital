@@ -14,6 +14,7 @@ public class Banda {
         for(int i = 0; i < 3; i++){
             instrumentos[i].afinar();
             instrumentos[i].tocar();
+            instrumentos[i].tocar("Do");
         }
     }
 
@@ -25,6 +26,8 @@ public class Banda {
             i = new Guitarra();
         else if(a % 3 == 0)
             i = new Viola();
+        else if(a % 5 == 0)
+            i = new Uquelele();
         else
             i = new Cuatro();
 

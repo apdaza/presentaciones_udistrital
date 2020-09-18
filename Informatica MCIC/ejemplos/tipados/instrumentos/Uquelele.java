@@ -1,24 +1,24 @@
 package tipados.instrumentos;
 
-public class Guitarra implements Instrumento{
+public class Uquelele implements Instrumento{
 
     @Override
     public void afinar() {
         Afinador a = new Afinador();
         a.generarTono();
-        System.out.println("afinando guitarra");
+        System.out.println("afinando uquelele");
 
     }
 
     @Override
     public void tocar() {
-        System.out.println("tocando guitarra");
-
+        System.out.println("tocando uquelele");
     }
 
     @Override
     public void tocar(String nota) {
-        System.out.println("tocando guitarra en " + nota);
+        System.out.println("tocando uquelele en " + nota);
 
     }
+    
 }
