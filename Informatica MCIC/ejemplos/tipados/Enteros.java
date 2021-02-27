@@ -12,6 +12,7 @@ public class Enteros {
             System.out.print("Ingrese un entero: ");
             valor = sc.nextInt();
         }
+        sc.close();
         
 
         

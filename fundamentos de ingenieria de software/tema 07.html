@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="estilos/estilos.css">
+  </head>
+  <body>
+    <textarea id="source">
+      name: inverse
+      layout: true
+      class: center, middle, inverse
+      ---
+      template: inverse
+      # Arquitectura de aplicaciones en la nube
+      ***
+      ---
+      layout: false
+      # Arquitectura de aplicaciones en la nube
+      ***
+
+      ## Contenidos
+      1. Introducción y objetivos	
+      2. Fundamentos de Cloud Computing	
+      3. Calidad de las aplicaciones en la nube	
+      4. Estilos de arquitectura	
+      5. Patrones de diseño	
+      6. Referencias bibliográficas	
+        
+         
+      ---
+      ![RN](./media/tema07/esquema01.png)
+
+      ---
+      ![RN](./media/tema07/esquema02.png)
+      
+      ---
+      # 1.  Introducción y objetivos	
+      
+      La ___computación en la nube___ ha adquirido una creciente importancia en los últimos años. 
+
+      > Más que una tecnología en particular es la combinación de un conjunto de tecnologías que ha permitido el surgimiento de un nuevo modelo de acceso a servicios de diferente índole; desde las capacidades más básicas de infraestructura de cómputo, hasta aplicaciones software de utilidad para el usuario final, empresarial o doméstico.
+
+      En este tema vamos a analizar las principales características del ___cloudComputing___ y estudiaremos algunos de los patrones arquitectónicos más habituales. 
+      
+      Con todo ello alcanzaremos los siguientes objetivos:
+
+      -	Conocer las ___principales características___ de la computación en la nube (Cloud Computing), los ___principales modelos de servicio___ y los ___principales modelos de despliegue___. 
+      
+      -	Conocer los ___factores que determinan la calidad___ de las aplicaciones en la nube. 
+      
+      ---
+      # 1.  Introducción y objetivos	
+      
+      -	Conocer una serie de ___arquitecturas genéricas comunes___ entre las aplicaciones que se ejecutan en la nube.
+      
+      -	Saber aplicar ___principios y buenas prácticas___ de diseño para conseguir las mejores características en nuestras aplicaciones en la nube.
+      
+      -	Analizar algunos ___patrones de diseño___ concreto que permiten llevar a la práctica los principios de diseño recomendados para aplicaciones en la nube.
+
+      ---
+      # 2. Fundamentos de Cloud Computing	
+
+      > ___Cloud Computing___, o la computación en la nube, es un nuevo paradigma para desarrollar aplicaciones, basado en la disponibilidad de servicios que son accesibles a través de Internet. 
+
+      Históricamente representa la cúspide tecnológica de un proceso de evolución de los sistemas distribuidos que se ha desarrollado durante las últimas décadas, desde mediados del siglo XX.  
+      
+      Hoy en día, las tecnologías cloud se presentan en una gran variedad de formas y servicios y, de un modo u otro, todos somos usuarios de ellas. En esta sección exploraremos los orígenes históricos del cloud, sus principales características, y las alternativas de servicio que nos ofrece.
+
+      ---
+      # 2. Fundamentos de Cloud Computing
+      ## Orígenes y concepto 
+
+      El cloud ha sido posible como evolución de diferentes arquitecturas para sistemas distribuidos y gracias al desarrollo reciente de tecnologías de virtualización, que permiten eliminar los problemas que supone la heterogeneidad del hardware desde el punto de vista del desarrollo de servicios. 
+
+      Revisamos aquí, brevemente, las tecnologías que subyacen en lo que conocemos como cloudComputing: P2P, Clúster y Grid (Kahanwal & Singh, 2012).
+
+      ___Peer-To-Peer Computing.___ 
+      - Las redes P2P son el primer intento para resolver los problemas de escalabilidad y necesidades de cómputo crecientes, mediante agrupación de hardware existente. 
+
+      ---
+      # 2. Fundamentos de Cloud Computing
+      ## Orígenes y concepto
+
+      - En este caso, cada sistema es autónomo y no existe un control centralizado o nodo maestro que supervise al resto.
+
+      ___Cluster Computing.___ 
+      - Los clústers son arquitecturas distribuidas formadas por conjuntos de máquinas independientes conectadas de tal modo que funcionan como un único sistema. 
+
+      - En este caso se trata de grupos de máquinas similares o idénticas, ejecutando el mismo sistema operativo, y conectadas a través de una red de área local en la mayoría de los casos. De esta manera, se obtienen sistemas de alto rendimiento combinando las capacidades disponibles.
+
+      ---
+      # 2. Fundamentos de Cloud Computing
+      ## Orígenes y concepto
+
+      ___Grid Computing.___
+
+      - Aquí se amplía el ámbito de deslocalización de los equipos aprovechando la conectividad de Internet, de manera que es posible obtener un único punto de acceso a un conjunto de recursos distribuidos en diferentes dominios de administración. 
+
+      - El mayor problema que presenta es la dificultad de interoperabilidad cuando coexisten tecnologías heterogéneas diferentes entre sí.
+
+      ---
+      # 2. Fundamentos de Cloud Computing
+      ## Orígenes y concepto
+
+      ___Cloud Computing.___ 
+      
+      - Surge gracias al desarrollo de las tecnologías de virtualización, lo cual simplifica enormemente la gestión de los recursos físicos. De esta manera, se resuelve el problema que presenta el Grid Computing. 
+      
+      - Es posible uniformizar las características del hardware sobre el que se ejecutan los servicios y, desde el punto de vista del usuario, el manejo es más sencillo y familiar.
+      
+      - Este conjunto de ideas aparece representado esquemáticamente en la figura siguiente.
+
+      ---
+      # 2. Fundamentos de Cloud Computing
+      ## Orígenes y concepto
+
+      ![reducida](./media/tema07/evolucion.png)     
+      
+      ---
+      # 2. Fundamentos de Cloud Computing
+      ## Orígenes y concepto
+
+      - En el caso del Cloud Computing (d), de la figura, la tecnología de virtualización permite que desde el exterior exista uniformidad y flexibilidad para trabajar con los recursos ofrecidos.
+
+      - La siguiente figura, presenta de manera resumida lo explicado anteriormente, en cuanto a la evolución en el tiempo de las diferentes tecnologías.
+
+      ---
+      # 2. Fundamentos de Cloud Computing
+
+      ![reducida](./media/tema07/origenes.png)
+
+      ---
+      # 2. Fundamentos de Cloud Computing
+      ## Orígenes y concepto
+
+      Teniendo en cuenta todo lo anterior, el «Instituto Nacional de Estándares y Tecnología de los Estados Unidos (NIST)» elaboró la siguiente definición de ___Cloud Computing___: 
+
+      > Cloud Computing es un modelo que permite el acceso por red ubicuo, conveniente y bajo demanda a un conjunto compartido de recursos computacionales configurables (como redes, servidores, almacenamiento, aplicaciones y servicios) que pueden ser rápidamente aprovisionados y liberados con un esfuerzo mínimo de administración o interacción con el proveedor de servicios. 
+
+      > ___Mell y Grance (2011, p. 2)___. 
+      ---
+      # 2. Fundamentos de Cloud Computing
+      ## Orígenes y concepto
+
+      Como vemos, el concepto se refiere tanto a las aplicaciones que se proporcionan como servicios a través de Internet, como al hardware y el software que permite ofrecer estos servicios (Armbrust et al., 2010). 
+
+      Asociadas a esta definición, el NIST identifica 5 características esenciales, 3 modelos de servicio y 4 modelos de despliegue.  
+      
+      ---
+      # 2. Fundamentos de Cloud Computing
+      
+      ![RN](./media/tema07/caracteristicas01.png)
+
+      ---
+      # 2. Fundamentos de Cloud Computing
+      
+      ![RN](./media/tema07/caracteristicas02.png)
+
+      ---
+      # 2. Fundamentos de Cloud Computing
+      
+      ![RN](./media/tema07/caracteristicas03.png)
+
+      ---
+      # 2. Fundamentos de Cloud Computing
+      ## Modelos de servicio
+
+      Los diferentes modelos de servicio guardan relación con la carga de gestión, de los niveles de servicio, que recae en el proveedor, liberando al usuario de este esfuerzo.
+
+      ___Software como servicio Software as a Service (SaaS).___ 
+      
+      El servicio ofrecido al usuario consiste en aplicaciones que el proveedor ejecuta en algún tipo de infraestructura cloud. 
+      
+      Estas aplicaciones son accesibles desde una variedad de clientes (navegadores web o aplicaciones específicas), y la única responsabilidad del usuario está en el uso de la aplicación y su posible configuración.
+
+      ---
+      # 2. Fundamentos de Cloud Computing
+      ## Modelos de servicio
+
+      ___Plataforma como servicio Platform as a Service (PaaS).___ 
+      
+      El servicio ofrecido al usuario consiste en la capacidad de desplegar aplicaciones propias o de terceros sobre una infraestructura cloud, ofreciendo un entorno de ejecución adecuado en función de las herramientas, lenguajes y librerías necesarias para la aplicación. 
+      
+      El usuario no se encarga de la administración de la infraestructura subyacente (redes, servidores o sistemas operativos).
+
+      ---
+      # 2. Fundamentos de Cloud Computing
+      ## Modelos de servicio
+
+      ___Infraestructura como servicio Infrastructure as a Service (IaaS).___ 
+      
+      El servicio ofrecido al usuario consiste en el acceso a recursos computacionales de bajo nivel, como almacenamiento, redes, y capacidad de procesamiento, sobre los que el cliente puede desplegar el software de su elección (sistema operativo y aplicaciones). 
+      
+      En este caso el usuario no gestiona la infraestructura subyacente, pero sí tiene cierta capacidad en su configuración.
+
+      En los tres primeros modelos tradicionales, el usuario tiene la mayor parte de la responsabilidad de gestión de los servicios.
+
+      ---
+      # 2. Fundamentos de Cloud Computing
+      
+      ![intermedia](./media/tema07/modelos.png)
+
+      ---
+      # 2. Fundamentos de Cloud Computing
+      ## Modelos de servicio
+      
+      - En el modelo tradicional ___on–premise___ está encargado de realizar todas las operaciones, desde la administración de la infraestructura hasta el desarrollo, despliegue y mantenimiento de las aplicaciones.
+      
+      -	El modelo de ___co–locación___ (colo) los usuarios comparten recursos ubicados en un mismo centro de datos. Se tiene acceso a las instalaciones, refrigeración, ancho de banda y otros recursos computaciones y, generalmente, es el usuario quien debe gestionarlos, aunque en muchos casos se ofrecen servicios administrados.
+      
+      -	El modelo de ___hosting___ consiste simplemente en adquirir servidores, pero la mayor parte de infraestructura de comunicaciones y almacenamiento es gestionada por el proveedor de servicios.
+      
+      ---
+      # 2. Fundamentos de Cloud Computing
+      ## Modelos de servicio
+
+      -	___IaaS.___ Gracias a la virtualización, el usuario puede contratar el uso de máquinas virtuales y otros recursos de infraestructura. Es libre de instalar y configurar el sistema operativo y otros elementos de la plataforma, y en él recae la responsabilidad de administrar las capas superiores.
+      
+      -	___Paas.___ En este nivel se le ofrece al usuario una plataforma de desarrollo y despliegue administrada.
+      
+      -	___SaaS.___ Este es el nivel superior, en el que el usuario simplemente se suscribe a aquellos productos de aplicación que mejor resuelven sus necesidades.
+      Modelos de despliegue
+
+      ---
+      # 2. Fundamentos de Cloud Computing
+      ## Modelos de servicio
+
+      ___Modalidades básicas de despliegue:___
+
+      ![RN](./media/tema07/modelos_despliegue01.png)
+
+      ---
+      # 2. Fundamentos de Cloud Computing
+      ## Modelos de servicio
+
+      ___Modalidades básicas de despliegue:___
+
+      ![RN](./media/tema07/modelos_despliegue02.png)
+
+      ---
+      # 2. Fundamentos de Cloud Computing
+      ## Modelos de servicio
+
+      ___Modalidades básicas de despliegue:___
+
+      ![RN](./media/tema07/modelos_despliegue03.png)
+
+      ---
+      # 2. Fundamentos de Cloud Computing
+      ## Modelos de servicio
+
+      ___Modalidades básicas de despliegue:___
+
+      ![RN](./media/tema07/modelos_despliegue04.png)
+
+
+      ---
+      # 3. Calidad de las aplicaciones en la nube	
+      ## Factores que determinan la calidad de las aplicaciones en la nube.
+
+      ___Disponibilidad.___ 
+      
+      - Esta característica indica la fracción del tiempo que un sistema está en funcionamiento y es capaz de atender las peticiones recibidas. 
+      
+      - Depende tanto de la capacidad del sistema, como del volumen de peticiones recibido. 
+      
+      - Un número importante de usuarios no previsto puede hacer que el sistema no responda adecuadamente o que incluso falle, reduciendo su disponibilidad.
+
+      ---
+      # 3. Calidad de las aplicaciones en la nube	
+      ## Factores que determinan la calidad de las aplicaciones en la nube.
+
+      ___Resistencia o resiliencia.___ 
+      
+      - Es la capacidad de un sistema para detectar posibles errores, o recuperarse, y volver a un estado funcional. 
+      
+      - Todo ello pasa por monitorizar adecuadamente el funcionamiento del sistema, y en caso de que se produzca un fallo poder llevarlo a un modo de funcionamiento adecuado.
+
+      ---
+      # 3. Calidad de las aplicaciones en la nube	
+      ## Factores que determinan la calidad de las aplicaciones en la nube.
+      
+      ___Seguridad.___ 
+      
+      - Hace referencia a la protección del sistema (tanto a nivel de aplicación como a nivel de datos) frente a amenazas externas. 
+      
+      - Existen determinados patrones que pueden ayudar a mejorar este aspecto y que deben ser considerados en el diseño arquitectónico.
+
+      ---
+      # 3. Calidad de las aplicaciones en la nube	
+      ## Factores que determinan la calidad de las aplicaciones en la nube.
+
+      ___Escalabilidad y elasticidad.___ 
+      
+      - Esta propiedad hace referencia a la capacidad de un sistema para controlar y responder al aumento de carga. 
+      
+      - Para dar respuesta a demandas crecientes, el sistema debe ampliar su capacidad. 
+      
+      - Un sistema será más elástico cuanto mayor facilidad tenga para realizar este escalado. 
+      
+      ---
+      # 3. Calidad de las aplicaciones en la nube	
+      ## Factores que determinan la calidad de las aplicaciones en la nube.
+
+      - Esta ampliación se puede realizar según dos enfoques (Varia, 2010):
+       - ___Escalado vertical___ (scale–up). Consiste en invertir en la ampliación de recursos computacionales existentes, sin preocuparse demasiado por la arquitectura. 
+
+       - ___Escalado horizontal___ (scale–out). Consiste en diseñar una arquitectura con componentes pequeños y específicos, poco acoplados y adoptando un enfoque orientado a servicios. 
+
+      ---
+      ![RN](./media/tema07/escalado.png)
+
+      ---
+      # 3. Calidad de las aplicaciones en la nube	
+      ## Factores que determinan la calidad de las aplicaciones en la nube.
+
+      Los modernos servicios de infraestructura, plataforma de desarrollo y aplicación en la nube permiten aprovisionar recursos de manera rápida casi instantánea, pocos minutos después de recibir la solicitud de un administrador o incluso de manera automatizada. 
+      
+      Se facilita enormemente tanto el escalado horizontal como el vertical, aunque el primer debe ser considerado minuciosamente en las etapas de diseño para que resulte efectivo.
+
+      ---
+      # 4. Estilos de arquitectura	
+      
+      Cuando diseñamos aplicaciones para la nube, la primera decisión que debemos tomar está relacionada con el estilo arquitectónico general que emplearemos. 
+      
+      De esta decisión dependerán muchas de las características que hemos estudiado, y que determinarán la calidad del servicio. 
+      
+      La elección de un modelo también puede suponer una serie de restricciones. 
+
+      ___Aplicaciones de N-capas (N–tier)___
+
+      La aplicación queda dividida en diferentes capas especializadas en determinadas funciones lógicas, de manera que cada una de las capas puede hacer llamadas a servicios ofrecidos por las capas inferiores. 
+
+      Las diferentes capas lógicas se agrupan en niveles físicos (que pueden coincidir o no con ellas), que se ejecutan en máquinas independientes.
+
+      ---
+      # 4. Estilos de arquitectura
+
+      ![RN](./media/tema07/n_capas.png)
+
+      Encontramos dos variantes en esta arquitectura:
+
+      - ___Arquitectura de capa cerrada.___ Cada capa solo puede efectuar llamadas a la inmediatamente inferior. En este caso se limita la dependencia entre capas, pero se puede crear un tráfico innecesario cuando una capa se limita a pasar solicitudes a la siguiente y una pérdida de rendimiento.
+      - ___Arquitectura de capa abierta.___ Cada capa puede realizar llamadas a cualquiera de las capas inferiores. En este caso, se aumenta el acoplamiento entre capas.
+
+      ---
+      # 4. Estilos de arquitectura
+
+      ___Web–Cola–Trabajador___
+
+      El estilo de arquitectura Web–Cola–Trabajador —Web–Queue–Worker (WQW)— es típico de aplicaciones con un front–end que recibe solicitudes HTTP y un trabajador back–end, que se especializa en tareas de larga duración con uso intensivo de la CPU. 
+
+      La comunicación entre el front–end y el back–end se consigue a través de una cola de mensajes asíncronos.
+
+      ![intermedia](./media/tema07/web_cola_trabajador.png)
+
+      ---
+      # 4. Estilos de arquitectura
+
+      ___Microservicios___
+
+      Estas aplicaciones están formadas por muchos servicios pequeños independientes, que implementan capacidades empresariales concretas. 
+      
+      Estas arquitecturas tienen una construcción más compleja que las anteriores y su mantenimiento requiere una cultura de desarrollo y DevOps avanzada. 
+
+      Los Microservicios son una evolución de las arquitecturas orientadas a servicios (SOA), pero se diferencian en los siguientes puntos (Microsoft, 2017):
+
+      - Los servicios son de pequeño tamaño e independientes entre sí.
+      - Cada servicio tiene bases de código independientes administradas por equipos distintos.
+      - Cada servicio es responsable de gestionar sus propios datos y estado interno (tienen su propia capa de datos asociada).
+      - Los servicios se comunican entre así a través de API, y no es necesario que compartan una tecnología o framework de desarrollo concreto.
+      - Los clientes llaman a los servicios a través de una puerta de enlace API, y no directamente.
+
+      ---
+      # 4. Estilos de arquitectura
+      
+      ![RN](./media/tema07/microservicios.png)
+
+      ---
+      # 4. Estilos de arquitectura
+
+      ___CQRS___
+
+      El modelo tradicional CRUD (Create–Read–Update–Delete) funciona bien en aplicaciones sencillas, pero en aplicaciones más complejas puede haber grandes diferencias entre las operaciones de lectura y las de escritura. 
+      
+      - Las lecturas pueden ser muy frecuentes y requerir de la manipulación de grandes volúmenes de datos para devolver una respuesta en el formato adecuado. 
+      - Las escrituras pueden ser más esporádicas, pero estar sujetas a operaciones de validación o requerir de la ejecución de una lógica de negocio compleja.
+
+      El estilo ___CQRS (Command and Query Responsibility Segretation) Segregación de Responsabilidades de Consultas y Comandos___ separa las operaciones de lectura y escritura, aislando las partes del sistema que modifican los datos, de las que simplemente los leen. 
+      
+      La ventaja fundamental es que se puede independizar el escalado de las operaciones de lectura y escritura. 
+
+      ---
+      # 4. Estilos de arquitectura
+
+      Esta arquitectura puede resultar interesante dentro de un subsistema de una arquitectura más grande, puesto que su aplicación a todo el sistema puede introducir demasiada complejidad.
+
+      ![intermedia](./media/tema07/cqrs.png)
+
+      A la izquierda vemos una variante básica, donde las operaciones de lectura y escritura comparten la base de datos. 
+      
+      A la derecha se consigue un mayor aislamiento separando ambos almacenamientos. 
+
+      ---
+      # 5. Patrones de diseño	
+      
+      La implementación de aplicaciones cloud puede beneficiarse de la aplicación de ciertos patrones específicos destinados a mejorar características, como la disponibilidad, escalabilidad y seguridad. 
+      
+      Cada uno de estos patrones resuelve un problema concreto, independientemente de la plataforma de despliegue elegida. 
+
+      La utilización de ciertos patrones puede tener un impacto definitivo en características como el rendimiento o el consumo energético de los servicios cloud(Abtahizadeh, 2016).
+
+      ___Patrones de diseño e implementación.___ 
+      
+      Un buen diseño general del sistema simplifica su implementación y mantenimiento y, al mismo tiempo, facilita la posible reutilización de componentes y la futura extensión del sistema. 
+
+      La mayoría de los patrones que estudiaremos más adelante pertenecen a esta categoría, pero aquí podemos asignar específicamente el patrón de Back–end para Front–end, Tuberías y filtros, y el Hosting de contenido estático.
+
+      ---
+      # 5. Patrones de diseño	
+      
+      ___Patrones de disponibilidad.___ 
+      
+      La disponibilidad de un sistema es la fracción de tiempo que el sistema está funcionando con normalidad. Puede verse afectada por errores del sistema o en la infraestructura subyacente, ataques maliciosos o la propia carga de trabajo del sistema, que puede hacer que este no responda. 
+
+      - Patrón de Monitorización de estado (Health Endpoint Monitoring)
+      
+      - Patrón de Equilibrado de carga basado en colas (Queue-Based Load Leveling).
+
+      ___Patrones de gestión de datos.___ 
+      
+      Este es un elemento fundamental de las aplicaciones cloud y afecta a la mayoría del resto de atributos. 
+      
+      Los datos suelen estar diseminados en diferentes subsistemas por razones de rendimiento, escalabilidad o disponibilidad. 
+      
+      ---
+      # 5. Patrones de diseño	
+
+      Esto hace que al menos sea necesario mantener los datos sincronizados entre diferentes elementos del sistema. 
+
+      - Patrón Cache-Aside
+      
+      - Patrón Sharding
+      
+      - Patrón Hosting de contenido estático.
+
+      ___Patrones de administración y supervisión.___ 
+      
+      Las aplicaciones cloud se ejecutan en infraestructuras remotas a las que en ocasiones no se tiene acceso de administración. 
+      
+      Esto puede dificultar su monitorización frente a una alternativa on–premise. Es necesario que las aplicaciones proporcionen la información que los administradores del sistema utilizarán para hacer un seguimiento de su correcto funcionamiento. 
+      
+      - Patrón agente supervisor de estado
+
+      ---
+      # 5. Patrones de diseño	
+
+      ___Patrones de mensajería.___ 
+      
+      La naturaleza distribuida de estas aplicaciones hace fundamental dotarlas de mecanismos que permitan la comunicación y coordinación entre los diferentes componentes, al mismo tiempo que se logre el objetivo de débil acoplamiento para maximizar la escalabilidad. 
+
+      Lo más habitual es la utilización de mensajes asíncronos entre componentes, aunque ello puede dificultar algunos aspectos, como su ordenación y priorización. 
+
+      - Patrón de Tuberías y filtros (Pipes and Filters)
+      
+      - Patrón de Equilibrado de carga basado en colas
+      
+      - Patrón de cola de prioridad.
+
+      ---
+      # 5. Patrones de diseño	
+
+      ___Patrones de rendimiento y escalabilidad.___ 
+      
+      El rendimiento es la propiedad del sistema que mide su capacidad para realizar una acción ante una petición dentro de un intervalo de tiempo acotado. 
+
+      La escalabilidad tiene que ver con la capacidad del sistema para mantener un nivel de rendimiento cuando la carga de trabajo aumenta. 
+      
+      Ambas características están acopladas y un buen diseño debe considerar cómo hacer frente al problema de mantener un nivel de rendimiento adecuado, a pesar de que se produzcan picos inesperados en la carga de trabajo. 
+      
+      - Patrón de Equilibrado de carga en colas
+      
+      - Patrón Sharding
+      
+      - Patrón Cola de prioridad
+      
+      - Patrón Cache–Aside
+      
+      - Patrón de Hosting de contenido estático.
+
+      ---
+      # 5. Patrones de diseño	
+
+      ___Patrones de resistencia.___ 
+      
+      La resistencia (o resiliencia) de un sistema es su capacidad para recuperar el funcionamiento normal tras la ocurrencia de un fallo. 
+      
+      Las aplicaciones cloud suelen integrar diferentes servicios y recursos, de manera que son muchos los puntos en los que pueden producirse fallos que afecten al sistema. 
+
+      - Patrón de Equilibrado de carga en colas
+      
+      - Patrón del Agente supervisor de estado
+      
+      - Patron de Reintento.
+
+      ---
+      # 5. Patrones de diseño	
+
+      ___Patrones de seguridad.___ 
+      
+      La seguridad de un sistema es su capacidad para prevenir acciones maliciosas o accidentales procedentes de su exterior, evitando la revelación o pérdida de información. 
+      
+      Las aplicaciones cloud son accesibles desde Internet y, en muchos casos, son accesibles para el público en general, de modo que aumenta su vulnerabilidad frente usuarios maliciosos. 
+
+      - Patrón de Identidad federada 
+      
+      - Patrón Gatekeeper.
+
+      ---
+      ![intermedia](./media/tema07/patron_arquitectura.png)
+
+      ???
+      # 5. Patrones de diseño	
+
+      Patrón Back–end para Front–end
+
+      Problema: muchos servicios cloud están construidos para ser utilizados desde una variedad de dispositivos —cada uno de ellos con sus propias particularidades en cuanto a usabilidad, tamaño de pantalla, recursos computacionales, etc. —.
+
+      Desde el back–end es necesario tener en cuenta estas especificidades y, por tanto, los requisitos en este lado varían en función del dispositivo que se conecta. Además, la frecuencia de actualización de las versiones cliente para los distintos dispositivos puede ser diferente y, también, sus equipos de desarrollo. 
+
+      Los cambios en la aplicación cliente van acompañados de modificaciones en el back–end, y un enfoque de back–end único dificulta el desarrollo y el mantenimiento de la aplicación.
+
+      La solución consiste en definir un back–end específico para cada uno de los tipos de interfaz de usuario, como se muestra en la figura 11. Esto permite que cada uno de los back-ends pueda ser más pequeño, optimizado para un dispositivo específico, y sencillo de mantener. El primero en describir este patrón fue Sam Newman (Newman, 2015).
+
+      ![RN](./media/tema07/patron01.png)
+
+      A la izquierda de la imagen tenemos un único back–end que trabaja con todos los posibles clientes. A la derecha, vemos una configuración en la que se han separado los back–ends que atienden a los diferentes dispositivos, aunque todos continúan consumiendo el mismo conjunto de servicios internos.
+
+      Patrón de Equilibrado de carga basado en colas
+
+      Problema: muchas aplicaciones cloud ejecutan diferentes tareas que, a su vez, invocan un conjunto de servicios (por ejemplo, un servicio de almacenamiento). Cuando un servicio es consumido por varias tareas, es difícil predecir la carga futura y el número de peticiones que recibirá, de manera que puede estar sometidos a picos de trabajo puntuales y a sobrecargas que pueden producir retrasos o incluso el fallo del servicio.
+
+      La solución consiste en introducir una cola de peticiones intermedia entre las tareas y el servicio. Esta cola actúa como búfer intermedio entre las tareas y el servicio que utilizan, y permite que los mensajes sean suministrados al servicio a un ritmo más controlado. 
+
+      Ante una acumulación de mensajes en la cola, es posible, según este esquema, replicar las instancias del servicio, de manera que se pueda atender más rápidamente a las peticiones. Esta idea se representa en los servicios dibujados en línea discontinua en la figura 12.
+
+      ![RN](./media/tema07/patron02.png)
+
+      Patrón de Sharding
+
+      Problema: cuando tenemos un almacén de datos en un único servidor, tenemos las siguientes limitaciones, que en un primer momento sólo pueden solucionarse mediante un escalado vertical (aumentando la cantidad de recursos asignados a cada servidor):
+      	El espacio de almacenamiento de un servidor en concreto se puede ampliar, pero puede haber límites.
+      	Los recursos computacionales, como memoria o procesadores, también se pueden ampliar, pero una vez más encontraremos límites. A medida que aumenta el número de usuarios que realizan operaciones de lectura/escritura en el almacén de datos, estos recursos pueden volverse insuficientes, aumentando los tiempos de respuesta y la frecuencia de errores.
+      	El ancho de banda también afecta al rendimiento y la capacidad de un servidor para dar respuesta a las solicitudes.
+      	La geografía también afecta al rendimiento de los sistemas de información. Puede ser necesario almacenar los datos correspondientes a determinados usuarios en localidades próximas a su ubicación.
+
+      Necesitamos una solución que permita escalar casi indefinidamente ante el aumento en el número de usuarios y los datos almacenados. 
+
+      El sharding (particionamiento) consiste en dividir el conjunto de los datos en particiones horizontales (shards). Las particiones comparten el mismo esquema, pero solo contienen un subconjunto de los datos. Esta solución facilita el escalado horizontal añadiendo nuevos shards en nodos de almacenamiento adicionales, y se representa en la figura 13.
+
+      ![RN](./media/tema07/patron03.png)
+
+      Patrón de Tuberías y filtros
+
+      Problema: es necesario realizar un conjunto de operaciones de complejidad variable sobre una información recibida, antes de suministrarla a una cierta lógica de negocio. 
+
+      El enfoque sencillo aborda el procesamiento en un módulo monolítico, como se aprecia en la figura 14. Sin embargo, esta solución disminuye las oportunidades de reutilizar código, optimizarlo o refactorizarlo.
+
+      ![RN](./media/tema07/patron04.png)
+
+      La solución consiste en descomponer el procesamiento en operaciones individuales, de manera que sea posible reutilizar módulos o filtros en operaciones similares en el procesamiento de otros datos, como se muestra en la figura 15. Este enfoque favorece la reutilización del código y la sostenibilidad del sistema.
+
+      ![RN](./media/tema07/patron05.png)
+
+      Además, esta solución permite poder ejecutar los filtros más complejos (cuellos de botella, con procesamiento más lento) en hardware de alto rendimiento, en máquinas independientes de las que realizan procesamientos más sencillos. Esta idea se refleja en la figura 16, donde, además, podemos ver que es posible dirigir el flujo de procesamiento de cada fuente de datos en función de las necesidades, de manera que se consiga una mejor distribución de la carga de trabajo.
+
+      ![RN](./media/tema07/patron06.png)
+
+      Patrón de Cola de prioridades
+
+      Problema: muchas aplicaciones delegan operaciones específicas en otros servicios (por ejemplo, procesamiento de datos en segundo plano). En muchos casos, el orden de llegada de las peticiones no es relevante y se pueden gestionar con colas tradicionales FIFO. Sin embargo, puede ser necesario priorizar peticiones específicas.
+      La solución consiste en facilitar el procesamiento temprano de las solicitudes con mayor prioridad. Para ello, se define una cola de prioridades (Priority Queue) entre la aplicación y los procesos que dan respuesta a las solicitudes (Consumers). Como vemos en la figura 17, la aplicación envía las peticiones especificando una prioridad, de manera que es posible ordenarlas en una cola, y las más prioritarias serán procesadas antes.
+
+      ![RN](./media/tema07/patron07.png)
+
+      Cuando el sistema no admite colas de mensajes basadas en prioridad, una solución alternativa consiste en definir una cola diferente por cada nivel de prioridad de los mensajes, como se muestra en la figura 18. Es responsabilidad de la aplicación el envío de los mensajes a la cola correspondiente. Esta solución tiene la posible ventaja de que se puede asignar diferente número de consumidores a cada cola, y las colas más prioritarias pueden tener asignados consumidores en hardware de mayor potencia.
+
+      ![RN](./media/tema07/patron08.png)
+
+      Patrón Cache–Aside
+
+      Problema: muchas aplicaciones solicitan y modifican frecuentemente información guardada en almacenes de datos en discos. Estas operaciones de lectura y escritura son lentas y perjudican el rendimiento del sistema, especialmente, si la misma operación se realiza repetidamente en el tiempo.
+
+      Una solución consiste en almacenar los datos en una memoria más rápida, de manera que cuando sean solicitados ya estén disponibles. Muchos sistemas de almacenamiento caché proporcionan servicios de lectura síncrona y escritura síncrona/asíncrona, de manera que se mantiene una consistencia entre la información almacenada en caché y la contenida en el almacén. Si no existe esta funcionalidad, la aplicación que utiliza la caché debe mantener esta coherencia. La idea se representa en la figura 19.
+
+      ![RN](./media/tema07/patron09.png)
+
+      En la figura 19, ante una operación de lectura (arriba), la aplicación comprueba primero si la información está en Caché (1). En caso de existir, la recupera y la devuelve al cliente. En caso contrario, obtiene la información del almacén (2), la devuelve al cliente, y también la agrega a la Caché (3). En una operación de escritura (abajo) es necesario actualizar la información tanto en la Caché como en el almacén (A y B).
+
+      Patrón de Hosting de contenido estático
+
+      Problema: las aplicaciones web contienen muchos elementos estáticos, ya se trate de páginas estáticas, recursos contenidos en páginas estáticas o dinámicas (como imágenes y hojas de estilo) o documentos para su descarga independiente. Los servidores web pueden responder a este tipo de peticiones, pero para ello consumen ciclos de procesamiento en las instancias de cálculo.
+
+      La solución consiste, como se muestra en la figura 20, en alojar todos los recursos estáticos en servicios de almacenamiento externos a las instancias de cálculo donde se ejecuta la aplicación. El consumo de recursos en este caso será muy inferior. El mayor problema se centra en el despliegue de la aplicación (enviando cada elemento al host correspondiente) y la protección de los recursos que no están disponibles sin autenticación.
+
+      ![RN](./media/tema07/patron10.png)
+
+      En una aplicación web el servicio ejecutado en la instancia virtual devuelve las páginas dinámicas (1), que contienen enlaces a recursos alojados en almacenamientos estáticos (2), independientes de las instancias de cálculo (figura 20).
+      
+      Patrón de Agente supervisor de estado
+
+      Problema: es más complejo supervisar el estado de ejecución de aplicaciones en cloud que en el caso de aplicaciones locales. En todo caso es una buena práctica comprobar periódicamente el estado interno de los servicios ofrecidos.
+
+      La solución consiste en implementar un supervisor de estado externo (Health Endppoint Monitoring) que envía solicitudes periódicas a un punto de conexión de la aplicación cloud. La aplicación realiza las comprobaciones solicitadas y devuelve un informe de su estado, como muestra la figura 21.
+
+      ![RN](./media/tema07/patron11.png)
+
+      A intervalos regulares, el agente solicita un informe de estado a la aplicación cloud que realiza las comprobaciones solicitadas y devuelve un informe de estado (figura 21).
+
+      Patrón de Reintento (Retry)
+
+      Problema: las aplicaciones en la nube pueden fallar por diversos motivos. Muchos de ellos pueden ser transitorios (pérdida momentánea de conectividad, sobrecarga transitoria de un servido que demora su tiempo de respuesta, etc.). Nuestras aplicaciones deben ser sensibles a este tipo de problemas.
+
+      Cuando una aplicación detecta errores en las peticiones a servicios remotos, puede adoptar diferentes estrategias:
+
+      	Cancelar. Si es poco probable que el error sea transitorio (por ejemplo, un fallo de autenticación debido a credenciales incorrectas), lo mejor es cancelar la operación y notificar una excepción.
+      	Reintentar. Si el error puede deberse a un tipo de problema transitorio, es posible reintentar la petición un número de veces, a intervalos cada vez más espaciados en el tiempo, como se muestra en la figura 22.	
+
+      ![RN](./media/tema07/patron12.png)
+
+      En el caso de la figura 22, el tercer intento de petición de servicio tiene éxito.
+
+      Patrón de Identidad federada
+
+      Problema: los usuarios necesitan utilizar servicios diferentes, ofrecidos por organizaciones independientes, y deben utilizar credenciales distintas en cada caso. Esto empeora la experiencia de usuario que debe manejar conjuntos de credenciales diferentes en cada caso, y complica la tarea del administrador del servicio.
+
+      La solución consiste en delegar el proceso de autenticación en un proveedor de identidades externo especializado en este problema, como vemos en la figura 23. Es habitual emplear servicios de proveedores de identidades sociales (como Google, Microsoft, Yahoo! o Facebook), en los que debe confiar el servicio que implementa el patrón de Identidad federada. De esta manera, se desacopla el problema de autenticación —que resuelve el IDP— del problema de autorización —que debe gestionar el servicio con las credenciales que utiliza el cliente en su comunicación.
+
+      ![RN](./media/tema07/patron13.png)
+
+      En esta figura, para que el cliente pueda obtener servicios del Servicio 1 es necesario que previamente el Servicio 1 haya establecido una relación de confianza (1) con el Proveedor de Identidad (IDP) y Servicio de Token de Seguridad (STS). Si esto es así, el cliente puede autenticarse en el IDP (2) y solicitar un token que le envía el STS (3). Entonces, puede emplear ese token que le identifica para consumir los servicios del Servicio 1. El proceso frente al Servicio 2, independiente del 1, sería el mismo, como muestra la secuencia de acciones A, B, C, D, que se corresponden con las 1, 2, 3 y 4.
+
+      Patrón Gatekeeper (guardián)
+
+      Problema: las mismas aplicaciones que exponen los puntos de conexión a los clientes son las que manejan las solicitudes y acceden a los datos. Si este sistema es comprometido, un usuario malintencionado puede tener acceso a todos los servicios y datos.
+
+      La solución consiste en crear una instancia de host intermedia entre los clientes y los servicios, de manera que verifica las solicitudes enviadas y, en caso de resultar válidas, las reenvía la aplicación, actuando como intermediario en el envío de peticiones y devolución de datos. De esta manera, se desacoplan los hosts que exponen puntos de conexión de aquellos que procesan solicitudes y tienen acceso al almacenamiento (figura 24). El mayor problema de este patrón es una posible pérdida de rendimiento.
+
+      ![RN](./media/tema07/patron14.png)
+
+      Este patrón ofrece un nivel de seguridad adicional, protegiendo a los sistemas que tienen acceso a los datos. Funciona como una fachada o cortafuegos, tal y como se ve en la figura 24.
+
+      ---
+      # 6. Referencias bibliográficas      
+
+      - Abtahizadeh, S. A. (2016). Understanding the Impact of Cloud Computing Patterns on Performance and Energy Consumption (Tesis de maestría). Universitè de Montreal, Canadá. Recuperado de https://publications.polymtl.ca/2296/1/2016_SeyedAmirhosseinAbtahizadeh.pdf
+
+      - Armbrust, M., Stoica, I., Zaharia, M., Fox, A., Griffith, R., Joseph, A. D., … Rabkin, A. (2010). A View of Cloud Computing. Communications of the ACM, 53(4), 50–58. https://doi.org/10.1145/1721654.1721672
+      
+      - Kahanwal, D. B., & Singh, D. T. P. (2012). The Distributed Computing Paradigms: P2P, Grid, Cluster, Cloud, and Jungle. International Journal of Latest Research in Science and Technology, 1(2), 183–187.
+      
+      ---
+      # 6. Referencias bibliográficas      
+
+      - McLellan, C. (2017). XaaS: Why «everything» is now a service [Web]. Recuperado de https://www.zdnet.com/article/xaas-why-everything-is-now-a-service/ 
+      Mell, P., & Grance, T. (2011). The NIST Definition of Cloud Computing. NIST Special Publication, 800-145. Gaithersburg, MD. Recuperado de https://goo.gl/PzRKxh
+      
+      - Microsoft. (2017). Guía de arquitectura de aplicaciones en el cloud [E–Book]. Redmond, Washington: Microsoft Press. Recuperado de https://azure.microsoft.com/es-es/campaigns/cloud-application-architecture-guide/
+      
+      - Newman, S. (2015). Backends For Frontends [Web]. Recuperado de https://samnewman.io/patterns/architectural/bff/
+      
+      ---
+      # 6. Referencias bibliográficas      
+
+      - Urueña, A., Ferrarie, A., Blanco, D. y Valdecasa, E. (2012). Cloud Computing: Retos y Oportunidades (p. 341). Madrid: Observatorio Nacional de las Telecomunicaciones y de la SI (ONTSI). Recuperado de https://www.ontsi.red.es/ontsi/sites/ontsi/files/1-_estudio_cloud_computing_retos_y_oportunidades_vdef.pdf
+      
+      - Varia, J. (2010). Arquitectura para la nube: Prácticas recomendadas. Recuperado de https://d36cz9buwru1tt.cloudfront.net/es/whitepapers/AWS_Cloud_Best_Practices.pdf
+      
+      - Watts, S. (2017). SaaS vs PaaS vs IaaS: What’s The Difference and How To Choose [Entrada de un blog]. Recuperado de https://www.bmc.com/blogs/saas-vs-paas-vs-iaas-whats-the-difference-and-how-to-choose/
+      
+
+
+    </textarea>
+    <script src="scripts/remark.js"></script>
+    <script>
+       var slideshow = remark.create();
+    </script>
+  </body>
+</html>

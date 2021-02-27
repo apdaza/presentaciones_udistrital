@@ -10,5 +10,6 @@ public class Hola{
         nombre = sc.next();
 
         System.out.println("Hola " + nombre);
+        sc.close();
     }
 }

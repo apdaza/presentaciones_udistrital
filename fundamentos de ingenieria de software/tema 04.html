@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="estilos/estilos.css">
+  </head>
+  <body>
+    <textarea id="source">
+      name: inverse
+      layout: true
+      class: center, middle, inverse
+      ---
+      template: inverse
+      # Desarrollo de software basado en reutilización
+      ***
+      ---
+      layout: false
+      # Desarrollo de software basado en reutilización
+      ***
+
+      ## Contenidos
+      1. Introducción y objetivos	
+      4. La reutilización del software	
+      4. Niveles de reutilización de código	
+      4. Técnicas concretas de reutilización	
+      4. Desarrollo basado en componentes	
+      4. Beneficios y problemas de la reutilización	
+      4. Planificación de la reutilización
+      4. Referencias bibliográficas	
+        
+
+      ---
+      ![RN](./media/tema04/esquema.png)
+      ---
+      # 1. Introducción y objetivos
+
+      > ___El proceso de desarrollo de software basado en la reutilización___. Se trata de una filosofía o estrategia que guía el proceso de ingeniería para ___aprovechar código y conocimientos generados previamente___. 
+
+      Vamos a analizar:
+      - Las principales ___características y objetivos___ de la reutilización del software.
+      
+      - Explicaremos ___técnicas específicas___ relacionadas con este concepto. 
+      
+      - Estudiaremos las ___particularidades del proceso de software basado en componentes___ y las principales consideraciones que debemos tener en cuenta al adoptar este enfoque general.
+
+      ---
+      # 1. Introducción y objetivos
+
+      Los objetivos que perseguimos alcanzar son los siguientes:
+
+      - Comprender los beneficios y posibles inconvenientes de la reutilización de software en el desarrollo de sistemas nuevos.
+      
+      - Conocer las principales técnicas de reutilización de software y saber agruparlas según su granularidad o cantidad de código reutilizado.
+      
+      - Saber relacionar la importancia de los patrones arquitectónicos y de diseño con otras técnicas de reutilización de software.
+    
+      - Conocer las actividades fundamentales del proceso de software basado en componentes.
+      
+      - Conocer los aspectos a valorar antes de decidir por la utilización de estas técnicas.
+
+      ---
+      # 2. La reutilización del software
+
+      El ___desarrollo orientado a la reutilización___, aunque conceptualmente data de mucho tiempo atrás, solo se ha convertido en norma habitual en el entorno empresarial a partir del año 2000 (Sommerville, 2011). 
+      
+      Progresivamente, el software se ha vuelto un activo más valioso para las organizaciones y se ha visto necesario adoptar estrategias que faciliten los siguientes objetivos:
+      
+      ![RN](./media/tema04/objetivos.png)
+
+      ---
+      # 2. La reutilización del software
+
+      Este movimiento se ha visto impulsado por distintos factores:
+
+      ![RN](./media/tema04/factores.png)
+
+      ---
+      # 2. La reutilización del software 
+
+      En el contexto de la ingeniería del software, el concepto de ___reutilización de software___ va más allá de la simple ___reutilización de líneas de código___ contenidas en archivos de proyectos anteriores mediante un simple copiado y pegado. 
+
+      En este caso, nos estamos apoyando en conceptos que tienen que ver con (Polo Usaola, 2012): 
+
+      - Diseño.
+
+      - Implementación.
+
+      - Conocimiento.
+
+      ---
+
+      ![RN](./media/tema04/conceptos.png)
+
+      ---
+      # 2. La reutilización del software 
+
+      Todos estos factores, estrechamente relacionados entre sí, nos hacen ver que un aspecto importante a considerar, desde el punto de vista de ingeniería, es el enfoque adoptado en el proceso de reutilización (Polo Usaola, 2012):
+
+      ![RN](./media/tema04/enfoques.png)
+
+      ---
+      # 3. Niveles de reutilización de código
+
+      Cuando reutilizamos código existente en nuestros proyectos, según la cantidad y complejidad del código que estemos reutilizando, podemos distinguir tres grandes ___niveles de granularidad___, según Sommerville (2011, p. 426):
+
+      ![RN](./media/tema04/niveles01.png)
+
+      ---
+      # 3. Niveles de reutilización de código
+
+      ![RN](./media/tema04/niveles02.png)
+      ![RN](./media/tema04/niveles03.png)
+      
+      En los proyectos generalmente se utilizan varios de estos niveles de reutilización, y los niveles superiores engloban siempre a los inferiores.
+
+      ---
+      # 4. Técnicas concretas de reutilización
+  
+      Los enfoques más antiguos permitieron la ___reutilización de rutinas___ encapsuladas en simples funciones, que eran recopiladas en librerías listas para su utilización
+      
+      El paradigma de la orientación a objetos permitió reutilizar elementos de complejidad y granularidad creciente, como ___las clases___. 
+      
+      A medida que se acumuló conocimiento y experiencia, la comunidad de ingeniería de software fue desarrollando ___patrones de arquitectura y de diseño___ que evitaban tener que enfrentarse desde cero a problemas de diseño habituales. 
+      
+      Más recientemente, tenemos a nuestra disposición ___componentes___ y ___subsistemas enteros___, ___frameworks de desarrollo___ y ___servicios___ que podemos aprovechar en nuestros proyectos.
+      
+      ---
+      # 4. Técnicas concretas de reutilización
+      ## Los patrones arquitectónicos
+
+      > ___El diseño de la arquitectura de un sistema es una representación de su estructura general al más alto nivel___. 
+      
+      En este nivel se ___omiten detalles específicos___ y se trabaja con un ___nivel de abstracción lo suficientemente elevado___ como para que no sean relevantes los ___detalles de implementación___. 
+      
+      Los buenos diseños arquitectónicos favorecen los siguientes aspectos (Polo Usaola, 2012):
+
+      ---
+      # 4. Técnicas concretas de reutilización
+      ## Los patrones arquitectónicos
+
+      - Permiten ___identificar las relaciones necesarias___ entre distintos sistemas o subsistemas.
+      
+      - Como consecuencia de lo anterior, se favorece la ___reutilización de elementos existentes___ y permite ___estudiar la manera de mejorar o adaptar otros___ que no pueden ser utilizados en su estado actual.
+      
+      - Es una ___potente herramienta de documentación del código___ que ayuda a comprender su funcionamiento general de un solo golpe de vista.
+      
+      - A lo largo de los años se han producido ___multitud de patrones arquitectónicos___ que dan respuesta a problemas concretos. 
+
+      ---
+      # 4. Técnicas concretas de reutilización
+      ## Los patrones de diseño
+
+      > ___Podemos considerar un patrón de diseño como una solución general para el diseño de un software que debe resolver un tipo de problema frecuente___. 
+      
+      Es la frecuencia de la necesidad de esta implementación lo que ha hecho que el conocimiento acumulado haya ido definiendo ciertas maneras de abordar el problema que han demostrado éxito en la práctica. 
+
+      Para que una determinada solución pueda ser considerada un patrón:
+
+      - Que haya sido ___aplicada y probada___ con éxito un número suficiente de veces.
+      
+      - Que pueda ser descrita con la ___suficiente generalidad___ como para permitir su aplicación o reutilización en contextos diferentes.
+
+      ---
+      # 4. Técnicas concretas de reutilización
+      ## Los patrones de diseño
+
+      La mayoría de los patrones de diseño consideran intrínsecamente ___la reutilización como un valor deseable___, de manera que cuando aplicamos un patrón no solamente estamos reutilizando un diseño, sino a su vez el patrón definirá ciertos elementos (clases) reutilizables en nuestra aplicación. 
+      
+      Esto, en ocasiones, puede requerir que el patrón requiera la implementación de clases o elementos adicionales, intermedios, que a veces pueden repercutir negativamente en la complejidad del sistema y su mantenimiento.
+      
+      ---
+      # 4. Técnicas concretas de reutilización
+      ## Las librerías
+
+      Una librería de código es un ___conjunto de funciones reutilizables___ contenidas en uno o varios ficheros. 
+      
+      Además, estas funciones suelen estar agrupadas teniendo en cuenta que aportan ___funcionalidades relacionadas___ (funciones matemáticas, funciones de procesamiento de imagen, funciones para creación de gráficos, etc.). 
+      
+      Cuando utilizamos este tipo de elementos en nuestros proyectos, generalmente, el código de la librería se encuentra alojado de manera externa al repositorio de nuestro proyecto, en directorios diferentes. 
+      
+      ---
+      # 4. Técnicas concretas de reutilización
+      ## Las librerías
+      .text-column[
+      Aparecen dos ___enfoques fundamentales___ a la hora de reutilizar este código:
+      ]
+      .img-column[
+      ![RN](./media/tema04/enfoques_librerias.png)
+      ]
+
+      ---
+      # 4. Técnicas concretas de reutilización
+      ## Las librerías
+
+      Sin embargo, la utilización de librerías de ___enlace dinámico___ puede provocar inconvenientes:
+
+      - ___Problemas de compatibilidad con distintas versiones de una librería.___ Esto ocurre cuando en un sistema tenemos varios programas que utilizan una misma librería, pero no todos pueden con la misma versión.
+
+      - ___Problemas de mantenimiento.___ Lo anterior obliga a que generalmente en un mismo sistema coexistan varias versiones de la misma librería. Además, la desinstalación manual de alguna de ellas puede provocar que algunas aplicaciones dejen de funcionar.
+
+      ---
+      # 4. Técnicas concretas de reutilización
+      ## Las clases
+
+      La aparición del ___paradigma de la programación orientada a objetos (POO)___ y las capacidades como ___la herencia___, ___el polimorfismo___ y ___la encapsulación___ de funcionalidades están directamente relacionadas con la búsqueda de la reutilización de código. 
+      
+      > Generalmente, las clases se agrupan en ___paquetes___ que contienen clases relacionadas entre sí. 
+
+      ---
+      # 4. Técnicas concretas de reutilización
+      ## Las clases
+
+      Veamos cómo algunos de los conceptos de la POO ayudan en la reutilización de código:
+
+      __La abstracción:__ 
+      
+      - Hace referencia a la posibilidad de extraer las características esenciales y relevantes de objetos dentro de una categoría que los diferencian del resto. 
+      
+      - Desde el punto de vista externo, solo nos interesan los servicios que ofrece un objeto y no tanto su funcionamiento interno.
+      
+      ---
+      # 4. Técnicas concretas de reutilización
+      ## Las clases
+
+      __El encapsulamiento:__ 
+      
+      - Es lo que permite encerrar en el objeto tanto la información sobre su estado (en campos o atributos) como su comportamiento (en operaciones o métodos). 
+      
+      - No debe confundirse con el concepto de ocultación, aunque, generalmente, los atributos permanecen ocultos al exterior y el objeto solo expone aquellos servicios que desea ofrecer a través de métodos públicos, siendo el resto invisibles (e innecesarios) para el consumidor externo.
+      
+      ---
+      # 4. Técnicas concretas de reutilización
+      ## Las clases
+
+      __La herencia:__ 
+      
+      - Permite crear jerarquías completas de clases relacionadas, de manera que las descendientes heredan comportamientos de los padres, no siendo necesario repetir el código que describe una funcionalidad común.
+
+      __El polimorfismo:__ 
+      
+      - Permite trabajar con diferentes objetos sin importar su tipo concreto, siempre que soporten una interfaz definida y esperada por el consumidor. Esto quiere decir que la invocación de un mismo método en distintos objetos puede provocar comportamientos diferentes.
+
+      ---
+      # 4. Técnicas concretas de reutilización
+
+      ![RN](./media/tema04/poo.png)
+
+      ???
+      Todos los animales, sin importar su tipo, comparten características comunes que se abstraen en la clase Animal __(las flechas naranjas indican esta relación de abstracción)__. Por otro lado, los comportamientos y atributos compartidos por todos los perros se encapsulan en la clase abstracta Perros __(flechas naranjas)__, y las características de los animales salvajes se modelan en la clase AnimalSalvaje __(flechas verdes)__. 
+      
+      Vemos así que las variables y métodos propios de cada clase quedan encapsuladas de manera independiente, y que los objetos solo hacen públicas aquellas operaciones que pueden resultar útiles desde el exterior (alimentar() con un pienso, o fotografiar() a un animal). 
+
+      Finalmente, desde el punto de vista del consumidor del servicio puede ser irrelevante la instancia concreta con la que se esté trabajando. Un objeto Fotógrafo sabe que cualquier AnimalSalvaje expone públicamente el método fotografiar(), y el comportamiento que desencadene su invocación dependerá únicamente de la instancia concreta con la que se esté trabajando.
+
+      ---
+      # 4. Técnicas concretas de reutilización
+
+      ![RN](./media/tema04/poo01.png)
+
+      ---
+      # 4. Técnicas concretas de reutilización
+      ## Los servicios
+
+      Un servicio es, según Polo Usaola (2012) ___«una funcionalidad que un proveedor de servicios ofrece a sus clientes de forma remota»___ y puede ser considerado un componente más del sistema, que se utiliza a través de las operaciones que ofrece su interfaz. 
+      
+      __El W3C (2004) los define como:__
+      
+      >> «Un sistema software destinado a soportar la interacción entre máquinas a través de una red, que ofrece una interfaz descrita en un lenguaje procesable por máquinas (específicamente WSDL), y con el que otros sistemas interactúan utilizando mensajes SOAP, generalmente transportados sobre HTTP y con serialización XML en combinación con otros estándares web.»
+
+      ---
+      # 4. Técnicas concretas de reutilización
+      ## Los servicios
+
+      Según esta definición:
+      
+      - __XML (eXtensible Markup Language)__ es el formato utilizado para contener los datos que se intercambian.
+      
+      - __SOAP (Simple Object Access Protocol)__ es el protocolo utilizado para transferir los datos.
+      
+      -	__WSLD (Web Services Description Language)__ describe los servicios disponibles.
+
+      ---
+      # 4. Técnicas concretas de reutilización
+      ## Los servicios
+
+      Sin embargo, hoy en día la variedad de servicios web, protocolos utilizados y formatos de intercambio es tan amplia que podemos considerar como servicio web cualquier funcionalidad que nos ofrece un servidor remoto. 
+      
+      Cada vez es más habitual encontrar API que proporcionan sus servicios en formatos como JSON, más ligero que XML, adoptando el estilo arquitectónico REST (RESTful APIs).
+      
+      ---
+      # 4. Técnicas concretas de reutilización
+      ## Los componentes
+
+      Podemos definir un componente, según Sommerville (2011) como:
+
+      >> «una unidad de software independiente que puede organizarse con otros componentes para crear un sistema de software». 
+      
+      Heineman y Councill (2001) dan una definición más precisa y lo consideran:
+      
+      >> «un elemento de software que se conforma a un modelo de componentes estándar y puede desplegarse y componerse independientemente sin modificación, de acuerdo con un estándar de composición».
+      
+      ---
+      # 4. Técnicas concretas de reutilización
+      ## Los componentes
+
+      Existe un consenso general en que, en todo caso, un componente es un elemento que se incluye en el sistema ofreciendo un conjunto de interfaces estandarizadas, lo que lo diferencia de un servicio externo. 
+      
+      Estas interfaces suponen un contrato entre ese elemento y el resto del sistema, que lo ve como una «caja negra» (y, de hecho, es habitual no tener acceso al código fuente del componente utilizado).
+      
+      El desarrollo basado en componentes se ocupa de desarrollar sistemas integrando componentes, y da lugar a un modelo de proceso especializado que estudiaremos más adelante. 
+      
+      ---
+      # 4. Técnicas concretas de reutilización
+      ## Los componentes
+
+      Podemos resumir del siguiente modo las características de los componentes (Sommerville, 2011): 
+      
+      - __Estandarizado:__ los componentes se ajustan a modelos estandarizados que definen sus interfaces, metadatos y documentación, y facilitan su integración.
+      
+      -	__Independiente:__ un componente es un elemento aislado, susceptible de ser intercambiado por otro componente diferente, si es necesario, gracias a la estandarización. En caso de que el componente necesite a su vez de un servicio externo debe especificarse a través de una interfaz de requisitos o dependencias.
+      
+      ---
+      # 4. Técnicas concretas de reutilización
+      ## Los componentes
+
+      -	__Componible:__ las interfaces públicas que ofrece deben facilitar su integración con otros servicios, permitiendo el acceso a información y operaciones.
+      
+      -	__Implementable:__ debe existir una plataforma tecnológica o framework general de desarrollo que permita su utilización. En el caso de que el componente sea un servicio externo, será responsabilidad del proveedor ofrecer esta infraestructura. 
+      
+      -	__Documentado:__ deben ofrecer documentación adecuada para que los potenciales usuarios puedan valorar su utilidad y si cumplen con sus necesidades.
+      
+      ---
+      # 4. Técnicas concretas de reutilización
+      ## Los componentes
+
+      Cualquier componente tiene en general dos interfaces relacionadas:
+      .text-column[
+      - __Interfaz «proporciona»__, que define los servicios ofrecidos a través de una API.
+      
+      -	__Interfaz «requiere»__, que indica los servicios de otros componentes de los cuáles depende, y si no están disponibles, el componente no funcionará
+      ]
+      .img-column[
+      ![RN](./media/tema04/componente.png)      
+      ]
+
+      ---
+      # 4. Técnicas concretas de reutilización
+      ## Los frameworks de desarrollo
+
+      A pesar de los beneficios de la programación orientada a objetos, la reutilización de objetos de manera individual resulta difícil. 
+      
+      Esto, según Sommerville (2011), se debe a que a menudo su tamaño es demasiado pequeño y su propósito tan específico, que puede resultar más simple su implementación desde cero que su adaptación. 
+      
+      Sin embargo, los frameworks de desarrollo ofrecen un entorno idóneo que simplifica y guía la reutilización de componentes de grano más fino. 
+      
+      ---
+      # 4. Técnicas concretas de reutilización
+      ## Los frameworks de desarrollo
+
+      Para Schmidth, Gokhale y Natarajan (2004), un framework de desarrollo es 
+      > «un conjunto integrado de artefactos de software (como clases y componentes) que colaboran proporcionando una arquitectura reutilizable para un conjunto de aplicaciones relacionadas». 
+      
+      Permiten desacoplar las partes de código que dependen del dominio de aplicación específico, de aquellas que no lo son y son comunes a otras aplicaciones de la misma categoría. 
+      
+      ---
+      # 4. Técnicas concretas de reutilización
+      ## Los frameworks de desarrollo
+      .text-column[
+      Permiten mejorar la extensibilidad y portabilidad del sistema del siguiente modo (Schmidth et al., 2004):
+      ]
+      .img-column[
+      ![RN](./media/tema04/frameworks.png)      
+      ]
+
+      ---
+      # 4. Técnicas concretas de reutilización
+      ## Los frameworks de desarrollo
+
+      Sin embargo, la utilización de un framework puede resultar compleja en ocasiones:
+
+      - ___Dificultad de aprendizaje___. Aprender a manejar algunos frameworks con agilidad puede llegar meses.
+
+      - ___Su desarrollo es complejo___ y requiere programadores de ___gran experiencia___.
+      
+      - Existe gran variedad de este tipo de frameworks, lo cual ___dificulta su elección___.
+      
+      - ___La depuración___ de las aplicaciones puede ___requerir conocimientos avanzados sobre el funcionamiento interno del framework___, lo cual puede resultar complejo.
+
+      ---
+      # 4. Técnicas concretas de reutilización
+      ## Los frameworks de desarrollo
+
+      Una clase particular de framework, muy popular hoy en día, es la que permite desarrollar aplicaciones web. 
+      
+      En general, se basan en el patrón ___Modelo-Vista-Controlador___ (Gamma, Helm, Johnson y Vlissides, 2003). 
+      
+      A su vez, suelen incluir otros frameworks más específicos para resolver problemas concretos. 
+      
+      La mayoría de los frameworks web ofrecen las siguientes características (Sommerville, 2011):
+
+      ---
+      # 4. Técnicas concretas de reutilización
+      ## Los frameworks de desarrollo
+
+      - ___Seguridad___, ofreciendo clases para resolver problemas habituales como la autenticación de usuarios y el control de acceso.
+      
+      - ___Páginas web dinámicas___, soportando algún sistema de plantillas que permita dotarlas de contenidos específicos, generando así el HTML final.
+      
+      - ___Soporte para bases de datos___. Aunque, en general, los frameworks no están sujetos al empleo de una base de datos en particular, ofrecen clases que facilitan la interacción con diferentes opciones.
+      
+      - ___Interacción con los usuarios___, simplificando la utilización de otros frameworks de desarrollo front-end que permiten crear páginas más interactivas.
+
+      ---
+      # 4. Técnicas concretas de reutilización
+      ## Reutilización de aplicaciones (productos COTS)
+
+      - En ocasiones, es posible reutilizar un sistema software íntegro en su estado actual o con mínimas modificaciones para dar respuesta a nuestras necesidades. 
+      
+      - Los productos ___COTS (Commercial-Off-The-Shelf)___ se pueden adaptar a las necesidades del cliente sin cambiar el código fuente del sistema (Sommerville, 2011, p. 440). 
+      
+      - Este enfoque se ha vuelto cada vez más habitual, y prácticamente todas las herramientas ofimáticas, de correo electrónico, sistemas ERP y CMS, y productos en el lado del servidor pertenecen a esta categoría. 
+      
+      ---
+      # 4. Técnicas concretas de reutilización
+      ## Reutilización de aplicaciones (productos COTS)
+
+      Este enfoque ofrece algunas ventajas y problemas. 
+
+      ![RN](./media/tema04/cots_ventajas.png)
+
+      ---
+      # 4. Técnicas concretas de reutilización
+      ## Reutilización de aplicaciones (productos COTS)
+
+      ![RN](./media/tema04/cots_problemas.png)
+
+      ---
+      # 4. Técnicas concretas de reutilización
+      ## Reutilización de aplicaciones (productos COTS)
+
+      Encontramos dos categorías dentro de este enfoque de reutilización __sistemas de solución__ y __sistemas integrados__.
+
+      ![RN](./media/tema04/cots_enfoques.png)
+
+      ---
+      # 4. Técnicas concretas de reutilización
+      ## Reutilización de aplicaciones (productos COTS)
+      __Ejemplo de sistema COTS__
+
+      Supongamos que una empresa tiene la necesidad de crear un blog empresarial. Podría adoptar dos enfoques alternativos dentro de una solución COTS:
+      
+      - Contratar un blog en WordpPress.com y configurarlo según sus necesidades, seleccionando la plantilla y el conjunto de plugins más adecuado.
+      
+      - Descargar el CMS desde WordPress.org e instalarlo en su propia infraestructura, configurando la base de datos y otros elementos y subsistemas que permitan dar solución a sus necesidades.
+      
+      ---
+      # 4. Técnicas concretas de reutilización
+      ## Reutilización de aplicaciones (productos COTS)
+
+      ![reducida](./media/tema04/cots_componentes_medida.png)
+
+      ---
+      # 5. Desarrollo basado en componentes
+
+      - Un componente software es un fragmento de código que encapsula un conjunto de funcionalidades específicas, y relacionadas entre sí, que se exponen a través de interfaces estandarizadas, de manera que se facilita su reutilización. 
+      
+      - Su combinación adecuada permite crear aplicaciones más completas. 
+      
+      - La labor de ingeniería, que analiza los sistemas aprovechando este enfoque de reutilización, define una arquitectura de colaboración e implementa el código necesario para que los componentes funcionen unos con otros, es conocida como desarrollo basado en componentes, o ingeniería del software basada en componentes ___Component Based Software Engineering (CBSE)___.
+      
+      ---
+      # 5. Desarrollo basado en componentes
+
+      Existen dos tipos de procesos CBSE:
+
+      - ___Desarrollo «para» reutilización.___ Se centra en el desarrollo de componentes que podrán ser reutilizados y que, en general, supone generalizar componentes existentes.
+      
+      -	___Desarrollo «con» reutilización.___ Busca desarrollar aplicaciones nuevas empleando componentes y servicios existentes.
+
+      ## CBSE con reutilización
+
+      - El desarrollo de nuevos sistemas software como integración de componentes existentes requiere de una adaptación del proceso general de desarrollo. 
+
+      ---
+      # 5. Desarrollo basado en componentes
+      ## CBSE con reutilización
+
+      - Debemos tener en cuenta que los componentes deben ser considerados como «cajas negras», de manera que deben ser utilizados tal y como son proporcionados, y su modificación es a menudo complicada, imposible o no conveniente. 
+
+      - Las adaptaciones necesarias frente a otros modelos de proceso son las siguientes:
+       - ___Especificación inicial:___ se parte de una especificación de requisitos genérica, ya que puede ser necesaria su adaptación en función de las alternativas de componentes encontradas. Una especificación demasiado detallada puede limitar el número de alternativas.
+      
+      ---
+      # 5. Desarrollo basado en componentes
+      ## CBSE con reutilización
+       - ___Adaptación de requisitos:___ se adaptan los requisitos en función de los componentes encontrados. Para cada componente se evalúa:
+        - Su capacidad para cumplir con los requisitos definidos.
+
+        - Su encaje en el diseño arquitectónico del sistema.
+        
+        - La necesidad de adaptación, analizando sus interfaces, dependencias, documentación, seguridad y cualquier factor que afecte a su integración.
+      
+       - ___Selección e integración:___ una vez seleccionados los componentes, se procede a su composición e integración en el sistema, que puede requerir de adaptaciones.
+      
+      ---
+      # 5. Desarrollo basado en componentes
+      ## CBSE con reutilización
+
+       - ___Evolución:___ finalmente, hay que considerar la fase de mantenimiento. Puede ser necesario:
+        -	Corregir errores: mantenimiento correctivo. 
+
+        -	Agregar funcionalidades: mantenimiento perfectivo.
+        
+        -	Adaptar el sistema a cambios en el entorno: mantenimiento adaptativo.
+
+      - Estas modificaciones pueden suponer la sustitución de componentes por otros o por nuevas versiones de estos, o su modificación interna en caso de que sea posible.
+
+      ---
+      # 5. Desarrollo basado en componentes
+      ## CBSE con reutilización
+
+      ![RN](./media/tema04/componentes.png)
+
+      ---
+      # 5. Desarrollo basado en componentes
+      ## Composición de componentes
+
+      >> La composición de componentes implica combinarlos entre sí y desarrollar el código necesario para que el sistema quede integrado. 
+
+      Esta integración se puede realizar de tres maneras diferentes (Sommerville, 2011):
+
+      - ___Composición secuencial.___ Se crea un sistema compuesto utilizando secuencialmente los servicios ofrecidos por A, y utilizando estos resultados como entrada para los servicios que ofrece B. En este caso, puede ser necesario código adicional para establecer el orden correcto de las llamadas y garantizar que las salidas de A son compatibles con las entradas que espera B.
+
+      ---
+      # 5. Desarrollo basado en componentes
+      ## Composición de componentes
+
+      - ___Composición jerárquica.___ En este caso, dos componentes se conectan directamente entre sí, de manera que es necesario que la interfaz «requiere» de A sea compatible con la interfaz «proporciona» de B. Puede ser necesario realizar una adaptación entre ambas interfaces.
+
+      - ___Composición aditiva.___ Se crea un nuevo componente virtual como combinación de dos o más componentes existentes. En conjunto, ofrecen nuevas interfaces «proporciona» y «requiere» que son combinación de las de sus integrantes y, generalmente, es necesaria la creación de una fachada que uniformice su uso.
+
+      ---
+      # 5. Desarrollo basado en componentes
+      ## Composición de componentes
+
+      ![RN](./media/tema04/componentes01.png)
+
+      ---
+      # 5. Desarrollo basado en componentes
+      ## Composición de componentes
+
+      La integración de componentes puede requerir el desarrollo de algún ___mecanismo de adaptación___, esto se debe a varios posibles ___tipos de incompatibilidad___:
+
+      -	___Incompatibilidad de parámetros.___ Las operaciones en ambas interfaces conectadas tienen el mismo nombre, pero distinta organización o tipos de parámetros.
+
+      -	___Incompatibilidad de operaciones.___ Los nombres de las operaciones en ambas interfaces son incompatibles.
+
+      - ___Incompletitud de operaciones.___ La interfaz «proporciona» de un componente es insuficiente para la interfaz «requiere» del otro componente.
+
+      ---
+      # 6. Beneficios y problemas de la reutilización
+
+      La reutilización de código y conocimiento acumulados en proyectos previos ofrece los siguientes ___beneficios___ en los procesos de desarrollo (Polo Usaola, 2012; Sommerville, 2011):
+
+      - ___Disminución de la duración del proyecto___ y los plazos de entrega, al aprovechar elementos ya existentes.
+      
+      - ___Reducción de costos del proyecto___, como consecuencia de lo anterior y de evitar el desarrollo de algunas partes del sistema ya disponibles.
+       
+      - ___Aumento de la confiabilidad en el sistema___, al reutilizarse componentes probados en desarrollos anteriores.
+      
+      - ___Disminución del riesgo del proyecto___, tanto desde el punto de vista tecnológico, como en la estimación de costos. El valor y calidad del software existente es ya conocido, mientras que a menudo es más complejo valorar el costo de su desarrollo.
+      
+      ---
+      # 6. Beneficios y problemas de la reutilización
+
+      - ___Optimización del conocimiento especializado___. Por un lado, los especialistas en un tema pueden desarrollar componentes reutilizables que encapsulan su conocimiento en ese ámbito en concreto. Por otro, los desarrolladores de nuevos sistemas pueden reutilizar componentes genéricos o específicos, centrando su labor de manera más eficiente en aspectos relativos al dominio de aplicación concreto.
+
+      - ___Mejora de la experiencia de usuario.___ La reutilización de componentes de interfaz de usuario estandarizados permite homogeneizar la apariencia externa de una categoría de aplicaciones, aumentando la familiaridad para el usuario y facilitando el uso de las aplicaciones.
+
+      - ___Mejora de la arquitectura y el diseño del sistema___. Primero porque este enfoque obliga a un proceso de análisis más detallado y, segundo, porque la reutilización de frameworks y librerías existentes imponen restricciones que generalmente conducen a un mejor estilo en la construcción del sistema. 
+
+      ---
+      # 6. Beneficios y problemas de la reutilización
+
+      -	___Supone una inversión a futuro___, ya que los elementos con posibilidad de reutilización repercutirán favorablemente en desarrollos futuros.
+
+      - ___Mejora del mantenimiento del sistema___, puesto que es más fácil detectar problemas en componentes que se utilizan en varios sistemas y, una vez arreglado el componente, se benefician todos los desarrollos que lo integran. En el caso de utilizar componentes de terceros, nos podemos beneficiar del esfuerzo realizado por esa comunidad de desarrolladores en la mejora de esos componentes.
+
+      A pesar de todo ello, también podemos identificar algunos aspectos posiblemente ___negativos___ en este enfoque. Enumeramos algunos de estos posibles ___problemas___:
+
+      -	___Problemas de mantenimiento___, si no tenemos acceso o conocimientos para modificar el software reutilizado.
+
+      ---
+      # 6. Beneficios y problemas de la reutilización
+
+      -	___La creación y mantenimiento___ de la librería de componentes supone un ___costo adicional___.
+
+      - Costes de aprendizaje y comprensión de los componentes reutilizados, al menos la primera vez que se utilizan.
+      
+      - ___Costes de integración en el sistema___, que puede requerir el desarrollo de adaptadores específicos.
+      
+      - ___Síndrome de «no se inventó aquí»___, Sommerville (2011, p. 428), que hace que muchos ingenieros prefieran escribir sus propios componentes, por considerar que lo harán mejor y que resulta una tarea más desafiante.
+
+      ---
+      # 7. Planificación de la reutilización
+
+      Si adoptamos un enfoque proactivo en la reutilización del software, deberemos considerar una serie de factores relacionados con el desarrollo del proyecto (Sommerville, 2011) y, así, determinar la técnica o el conjunto de técnicas más adecuadas para cada caso concreto:
+
+      - ___El tiempo disponible para el desarrollo.___ Si la planificación presenta tiempos ajustados, conviene adoptar estrategias de mayor granularidad, de manera que se puedan desarrollar partes importantes del sistema, o el sistema completo, en plazos reducidos.
+
+      - ___La vida esperada del software.___ El mantenimiento futuro del software es un aspecto a tener en cuenta. Utilizar componentes disponibles puede facilitar el proceso de mantenimiento, si es que estos cuentan con su propia comunidad de desarrollo que introduce mejoras, arregla problemas, mejora la seguridad… Pero el no tener acceso al código de estos componentes puede dificultar el mantenimiento, si somos nosotros quienes queremos introducir la modificación.
+
+      ---
+      # 7. Planificación de la reutilización
+
+      - ___La experiencia del equipo de desarrollo.___ A menudo, la integración de un componente existente en un nuevo desarrollo puede ser compleja, o requerir de habilidades adicionales. Por otro lado, la reutilización de elementos genéricos puede permitir al equipo focalizarse en aquellos aspectos específicos del desarrollo en los que se tiene mayor experiencia.
+
+      - ___La criticidad del software.___ Si el desarrollo debe ser certificado por un regulador externo, o hay que tener en cuenta aspectos específicos relacionados con su seguridad o eficiencia; no tener acceso al código fuente o capacidad para modificarlo puede suponer un problema.
+
+      - ___Los requisitos no funcionales.___ El empleo de estrategias de reutilización, como la generación automática de código, puede suponer un detrimento de la eficiencia del sistema, y de otros aspectos no funcionales, que conviene evitar.
+
+      ---
+      # 7. Planificación de la reutilización
+
+      - ___El dominio de aplicación.___ La cantidad de software disponible para su reutilización puede no ser la misma dependiendo del dominio o aplicación concreta, y la adaptación de código existente puede no ser sencilla o viable en todos los casos.
+
+      - ___La plataforma de despliegue del sistema.___ Pueden existir problemas de compatibilidad entre la tecnología propia del proyecto y la de los componentes que se desea reutilizar. La adaptación o integración de todos ellos puede resultar demasiado compleja.
+       
+      ---
+      # 8. Referencias bibliográficas
+
+      - del Pino, J. (2017). Frameworks Web de lado servidor [Web]. Recuperado de https://developer.mozilla.org/es/docs/Learn/Server-side/Primeros_pasos/Web_frameworks
+
+      - Esri. (2011). Taking a COTS-Based Approach to Implementing Enterprise GIS (An Esri White Paper). Recuperado de http://www.esri.com/library/whitepapers/pdfs/cots-based-approach-enterprise.pdf
+
+      - Gamma, E., Helm, R., Johnson, R. y Vlissides, J. (2003). Patrones de diseño: elementos de software orientado a objetos reutilizables. Madrid: Pearson Educación.
+
+      - Heineman, G. T. & Councill, W. T. (2001). Component-based software engineering: putting the pieces together (1.a ed.). Boston: Addison-Wesley.
+
+      ---
+      # 8. Referencias bibliográficas
+
+      - Johnson, R. E. (1997). Frameworks = (components + patterns). Communications of the ACM, 40(10), 39-42. doi:10.1145/262793.262799
+
+      - Polo, M. (2012). Desarrollo de software basado en reutilización [Material didáctico]. Barcelona: Universitat Oberta de Catalunya. Recuperado de http://hdl.handle.net/10609/63466
+
+      - Schmidth, D. C., Gokhale, A. & Natarajan, B. (2004). Leveraging Application Frameworks. ACM Queue, 2(5), 66-75.
+
+      - Sommerville, I. (2011). Ingeniería de software (9ª ed.). México: Pearson Educación de México.
+
+      - W3C. (2004). Web Services Glossary [Web]. Recuperado de https://www.w3.org/TR/ws-gloss/
+      
+
+
+
+    </textarea>
+    <script src="scripts/remark.js"></script>
+    <script>
+       var slideshow = remark.create();
+    </script>
+  </body>
+</html>

@@ -5,7 +5,7 @@
 body {
   font-family: 'Arial Narrow';
   text-align: justify;
-  
+
 }
 h1, h2, h3 {
   font-family: 'Arial Narrow';
@@ -18,7 +18,7 @@ h1, h2, h3 {
   background-repeat: no-repeat;
 }
 .remark-slide-content blockquote {color:#0098cd; text-align: end; text-shadow: 0 0 5px darkgray;}
-.remark-slide-number {color: white; opacity: .8;}
+.remark-slide-number {color: rgb(24, 44, 87); opacity: .8;}
 .remark-slide-content h1 { font-size: 2.2em; color:#0098cd; text-shadow: 0 0 8px #777872; border-bottom: groove; padding-bottom: 0.5em;}
 .remark-slide-content h2 { font-size: 1.6em; color:#2e5868; text-shadow: 0 0 5px #777872;}
 .remark-slide-content h3 { font-size: 1.2em; color:#117397; text-shadow: 0 0 3px #777872;}
@@ -30,7 +30,7 @@ h1, h2, h3 {
 
 li { margin-bottom: 15px; list-style-image: url("../media/li.png")}
 
-li li { font-style: italic;}
+li li { font-style: italic; margin-bottom: 5px}
 
 li p { line-height: 1.25em; }
 .red { color: #fa0000; }
@@ -43,7 +43,7 @@ a, a > code {
 code {
   background: #e7e8e2;
   border-radius: 5px;
-  
+
 }
 .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
 .remark-code-line-highlighted     { background-color: #373832; }

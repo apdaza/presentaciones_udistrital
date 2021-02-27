@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="estilos/estilos.css">
+  </head>
+  <body>
+    <textarea id="source">
+      name: inverse
+      layout: true
+      class: center, middle, inverse
+      ---
+      template: inverse
+      # Patrones de arquitectura de sistemas
+      ***
+      ---
+      layout: false
+      # Patrones de arquitectura de sistemas
+      ***
+
+      ## Contenidos
+      1. Introducción y objetivos	
+      2. El diseño arquitectónico	
+      3. Patrones arquitectónicos generales	
+      4. Arquitecturas tolerantes a fallos	
+      5. Arquitecturas de sistemas distribuidos	
+      6. Referencias bibliográficas	 
+        
+
+      ---
+      ![RN](./media/tema05/esquema.png)
+      ---
+      # 1. Introducción y objetivos
+
+      - Una de las técnicas de ingeniería que facilitan la reutilización es el empleo de ___patrones para modelar la arquitectura___ general del sistema. 
+      
+      - En este caso, no estamos utilizando funciones, componentes o servicios concretos, sino que estamos aprovechando ___la experiencia___ y ___conocimiento___ acumulados por otros desarrolladores en proyectos anteriores. 
+      
+      - Así, no sólo aceleramos el proceso de diseño, sino que aplicamos soluciones que están sobradamente probadas y comprobadas en la práctica. 
+      
+      - Al mismo tiempo, un correcto diseño puede ayudar a identificar ciertos elementos que es posible implementar reutilizando software existente, acelerando así también el proceso de implementación y pruebas.
+
+      - Existen infinidad de situaciones que se repiten reiteradamente en sucesivos proyectos, y carece de sentido volver a pensar soluciones arquitectónicas para problemas que han sido resueltos en proyectos previos similares.
+
+      ---
+      # 1. Introducción y objetivos
+
+      - En este caso, tal vez la mayor complejidad consiste en identificar aquellas situaciones que presentan similitudes con otros problemas previamente analizados y, en su caso, determinar la solución o soluciones más apropiadas partiendo de un patrón. 
+      
+      - En este contexto, un patrón no es más que ___la descripción de una buena solución para un problema habitual en la práctica___. 
+      
+      __Objetivos:__
+
+      - Comprender la importancia de los patrones de diseño arquitectónico y su utilidad como herramienta de reutilización de conocimiento en la implementación de sistemas software.
+      
+      - Saber seleccionar una arquitectura en función de la importancia de los diferentes requisitos no funcionales.
+      
+      ---
+      # 1. Introducción y objetivos
+
+      - Conocer los patrones arquitectónicos generales en los que se basan la mayoría de los sistemas informáticos: cliente–servidor, tuberías y filtros, multicapa y repositorio de datos.
+      
+      - Conocer algunos patrones de arquitectura específicos, como los empleados para mejorar la tolerancia a fallos de un sistema o los empleados en sistemas distribuidos.
+      
+
+      ---
+      # 2. El diseño arquitectónico
+
+      - El diseño arquitectónico de un sistema de información es su representación esquemática al más alto nivel (Polo Usaola, 2012). 
+      
+      - Son modelos que prescinden de determinados detalles centrándose en aquellos elementos principales del sistema y en la misión que cumplen en el contexto global. 
+      
+      El diseño arquitectónico de un sistema permite estudiarlo, y realizado adecuadamente ofrece las siguientes ventajas:
+
+      ![RN](./media/tema05/ventajas_arquitectura.png)
+
+      ---
+      # 2. El diseño arquitectónico
+      ## La importancia de los requisitos no funcionales
+
+      A la hora de diseñar la arquitectura es necesario reflexionar sobre las características del sistema, y pensar tanto en las que comparte con otros sistemas de la misma categoría como en las que le son específicas, especialmente en sus requisitos no funcionales:
+      
+      ___Rendimiento.___ 
+      
+      - El rendimiento de un sistema está relacionado con el nivel de aprovechamiento de los recursos disponibles. 
+      
+      - Una medida del rendimiento es el número de tareas realizadas en una unidad de tiempo o, recíprocamente, el tiempo medio que el sistema tarda en responder y completar una tarea. 
+      
+      ---
+      # 2. El diseño arquitectónico
+      ## La importancia de los requisitos no funcionales
+
+      - Si el rendimiento es un factor crítico deberemos tener especial cuidado en la manera de distribuir el sistema. 
+      
+      - Será preferible concentrar las operaciones más críticas en un número reducido de nodos concentrados en pocas máquinas, puesto que los procesos de comunicación introducen retardos adicionales.
+      
+      ___Seguridad.___ 
+      
+      - Hace referencia a la capacidad de un sistema para protegerse ante intrusiones. 
+      
+      - Si la seguridad y protección de los datos es fundamental, convendrá tenerlos agrupados en un único repositorio y definir una arquitectura de capas con varios niveles de seguridad que proteja el acceso a ellos.
+      
+      ---
+      # 2. El diseño arquitectónico
+      ## La importancia de los requisitos no funcionales
+
+      ___Protección.___ 
+      
+      - Este término hace referencia a la capacidad de un sistema para evitar o hacer frente a los fallos.
+      
+      - Si es importante que el sistema no falle (que sea fiable), o que en caso de fallo se recupere adecuadamente, será importante concentrar los procesos que realicen las operaciones más complejas y, posiblemente, definir mecanismos de redundancia que permitan mantener el sistema en funcionamiento a pesar de un fallo.
+
+      ___Disponibilidad.___ 
+      
+      - Tiene que ver con la probabilidad, o fracción del tiempo total, en que el sistema proporciona los servicios cuando le son solicitados. 
+
+      ---
+      # 2. El diseño arquitectónico
+      ## La importancia de los requisitos no funcionales
+
+      - Los sistemas de alta disponibilidad son a menudo redundantes, de manera que ante el fallo de un elemento otro pueda entrar a sustituirlo. 
+      
+      - Así también es posible realizar operaciones de sustitución o mantenimiento sin detener el sistema.
+      
+      ___Mantenibilidad.___ 
+      
+      - Este requisito es favorecido por el empleo de componentes de granularidad pequeña, fácilmente actualizables o sustituibles, y estableciendo una clara separación entre productores y consumidores de datos. 
+      
+      - En definitiva, un bajo acoplamiento facilita el mantenimiento del sistema.
+      
+      ---
+      # 2. El diseño arquitectónico
+      ## La importancia de los requisitos no funcionales
+
+      >> Hay requisitos que pueden estar en conflicto sugiriendo estilos arquitectónicos en contraposición. 
+      
+      En muchas ocasiones, será necesario tomar decisiones de compromiso en función de la importancia relativa de los requisitos no funcionales.
+      
+      ---
+      # 3. Patrones arquitectónicos generales
+      
+      >> Los patrones arquitectónicos son una manera de «representar, compartir y reutilizar el conocimiento sobre los sistemas de software» que se manifiesta como una ___«descripción abstracta estilizada de buena práctica, que se ensayó y puso a prueba en diferentes sistemas y entornos»___. 
+      
+      >> Un patrón ha debido mostrar su utilidad en desarrollos previos, e idealmente debería ir acompañado de ___recomendaciones___ sobre su ___aplicabilidad___, ___fortalezas___ y ___debilidades___.
+       
+      ## Arquitecturas cliente–servidor
+      
+      - En estos sistemas la lógica se distribuye entre dos tipos de máquinas, clientes y servidores, conectados por algún tipo de middleware. 
+      
+      ---
+      # 3. Patrones arquitectónicos generales
+      ## Arquitecturas cliente–servidor
+
+      - Ambos tipos de sistemas pueden tener arquitecturas internas muy diferentes. 
+      
+      - Estas arquitecturas son habituales en los sistemas distribuidos, pero también puede aplicarse a procesos que se ejecutan en la misma máquina. 
+      
+      - Los elementos fundamentales son:
+       - Servidosres.
+
+       - Clientes.
+
+       - Red.
+      
+      ---
+      # 3. Patrones arquitectónicos generales
+      ## Arquitecturas cliente–servidor
+
+      ![RN](./media/tema05/cliente_servidor00.png)
+
+      ---
+      # 3. Patrones arquitectónicos generales
+      ## Arquitecturas cliente–servidor
+
+      ![RN](./media/tema05/cliente_servidor01.png)
+
+      ---
+      # 3. Patrones arquitectónicos generales
+      ## Arquitecturas cliente–servidor
+
+      las principales características de este patrón arquitectónico son:
+      
+      - ___Descripción:___	La funcionalidad del sistema se organiza en servicios que ofrecen distintos servidores. Los clientes son usuarios de estos servicios.
+
+      - ___Ejemplo:___	En la figura anterior se muestra un ejemplo para un museo virtual organizado según el modelo cliente–servidor.
+
+      - ___Cuando usarlo:___	Apropiado cuando desde diferentes puntos se necesita obtener información o servicios comunes.
+
+      ---
+      # 3. Patrones arquitectónicos generales
+      ## Arquitecturas cliente–servidor
+
+      - ___Ventajas:___	
+       - Los servidores pueden estar distribuidos en una red.
+       - Cuando la carga es variable se pueden replicar los servidores.
+
+      - ___Desventajas:___	
+       - Los servidores son puntos vulnerables al poder recibir ataques.
+       - La carga puede ser impredecible cuando aumenta el número de clientes.
+
+      ---
+      # 3. Patrones arquitectónicos generales
+      ## Arquitecturas cliente–servidor
+
+      En función de cómo esté distribuida la lógica entre los diferentes nodos, podemos encontrar diferentes situaciones particulares:
+
+      - ___Clientes ligeros___, que únicamente contienen lógica de presentación.
+
+      - ___Clientes pesados___, que, además, realizan operaciones adicionales con los datos y, en muchos casos, almacenan también información.
+      
+      ---
+      ---
+      # 3. Patrones arquitectónicos generales
+      ## Arquitecturas cliente–servidor
+      
+      .text-column[
+      ___Modelo arquitectónico___
+      
+      - Sistema de presentación remota
+      (cliente ligero)
+      
+      - Ejemplo: telnet.
+      ]
+      .img-column[
+      ___Ejemplo de sistema___
+
+      ![RN](./media/tema05/cliente_servidor_ejemplo01.png)
+      ]
+      
+      ---
+      # 3. Patrones arquitectónicos generales
+      ## Arquitecturas cliente–servidor
+      
+      .text-column[
+      ___Modelo arquitectónico___
+      
+      - Sistema de presentación distribuida (cliente ligero)
+      
+      - Ejemplo: Páginas ASP, JSP, etc.
+      ]
+      .img-column[
+      ___Ejemplo de sistema___
+
+      ![RN](./media/tema05/cliente_servidor_ejemplo02.png)
+      ]
+      ---
+      # 3. Patrones arquitectónicos generales
+      ## Arquitecturas cliente–servidor
+      
+      .text-column[
+      ___Modelo arquitectónico___
+      
+      - Sistemas de datos distribuidos 
+      (cliente pesado)
+      
+      - Ejemplo: Sistema de gestión de una empresa con varias sucursales.
+      ]
+      .img-column[
+      ___Ejemplo de sistema___
+
+      ![RN](./media/tema05/cliente_servidor_ejemplo03.png)
+      ]
+      ---
+      # 3. Patrones arquitectónicos generales
+      ## Arquitecturas cliente–servidor
+      
+      .text-column[
+      ___Modelo arquitectónico___
+      
+      - Sistema de lógica distribuida
+      (cliente pesado)
+
+      - Ejemplo: Un simulador de préstamos.
+      ]
+      .img-column[
+      ___Ejemplo de sistema___
+
+      ![RN](./media/tema05/cliente_servidor_ejemplo04.png)
+      ]
+
+      ---
+      # 3. Patrones arquitectónicos generales
+      ## Arquitecturas cliente–servidor
+      
+      .text-column[
+      ___Modelo arquitectónico___
+      - Sistema remoto de gestión de datos (cliente pesado)
+      
+      - Ejemplo: Un cliente de base de datos.
+
+      ]
+      .img-column[
+      ___Ejemplo de sistema___
+
+      ![RN](./media/tema05/cliente_servidor_ejemplo05.png)
+      ]
+
+      ---
+      # 3. Patrones arquitectónicos generales
+      ## Arquitecturas de tuberías y filtros
+
+      >> Las arquitecturas de «tuberías y filtros» (pipes and filters) modelan sistemas cuyos componentes principales son nodos especializados en aceptar datos de entrada, procesarlos y producir unos resultados con ellos. 
+      
+      Estos nodos, o filtros, se interconectan entre sí a través de algún mecanismo de comunicación (las tuberías), de manera que la representación global del sistema adopta la forma de ___un grafo dirigido___. 
+      
+      Una característica importante de estos sistemas es que ___los nodos son independientes entre sí___, no comparten información de estado ni tienen por qué conocer al resto de nodos de la red.
+      
+      ---
+      # 3. Patrones arquitectónicos generales
+      ## Arquitecturas de tuberías y filtros
+
+      Un ejemplo clásico de este tipo de sistema son los compiladores de lenguajes y, en general, cualquier sistema de procesamiento de lenguaje o de señal.
+      
+      ![reducida](./media/tema05/tuberias.png)
+
+      ---
+      # 3. Patrones arquitectónicos generales
+      ## Arquitecturas de tuberías y filtros
+
+      En este tipo de sistemas es fácil la reutilización de componentes, o filtros, siempre y cuando los protocolos de comunicación entre ellos sean respetados. Además, dada la independencia de los componentes el mantenimiento suele ser sencillo. 
+
+      Características principales de este patrón:
+
+      - ___Descripción:___	Los datos fluyen a lo largo del sistema atravesando componentes de procesamiento (filtros) conectados entre sí y que no comparten estado.
+      
+      - ___Ejemplo:___	En la figura anterior se muestra un ejemplo con los diferentes y consecutivos procesamientos que sufre el código durante la compilación y enlace.
+      
+      ---
+      # 3. Patrones arquitectónicos generales
+      ## Arquitecturas de tuberías y filtros
+
+      - ___Cuando usarlo:___	Es de utilidad en cualquier operación de tratamiento de datos (en lote o transacciones) donde son necesarias varias etapas de procesado.
+      
+      - ___Ventajas:___	
+       - Fácil de entender, mantener y aplicar reutilización.
+       - Se adapta bien a muchos procesos empresariales.
+       - Fácil extensión mediante la adición de más filtros.
+      
+      - ___Desventajas:___	
+       -	Se deben respetar formatos e interfaces entre filtros.
+       - Puede requerir el desarrollo de filtros adicionales de acoplamiento.
+
+      ---
+      # 3. Patrones arquitectónicos generales
+      ## Arquitecturas multicapa
+
+      >> En este caso, el sistema es susceptible de ser descompuesto en diferentes capas (tiers o layers, en inglés), de manera que cada una de ellas se especializa en un conjunto de responsabilidades y ofrece servicios a las capas situadas en el nivel inmediatamente superior. 
+      
+      Idealmente, ___cada capa solo conoce a las adyacentes y solo ofrece servicios a la que está situada inmediatamente por encima___, pero pueden encontrarse variaciones de este modelo.
+      
+      Este tipo de arquitectura soporta el enfoque de modelo incremental de sistemas, comenzando por el desarrollo de las capas inferiores, de manera que sus servicios estén disponibles cuando comienzan a desarrollarse las superiores. 
+      
+      ---
+      # 3. Patrones arquitectónicos generales
+      
+      .text-column[
+      ## Arquitecturas multicapa
+      También es apropiado cuando se necesita establecer distintos niveles de control de acceso a un sistema. Los sistemas operativos siguen también este patrón arquitectónico.
+      ]
+      .img-column[
+      ![RN](./media/tema05/capas.png)
+      ]
+
+      ---
+      # 3. Patrones arquitectónicos generales
+      ## Arquitecturas multicapa
+
+      Características:
+
+      - ___Descripción:___	Las funcionalidades del sistema se distribuyen en distintas capas lógicas, de manera que cada una ofrece servicios a la superior.
+      
+      - ___Ejemplo:___	En la figura anterior se presentan un ejemplo de arquitectura, una para el caso de una aplicación.
+      
+      - ___Cuando usarlo:___	Cuando queramos construir nuevos servicios sobre otros existentes, o exista un requisito de seguridad en varios niveles.
+      
+      ---
+      # 3. Patrones arquitectónicos generales
+      ## Arquitecturas multicapa
+
+      - ___Ventajas___	
+       - Permite la sustitución de capas enteras manteniendo la interfaz.
+       - Permite el despliegue de cada capa en máquinas diferentes.
+      
+      - ___Desventajas___	
+       -	Puede ser difícil mantener una separación clara entre capas.
+       - Puede disminuir el rendimiento en sistemas con muchas capas.
+
+      ---
+      # 3. Patrones arquitectónicos generales
+      ## Arquitectura de repositorio
+
+      >> Este tipo de arquitectura es adecuada para sistemas que utilizan ___grandes cantidades de información que comparten diferentes subsistemas___. Generalmente existen componentes generadores de datos y otros que los consumen, de manera que los datos quedan almacenados en un repositorio común.
+      
+      ![reducida](./media/tema05/repositorio.png)      
+
+      ---
+      # 3. Patrones arquitectónicos generales
+      ## Arquitectura de repositorio
+
+      Esta es una manera eficiente de ___compartir grandes cantidades de datos___, pero todos los participantes deben ponerse de acuerdo en un modelo de datos común. 
+
+      El repositorio se encuentra lógicamente centralizado, aunque a nivel físico pueda estar distribuido en diferentes máquinas. 
+      
+      Esta posible distribución, orientada en general a facilitar la escalabilidad del sistema, es uno de los puntos que plantea problemas en este modelo. Lógicamente, al tener los datos centralizados en un único lugar, este es precisamente el punto más vulnerable del sistema.
+
+      ---
+      # 3. Patrones arquitectónicos generales
+      ## Arquitectura de repositorio
+
+      Características:
+
+      - ___Descripción:___	Todos los datos del sistema se concentran en un repositorio central al que acceden el resto de las componentes.
+      
+      - ___Ejemplo:___	En la figura anterior vemos un ejemplo de un sistema de gestión hospitalaria, donde toda la información sobre pacientes es compartida por otros subsistemas de gestión.
+
+      - ___Cuando usarlo:___	Con sistemas que deben almacenar grandes volúmenes de información durante mucho tiempo.
+
+      ---
+      # 3. Patrones arquitectónicos generales
+      ## Arquitectura de repositorio
+
+      - ___Ventajas:___	
+       -	El resto de las componentes son independientes entre sí.
+       - Los datos están concentrados, lo cual facilita su gestión.
+      
+      - ___Desventajas:___	
+       -	La información está concentrada en un único nodo crítico.
+       -	El resto de las componentes se comunican a través de este nodo.
+       -	Puede ser complicado distribuir el repositorio en varias máquinas (problemas de redundancia o inconsistencia de datos).
+
+      
+      ---
+      # 4. Arquitecturas tolerantes a fallos
+
+      >> La confiabilidad de un sistema es, según Sommerville (2011), ___una propiedad agregada que toma en cuenta la protección, fiabilidad, disponibilidad, seguridad y otros atributos del sistema, y refleja el grado en el que los usuarios pueden confiar en él___. 
+      
+      Sistemas críticos requieren de técnicas específicas para mejorar su confiablidad y entre ellas están las que refuerzan la arquitectura del sistema. 
+      
+      Esto pasa por analizar cuidadosamente la tolerancia a fallos incluyendo, en general, componentes y mecanismos redundantes. 
+
+      ---
+      # 4. Arquitecturas tolerantes a fallos
+      ## Sistemas de protección
+      
+      - Un sistema de protección está especializado en monitorizar el correcto funcionamiento de otro sistema al que está asociado. 
+      
+      - Son habituales en los sistemas de control de proceso (como la industria química) o control de equipo (como los procesos de fabricación o el control de vehículos). 
+      
+      - El sistema de protección funciona en paralelo con el controlador de proceso, monitorizando tanto las condiciones ambientales como el estado del propio proceso. 
+      
+      - En caso de detectar alguna desviación sobre el comportamiento esperado, puede tomar el control del sistema o, al menos, provocar algún tipo de aviso al exterior.
+      
+      ---
+      # 4. Arquitecturas tolerantes a fallos
+      ## Sistemas de protección
+      
+      ![mini](./media/tema05/sistema_proteccion.png)
+ 
+      ---
+      # 4. Arquitecturas tolerantes a fallos
+      ## Sistemas de protección
+
+      - El sistema de protección adquiere información del entorno a través de un conjunto independiente de sensores. 
+      
+      - También monitoriza otras variables del sistema, como el estado de los sensores y actuadores de proceso, y el propio sistema de control. 
+      
+      - Puede contar con un sistema de actuadores independiente al del proceso (por ejemplo, un sistema de detención de emergencia en un vehículo no tripulado). 
+      
+      - En caso de ser necesario, puede entrar en acción y evitar un fallo catastrófico del sistema.
+
+      ---
+      # 4. Arquitecturas tolerantes a fallos
+      ## Programación de varias versiones
+
+      - En este caso, se desarrollan varias versiones del mismo sistema que se ejecutan en máquinas diferentes. 
+      
+      - Partiendo de una especificación común, las distintas versiones son desarrolladas por diferentes equipos, y así se llega a implementaciones alternativas. 
+      
+      - Las salidas que generan los diferentes sistemas se comparan en un sistema de votación, rechazando aquellas salidas que son inconsistentes o que no se producen a tiempo. 
+      
+      - Este tipo de protección es habitual en los sistemas de ___señalización ferroviaria___, ___sistemas de control de aeronaves___ y ___protección de reactores___.
+      
+      ---
+      # 4. Arquitecturas tolerantes a fallos
+      ## Programación de varias versiones
+
+      ![reducida](./media/tema05/vv.png)
+
+      ---
+      # 5. Arquitecturas de sistemas distribuidos
+      
+      Actualmente, la mayoría de grandes sistemas son ___sistemas distribuidos___, donde el cómputo se reparte entre un gran número de máquinas y se contrastan con los sistemas centralizados cuyos componentes se ejecutan en un solo computador. 
+      
+      Un sistema distribuido es ___una colección de computadores independientes que aparecen al usuario como un solo sistema coherente___. 
+      
+      Estos sistemas son más complejos que los centralizados, tanto en su diseño como en su implementación. 
+      
+      En general, según Sommerville (2011), se debe encontrar un equilibrio entre diferentes requisitos no funcionales —como el rendimiento, la confiabilidad, la seguridad y la manejabilidad del sistema. 
+      
+      Con el tiempo han surgido algunos modelos arquitectónicos que se ocupan de manera específica de este tipo de problemas.
+
+      ---
+      ![intermedia](./media/tema05/distribuidos_ventajas.png)
+      
+      ---
+      # 5. Arquitecturas de sistemas distribuidos
+      ## Arquitecturas maestro–esclavo
+
+      - Existen muchos sistemas con fuertes restricciones de tiempo real, en los que el cómputo se distribuye a diferentes escalas entre diferentes nodos de procesamiento. 
+      
+      - Puede haber nodos especializados en la adquisición de información del entorno, nodos especializados en controlar los actuadores, nodos especializados en cómputo, etc.
+      
+      - En este tipo de sistemas es habitual la presencia de un proceso ___maestro___, responsable de gestionar la comunicación y coordinar al resto de participantes. 
+      
+      ---
+      # 5. Arquitecturas de sistemas distribuidos
+      ## Arquitecturas maestro–esclavo
+
+      - Se trata de una arquitectura centralizada en la que el maestro toma la forma de un nodo cliente–servidor: 
+       - actúa como cliente frente a otros procesos, como el control de sensores (pidiendo información) o el control de actuadores (enviando consignas de operación), 
+       
+       - y sirve información a otros procesos, como los clientes de las consolas de operador. 
+
+      ---
+      # 5. Arquitecturas de sistemas distribuidos
+      ## Arquitecturas maestro–esclavo
+
+      ![intermedia](./media/tema05/maestro_esclavo.png)
+
+      ---
+      # 5. Arquitecturas de sistemas distribuidos
+      ## Arquitecturas cliente–servidor de varios niveles
+
+      - El patrón ___cliente-servidor___ es predominante en sistemas distribuidos y, en el caso más básico, presenta únicamente dos niveles lógicos: _existe un único servidor y un conjunto más grande de clientes que consumen sus servicios._ 
+
+      - Este modelo es compatible con una arquitectura multicapa, pero presenta el problema de que todas las capas (presentación procesamiento de aplicación, gestión de datos y base de datos) se mapean en dos únicos sistemas cómputo. 
+           
+      - Las arquitecturas cliente–servidor de varios niveles son aquellas que distribuyen los diferentes servidores, con capacidades específicas, en diferentes niveles físicos.
+      
+      ---
+      ![RN](./media/tema05/cs_niveles.png)
+
+      ---
+      # 5. Arquitecturas de sistemas distribuidos
+      ## Arquitecturas de componentes distribuidos
+
+      - La arquitectura multicapa, entendida en este contexto como una arquitectura cliente–servidor multinivel, permite que cada una de ellas se implemente como un servidor separado. 
+      
+      - Esto puede plantear problemas de diseño; no siempre está claro qué servicios incluir en cada capa, y puede plantear problemas de escalabilidad a la hora de replicar los servidores de cada capa a medida que se agregan clientes.
+      
+      - Un enfoque más flexible consiste en diseñar el sistema como un conjunto de servicios comunicados a través de un middleware. 
+      
+      ---
+      # 5. Arquitecturas de sistemas distribuidos
+      ## Arquitecturas de componentes distribuidos
+
+      ![RN](./media/tema05/componentes_distribuidos.png)
+      
+      ---
+      # 5. Arquitecturas de sistemas distribuidos
+      ## Arquitecturas de componentes distribuidos
+      
+      ![RN](./media/tema05/componentes_distribuidos_beneficios.png)
+      
+      ---
+      # 5. Arquitecturas de sistemas distribuidos
+      ## Arquitecturas de componentes distribuidos
+      
+      ![RN](./media/tema05/componentes_distribuidos_desventajas.png)
+
+      ---
+      # 6. Referencias bibliográficas
+
+      - Polo, M. (2012). Desarrollo de software basado en reutilización [Material didáctico]. Barcelona: Universitat Oberta de Catalunya. Recuperado de http://hdl.handle.net/10609/63466
+
+      - Sommerville, I. (2011). Ingeniería de software (9ª ed.). México: Pearson Educación de México.
+
+      - Tanenbaum, A. S. & Steen, M. van. (2007). Distributed systems: principles and paradigms (2ª ed.). Upper Saddle RIiver, NJ: Pearson Prentice Hall.
+
+      - University of California. (2018). SETI@home [Web]. Recuperado de https://setiathome.berkeley.edu/
+
+      
+
+
+
+    </textarea>
+    <script src="scripts/remark.js"></script>
+    <script>
+       var slideshow = remark.create();
+    </script>
+  </body>
+</html>

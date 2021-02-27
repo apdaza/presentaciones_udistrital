@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="estilos/estilos.css">
+  </head>
+  <body>
+    <textarea id="source">
+      name: inverse
+      layout: true
+      class: center, middle, inverse
+      ---
+      template: inverse
+      # Pruebas del software: TDD, ATDD y BDD
+      ***
+      ---
+      layout: false
+      # Pruebas del software: TDD, ATDD y BDD
+      ***
+
+      ## Contenidos
+      1. Introducción y objetivos
+      2. Verificación y validación del software
+      3. Las pruebas de software
+      4. Test Driven Development (TDD)
+      5. Acceptance Test Driven Development (ATDD)
+      6. Behavior Driven Development (BDD)
+      7. Referencias bibliográficas
+      
+      ---
+      ![reducida](./media/tema08/esquema.png)
+
+      ---
+      # 1.  Introducción y objetivos	
+      
+      En este tema estudiaremos una de las técnicas más comúnmente empleadas y populares en la actualidad para guiar el proceso de desarrollo de software: 
+      - ___Test Driven Development (TDD)___, o Desarrollo dirigido por pruebas, y algunas de sus extensiones, como:
+       - ___ATDD___ (Acceptance Test Driven Development) 
+       - ___BDD___ (Behavior Driven Development). 
+
+      Mediante estas técnicas, todo el proceso de construcción del software comienza precisamente por la ___definición de un conjunto de pruebas___ que tienen en cuenta la especificación de requisitos y que alcanzan pleno sentido en el ámbito de las ___metodologías ágiles___, donde cada iteración comienza precisamente por la definición de estas pruebas.
+
+      Por todo ello, al comienzo del tema realizaremos un amplio repaso de los conceptos de ___verificación___ y ___validación___ del software, y el tipo de pruebas que abarcan. 
+
+      ---
+      # 1.  Introducción y objetivos
+
+      En este tema pretendemos alcanzar los siguientes objetivos: 
+
+      - ___Diferenciar claramente los conceptos de verificación y validación del software___, y su importancia en el proceso de desarrollo.
+      
+      - ___Saber diferenciar los diferentes tipos de pruebas de software___ que se realizan durante el desarrollo de un sistema de software.
+      
+      - ___Comprender los principios fundamentales de la técnica TDD___ y su importancia y beneficios en el proceso de desarrollo de software.
+      
+      -	___Comprender las características de la técnica ATDD___, las fases que comprende y su relación con los tipos de pruebas estudiados anteriormente.
+      
+      -	___Conocer la técnica de desarrollo TDD___ y los beneficios que supone para la mejora de la calidad del software desarrollado.
+      
+      -	___Conocer los fundamentos de utilización del framework de pruebas basados en Gherkin___ como implementación de la notación ___Given/When/Then___ típica de la técnica de desarrollo basada en comportamientos.
+
+      ---
+      # 2. Verificación y validación del software
+
+      La ___verificación___ y ___validación___ del software abarca el conjunto de procesos de comprobación y de análisis que permiten asegurar que un producto es acorde con su especificación y cumple con las necesidades para las que fue construido. 
+
+      ___Verificación:___ 
+      
+      - Comprueba que el software se construye de la manera correcta. Comprueba en definitiva el correcto funcionamiento del software y que el producto construido está libre de errores. 
+
+      - Responde a la pregunta: _¿estamos construyendo correctamente el sistema?_
+
+      - Se centra en relacionar el producto con el conjunto de requisitos funcionales y no funcionales de la especificación, y los productos de cada fase con las especificaciones obtenidas al final de la anterior.
+
+      ---
+      # 2. Verificación y validación del software
+
+      ___Validación:___ 
+      
+      - Confirma que el producto construido es apropiado para el uso previsto. 
+
+      - En otras palabras, responde a la pregunta: _¿estamos construyendo el sistema correcto?_. 
+
+      - En este caso se contrasta el producto con las expectativas del cliente o usuario.
+
+      ---
+      # 2. Verificación y validación del software
+
+      ![RN](./media/tema08/validacion_verificacion.png)
+
+      ---
+      # 2. Verificación y validación del software
+
+      - Las tareas de ___verificación___ se centran en analizar el propio proceso de desarrollo, comprobando que cada paso es realizado correctamente y en conformidad con los pasos anteriores.
+      
+      - La ___validación___ se centra en garantizar que el sistema en construcción es compatible en todo momento con las expectativas de los clientes o usuarios finales, y cumplirá finalmente con su misión. 
+
+      - Aunque la ___verificación___ determina la calidad del producto, desde el punto de vista de la ingeniería, no siempre garantiza que el producto sea útil.
+
+      - Los procesos de ___verificación___ están formados por actividades bastante objetivas, donde tiene poca influencia la posible subjetividad del usuario final. 
+      
+      ---
+      # 2. Verificación y validación del software
+
+      En la ___verificación___, se analizan minuciosamente los productos parciales de trabajo (métodos, clases, módulos y su interacción, documentos de diseño y documentación del producto), pero todo ello no garantiza que la validación sea exitosa, pues este paso final depende precisamente de las expectativas del usuario que finalmente trabajará con la aplicación.
+
+      ---
+      # 2. Verificación y validación del software
+
+      <table>
+        <tr>
+          <th>&nbsp;</th><th>VERIFICACIÓN</th><th>VALIDACIÓN</th>
+        </tr>
+        <tr>
+          <th>DEFINICIÓN</th>
+          <td>Proceso en el que se evalúa un producto de trabajo en una fase de desarrollo para determinar que cumple con los requisitos definidos para esa fase.</td>
+          <td>Proceso de evaluación del software durante su construcción, o al final del proceso de desarrollo, para determinar que satisface los requisitos de negocio.</td>
+        </tr>
+        <tr>
+          <th>OBJETIVO</th>
+          <td>Asegurar que se construye el producto de acuerdo con los requisitos y especificaciones de diseño.</td>
+          <td>Asegurar que el producto cumple con las necesidades del usuario y que las especificaciones iniciales son correctas.</td>
+        </tr>
+        <tr>
+          <th>PREGUNTA</th>
+          <td>¿Estamos construyendo correctamente el sistema?</td>
+          <td>¿Estamos construyendo el sistema correcto?</td>
+        </tr>
+      </table>
+
+      ---
+      # 2. Verificación y validación del software
+
+      <table>
+        <tr>
+          <th>&nbsp;</th><th>VERIFICACIÓN</th><th>VALIDACIÓN</th>
+        </tr>
+        <tr>
+          <th>ELEMENTOS DE EVALUACIÓN</th>
+          <td>Planificación, especificación de requisitos, diseños, código, casos de prueba.</td>
+          <td>El producto o sistema final.</td>
+        </tr>
+        <tr>
+          <th>ACTIVIDADES</th>
+          <td>Revisiones, Walkthroughs, Inspecciones
+            </td>
+          <td>Pruebas de caja negra (funcionales), Pruebas de caja gris, Pruebas de caja blanca (estructura)
+            </td>
+        </tr>
+        <tr>
+          <th>PROCESO</th>
+          <td>Estático, no se ejecuta el código.</td>
+          <td>Dinámico, se prueba el producto.</td>
+        </tr>
+      </table>
+
+      ---
+      # 2. Verificación y validación del software
+
+      Algunos autores opinan que todas las pruebas de software sirven para la ___verificación___, es decir, para comprobar que el sistema se construye correctamente, mientras que la ___validación___ se lleva a cabo en dos momentos:
+      - ___Cuando los requisitos se revisan___, asegurando que la especificación refleja los deseos del usuario.
+
+      - ___Cuando el usuario evalúa el sistema en funcionamiento y lo acepta___, y en este sentido equivaldría a las pruebas de aceptación.
+
+      Otros autores contemplan las pruebas unitarias y de integración más relacionadas con la ___verificación___, mientras que las de orden superior como las pruebas de validación y las pruebas del sistema tienen que ver con la ___validación___ del sistema.
+
+      ---
+      # 3. Las pruebas de software
+
+      > Podemos definir las pruebas de software, como _el proceso que ayuda a identificar la corrección, completitud, seguridad y calidad del software desarrollado. 
+
+      Las pruebas consisten en ejecutar un conjunto de elementos software con el objetivo de ___encontrar errores___. 
+      
+      Las pruebas ___no pueden garantizar que el software esté completamente libre de errores___, ni tan siquiera que el programa sea correcto, pero sí intentan cubrir, de una manera amplia, posibles errores, con el fin de detectarlos en caso de que se produzcan. 
+
+      Podemos identificar diferentes estrategias para realizar las pruebas de un sistema, que se ejecutan de dentro hacia fuera: 
+      - Comenzando por pequeños fragmentos de código y módulos unitarios,
+      
+      - Avanzando durante la integración hasta finalizar ejecutando pruebas sobre el sistema completo. 
+
+      ---
+      # 3. Las pruebas de software
+
+      Aquí veremos las siguientes estrategias:
+
+      - ___Pruebas unitarias:___ Se encargan de comprobar la correcta lógica y funcionalidad de cada elemento aislado (método, clase o módulo) teniendo en cuenta su especificación.
+
+      - ___Pruebas de integración:___ Comprueban el correcto funcionamiento de dos o más elementos integrados, y el flujo de información a través de las interfaces que exponen.
+
+      - ___Pruebas de validación:___ Comprueban la compatibilidad del sistema respecto a los requisitos del usuario y del sistema.
+
+      - ___Pruebas del sistema:___ Comprueban el correcto funcionamiento del sistema en un entorno operativo de producción, prestando atención a los requisitos no funcionales.
+
+      - ___Pruebas de aceptación:___ En este caso es el usuario o cliente quien valida que el producto se ajusta a sus necesidades. 
+
+      ---
+      # 3. Las pruebas de software
+
+      ![RN](./media/tema08/modelo_v.png)
+
+      El Modelo de proceso de software en V, puede ser considerado como una extensión del modelo en cascada, donde se muestran las relaciones entre cada fase del ciclo de desarrollo del producto y la fase de pruebas asociada. También es conocido como _Modelo de verificación y validación_.
+
+      ---
+      # 3. Las pruebas de software
+
+      ## Las pruebas unitarias
+
+      Las pruebas unitarias se centran en una unidad de código claramente diferenciada del resto, generalmente una función o método de un objeto. 
+
+      Cuanto mejor diseñadas estén y más amplitud de aspectos cubran sobre la funcionalidad diseñada, más seguro será para el programador introducir cambios en el código.
+
+      Idealmente, las pruebas unitarias deben estar aisladas de otras dependencias. Si un fragmento de código debe acceder a la red, o realizar operaciones frente a la base de datos, existen paquetes informáticos que permiten simular estas dependencias de manera controlada.
+      
+      ---
+      # 3. Las pruebas de software
+
+      ## Las pruebas unitarias
+
+      ![RN](./media/tema08/unitarias.png)
+
+      ---
+      # 3. Las pruebas de software
+
+      ## Las pruebas unitarias
+
+      Las pruebas unitarias son un elemento independiente del código que se está verificando, pero que facilita su ejecución. 
+
+      En la mayoría de las ocasiones, el componente bajo prueba no es un programa ejecutable y, por tanto, hay que desarrollar un software controlador o _programa principal_ que acepta datos de los casos de prueba, los envía al componente y genera un informe de resultados. 
+
+      ---
+      # 3. Las pruebas de software
+
+      ## Las pruebas de integración
+
+      En este caso, se trata de ___comprobar el funcionamiento conjunto de diferentes partes del código___, _por ejemplo, comprobar que los accesos a una base de datos funcionan correctamente cuando se ejecutan frente a una base de datos real_. 
+
+      Mientras que durante las pruebas unitarias estas interacciones se ejecutan de manera simulada, aquí interactúan los subsistemas desarrollados entre sí, o con otros previamente existentes. 
+      
+      Lo habitual es realizar la integración de manera progresiva o incremental, y no hacerla con todos los módulos a la vez (lo cual es conocido como _integración big bang_).
+
+      ---
+      # 3. Las pruebas de software
+
+      ## Las pruebas funcionales o pruebas de validación
+
+      Estas pruebas ___verifican que se cumplen los requisitos funcionales___, que son traducción directa de las funcionalidades esperadas por el usuario a un dominio técnico. 
+
+      Se realizan sobre el sistema integrado y se centran en acciones visibles para el usuario y en las salidas del sistema que este reconoce. 
+      
+      La validación del software se consigue aquí según la conformidad del producto con los requisitos funcionales y se realiza siguiendo un plan de pruebas previamente definido. 
+      
+      En esta fase es fundamental la participación del cliente o usuario final, y la comprobación de que los criterios de validación definidos en la especificación inicial se verifican. 
+
+      ---
+      # 3. Las pruebas de software
+
+      ## Las pruebas funcionales o pruebas de validación
+
+      Podemos destacar dos tipos de pruebas específicas en esta fase, especialmente importante cuando se realiza un software a pedida para un cliente:
+
+      ![RN](./media/tema08/alfa.png)
+
+      ---
+      # 3. Las pruebas de software
+
+      ## Las pruebas funcionales o pruebas de validación
+
+      ![RN](./media/tema08/beta.png)
+
+      ---
+      # 3. Las pruebas de software
+
+      ## Pruebas del sistema
+
+      Las pruebas del sistema persiguen ejercitar el conjunto del sistema de información, ___comprobando la correcta interacción de todos los componentes en un ambiente de producción___. 
+
+      Adquieren especial importancia en este contexto ___los requisitos no funcionale___s que generalmente afectan al sistema en su conjunto e imponen restricciones que afectan al sistema en funcionamiento en un entorno operativo real. 
+
+      En ocasiones, estas pruebas se realizan antes que las pruebas de validación (especialmente cuando la validación coincide con la aceptación) o, incluso, de manera simultánea.
+
+      ---
+      # 3. Las pruebas de software
+
+      ## Pruebas del sistema
+
+      Algunas pruebas específicas importantes en esta etapa son las siguientes:
+
+      -	___Pruebas de recuperación___, que comprueban en qué medida el sistema es capaz de recuperar su propio estado y los datos con los que trabaja ante un fallo, reanudando el normal funcionamiento.
+
+      -	___Pruebas de seguridad___, que intentan garantizar que el sistema cuenta con mecanismos de protección adecuados frente a intentos de penetración, intencionados o accidentales, que busquen entorpecer el funcionamiento del sistema o robar información.
+
+      -	___Pruebas de esfuerzo___, que ponen al sistema en un modo de funcionamiento anómalo en el que se demandan recursos en una cantidad, frecuencia o volumen anómalos, intentando responder a la pregunta _¿cuánto podemos doblar esto antes de que se rompa?_ (Pressman, 2010, p. 402). 
+
+      ---
+      # 3. Las pruebas de software
+
+      ## Pruebas del sistema
+
+      -	___Pruebas de rendimiento___, que evalúan el comportamiento del sistema en condiciones normales de operación y, generalmente, se emparejan con las pruebas de esfuerzo.
+
+      - ___Pruebas de despliegue___, que son apropiadas cuando el sistema debe ejecutarse en plataformas diferentes con entornos de hardware o de software distintos. Estas pruebas también son conocidas como pruebas de configuración, pues verifican el correcto funcionamiento del producto en diferentes configuraciones del entorno operativo. 
+    
+      -	___Pruebas de documentación___, en las que se comprueba la adecuación de la documentación de usuario a su propósito.
+
+      ---
+      # 3. Las pruebas de software
+
+      ## Las pruebas de aceptación
+
+      Se centran en comprobar de manera automática ___el correcto funcionamiento de una aplicación entera___. Para ello, es útil utilizar herramientas como _Selenium_, en el caso de aplicaciones web, que permiten simular la interacción con un navegador web.
+
+      Las pruebas de aceptación representan los intereses del cliente, y le aportan la seguridad de que el software desarrollado incluye todas las características deseadas, y que se comporta adecuadamente. 
+
+      El hecho de que todas las pruebas de aceptación se ejecuten de manera correcta es un hito fundamental en el desarrollo de un proyecto, pues quiere decir que el proyecto ha finalizado y que cumple con todas las especificaciones del cliente.
+
+      ---
+      # 4. Test Driven Development (TDD)
+
+      Podemos considerar las pruebas de software como la actividad que ___más ayuda a garantizar la buena calidad del código___. Sin embargo, es una actividad que tradicionalmente se venía realizando en las ___últimas fases de los proyectos___, cuando es conocido que el coste de realizar cualquier cambio resulta mucho más alto.
+      
+      Parece que si conseguimos adelantar esta fase, tendremos la oportunidad de reducir posibles costes adicionales ocasionados por la detección tardía de defectos. 
+      
+      Los nuevos enfoques de desarrollo ___ágil___ consiguen esto, solapando todas las actividades dentro de cada iteración, de manera que en cada una de ellas se incluye un poco de ___análisis de requisitos___, 
+      un poco de ___diseño___, un poco de ___implementación___ y las ___pruebas___ asociadas, hasta que el sistema está completo.
+
+      ---
+      # 4. Test Driven Development (TDD)
+      
+      El ___Desarrollo dirigido por pruebas___, o ___TDD (Test Driven Development)___, es un estilo de programación en el que se entremezclan tres actividades: 
+
+      - Codificación.
+      - Pruebas (en forma de pruebas unitarias).
+      - Diseño (en la forma de refactorización del código). 
+
+      El TDD alcanza pleno sentido dentro de los modelos de desarrollo iterativos, orientados a tener en consideración posibles cambios inesperados en los requisitos.
+
+      ---
+      # 4. Test Driven Development (TDD)
+
+      ## El enfoque de desarrollo con las _pruebas primero_ (test–first)
+
+      Podemos considerar el desarrollo dirigido por pruebas como una técnica de construcción de software que guía el proceso de desarrollo comenzando por la escritura de las pruebas. 
+
+      Son las pruebas quienes guían el desarrollo de una clase o un fragmento de código. También se conoce como enfoque test–first (las pruebas primero), siendo este uno de los principios fundamentales de la técnica. 
+
+      Test–first ha sido desarrollada fundamentalmente en el contexto de la metodología eXtreme Programming, de Kent Beck, y esencialmente consiste en repetir de manera iterativa la siguiente secuencia de tres pasos.
+
+      ---
+      # 4. Test Driven Development (TDD)
+
+      ![RN](./media/tema08/tdd.png)
+
+      ---
+      # 4. Test Driven Development (TDD)
+
+      - Escribir una prueba que verifique la implementación de la siguiente funcionalidad que se va a incluir en el software. En un primer momento la prueba no funcionará y es posible que ni siquiera compile el código por faltar aún elementos de la implementación. En este momento decimos que los test están _en rojo_.
+
+      -	Codificar la funcionalidad de manera progresiva e incremental hasta conseguir que la prueba se ejecute sin problemas. Al final de este proceso todos los test deberían estar _en verde_.
+
+      -	Refactorizar el código nuevo y el antiguo para mejorar su estructura interna. Aquí es posible eliminar o reorganizar el código que se ha generado durante el proceso de codificación, mientras se intentaba conseguir que la prueba se ejecutara correctamente. El desarrollador se obliga a reflexionar sobre el código construido, mejorando iterativamente el diseño.
+
+      ---
+      # 4. Test Driven Development (TDD)
+
+      De esta manera, se construye de manera incremental toda la funcionalidad del sistema. Este proceso se puede resumir en uno de los mantras de TDD: ___red/green/refactor___. 
+
+      El objetivo final es conseguir código limpio que funciona (___clean code that works___), aunque primero se consigue que el código funcione correctamente y, luego, nos centramos en los aspectos de limpieza, organización y correcta estructura interna, ___siempre comprobando que las pruebas no dejan de funcionar correctamente___.
+
+      ---
+      # 4. Test Driven Development (TDD)
+
+      ![RN](./media/tema08/tdd_tradicional.png)
+
+      En un proceso tradicional es importante realizar un gran esfuerzo inicial en la especificación de la arquitectura del sistema y el diseño detallado antes de comenzar un desarrollo de código significativo y las pruebas unitarias se definen y ejecutan una vez implementado el código. 
+
+      El enfoque ___TDD___ parte de un diseño arquitectónico general, y comienza escribiendo las pruebas unitarias, que guían el proceso de desarrollo en iteraciones generalmente cortas y rápidas. De esta manera, el diseño va emergiendo y evolucionando de manera natural.
+
+      ---
+      # 4. Test Driven Development (TDD)
+
+      ## Las ventajas de TDD
+
+      - Ayuda a construir código que se comprueba automáticamente (___self–testing code___).
+      
+      - ___Se mejora el diseño___. Fundamentalmente en el contexto de la programación orientada a objetos, además ayuda a reflexionar sobre las interfaces con los objetos. En primer lugar, pensamos en objetos vacíos, sin implementación, cuyo estado podemos comprobar a través de los métodos que exponen. De esta manera estamos separando conceptualmente la interfaz de la implementación.
+
+      -	___Cobertura de pruebas___. Los equipos TDD alcanzan un mayor porcentaje de cobertura del código con sus pruebas.
+
+      ---
+      # 4. Test Driven Development (TDD)
+
+      ## Las ventajas de TDD
+      
+      - ___Tamaño del código___. La métrica más sencilla para la complejidad del código es su tamaño y, en general, un menor número de líneas indica una mayor simplicidad que, en principio, favorece esta técnica, pues se pudo comprobar que: 
+
+       - Los equipos TDD desarrollaron módulos y clases más ligeros, con menos líneas de código.
+      
+       - Los equipos TDD también escribieron métodos de tamaño más pequeño en promedio.
+      
+       - Los equipos TDD desarrollaron mayor número de clases, pero con menor número de métodos en promedio.
+
+      
+      ---
+      # 4. Test Driven Development (TDD)
+
+      ## Las ventajas de TDD
+      
+      -	___Acoplamiento (coupling)___, que indica el grado de interdependencia entre los diferentes módulos o clases del código, dando una medida de lo fuerte que es la conexión entre los diferentes elementos del código. En general, se busca un bajo acoplamiento como síntoma de un buen diseño y estructura del código, donde se facilita la posible sustitución de ciertos elementos. 
+
+      -	___Cohesión (cohesion)___, que se refiere al grado en que los elementos, dentro de un mismo módulo o clases, están relacionados entre sí, y tiene sentido mantenerlos juntos, midiendo por tanto la fortaleza de las relaciones entre los métodos y datos de una misma unidad de código.  En general, se busca una alta cohesión como indicador de una buena calidad del código y su diseño. 
+      
+      ---
+      # 4. Test Driven Development (TDD)
+
+      ## Las ventajas de TDD
+      
+      -	___Complejidad___. El tamaño del código es una buena medida de la complejidad. En la medida en que las clases y métodos sean pequeños serán más sencillos de comprender y mantener. Al ser analizadas las clases en su conjunto los programadores TDD producían de manera consistente clases más simples en términos de número de ramas y número de métodos. 
+
+      
+      ---
+      # 4. Test Driven Development (TDD)
+
+      ## TDD como técnica de análisis y diseño
+
+      > _Test-first coding isn’t testing_. 
+      
+      Efectivamente, las pruebas son importantes; como hemos visto esta técnica alcanza un mayor porcentaje de cobertura del código y, además, tiene poco sentido si las pruebas no están automatizadas, pero lo fundamental es que ___obliga a un esfuerzo de reflexión por parte del programador que repercute en un mejor diseño del software___.
+
+      
+      ---
+      # 4. Test Driven Development (TDD)
+
+      ## Frameworks y herramientas para TDD
+
+      Existen múltiples frameworks que permiten automatizar las pruebas que realizamos sobre el sistema en construcción. 
+
+      El framework Serenity, por ejemplo, permite automatizar las pruebas en Java, integrándose también con herramientas BDD, como Cucumber o JBehave. Robot 
+
+      Framework es el framework más popular para pruebas automatizadas en Python, aunque también es posible utilizarlo en proyectos Java, a través de Jython, o en proyectos .NET, mediante IronPython (Pablos, 2018). 
+
+      ---
+      # 5. Acceptance Test Driven Development (ATDD)
+
+      El ___Desarrollo dirigido por pruebas de aceptación___, o ATDD (Acceptance Test Driven Development), es ___análogo al TDD___, pero involucra a miembros del equipo que pueden aportar diferentes perspectivas (clientes, usuarios, desarrolladores y expertos en pruebas) que cooperan para escribir unas pruebas de aceptación antes de implementar la funcionalidad asociada.
+
+      - Tiene en común con TDD el hecho de que las pruebas se definen antes de escribir el código, y que estas reflejan unas ciertas expectativas sobre su funcionamiento. 
+      
+      - La diferencia está en que estas pruebas se definen en estrecha colaboración con el cliente, de manera que ayudan a comprender las historias de usuario y a capturar su esencia en pruebas ejecutables. Podemos considerar las pruebas de aceptación como _requisitos ejecutables_.
+
+      ---
+      # 5. Acceptance Test Driven Development (ATDD)
+
+      __Ciclo de vida ATDD:__
+
+      ![reducida](./media/tema08/atdd.png)
+      
+      ---
+      # 5. Acceptance Test Driven Development (ATDD) 
+      
+      __Fases del ciclo de vida ATDD:__
+
+      
+      ![reducida](./media/tema08/fases_atdd01.png)
+
+      ---
+      # 5. Acceptance Test Driven Development (ATDD) 
+      
+      __Fases del ciclo de vida ATDD:__
+
+      
+      ![reducida](./media/tema08/fases_atdd02.png)
+
+      ---
+      # 6. Behavior Driven Development (BDD)
+
+      El ___Desarrollo dirigido por comportamiento___ o Behavior Driven Development (BDD) es una síntesis o refinamiento de prácticas que proceden del Desarrollo dirigido por pruebas (TDD) y del Desarrollo dirigido por pruebas de aceptación (ATDD). Esencialmente, ofrece un proceso guiado para escribir buenas pruebas automatizadas. 
+
+      BDD mejora a TDD y ATDD con las siguientes tácticas:
+
+      -	Está claramente orientado a los objetivos de negocio.
+      
+      -	Se piensa _desde fuera hacia dentro_, priorizando los comportamientos que claramente aportan valor a los objetivos de la aplicación. El desarrollo se centra en la elaboración de código que satisface unos requisitos funcionales concretos.
+      
+      ---
+      # 6. Behavior Driven Development (BDD)
+
+      -	Mejora el proceso de comunicación. Viene acompañado de herramientas que permiten describir los comportamientos en un lenguaje comprensible para todos los stakeholders (cliente y usuarios, expertos en el dominio de aplicación, ingenieros de pruebas y desarrolladores), tengan o no formación técnica. 
+
+      Podemos considerarlo una extensión del TDD, menos centrada en la implementación y más orientada hacia el escenario (el comportamiento general de la funcionalidad desde el punto de vista del problema que resuelve). 
+      
+      > BDD es una metodología ágil de segunda generación, con un enfoque de fuera hacia dentro, que facilita la extracción de información de múltiples stakeholders y a diferentes escalas, y altamente automatizada (North, 2009).
+
+      A pesar de sus beneficios, puede resultar una técnica más compleja de implementar que TDD, y es recomendable solo para desarrolladores familiarizados con esta última. 
+      
+      ---
+      # 6. Behavior Driven Development (BDD)
+
+      Esta técnica viene acompañada de herramientas específicas que permiten trasladar las historias de usuario a una notación más formal, pero aún próxima al lenguaje natural, de manera que los comportamientos esperados quedan claramente definidos. 
+
+      ## La notación _Given–When–Then_
+
+      Dentro de este enfoque se ha originado la notación ___Given–When–Then___, que facilita la comprensión de los comportamientos y la implementación de las pruebas. 
+
+      Se trata de una plantilla que facilita la escritura de las pruebas de aceptación para una historia de usuario, y que es seguida por las herramientas que dan soporte a esta técnica. 
+
+      ---
+      # 6. Behavior Driven Development (BDD)
+
+      Se compone de tres partes (Agile Alliance, 2015d):
+
+      ![RN](./media/tema08/gwt.png)
+
+
+      ---
+      # 6. Behavior Driven Development (BDD)
+
+      Veamos un ejemplo de prueba definida con la notación: 
+
+      Ejemplo de prueba definida con la notación
+
+      <table>
+        <tr>
+          <th>DADO QUE</th><th>CUANDO</th><th>ENTONCES</th>
+        </tr>
+        <tr>
+         <td>la cuenta de mi banco tiene crédito y no he realizado retiradas de efectivo recientemente</td>
+         <td>intento retirar una cantidad inferior al límite de mi tarjeta</td>
+         <td>la retirada debería completarse sin errores o avisos</td>
+        </tr>
+      </table>
+
+      Algunos frameworks de pruebas que soportan este enfoque son Behave, JBejave, RSpec o Cucumber.
+
+      ---
+      # 7. Referencias bibliográficas
+
+      - Agile Alliance (2015). TDD. En Glossary. Recuperado de https://www.agilealliance.org/glossary/tdd/
+
+      - Agile Alliance. (2015). Acceptance Test Driven Development (ATDD). En Glossary. Recuperado de https://www.agilealliance.org/glossary/atdd/
+
+      - Agile Alliance. (2015). BDD: Learn about Behavior Driven Development. En Glossary. Recuperado de https://www.agilealliance.org/glossary/bdd/
+
+      - Agile Alliance. (2015). What is _Given - When - Then_? En Glossary. Recuperado de 2018, de https://www.agilealliance.org/glossary/gwt/
+
+      - Beck, K. (2001). Aim, Fire. IEEE Software, 18(5), 87-89. https://doi.org/10.1109/52.951502
+
+      - Boehm, B. W. (1981). Software Engineering Economics (1ª ed.). Englewood Cliffs, N.J: Prentice Hall.
+
+      ---
+      # 7. Referencias bibliográficas
+
+      - Bolaños, D., Sierra, A. y Alarcón, M. I. (2007). Pruebas de Software y JUnit. Un análisis en profundidad y ejemplos prácticos. Madrid: Pearson Educación, S.A.
+
+      - Cucumber Docs. (2018). Cucumber Reference [Web]. Recuperado de https://docs.cucumber.io/cucumber/api/
+
+      - Cucumber Docs. (2018). Gherkin Reference [Web]. Recuperado de 2018, de https://docs.cucumber.io/gherkin/reference/
+
+      - Fowler, M. (2005). Test Driven Development [Artículo Web]. Recuperado de https://martinfowler.com/bliki/TestDrivenDevelopment.html
+
+      - Fowler, M. (2014). UnitTest [Artículo Web]. Recuperado de https://martinfowler.com/bliki/UnitTest.html
+
+      ---
+      # 7. Referencias bibliográficas
+
+      - Gal-Oz, N., & Balaban, M. (2016). Software testing: building acceptance tests. [Material de clase del curso de fundamentos de ingeniería del software]. Universidad Ben-Gurion del Negrev (Israel), Be’er Sheva. Recuperado de https://www.cs.bgu.ac.il/~fsen161/Class_Material
+
+      - Ghory, I. (2007). Using FizzBuzz to Find Developers who Grok Coding [Entrada de un blog]. Recuperado de  de https://imranontech.com/2007/01/24/using-fizzbuzz-to-find-developers-who-grok-coding/
+      Grigg, J. (2012). Arrange Act Assert [Wiki]. Recuperado de http://wiki.c2.com/?ArrangeActAssert
+
+      - Hartikainen, J. (2015). What’s the difference between Unit Testing, TDD and BDD? [Blog personal]. Recuperado de https://codeutopia.net/blog/2015/03/01/unit-testing-tdd-and-bdd/
+
+      - Henderson-Sellers, B. (1995). Object-Oriented Metrics: Measures of Complexity (1.a ed.). Upper Saddle River, N.J: Prentice Hall.
+
+      ---
+      # 7. Referencias bibliográficas
+
+      - Hendrickson, E. (2008). Driving Development with Tests: ATDD and TDD. Quality Tree Software, Inc. Recuperado de http://testobsessed.com/wp-content/uploads/2011/04/atddexample.pdf
+
+      - Janzen, D. S., Polytechnic, C., Obispo, S. L., & Saiedian, H. (2008). Does Test-Driven Development Really Improve Software Design Quality. IEEE Software, Marzo/Abril 2008, 77–84.
+
+      - JBehave. (2018). What is JBehave? [Página de oficial del producto]. Recuperado de https://jbehave.org/
+
+      - Microsoft. (2018). Unit Test Basics in Visual Studio [Web]. Recuperado de https://docs.microsoft.com/en-us/visualstudio/test/unit-test-basics
+
+      ---
+      # 7. Referencias bibliográficas
+
+      - Murphy, C. (2005). Improving Application Quality Using Test-Driven Development (TDD). Methods and Tools, a Software Development Magazine, Spring’05. Recuperado de http://www.methodsandtools.com/archive/archive.php?id=20
+
+      - North, D. (2006, septiembre 20). Introducing BDD [Artículo Web]. Recuperado de https://dannorth.net/introducing-bdd/
+
+      - North, D. (2009). How to sell BDD to the business [Vídeo]. London. De https://skillsmatter.com/skillscasts/923-how-to-sell-bdd-to-the-business
+
+      - NUnit. (2018). NUnit.org [Web]. Recuperado de https://nunit.org/ 
+
+      - Pablos, J. (2 de mayo de 2018). Top 7 Frameworks de Pruebas Automatizadas [Entrada de blog]. Recuperado de https://josepablosarco.wordpress.com/2018/05/02/top-7-frameworks-de-pruebas-automatizadas/
+
+      ---
+      # 7. Referencias bibliográficas
+
+      - Pressman, R. S. (2010). Ingeniería del software: un enfoque práctico (7.a ed.). México: McGraw-Hill Educación.
+
+      - Rose, S., Wynne, M., & Hellesøy, A. (2015). The Cucumber for Java Book. Dallas, Texas: Pragmatic Programmers.
+
+      - Sharma, L. (2017). Difference between Verification and Validation [Tutorial]. Recuperado de http://toolsqa.com/software-testing/difference-between-verification-and-validation/
+
+      - STF. (2011). Verification vs Validation [Web]. Recuperado de http://softwaretestingfundamentals.com/verification-vs-validation/
+
+    </textarea>
+    <script src="scripts/remark.js"></script>
+    <script>
+       var slideshow = remark.create();
+    </script>
+  </body>
+</html>

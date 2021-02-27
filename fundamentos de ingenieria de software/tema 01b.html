@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../estilos/estilos.css">
+  </head>
+  <body>
+    <textarea id="source">
+      name: inverse
+      layout: true
+      class: center, middle, inverse
+      ---
+      template: inverse
+      # Otras metodologías ágiles
+      
+      ---
+      layout: false
+      # Otras metodologías ágiles
+      
+
+      ## Contenidos
+      1. Crystal Methodologies
+      2. Feature–Driven Development (FDD)
+      3. Adaptive Software Development (ASD)
+      4. Referencias
+
+      ---
+      # 1. Crystal Methodologies
+
+      Se trata de una familia de metodologías creadas por Alistair Cockburn. Se centran en el equipo, entendido como el conjunto de personas que deben desarrollar el software. 
+
+      Se parte de la base de que el desarrollo de aplicaciones es una serie de juegos de cooperación, con recursos limitados, donde la comunicación juega un papel fundamental. 
+      
+      En este sentido, es fundamental el tamaño del equipo, puesto que no es lo mismo organizar un grupo pequeño, de tres desarrolladores, que uno más grande, de veinte. 
+      
+      Por tanto, en función del tamaño del equipo aparecen las diferentes variantes de Crystal (Fernández, 2012):
+
+      - Crystal Clear, para equipos de menos de ocho personas.
+      
+      - Crystal Yellow, para equipos de diez a veinte personas.
+      
+      - Crystal Orange, para equipos de veinticinco a cincuenta personas, etc.
+
+      ---
+      # 1. Crystal Methodologies
+
+      ![RN](./media/tema01/crystal.jpg)
+      ---
+      # 1. Crystal Methodologies
+
+      Las distintas metodologías comparten unos fundamentos comunes, mientras que los roles, patrones de proceso y prácticas son particulares en cada variante. 
+      
+      Las prioridades comunes a todas las metodologías son las siguientes:
+
+      __Seguridad en el resultado del proyecto__
+      - busca obtener un resultado razonable en función de las prioridades particulares de cada proyecto y los recursos disponibles.
+      
+      __Eficiencia en el proceso de desarrollo__
+      - está estrechamente relacionado con el aprovechamiento de los recursos disponibles.
+      
+      ---
+      # 1. Crystal Methodologies
+
+      __Aceptación de las convenciones__
+      - hace referencia a la comodidad que sienten los desarrolladores al adoptar las normas impuestas por la metodología. 
+
+      - esta es una característica importante, que surge de la comprobación empírica de que en muchas organizaciones las metodologías impuestas no siempre son aceptadas con gusto y muchas veces son obviadas.
+
+      ---
+      # 1. Crystal Methodologies
+
+      Además, se definen siete propiedades fundamentales que cualquier proyecto de desarrollo debería poseer para tener unas ciertas garantías de éxito (Lowe, 2016). 
+      
+      Todas ellas se aplican a proyectos de cualquier tamaño, pero las tres primeras se consideran fundamentales e ineludibles:
+
+      - __Entregas frecuentes.__ Para Cockburn (2004) la propiedad más importante de cualquier proyecto es la entrega de productos funcionales a los usuarios finales cada poco tiempo. En proyectos de carácter general se establece un intervalo máximo de cuatro meses (y preferiblemente dos), mientras que en desarrollos web el espacio entre entregas se reduce a una semana.
+
+      -	__Mejora reflexiva.__ El equipo debe dialogar y reflexionar sobre su propia práctica para proponer acciones de mejora.
+      
+      -	__Comunicación osmótica.__ El concepto de ósmosis hace referencia a la absorción de información en segundo plano, aunque no se produzca una comunicación formal, por la simple escucha de lo que sucede en el espacio de trabajo. Por este motivo los equipos deben estar localizados físicamente en el mismo lugar.
+
+      ---
+      # 1. Crystal Methodologies
+
+      -	__Seguridad personal.__ Se debe facilitar que todos los integrantes del equipo tengan libertad para expresar sus opiniones sin temor a represalias.
+
+      -	__Focus.__ Cada miembro del equipo debe contar con la capacidad, tiempo y herramientas para concentrarse en lo que debe y puede hacer en cada momento, sin interrupciones ni distracciones.
+
+      -	__Acceso directo a usuarios expertos.__ Se trata de obtener retroalimentación temprana y de calidad por parte de los usuarios finales del sistema.
+
+      -	__Un entorno tecnológicamente apropiado.__ El equipo debe contar con herramientas que permitan las pruebas automatizadas o la integración frecuente.
+
+      ---
+      # 2. Feature–Driven Development (FDD)
+
+      Esta metodología se basa en iteraciones de duración muy corta, siempre inferior a dos semanas. Todas las tareas de análisis, diseño e implementación se centran en cumplir una serie de características (features) del software, que deben cumplir las siguientes propiedades (Fernández, 2012):
+
+      - Ser sencillas y poder ser desarrolladas en poco tiempo (entre uno y diez días).
+      
+      - Representar una aportación para el cliente y su negocio.
+      
+      - Se deben expresar según el patrón "acción", "resultado", "objeto" (por ejemplo, «calcular el importe total de un pedido»).
+      
+      ---
+      # 2. Feature–Driven Development (FDD)
+
+      FDD hace énfasis en las tareas de diseño, y considera un modelo de proceso con cinco pasos (Palmer, S. 2009; Palmer y Felsing, 2001):
+      
+      __Desarrollo de un modelo de dominio general.__ 
+       
+      - El equipo, en colaboración con el cliente, desarrolla un modelo general del sistema de manera iterativa bajo la supervisión de un arquitecto jefe. 
+      
+      - Este proceso permite a los expertos en el dominio de aplicación y al equipo de desarrolladores compartir información y establecer un lenguaje común. 
+       
+      - El modelo inicial da una representación amplia del problema, sus objetos e interacciones, y va adquiriendo profundidad y refinamiento a través de las sucesivas iteraciones.
+      
+      ---
+      # 2. Feature–Driven Development (FDD)
+
+      __Construcción una jerarquía de características.__ 
+       
+      - Se descompone la funcionalidad en características sencillas. Cada una de ellas debe poder ser implementada en menos de dos semanas (y preferiblemente entre uno y tres días). 
+       
+      - No es el modelo el que guía el desarrollo, sino estas características. Las características se organizan en una jerarquía de tres niveles (áreas del dominio, actividades de cada área, y características concretas).
+      
+      __Planificación por característica.__ 
+      
+      - Se analizan las características en función de su prioridad, dependencias y complejidad, y se define un orden de implementación. 
+      
+      - Se agrupan en paquetes, y cada uno es asignado a un programador jefe, que se responsabiliza y especializa en ese conjunto de características.
+      
+      ---
+      # 2. Feature–Driven Development (FDD)
+      
+      __Diseño por característica.__ 
+      
+      - Tras la planificación inicial, comienza el proceso iterativo. 
+      
+      - En cada iteración, el programador jefe selecciona un conjunto de características de su paquete, y se elabora un diseño más detallado y una descomposición en clases que se distribuyen entre los programadores. 
+      
+      - Así, la responsabilidad sobre cada clase es individual y la propiedad del código no es compartida, como sucede en XP, buscándose la especialización.
+      
+      __Desarrollo por característica.__ 
+      
+      - Durante el resto de la iteración cada programador implementa y prueba el código, y tras un proceso de inspección se produce la integración en el repositorio general.
+      
+      ---
+      # 2. Feature–Driven Development (FDD)
+      
+      ![RN](./media/tema01/modelo_fdd.png)
+
+      ---
+      # 3. Adaptive Software Development (ASD)
+
+      Esta metodología, propuesta por Jim Highsmith (2000), parte del convencimiento de que las necesidades del cliente van a cambiar siempre, tanto durante el proyecto como tras su finalización. 
+      
+      Más que de una metodología, estamos hablando de un conjunto de procedimientos que permiten a las empresas alcanzar una cultura de adaptación. 
+      
+      Sus objetivos son los siguientes (Fernández, 2012; Highsmith, 2002):
+
+      - Concientizar a la organización de la necesidad de trabajar ___con el cambio___ y no contra el cambio. 
+
+      - Desarrollar proyectos iterativos de gestión del cambio y facilitar la colaboración entre las personas.
+
+      - Marcar una estrategia de desarrollo rápido de sin olvidar el rigor y la disciplina necesarios.
+      
+      ---
+      # 3. Adaptive Software Development (ASD)
+
+      ASD plantea un modelo de proceso con las tradicionales fases (planificación, diseño y construcción) sustituidas por un modelo más dinámico y abstracto: especulación, colaboración y aprendizaje (Highsmith, 2002).
+
+      ![RN](./media/tema01/fases_asd.png)
+
+      ---
+      # 3. Adaptive Software Development (ASD)
+
+      __Fase de especulación.__ 
+      
+      El término ___especulación___ reconoce la naturaleza incierta de los sistemas complejos, y anima a la exploración y la experimentación. 
+      
+      Asume la existencia de incertidumbres, y aunque la planificación no se abandona, debemos estar dispuestos a apartarnos en cualquier momento de planes predefinidos. 
+      
+      Aquí encontramos dos prácticas:
+
+      - Iniciación del proyecto.
+      
+      - Planificación adaptativa.
+
+      ---
+      # 3. Adaptive Software Development (ASD)
+
+      __Iniciación del proyecto. __
+      
+      - Se trata, según Highsmith (2002), de «definir la misión del proyecto y sus objetivos, entendiendo las restricciones, estableciendo la organización del proyecto, identificando y esbozando requisitos, estimando el tamaño y el alcance, e identificando los riesgos principales».
+       
+      - Esta fase dura entre dos y cinco días para proyectos pequeños y medianos, y puede alargarse hasta las tres semanas en proyectos grandes.
+
+      ---
+      # 3. Adaptive Software Development (ASD)
+ 
+      __Planificación adaptativa. __
+      
+      - Con la información de alcance y los recursos disponibles se define un marco temporal para el proyecto. 
+      
+      - Dentro de esta duración total, se establece el número de iteraciones y la duración de cada una. 
+      
+      - Cada una de ellas queda asociada a un tema general u objetivo, de manera que pueda suministrar un conjunto de características relacionadas demostrables al cliente para su revisión, al finalizar.
+
+      ---
+      # 3. Adaptive Software Development (ASD)
+  
+      __Fase de colaboración.__ 
+      
+      ASD se basa en la siguiente idea:
+      >> Los sistemas complejos no se construyen; evolucionan. 
+      
+      Además, estas aplicaciones requieren de la adquisición, análisis y utilización de grandes cantidades de información, no manejables por una única persona, y cuya comprensión requiere a menudo de capacidades y conocimientos específicos. 
+      
+      En este contexto las habilidades comunicativas del equipo son fundamentales.
+
+      Desarrollo concurrente del sistema, aplicando técnicas de ingeniería orientada a componentes. 
+      
+      El equipo técnico, de carácter multidisciplinar, se concentra en la producción del software, mientras que los jefes de proyecto se encargan de facilitar la colaboración y el desarrollo de actividades concurrentes. 
+      
+      ---
+      # 3. Adaptive Software Development (ASD)
+  
+      __Fase de colaboración.__ 
+      
+      En equipos pequeños esta colaboración es sencilla y emplea técnicas como la simple charla en pasillos. En proyectos y equipos grandes la participación del mánager es fundamental.
+
+      __Fase de aprendizaje.__ 
+    
+      En proyectos complejos, más que en ningún otro caso, se pueden cometer equivocaciones. 
+      
+      Es necesario aprender del proceso y de nosotros mismos como equipo, empleando técnicas como las retrospectivas y focus groups con clientes. 
+      
+      Aquí encontramos dos prácticas fundamentales:
+    
+      - La revisión de calidad
+
+      - Preguntas, respuestas y release
+
+      ---
+      # 3. Adaptive Software Development (ASD)
+ 
+      __La revisión de calidad__
+      
+      - desde la perspectiva del cliente __empleando focus groups__ 
+      
+      - desde un punto de vista técnico __empleando la programación en parejas__
+      
+      - las revisiones técnicas o la revisión de la arquitectura al final de cada iteració.
+
+      __Preguntas, respuestas y release__
+      - Dentro de la fase de aprendizaje es vital dedicar un tiempo a que el equipo reflexione y analice sus propias prácticas para identificar fallos y puntos de mejora. 
+      
+      - También se debe analizar el estado global del proyecto, evaluando el grado de ajuste a la planificación inicial y adoptando las acciones correctivas necesarias.
+ 
+      ---
+      # 4. Referencias
+
+      - Beck, K., Beedle, M., van Bennekum, A., Cockburn, A., Cunningham, W., Fowler, M., … Thomas, D. (2001). Manifiesto por el Desarrollo Ágil de Software. Recuperado de http://agilemanifesto.org/iso/es/manifesto.html 
+      
+      - Cockburn, A. (2004). Crystal clear: a human-powered methodology for small teams (1.a ed.). Boston: Addison-Wesley.
+      
+      - Consejo Superior de Informática (2001). Métrica versión 3. Recuperado de https://goo.gl/wtmEcH
+      
+      - Fernández, J. (2012). Introducción a las metodologías ágiles: otras formas de analizar y desarrollar [Material didáctico]. Barcelona: Universitat Oberta de Catalunya. Recuperado de http://hdl.handle.net/10609/63466
+      
+      - Highsmith, J. (2002). Agile Software Development Ecosystems. Boston: Addison-Wesley Longman Publishing Co., Inc.
+      
+      ---
+      # 4. Referencias
+
+      - Highsmith, J. A., (2000). Adaptive Software Development: A Collaborative Approach to Managing Complex Systems. New York: Dorset House Publishing Co., Inc.
+      
+      - Lowe, D. (2016). What is Crystal Clear? [web]. Recuperado de https://scrumandkanban.co.uk/what-is-crystal-clear/
+      
+      - Palmer, S. (2009). An Introduction to Feature-Driven Development [web]. Recuperado de https://dzone.com/articles/introduction-feature-driven
+      
+      - Palmer, S. & Felsing, J. (2001). A Practical Guide to Feature-Driven Development (1ª ed.). Londres: Pearson Education.
+      
+      ---
+      # 4. Referencias
+      
+      - Pressman, R. S. (2010). Ingeniería del software: un enfoque práctico (7ª ed.). México: McGraw-Hill Educación.
+      
+      - Sommerville, I. (2011). Ingeniería de software (9ª ed.). México: Pearson Educación de México.
+      
+      - Takeuchi, H. & Nonaka, I. (1986). The New New Product Development Game. Harvard Business Review [web]. Recuperado de https://hbr.org/1986/01/the-new-new-product-development-game 
+      
+      - Turner, M. S. (2006). Microsoft Solutions Framework Essentials. USA: Microsoft Press.
+      
+      - Tutorials Point. (2016). Adaptive Software Development Practices [web]. Recuperado de https://www.tutorialspoint.com/adaptive_software_development/adaptive_software_development_practices.htm 
+      
+
+
+    </textarea>
+    <script src="scripts/remark.js"></script>
+    <script>
+       var slideshow = remark.create();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../estilos/estilos.css">
+  </head>
+  <body>
+    <textarea id="source">
+      name: inverse
+      layout: true
+      class: center, middle, inverse
+      ---
+      template: inverse
+      # Requerimientos
+      ---
+      layout: false
+      # Qué son los requerimientos?
+
+      ## Según la IEEE:
+      
+      - Condición o capacidad requerida por el usuario para resolver un problema o alcanzar un objetivo
+      - Condición o capacidad que debe satisfacer o poseer un sistema o una componente de un sistema para satisfacer un contrato, un standard, una especificación u otro documento formalmente impuesto.
+      - Representación documentada de una condición o capacidad.
+
+      ---
+      # Requerimientos funcionales y no funcionales
+
+      ## Requerimientos funcionales
+
+      Según la guía del Business Analysis Body of Knowledge (BABOK):
+
+      >> Los requerimientos funcionales son las descripciones explicitas del comportamiento que debe tener una solución de software y que información debe manejar.
+
+      __los requerimientos funcionales:__
+
+      - Expresan las capacidades o cualidades que debe tener la solución para satisface los requerimientos de los interesados de proyecto.
+      
+      - Se expresan en términos de cuál debe ser el comportamiento de la solución y que información debe manejar.
+      
+      ---
+      # Requerimientos funcionales y no funcionales
+
+      ## Requerimientos funcionales
+
+      __los requerimientos funcionales:__
+
+      - Deben proporcionar una descripción lo suficientemente detallada para permitir el desarrollo e implementación de la solución.
+      
+      - Son los que más influyen en si la solución será aceptada o no por los usuarios.
+
+      ---
+      # Requerimientos funcionales y no funcionales
+
+      ## Importancia de definir los requerimientos funcionales
+
+      Los problemas y errores en la gestión de requerimientos funcionales son una de las causas más frecuentes de insatisfacción de los interesados en proyectos de software. Por ejemplo:
+      
+      - Requerimientos funcionales con descripciones muy ambiguas, produciendo interpretaciones inadecuadas por parte del equipo de desarrollo.
+      - El requerimiento funcional no fue entendido adecuadamente cuando fue levantado con el interesado, pasando información incorrecta al equipo de desarrollo.
+      - En su forma original, el requerimiento funcional no era factible técnicamente y el equipo de desarrollo realizó modificaciones que no fueron aprobadas por los interesados.
+
+      ---
+      # Requerimientos funcionales y no funcionales
+
+      ## Importancia de definir los requerimientos funcionales
+
+      Es fundamental la aplicación de metodologías probadas de gestión de requerimientos funcionales que eviten que estos problemas sucedan, algunas de las prácticas más recomendadas son:
+      
+      - Ante la presencia de ambigüedades, solicitar información adicional, mesas de trabajo o reuniones con los interesados. 
+      - Es menos costoso esperar a obtener una descripción que aclare las dudas antes que asumir y avanzar en el desarrollo.
+      - Validar las descripciones escritas de los requerimientos funcionales antes de comenzar su desarrollo. 
+      
+      ---
+      # Requerimientos funcionales y no funcionales
+
+      ## Importancia de definir los requerimientos funcionales
+      
+      - Cualquier duda que presente el equipo de desarrollo buscar comunicación con los interesados para su resolución.
+      - Si durante el desarrollo se presentará la necesidad de modificar algún requerimiento funcional debido a razones técnicas, solicitar mesas de trabajo o reunir, no proceder con un desarrollo e implementación que no ha sido validado por los interesados.
+      
+      Siguiendo estas prácticas podemos asegurar una mejor aceptación de los requerimientos funcionales cuando llegue el momento de la implementación.
+
+      ---
+      # Requerimientos funcionales y no funcionales
+
+      ## Posibles requerimientos funcionales de un sistema: 
+
+      - Descripciones de los datos a ser ingresados en el sistema.
+      - Descripciones de las operaciones a ser realizadas por cada pantalla.
+      - Descripción de los flujos de trabajo realizados por el sistema.
+      - Descripción de los reportes del sistema y otras salidas.
+      - Definición de quien puede ingresar datos en el sistema.
+      - Como el sistema cumplirá los reglamentos y regulaciones de sector o generales que le sean aplicables.
+
+
+      ---
+      # Requerimientos funcionales y no funcionales
+
+      ## Requerimientos No Funcionales
+
+      Los requerimientos no funcionales son los que especifican criterios para evaluar la operación de un servicio de tecnología de información, en contraste con los requerimientos funcionales que especifican los comportamientos específicos.
+
+      Por lo general, el Plan para implementar los requerimientos no funcionales se detalla en la Arquitectura del Sistema, mientras que el de los requerimientos funcionales se especifica en el Diseño.
+
+      Los Requerimientos funcionales definen los criterios que este debe cumplir para que este sea adecuado para su propósito (Fitness-for-purpose), mientras que los requerimientos no funcionales especifican los criterios que debe cumplir para que sea adecuado para su uso (Fitness-for-use).
+
+      ---
+      # Requerimientos funcionales y no funcionales
+
+      ## Requerimientos No Funcionales
+
+      Otros términos usados para los requerimientos no funcionales pueden ser: Restricciones, Atributos de calidad, objetivos de calidad, requerimientos de calidad de servicio.
+
+      Se pueden clasificar en dos categorías:
+
+      - Cualidades observables en tiempo de ejecución, como por ejemplo la usabilidad y la seguridad.
+      - Cualidades relacionadas con la evolución del sistema, como por ejemplo Mantenibilidad, Comprobabilidad, Extensibilidad y Escalabilidad, las cuales están inmersas en la estructura del sistema de software.
+
+      ---
+      # Requerimientos funcionales y no funcionales
+
+      ## Requerimientos No Funcionales
+
+      Algunos ejemplos de requerimientos no funcionales son:
+
+      - __Comprobabilidad:__ Grado en que un sistema, software o servicio de TI permite y facilita que sea probado en un determinado contexto.
+
+      - __Disponibilidad:__ Corresponde al tiempo total en que un sistema puede ser usado en un período determinado. También puede definirse el grado en que un sistema está en un estado operable definido cada vez que se necesite.
+
+      - __Extensibilidad:__ Grado en que la implementación del sistema toma en consideración y facilita su crecimiento en el futuro.
+
+      ---
+      # Requerimientos funcionales y no funcionales
+
+      ## Requerimientos No Funcionales
+
+      Algunos ejemplos de requerimientos no funcionales son:
+
+      - __Escalabilidad:__ Capacidad de un sistema o servicio de TI de manejar una creciente carga de trabajo, por ejemplo mayor número de conexiones o usuarios. No debe confundirse con extensibilidad, que mide la capacidad del sistema de crecer en funcionalidades.
+
+      - __Mantenibilidad:__ Mide la facilidad con que puede darse mantenimiento al producto (en este caso al software o servicio de TI), con la finalidad de: Desarrollar nuevos requerimientos, Aislar los defectos y sus causas, corregir estos defectos y atender las demandas del entorno cambiante. 
+
+      - __Seguridad:__ Grado de protección de los datos, software y plataforma de tecnología de posibles pérdidas, actividades no permitidas o uso para propósitos no establecidos previamente.
+
+      ---
+      # Requerimientos funcionales y no funcionales
+
+      ## Requerimientos No Funcionales
+
+      Algunos ejemplos de requerimientos no funcionales son:
+
+      - __Usabilidad:__ Definido como la facilidad de uso y aprendizaje de un Sistema, Software o Servicio de Tecnología de Información
+
+      
+      ---
+      # Ingeniería de requerimientos:
+
+      ## Según Zave:
+      
+      - Rama de la ingeniería del software que trata con el establecimiento de los objetivos, funciones y restricciones de los sistemas software.
+      - Asimismo, se ocupa de la relación entre estos factores con el objeto de establecer especificaciones precisas.
+
+      ## Según Boehm:
+      - Ingeniería de Requerimientos es la disciplina para desarrollar una especificación completa, consistente y no ambigua, la cual servirá como base para acuerdos comunes entre todas las partes involucradas y en dónde se describen las funciones que realizará el sistema.
+
+      ---
+      # Ingeniería de requerimientos:
+      
+      ## Según Loucopoulos:
+
+      - Trabajo sistemático de desarrollo de requisitos, a través de un proceso iterativo y cooperativo de análisis del problema, documentando los resultados en una variedad de formatos y probando la exactitud del conocimiento adquirido.
+
+      ## Según Leite:
+      - Es el proceso mediante el cual se intercambian diferentes puntos de vista para recopilar y modelar lo que el sistema va a realizar. 
+      - Este proceso utiliza una combinación de métodos, herramientas y actores,
+      cuyo producto es un modelo del cual se genera un documento de requerimientos.
+
+      ---
+      # Ingeniería de requerimientos
+
+      La ingeniería de requerimientos engloba el conjunto de tareas y técnicas que facilitan la comprensión de los requerimientos que debe cumplir el software.
+
+      Está compuesta por siete tareas, algunas de las cuales se desarrollan en paralelo:
+ 
+      - Concepción.
+      - Indagación.
+      - Elaboración.
+      - Negocoación.
+      - Especificación.
+      - Validación.
+      - Administración.
+
+      ---
+      # Los requerimientos en un enfoque predictivo
+
+      Bajo un enfoque de proyecto predictivo (___el desarrollo del sistema se realiza el fases claramente delimitadas, el Análisis, diseño, desarrollo, pruebas e implementación de la solución___), el desarrollo de un nuevo sistema o requerimiento individual siempre comienza con una fase de levantamiento y análisis, caracterizada por los siguientes aspectos:
+      
+      - Especialistas conocidos como Analistas de negocio (Business Analyst) realizan reuniones con los interesados (Por ejemplo los usuarios de la nueva solución) para levantar cuáles son sus requerimientos.
+      
+      - Se utilizan distintas técnicas de levantamiento de requerimientos funcionales, como pueden ser las entrevistas, mesas de trabajo o tormenta de ideas.
+      
+      - De todo este proceso surge un documento de requerimientos de software que describe la funcionalidad que se espera de la nueva solución.
+      
+      ---
+      # Los requerimientos en un enfoque predictivo
+
+      - Para que el enfoque sea exitoso, el documento debe ser lo más detallado posible. 
+      
+      - Un problema es que al tener que ser detallado, los revisores pueden verse abrumados, ocasionado que ciertos errores no sean identificados.
+      
+      - Una vez aprobado, el documento de requerimientos de software se convierte en un contrato, cualquier aspecto que el equipo de desarrollo no implemente se convierte en una causa de no aceptación. 
+      
+      - Por otro lado, cualquier aspecto adicional o cambio solicitado por los interesados debe llevar un proceso de cambio de alcance.
+      
+      ---
+      # Los requerimientos funcionales en las metodologías ágiles
+
+      Las metodologías ágiles establecen un enfoque más flexible sobre lo que es un requerimiento, los proyectos son ejecutados en iteraciones cortas se fomenta una mayor constante interacción entre usuario y desarrolladores abrazando el cambio en lugar de rechazarlo.
+      
+      Por ejemplo en el marco de trabajo __Scrum__:
+      
+      - El dueño de producto (Product Owner) es el que tiene la responsabilidad de la gestión de los requerimientos.
+      
+      - Sostiene reuniones con los interesados e identifica los requerimientos los cuales luego lleva al equipo de desarrollo de software.
+      
+      - Para las reuniones con los interesados también pueden aplicarse técnicas de levantamiento de requerimientos, como por ejemplo las entrevistas, mesas de trabajo, entre otras.
+      
+      ---
+      # Los requerimientos funcionales en las metodologías ágiles
+
+      - Una de las formas de documentar los requerimientos en metodologías agiles es la historia de usuario.
+      
+      - La intención es que las historias de los usuarios sean el inicio y no el final de las conversaciones entre usuarios e interesados sobre la funcionalidad que debe tener el software.
+      
+      - El enfoque ágil fomenta la constante comunicación entre interesados y usuarios, los requerimientos se van elaborando progresivamente, priorizando para el desarrollo los que estén definidos sin ambigüedades.
+      
+
+      ---
+      # Referencias
+      
+      - Pressman, R. (2010). Ingeniería del software (7ª ed.). México: McGrawHill.
+      
+      - Thompson, J. (2019 ). Gang of Four Design Patterns. Recuperado de: https://springframework.guru/gang-of-four-design-patterns/ 
+      
+      
+
+
+    </textarea>
+    <script src="scripts/remark.js"></script>
+    <script>
+       var slideshow = remark.create();
+    </script>
+  </body>
+</html>
