@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../estilos/estilos.css">
+  </head>
+  <body>
+    <textarea id="source">
+      name: inverse
+      layout: true
+      class: center, middle, inverse
+      ---
+      template: inverse
+      # Programación Orientada a Objetos
+      
+      ---
+      layout: false
+      # Programación Orientada a Objetos
+      
+      ## Contenidos
+      - Conceptos orientados a objetos
+      - Reutilización del código y relaciones entre clases
+      - Principos de diseño
+      - Patrones de diseño
+      - Introducción a UML
+
+      
+      ---
+      #  Conceptos orientados a objetos
+
+      Un sistema se califica como Orientado-a-Objetos cuando reúne las características de: ___abstracción___, ___encapsulación___, ___herencia___ y ___polimorfismo___; y los conceptos básicos que las forman: ___objetos___, ___mensajes___, ___clases___, ___instancias___ y ___métodos___.
+
+      ![RN](./media/tema03/pilares.png)
+
+      
+
+      ???
+      # Programación Orientada a Objetos ­ Conceptos Básicos
+      
+      - Un sistema se califica como Orientado­ a ­Objetos cuando reúne las características de: abstracción, encapsulación, herencia y polimorfismo; y los conceptos básicos que las forman: objetos, mensajes, clases, instancias y métodos.
+      
+      - Un objeto es una encapsulación abstracta de información, junto con los métodos o procedimientos para manipularla. Un objeto contiene operaciones que definen su comportamiento y variables que definen su estado entre las llamadas a las operaciones. 
+      
+      - Una clase equivale a la generalización o abstracción de un tipo específico de objetos. 
+      
+      - Un mensaje representa una acción a tomar por un determinado objeto. 
+      
+      - Una instancia es la concrección de una clase.
+      
+      - Un método consiste en la implementación en una clase de un protocolo de respuesta a los mensajes dirigidos a los objetos de la misma. La respuesta a tales mensajes puede incluir el envío por el método de mensajes al propio objeto y aun a otros, también como el cambio del estado interno del objeto.
+
+      # Características
+
+      __La abstracción__
+    
+      - Consiste en la generalización conceptual de un determinado conjunto de objetos y de sus atributos y propiedades, dejando en un segundo término los detalles concretos de cada objeto. ¿Qué se consigue con la abstracción? Bueno, básicamente pasar del plano material (cosas que se tocan) al plano mental (cosas que se piensan).
+
+      __La encapsulación__
+      - Se refiere a la capacidad de agrupar y condensar en un entorno con límites bien­definidos distintos elementos. 
+      - Cuando hablemos de encapsulación en general siempre nos referiremos, pues, a encapsulación abstracta. 
+      - De manera informal, primero generalizamos (la abstracción) y luego decimos: la generalización está bien, pero dentro de un cierto orden: hay que poner límites (la encapsulación), y dentro de esos límites vamos a meter, a saco, todo lo relacionado con lo abstraído: no sólo datos, sino también métodos, comportamientos, etc. 
+      - Por un lado es una abstracción pues, de acuerdo con la definición establecida anteriormente, es en ésta donde se definen las propiedades y atributos genéricos de determinados objetos con características comunes (recordemos el ejemplo de la sala de cine). La Clase es, por otro lado, una encapsulación porque constituye una cápsula o saco que encierra y amalgama de forma clara tanto los datos de que constan los objetos como los procedimientos que permiten manipularlos. 
+      - Las Clases se constituyen, así, en abstracciones encapsuladas.
+
+      __La herencia__
+    
+      - Se aplica sobre las clases. O sea, de alguna forma las clases pueden tener descendencia, y ésta heredará algunas características de las clases "padres". Si disponemos las clases con un formato de árbol genealógico, tenderemos lo que se denomina una estructura jerarquizada de clases.
+      - La OOP promueve en gran medida que las relaciones entre objetos se basen en construcciones jerárquicas. Esto es, las clases pueden heredar diferencialmente de otras clases (denominadas "superclases") determinadas características, mientras que, a la vez, pueden definir las suyas propias. Tales clases pasan, así, a denominarse "subclases" de aquéllas.
+      - La herencia se implementa mediante un mecanismo que se denomina derivación de clases: las superclases pasan a llamarse clases base, mientras que las subclases se constituyen en clases derivadas. 
+      - El mecanismo de herencia está fuertemente entroncado con la reutilización del código en OOP. Una clase derivada posibilita, el fácil uso de código ya creado en cualquiera de las clases base ya existentes.
+      - El concepto de herencia constituye un estrato básico del paradigma de objetos, pero esto no significa que todas las relaciones entre clases en OOP deban ajustarse siempre a este modelo jerárquico. Es necesario establecer si la pretendida relación entre objetos es de pertenencia o de derivación. En una relación típica de pertenencia un objeto contiene al otro.
+
+      __Polimorfismo__
+      - Esta propiedad, como su mismo nombre sugiere múltiples formas, se refiere a la posibilidad de acceder a un variado rango de funciones distintas a través del mismo interfaz. O sea, que, en la práctica, un mismo identificador puede tener distintas formas (distintos cuerpos de función, distintos comportamientos) dependiendo, en general, del contexto en el que se halle inserto. 
+      - El polimorfismo se puede establecer mediante la sobrecarga de identificadores y operadores, la ligadura dinámica y las funciones virtuales. El término sobrecarga se refiere al uso del mismo identificador u operador en distintos contextos y con distintos significados.
+      -  La sobrecarga de funciones conduce a que un mismo nombre pueda representar distintas funciones con distinto tipo y número de argumentos. En el ámbito de la OOP, la sobrecarga de funciones equivale a que un mismo mensaje puede ser enviado a objetos de diferentes clases de forma que cada objeto respondería al mensaje apropiadamente.
+      - La sobrecarga de operadores permite, por otro lado, el desarrollo de un código más coherente, como especialización de la sobrecarga de funciones, posibilitando la re­definición (para tipos de datos definidos ­por ­el ­usuario) de las operaciones realizadas por éstos (+, ­, *, >, etc.). Esto es, ocurre lo mismo que en la sobrecarga de funciones, pero aquí, en vez de identificadores de funciones, tenemos operadores.
+      - Gracias a la ligadura dinámica, pueden invocarse operaciones en objetos obviando el tipo actual del éstos hasta el momento de la ejecución del código.
+      
+      # Otros Conceptos
+      
+      - __Agregación:__ Composición de un objeto por otros. Es una relación más débil que la que existe entre el atributo y el objeto al cual pertenece, y más fuerte que una asociación. 
+      - __Concurrencia:__ Propiedad que distingue un objeto activo de otro inactivo.
+      - __Persistencia: Es la propiedad de un objeto cuya existencia trasciende el tiempo y/o el espacio (ej. el objeto continua existiendo luego de que su creador deja de existir / la ubicación de un objeto se mueve a un espacio de direcciones diferente de aquella donde fue creada).
+      - Visibilidad: capacidad de restringir el acceso a atributos y servicios de un objeto. Particularmente importante en el diseño e implementación. (ej.: público / protegido / privado)
+      ---
+      # Reutilización del código y relaciones entre clases
+
+      >> Reutilización de código no se refiere a copiar (ctrl+c) y pegar (ctrl+v)
+
+      ![RN](./media/tema03/reuso.png)
+
+      ???
+
+      Lo primero que se les viene a la cabeza a los estudiantes (y a muchos profesionales) cuando se les menciona la reutilización del código es el famoso copiar y pegar al que se han acostumbrado en la programación estructurada, y de echo muchos lo hacen en poo, lo cual es una de las practicas que más encarece el desarrollo de software. Como todo en Java, el problema se resuelve con las clases.
+
+      Para reutilizar el código creamos nuevas clases pero, en lugar de partir de cero, partimos de clases, relacionadas con nuestra clase, que han sido ya creadas y depuradas. El truco está en usar las clases sin ensuciar el código existente.
+
+      Una forma de hacer esto es crear objetos de nuestras clases existentes dentro de la nueva clase. Esto se conoce como composición porque la nueva clase está compuesta de objetos de clases existentes. Estamos reutilizando la funcionalidad del código, y no la forma.
+
+      Otra forma es crear una nueva clase como un tipo de una clase ya existente. Tomamos la forma de la clase existente y añadimos código a la nueva, sin modificar la clase existente. Esta forma de crear nuevos objetos se llamada herencia, y lo que hacemos es extender la clase en la que nos basamos para crear la nueva.
+
+      __Composición__
+    
+      - Hasta ahora hemos usado la composición de cierta manera, ej. cuando hacemos una interfaz gráfica de usuario, nuestra clase de interfaz gráfica esta compuesta por un frame, unos panel, botones, etc. todos estos objetos componen el objeto de interfaz gráfica. Es decir que la composición consiste en poner manejadores de objetos dentro de nuestra clase, estos manejadores de objetos no serán otra cosa que instancias de las clases en las que nos estamos basando para crear la nueva clase.
+
+      - Recordemos que la forma para determinar cuando usar composición es cuando podemos decir que nuestra nueva clase tiene un elemento de otro tipo de objetos, por ejemplo un cronómetro tiene: horas, minutos y segundos, es decir que una clase Cronometro esta compuesta por otras clases llamadas: Horas, Minutos y Segundos.
+
+      __Herencia__
+
+      - En java aunque no establezcamos de manera explicita la herencia siempre está presente, ya que todas las clases que creemos heredan de la clase Object, por eso es valido decir que en java todo es un objeto. La sintaxis para la composición es obvia pero, para realizar la herencia, hay una forma claramente distinta. Cuando heredamos, estamos diciendo "Esta nueva clase es como esa clase antigua", por ejemplo es decir que la clase Horas es una UnidadDeTiempo. Afirmamos esto en el código dando el nombre de la clase como siempre pero, antes de la apertura del límite cuerpo de clase, pondremos la palabra clave "extends" seguida por el nombre de la clase base. Cuando hagamos esto, obtendremos automáticamente todos los datos miembros y métodos de la clase base.
+
+      - De esta manera sin necesidad de tener que escribir nuevamente todos el código de UnidadDeTiempo lo tememos disponible en la clase Horas, pero que partes tenemos disponibles?, todos los atributos y los métodos de la clase padre están disponibles en la clase hija pero dependiendo de los modificadores de acceso o visibilidad de estos, por ejemplo los atributos y métodos de tipo friendly solo estarán disponibles para las clases hijas que heredan de una clase padre en el mismo paquete, los atributos y métodos de tipo public estarán disponibles para todas las clases que hereden de la clase padre sin  importar que se halle o no en el mismo paquete; los miembros protected también son accesibles desde las clases hijas.
+
+      - El código de nuestra clases hijas no tienen porque limitarse solo al código heredado, de hecho casi siempre la herencia se hace para extender la funcionalidad de las clases heredadas añadiendo nuevos métodos y atributos.
+
+      ## Composición frente a herencia
+      - Tanto la composición como la herencia permiten poner sub-objetos dentro de tu nueva clase. Podríamos preguntarnos cuál es la diferencia entre los dos, y cuándo elegir uno en lugar del otro. La composición es generalmente usada cuando deseamos las características de una clase existente dentro de una nueva clase, pero no su interfaz. Es decir, ponemos un para poder usarlo para implementar características de nuestra nueva clase, pero el usuario de esa nueva clase verá el interfaz que hemos definido en lugar del interfaz del objeto insertado.
+      - Los objetos miembros usan la implementación ocultándose a sí mismos, por lo que esto es una cosa segura a hacer y, cuando el usuario sabe que estamos uniendo un conjunto de partes, hace que el interfaz sea más fácil de entender.
+      - Cuando heredamos, estamos cogiendo una clase existente y creando una versión especial de esa clase. En general, esto significa que estamos tomando una clase de propósito general, especializándola para un caso o necesidad particular. Pensando un poco, podrá entender que no tendría sentido construir un coche usando un objeto vehículo (un coche no contiene un vehículo, ¡es un vehículo!). La relación es- un viene expresada por la herencia, y la relación tiene un viene expresada por la composición.
+
+
+      ---
+      # Principios de diseño
+
+      ![RN](./media/tema03/principio_diseño.png)
+
+      ---
+      # Patrones de Diseño	
+
+      > Un patrón de diseño contiene la solución probada a un problema en un determinado contexto.
+
+      > Tal es la importancia que cobran los patrones de diseño, como técnica de reutilización de software y resolución rápida de problemas habituales, que este tipo de conocimiento es recopilado y publicado en diferentes manuales y catálogos. 
+      
+      ???
+
+      Para poder considerar una solución como un ___patrón de diseño___ deben darse al menos dos características (Polo Usaola, 2012):
+
+      - ___Debe ser repetible___, habiendo mostrado su efectividad en más de una ocasión. Por tanto, la solución no solo debe resultar válida para una tecnología o problema de un dominio de aplicación concreto.
+      
+      - ___Su descripción debe ser los suficientemente genérica___ como para que pueda ser aplicado en contextos tecnológicos diversos.
+
+      En términos generales, los patrones de diseño persiguen ___aumentar la cohesión___ y ___reducir el acoplamiento___ de los sistemas, favoreciendo prácticas deseables como la ___reutilización de software___.
+
+      Estructura de los catálogos de los patrones:
+
+      - ___Nombre del patrón___, generalmente en inglés.
+      
+      - ___Clasificación del patrón___ (de creación, de estructura o de comportamiento).
+      
+      - Intención o ___descripción del problema___ que intenta resolver.
+      
+      - ___Motivación___ o explicación de escenarios prácticos que justifican la posible aplicación del patrón.
+      
+      - ___Estructura___, empleando diagramas de clases que representan los objetos que intervienen en el patrón y sus relaciones.
+      
+      -	___Consecuencias___ positivas y negativas de su empleo.
+      
+      -	___Implementación___, ofreciendo indicaciones para ello.
+      
+      -	___Código de ejemplo___, a veces en diferentes lenguajes como demostración.
+      
+      -	___Usos conocidos___, dando ejemplos de sistemas reales que lo aplican.
+      
+      -	___Patrones relacionados___, indicando los nombres de otros patrones con los que presenta similitudes, o con los que es posible combinarlo.
+
+      El más conocido y antiguo de estos catálogos es el de Gamma, Helm, Johson y Vlissides (Patrones de Gamma o Patrones GoF), que publicaron una primera versión de su libro, Design Patterns, en 1994.
+
+      Periódicamente, se celebran conferencias en todo el mundo sobre esta temática. Las más importantes son las Pattern Languages of Programs (PLoP), un grupo de conferencias anuales que se celebran en todo el mundo. 
+      
+      La principal de ellas se celebra anualmente en Estados Unidos, pero también existen otras ediciones, ya sea centradas en áreas geográficas concretas (AsianPLoP, EuroPLoP o KoalaPLoP) o en temáticas específicas (ScrumPLoP o ChilliPLoP).
+
+      ---
+      # Patrones de Diseño
+      
+      ## Tipos de patrones
+      
+      ### Patrones de creación
+      
+      Los patrones de creación o creacionales abstraen la forma en la que se crean los objetos, permitiendo tratar las clases a crear de forma genérica dejando para más tarde la decisión de qué clases crear o cómo crearlas.
+
+      ---
+      # Patrones de Diseño	
+      
+      ## Tipos de patrones
+      
+      ### Patrones de creación
+
+      - **Abstract Factory:** Proporciona una interfaz para crear familias de objetos o que dependen entre sí, sin especificar sus clases concretas.
+      
+      ![abstract factory](./media/tema03/abstractfactory.png)
+      
+      ---
+      # Patrones de Diseño	
+      
+      ## Tipos de patrones
+      
+      ### Patrones de creación
+
+      - **Builder:** Separa la construcción de un objeto complejo de su representación, de forma que el mismo proceso de construcción pueda crear diferentes representaciones.
+
+      ![builder](./media/tema03/builder.png)
+
+      ---
+      # Patrones de Diseño	
+      
+      ## Tipos de patrones
+      
+      ### Patrones de creación
+
+      - **Factory Method:** Define una interfaz para crear un objeto, pero deja que sean las subclases quienes decidan qué clase instanciar. Permite que una clase delegue en sus subclases la creación de objetos.
+
+      ![factory method](./media/tema03/factorymethod.png)
+
+      ---
+      # Patrones de Diseño	
+      
+      ## Tipos de patrones
+      
+      ### Patrones de creación
+
+      - **Prototype:** Especifica los tipos de objetos a crear por medio de una instancia prototípica, y crear nuevos objetos copiando este prototipo.
+
+      ![prototype](./media/tema03/prototype.png)
+
+      ---
+      # Patrones de Diseño	
+      
+      ## Tipos de patrones
+      
+      ### Patrones de creación
+
+      - **Singleton:** Garantiza que una clase sólo tenga una instancia, y proporciona un punto de acceso global a ella.
+
+      ![singleton](./media/tema03/singleton.png)
+
+      ---
+      # Patrones de Diseño	
+      
+      ## Tipos de patrones
+
+      ### Patrones estructurales
+
+      Tratan de conseguir que cambios en los requisitos de la aplicación no ocasionen cambios en las relaciones entre los objetos. Lo fundamental son las relaciones de uso entre los objetos, y, éstas están determinadas por las interfaces que soportan los objetos.
+
+      Estudian como se relacionan los objetos en tiempo de ejecución. Sirven para diseñar las interconexiones entre los objetos.
+
+      ---
+      # Patrones de Diseño	
+      
+      ## Tipos de patrones
+
+      ### Patrones estructurales
+
+      - **Adapter:** Convierte la interfaz de una clase en otra distinta que es la que esperan los clientes. Permiten que cooperen clases que de otra manera no podrían por tener interfaces incompatibles.
+
+      ![adapter](./media/tema03/adapter.png)
+
+      ---
+      # Patrones de Diseño	
+      
+      ## Tipos de patrones
+
+      ### Patrones estructurales
+
+      - **Bridge:** Desvincula una abstracción de su implementación, de manera que ambas puedan variar de forma independiente.
+
+      ![bridge](./media/tema03/bridge.png)
+
+      ---
+      # Patrones de Diseño	
+      
+      ## Tipos de patrones
+
+      ### Patrones estructurales
+
+      - **Composite:** Combina objetos en estructuras de árbol para representar jerarquías de parte-todo. Permite que los clientes traten de manera uniforme a los objetos individuales y a los compuestos.
+
+      ![composite](./media/tema03/composite.png)
+
+      ---
+      # Patrones de Diseño	
+      
+      ## Tipos de patrones
+
+      ### Patrones estructurales
+
+      - **Decorator:** Añade dinámicamente nuevas responsabilidades a un objeto, proporcionando una alternativa flexible a la herencia para extender la funcionalidad.
+
+      ![decorator](./media/tema03/decorator.png)
+
+      ---
+      # Patrones de Diseño	
+      
+      ## Tipos de patrones
+
+      ### Patrones estructurales
+
+      - **Facade:** Proporciona una interfaz unificada para un conjunto de interfaces de un subsistema. Define una interfaz de alto nivel que hace que el subsistema se más fácil de usar.
+
+      ![facade](./media/tema03/facade.png)
+
+      ---
+      # Patrones de Diseño	
+      
+      ## Tipos de patrones
+
+      ### Patrones estructurales
+
+      - **Flyweight:** Usa el compartimiento para permitir un gran número de objetos de grano fino de forma eficiente.
+
+      ![flyweight](./media/tema03/flyweight.png)
+
+      ---
+      # Patrones de Diseño	
+      
+      ## Tipos de patrones
+
+      ### Patrones estructurales
+
+      - **Proxy:** Proporciona un sustituto o representante de otro objeto para controlar el acceso a éste.
+
+      ![proxy](./media/tema03/proxy.png)
+
+      ---
+      # Patrones de Diseño	
+      
+      ## Tipos de patrones
+
+      ### Patrones de comportamiento
+
+      Los patrones de comportamiento estudian las relaciones entre llamadas entre los diferentes objetos, normalmente ligados con la dimensión temporal.
+
+      ---
+      # Patrones de Diseño	
+      
+      ## Tipos de patrones
+
+      ### Patrones de comportamiento
+
+      - **Chain of Responsibility:** Evita acoplar el emisor de una petición a su receptor, al dar a más de un objeto la posibilidad de responder a la petición. Crea una cadena con los objetos receptores y pasa la petición a través de la cadena hasta que esta sea tratada por algún objeto.
+
+      ![chain of responsibility](./media/tema03/chainofresponsibility.png)
+
+      ---
+      # Patrones de Diseño	
+      
+      ## Tipos de patrones
+
+      ### Patrones de comportamiento
+
+      - **Command:** Encapsula una petición en un objeto, permitiendo así parametrizar a los clientes con distintas peticiones, encolar o llevar un registro de las peticiones y poder deshacer la operaciones.
+
+      ![command](./media/tema03/command.png)
+
+      ---
+      # Patrones de Diseño	
+      
+      ## Tipos de patrones
+
+      ### Patrones de comportamiento
+
+      - **Interpreter:** Dado un lenguaje, define una representación de su gramática junto con un intérprete que usa dicha representación para interpretar las sentencias del lenguaje.
+
+      ![interpreter](./media/tema03/interpreter.png)
+
+      ---
+      # Patrones de Diseño	
+      
+      ## Tipos de patrones
+
+      ### Patrones de comportamiento
+
+      - **Iterator:** Proporciona un modo de acceder secuencialmente a los elementos de un objeto agregado sin exponer su representación interna.
+
+      ![iterator](./media/tema03/iterator.png)
+
+      ---
+      # Patrones de Diseño	
+      
+      ## Tipos de patrones
+
+      ### Patrones de comportamiento
+
+      - **Mediator:** Define un objeto que encapsula cómo interactúan un conjunto de objetos. Promueve un bajo acoplamiento al evitar que los objetos se refieran unos a otros explícitamente, y permite variar la interacción entre ellos de forma independiente.
+
+      ![mediator](./media/tema03/mediator.png)
+
+      ---
+      # Patrones de Diseño	
+      
+      ## Tipos de patrones
+
+      ### Patrones de comportamiento
+
+      - **Memento:** Representa y externaliza el estado interno de un objeto sin violar la encapsulación, de forma que éste puede volver a dicho estado más tarde.
+
+      ![memento](./media/tema03/memento.png)
+
+      ---
+      # Patrones de Diseño	
+      
+      ## Tipos de patrones
+
+      ### Patrones de comportamiento
+
+      - **Observer:** Define una dependencia de uno-a-muchos entre objetos, de forma que cuando un objeto cambia de estado se notifica y actualizan automáticamente todos los objetos.
+
+      ![observer](./media/tema03/observer.png)
+
+      ---
+      # Patrones de Diseño	
+      
+      ## Tipos de patrones
+
+      ### Patrones de comportamiento
+
+      - **State:** Permite que un objeto modifique su comportamiento cada vez que cambia su estado interno. Parecerá que cambia la clase del objeto.
+
+      ![state](./media/tema03/state.png)
+
+      ---
+      # Patrones de Diseño	
+      
+      ## Tipos de patrones
+
+      ### Patrones de comportamiento
+
+      - **Strategy:** Define una familia de algoritmos, encapsula uno de ellos y los hace intercambiables. Permite que un algoritmo varíe independientemente de los clientes que lo usan.
+
+      ![strategy](./media/tema03/strategy.png)
+
+      ---
+      # Patrones de Diseño	
+      
+      ## Tipos de patrones
+
+      ### Patrones de comportamiento
+
+      - **Template Method:** Define en una operación el esqueleto de un algoritmo, delegando en las subclases algunos de sus pasos. Permite que las subclases redefinan ciertos pasos del algoritmo sin cambiar su estructura.
+
+      ![templatemethod](./media/tema03/templatemethod.png)
+
+      ---
+      # Patrones de Diseño	
+      
+      ## Tipos de patrones
+
+      ### Patrones de comportamiento
+
+      - **Visitor:** Representa una operación sobre los elementos de una estructura de objetos. Permite definir una nueva operación sin cambiar las clases de los elementos sobre los que opera.
+
+      ![visitor](./media/tema03/visitor.png)
+
+      ---
+      # Introducción a UML
+
+      El Lenguaje de Modelado Unificado (UML) es un lenguaje de diseño para modelar software mediante diferentes tipos de diagramas. 
+      
+      Es un lenguaje de modelado visual que permite mediante representaciones, para los proyectos de software: 
+
+      - __Visualizar:__ permite mediante representaciones gráficas construir modelos que representan el dominio del problema y la solución.
+
+      - __Especificar:__ permite especificar mediante el modelo estático la estructura y mediante el modelo dinámico el comportamiento.
+
+      - __Construir:__ permite mediante el uso de herramientas CASE la generación de código en base a los modelos planteados.
+
+      - __Documentar:__ permite gestionar desde los requerimientos, todos los conjuntos de diagramas, códigos, manuales, etc.
+      
+      ---
+      # Introducción a UML
+      
+      Los principales diagramas son:
+
+      -	__Diagrama de clases:__ proporciona elementos para modelar las clases (con sus atributos y métodos) y las relaciones y asociaciones entre ellas.
+
+      -	__Diagrama de implementación:__ permite mostrar la distribución física de un sistema software en las plataformas de hardware y entornos de ejecución.
+
+      -	__Diagramas de casos de uso:__ representan la interacción del usuario con las diferentes funciones del sistema.
+
+      -	__Diagramas de secuencia:__ muestra la comunicación dinámica entre los diferentes objetos para llevar a cabo una tarea, describiendo el orden de ejecución.
+     
+      ---
+      # Introducción a UML
+
+      - __Diagramas de comunicación:__ representan como los diagramas de secuencia la comunicación entre los objetos para realizar una tarea, enfatizando en las relaciones entre las clases y objetos.
+
+      - __Diagramas de actividad:__ muestran el comportamiento dinámico del sistema mediante el flujo de control de las acciones que debe realizar.
+
+      - __Diagramas de estado:__ modelan los estados por los que pasa un objeto y las acciones que desencadenan la transición de estados.
+
+      ---
+      # Introducción a UML
+
+      ## Modelo conceptual:
+
+      ![RN](./media/tema03/uml_01.png)
+
+      ---
+      # Introducción a UML
+
+      ## Modelo conceptual:
+
+      ![RN](./media/tema03/uml_02.png)
+
+      ---
+      # Introducción a UML
+
+      ## Modelo conceptual:
+
+      ![RN](./media/tema03/uml_03.png)
+
+      ---
+      # Introducción a UML
+
+      ## Modelo conceptual:
+
+      ![RN](./media/tema03/uml_04.png)
+
+      ---
+      # Introducción a UML
+
+      ## Modelo conceptual:
+
+      ![RN](./media/tema03/uml_05.png)
+
+      ---
+      # Introducción a UML
+
+      ## Modelo conceptual:
+
+      ![RN](./media/tema03/uml_06.png)
+
+      ---
+      # Introducción a UML
+
+      ## Modelo conceptual:
+
+      ![RN](./media/tema03/uml_07.png)
+
+      ---
+      # Introducción a UML
+
+      ## Modelo conceptual:
+
+      ![RN](./media/tema03/uml_08.png)
+
+      ---
+      # Introducción a UML
+
+      ## Modelo conceptual:
+
+      ![RN](./media/tema03/uml_09.png)
+
+      ---
+      # Introducción a UML
+
+      ## Modelo conceptual:
+
+      ![RN](./media/tema03/uml_10.png)
+
+      ---
+      # Introducción a UML
+
+      ## Modelo conceptual:
+
+      ![RN](./media/tema03/uml_11.png)
+
+      ---
+      # Introducción a UML
+
+      ## Modelo conceptual:
+
+      ![RN](./media/tema03/uml_12.png)
+
+      ---
+      # Introducción a UML
+
+      ## Modelo conceptual:
+
+      ![RN](./media/tema03/uml_13.png)
+
+      ---
+      # Introducción a UML
+
+      ## Modelo conceptual:
+
+      ![RN](./media/tema03/uml_14.png)
+
+      ---
+      # Introducción a UML
+
+      ## Modelo conceptual:
+
+      ![RN](./media/tema03/uml_15.png)
+
+      ---
+      # Introducción a UML
+
+      ## Modelo conceptual:
+
+      ![RN](./media/tema03/uml_16.png)
+
+      ---
+      # Introducción a UML
+
+      ## Modelo conceptual:
+
+      ![RN](./media/tema03/uml_17.png)
+
+      ---
+      # Introducción a UML
+
+      ## Modelo conceptual:
+
+      ![RN](./media/tema03/uml_18.png)
+
+      ---
+      # Introducción a UML
+
+      ## Modelo conceptual:
+
+      ![RN](./media/tema03/uml_19.png)
+
+      ---
+      # Introducción a UML
+
+      ## Modelo conceptual:
+
+      ![RN](./media/tema03/uml_20.png)
+
+      ---
+      # Introducción a UML
+
+      ## Modelo conceptual:
+
+      ![RN](./media/tema03/uml_21.png)
+
+      ---
+      # Introducción a UML
+
+      ## Modelo conceptual:
+
+      ![RN](./media/tema03/uml_22.png)
+
+      ---
+      # Introducción a UML
+
+      ## Modelo conceptual:
+
+      ![RN](./media/tema03/uml_23.png)
+
+      ---
+      # Introducción a UML
+
+      ## Modelo conceptual:
+
+      ![RN](./media/tema03/uml_24.png)
+
+      ---
+      # Introducción a UML
+
+      ## Modelo conceptual:
+
+      ![RN](./media/tema03/uml_25.png)
+
+      ---
+      # Introducción a UML
+
+      ## Modelo conceptual:
+
+      ![RN](./media/tema03/uml_26.png)
+
+      ---
+      # Introducción a UML
+
+      ## Ejemplo:
+
+      __Cronómetro:__
+
+      El caso práctico elegido para la elaboración de los diagramas de UML es un aplicativo de escritorio que permita al usuario manejar un cronómetro con la implementación normal de las funciones básicas de un elemento como este: avanzar, parar, retroceder, reset.
+
+      ![RN](./media/tema03/uml_ejemplo_01.png)
+
+      ---
+      # Introducción a UML
+
+      ## Ejemplo:
+
+      __Diagrama de casos de uso:__
+
+      ![RN](./media/tema03/uml_ejemplo_02.png)
+
+      ---
+      # Introducción a UML
+
+      ## Ejemplo:
+
+      __Diagrama de clases:__
+
+      ![RN](./media/tema03/uml_ejemplo_03.png)
+
+      ---
+      # Introducción a UML
+
+      ## Ejemplo:
+
+      __Diagrama de estados:__
+
+      ![RN](./media/tema03/uml_ejemplo_04.png)
+
+      ---
+      # Introducción a UML
+
+      ## Ejemplo:
+
+      __Diagrama de secuencia:__
+
+      ![RN](./media/tema03/uml_ejemplo_05.png)
+
+      ---
+      # Introducción a UML
+
+      ## Ejemplo:
+
+      __Diagrama de colaboración:__
+
+      ![RN](./media/tema03/uml_ejemplo_06.png)
+
+      ---
+      # Introducción a UML
+
+      ## Ejemplo:
+
+      __Diagrama de paquetes:__
+
+      ![RN](./media/tema03/uml_ejemplo_07.png)
+
+
+
+      ---
+      # Referencias
+      
+      - 
+
+      
+    </textarea>
+    <script src="scripts/remark.js"></script>
+    <script>
+       var slideshow = remark.create();
+    </script>
+  </body>
+</html>

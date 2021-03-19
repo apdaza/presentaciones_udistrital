@@ -17,7 +17,7 @@ h1, h2, h3 {
   background-position:0px 600px;
   background-repeat: no-repeat;
 }
-.remark-slide-content blockquote {color:#0098cd; text-align: end; text-shadow: 0 0 5px darkgray;}
+.remark-slide-content blockquote {color:#0098cd; font-size: 1.2em; text-align: end; font-style: oblique; font-weight: bold; }
 .remark-slide-number {color: rgb(24, 44, 87); opacity: .8;}
 .remark-slide-content h1 { font-size: 2.2em; color:#0098cd; text-shadow: 0 0 8px #777872; border-bottom: groove; padding-bottom: 0.5em;}
 .remark-slide-content h2 { font-size: 1.6em; color:#2e5868; text-shadow: 0 0 5px #777872;}
@@ -26,6 +26,13 @@ h1, h2, h3 {
 .footnote {
   position: absolute;
   bottom: 3em;
+}
+
+.danger {
+  background: #e5be01;
+  border-radius: 5px;
+  color:#cd0000;
+  padding: 3px;
 }
 
 li { margin-bottom: 15px; list-style-image: url("../media/li.png")}
