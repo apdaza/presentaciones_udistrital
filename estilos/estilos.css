@@ -161,6 +161,12 @@ img[alt="intermedia"] {
   margin: auto;
 }
 
+img[alt="peque"] {
+  max-width:  400px;
+  display: block;
+  margin: auto;
+}
+
 img[alt="mini"] {
   max-width:  300px;
   display: block;

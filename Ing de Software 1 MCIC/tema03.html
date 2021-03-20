@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../estilos/estilos.css">
+  </head>
+  <body>
+    <textarea id="source">
+      name: inverse
+      layout: true
+      class: center, middle, inverse
+      ---
+      template: inverse
+      # Modelos de Proceso de Desarrollo de Software
+      
+      ---
+      layout: false
+      # Modelos de Proceso de Desarrollo de Software
+      
+      ## Contenidos
+      - Conceptos
+      - Ciclo de vida del desarrollo Software
+      - Modelos para el desarrollo de software
+      
+      ---
+      # Conceptos
+
+      ![RN](./media/conceptos_proyectos.png)
+      
+      ___Proceso:___
+      - Define el marco de trabajo y permite un desarrollo racional y oportuno de la Ingeniería del Software
+
+      ___Método:___
+      - Indica cómo construir técnicamente el software. Se incluyen técnicas de modelado y otras técnicas descriptivas
+
+      ---
+      # Conceptos
+
+      ___Herramientas:___
+      - Proporcionan el soporte automático o semiautomático para el proceso y para los métodos
+
+      ___Notación:___
+      - Conjunto de reglas gráficas o textuales para la representación de un modelo
+
+      ___Metodología:___
+      - Colección de métodos para resolver un tipo de problemas
+      - Descomposición del proceso de desarrollo en actividades y los métodos adecuados para llevar a cabo dichas actividades
+
+      
+      ---
+      # Conceptos
+
+      ___Ciclo de vida:___
+      - El ciclo de vida del desarrollo Software (SDLC), es una secuencia estructurada y bien definida de las etapas en Ingeniería de software para desarrollar el producto software deseado.
+
+      ___Modelo de desarrollo de software:___
+      - Es una representación simplificada del proceso para el desarrollo de software, presentada desde una perspectiva específica.
+      
+      ___Metodología de desarrollo de software:___
+      - Es un enfoque estructurado para el desarrollo de software que incluye modelos de sistemas, notaciones, reglas, sugerencias de diseño y guías de procesos.
+
+      ---
+      # Conceptos
+
+
+      ![RN](./media/desarrollo_software2.png)
+
+      ---
+      # Proceso de Software 
+      
+      ___Proceso:___
+      
+      > Conjunto ordenado de actividades; una serie de pasos que involucran tareas, restricciones y recursos que producen una determinada salida esperada (Pfleeger, 2002)
+      
+      > Marco de trabajo de las tareas que se requieren para construir software de alta calidad (Pressman, 2010)
+
+      ---
+      # Proceso de Software 
+      
+      Un proceso de software debe especificar:
+
+      - La ___secuencia de actividades___ a realizar por el equipo de desarrollo (Flujo de actividades)
+      
+      - Los ___productos___ que deben crearse
+       - resultados del trabajo (modelos, documentos, datos informes...)
+       - qué y cuándo
+      
+      - La ___asignación de tareas___ a cada miembro del equipo y al equipo como un todo
+      
+      - Los ___criterios___ para controlar el proceso
+       - se establece el control de gestión de los proyectos software
+       - establecimiento de hitos
+
+      - Las posibles ___heurísticas___
+
+      ---
+      # Proceso de Software 
+
+      ___Importancia:___
+
+      - Facilita la gestión del proyecto
+      - Establece una división del trabajo
+      - Facilita la comunicación de los miembros del equipo
+      - Permite la reasignación y la reutilización de personal especializado (transferencia entre proyectos)
+      - Mejora la productividad y el desarrollo (desarrollo reproducible)
+      - Establece el contexto en el que se aplican los métodos técnicos
+      - Gestiona el cambio adecuadamente
+      - Asegura la calidad
+
+      ---
+      # Ciclo de vida del desarrollo Software
+
+      ___Ciclo de vida:___
+      
+      > Las distintas fases por las que pasa el software desde que nace una necesidad de mecanizar un proceso hasta que deja de utilizarse el software que sirvió para ese objetivo, pasando por las fases de desarrollo y explotación (Frakes et al., 1991)
+
+      ___Ciclo de desarrollo:___
+
+      > El período de tiempo que comienza con la decisión de desarrollar un producto software y finaliza cuando se ha entregado este. Este ciclo incluye, en general, una fase de requisitos, una fase de diseño, una fase de implantación, una fase de pruebas, y a veces, una fase de instalación y aceptación (AEC, 1986)
+
+      ---
+      # Ciclo de vida del desarrollo Software
+
+      El ciclo de vida de desarrollo de software (SDLC) aporta una serie de pasos a seguir con la finalidad de diseñar y desarrollar un producto software de manera eficiente
+
+      ![reducida](./media/ciclo.png)
+
+      ???
+      # Ciclo de vida del desarrollo Software
+
+      ## Planeación y análisis de requerimientos
+      - El análisis de requisitos es la etapa más importante y fundamental en SDLC. 
+      - Lo realizan los miembros principales del equipo con aportes del cliente, el departamento de ventas, encuestas de mercado y expertos en dominios de la industria.
+      - Esta información se utiliza para planificar el enfoque básico del proyecto y para realizar un estudio de viabilidad del producto en las áreas económica, operativa y técnica.
+      - La planificación de los requisitos de garantía de calidad y la identificación de los riesgos asociados con el proyecto también se realiza en la etapa de planificación. 
+      - El resultado del estudio de factibilidad técnica es definir los diversos enfoques técnicos que se pueden seguir para implementar el proyecto con éxito con riesgos mínimos.
+
+      ## Definición de requerimientos
+      - Una vez que se realiza el análisis de requisitos, el siguiente paso es definir y documentar claramente los requisitos del producto y obtener la aprobación del cliente o de los analistas del mercado. 
+      - Esto se realiza a través de un documento SRS (Especificación de requisitos de software) que consta de todos los requisitos del producto que se diseñarán y desarrollarán durante el ciclo de vida del proyecto.
+
+      ## Diseño de la arquitectura del producto
+      - La especificación de requisitos de software (SRS) es la referencia para que los arquitectos de productos salgan con la mejor arquitectura para el producto a desarrollar. 
+      - Con base en los requisitos especificados en SRS, generalmente se propone y documenta más de un enfoque de diseño para la arquitectura del producto en un DDS (Especificación de documento de diseño.)
+      - Todas las partes interesadas importantes revisan este DDS y, basándose en diversos parámetros como la evaluación de riesgos, la solidez del producto, la modularidad del diseño, el presupuesto y las limitaciones de tiempo, se selecciona el mejor enfoque de diseño para el producto.
+      - Un enfoque de diseño define claramente todos los módulos arquitectónicos del producto junto con su comunicación y representación del flujo de datos con los módulos externos y de terceros (si los hay). 
+      - El diseño interno de todos los módulos de la arquitectura propuesta debe definirse claramente con el más mínimo de los detalles en DDS.
+
+      ## Construcción o desarrollo del producto
+      - En esta etapa de SDLC comienza el desarrollo real y se construye el producto. 
+      - El código de programación se genera según DDS durante esta etapa. 
+      - Si el diseño se realiza de manera detallada y organizada, la generación de código se puede lograr sin mucha molestia.
+      - Los desarrolladores deben seguir las pautas de codificación definidas por su organización y se utilizan herramientas de programación como compiladores, intérpretes, depuradores, etc. para generar el código. 
+      - Para la codificación se utilizan diferentes lenguajes de programación de alto nivel como C, C ++, Pascal, Java y PHP. El lenguaje de programación se elige con respecto al tipo de software que se está desarrollando.
+      
+      ## Prueba del producto
+      - Esta etapa suele ser un subconjunto de todas las etapas, ya que en los modelos SDLC modernos, las actividades de prueba están involucradas principalmente en todas las etapas de SDLC. 
+      - Esta etapa se refiere a la única etapa de prueba del producto donde se informan, rastrean, reparan y vuelven a probar los defectos del producto, hasta que el producto alcanza los estándares de calidad definidos en el SRS.
+      
+      ## Despliegue y mantenimiento
+      - Una vez que el producto se prueba y está listo para implementarse, se lanza formalmente en el mercado apropiado. 
+      - A veces, el despliegue del producto ocurre en etapas según la estrategia comercial de esa organización. 
+      - El producto puede lanzarse primero en un segmento limitado y probarse en el entorno empresarial real (UAT: prueba de aceptación del usuario).
+      - Luego, en función de los comentarios, el producto puede lanzarse tal cual o con las mejoras sugeridas en el segmento de mercado de orientación. 
+      - Después de que el producto se lanza al mercado, su mantenimiento se realiza para la base de clientes existente.
+      
+      ---
+      # Modelo de proceso
+      
+      > Un modelo de proceso software es una representación abstracta de un proceso software (Sommerville, 2005)
+      
+      - Hay varios modelos de procesos definidos en la bibliografía de Ingeniería del Software 
+      - Cada modelo de proceso representa un proceso desde una perspectiva particular, por lo que sólo ofrece una información parcial sobre dicho
+      proceso
+      - Los modelos de proceso genéricos, también llamados paradigmas de proceso, presentan un proceso desde una perspectiva arquitectónica, es decir, ofrecen
+      un marco de definición para el proceso, pero no detallan las actividades específicas
+      - Dichos modelos no son descripciones definitivas de los procesos software, más bien son abstracciones útiles que se utilizan para explicar diferentes aproximaciones al desarrollo del software
+
+      ---
+      # Modelo de proceso
+
+      - ___Especificación:___ Formulación de los requisitos y restricciones del sistema
+
+      - ___Diseño:___ Elaboración de un documento con el modelo del sistema
+
+      - ___Fabricación:___ Construcción del sistema
+
+      - ___Prueba:___ Comprobación de que el sistema cumple las especificaciones requeridas
+
+      - ___Instalación:___ Entrega del sistema al cliente y garantía de que es operativo
+
+      - ___Mantenimiento:___ Reparación de los fallos que aparecen en el sistema
+
+      Se puede separar en tres fases:
+
+      - ___La definición:___ Análisis de Sistemas; Análisis de Requisitos
+      - ___El desarrollo:___ Diseño; Codificación; Prueba
+      - ___El mantenimiento:___ Correctivo; Adaptativo; Perfectivo; Preventivo
+
+      ---
+      # Estándar ISO/IEC/IEEE 12207:2017
+
+      ![peque](./media/iso12207.jpg)
+
+      ???
+      El estándar ISO/IEC/IEEE 12207:2017 (ISO/IEC/IEEE, 2017) relativo a los procesos del ciclo de vida del software
+
+      - Se aplica a la adquisición de sistemas de software, productos y servicios, al suministro, desarrollo, operación, mantenimiento y eliminación de productos de software o componentes de software de cualquier sistema, ya sea que se realice interna o externamente a una organización
+      - Se incluyen aquellos aspectos de la definición del sistema necesarios para proporcionar el contexto de los productos y servicios de software
+      - También proporciona procesos que pueden emplearse para definir, controlar y mejorar los procesos del ciclo de vida del software dentro de una organización o de un proyecto
+      - No fomenta o especifica ningún modelo concreto de ciclo de vida, gestión del software o método de ingeniería, ni prescribe cómo realizar ninguna de las actividades
+      
+      ---
+      # Clasificación de los modelos de proceso
+
+      Existen diferentes formas de clasificar los modelos de proceso en función de sus características y los tipos de sistemas a los que se aplican:
+
+      ___Modelos tradicionales:___
+
+      Formados por un conjunto de fases o actividades en las que no tienen en cuenta la naturaleza evolutiva del software
+      - Clásico, lineal o en cascada
+      - Estructurado
+      - Basado en prototipos
+      - Desarrollo rápido de aplicaciones (RAD)
+
+      ---
+      # Clasificación de los modelos de proceso
+
+      ___Modelos evolutivos:___
+
+      Son modelos que se adaptan a la evolución que sufren los requisitos del sistema en función del tiempo
+      - Incremental
+      - Iterativo
+      - En espiral
+
+      ___Modelos para sistemas orientados a objetos:___
+
+      Modelos con un alto grado de iteratividad y solapamiento entre fases
+      - De agrupamiento
+      - Proceso Unificado
+
+      ---
+      # Clasificación de los modelos de proceso
+
+      ___Modelos basados en reutilización:___
+
+      Tienen en cuenta la reutilización sistemática del software
+      - Basado en componentes
+      - Proceso Unificado
+
+      ___Procesos ágiles:___
+
+      Enfatizan el desarrollo rápido, ponen el énfasis en la programación
+      - Programación extrema (XP)
+      - Scrum
+      - Desarrollo de software adaptativo
+      - Crystal
+
+      ---
+      # Clasificación de los modelos de proceso
+
+      ___Modelos para sistemas web:___
+
+      Creados específicamente para el desarrollo de aplicaciones web
+      - Modelos de Pressman
+      - UML-based Web Engineering
+
+      ---
+      # Modelos para el desarrollo de software:
+
+      ## Modelo primitivo
+
+      - Se le conoce también con el nombre de Modelo Prueba y Error o Modelo Codifica y Mejora
+      - Proceso de desarrollo aplicado en las primeras experiencias de programación
+      - Supone una iteración de fases codificación-depuración sin ninguna planificación ni diseños previos
+
+      ![RN](./media/primitivo.png)
+
+      ---
+      # Modelos para el desarrollo de software:
+
+      ## Modelo primitivo
+
+      ___Inconvenientes:___
+
+      - Código pobremente estructurado tras varias iteraciones
+      - Código espagueti
+      - Caro de desarrollar por las numerosas recodificaciones
+      - Posible rechazo del usuario al no existir análisis de requisitos
+      - Caro de depurar por la falta de planificación
+      - Caro de mantener por la falta de estructura y documentación
+      ---
+      # Modelos para el desarrollo de software:
+
+      ## Big - bang
+
+      ![reducida](./media/bigbang.png)
+      ---
+      # Modelos para el desarrollo de software:
+
+      ## Big-bang
+      - El modelo Big Bang es un modelo donde no seguimos ningún proceso específico. 
+      - El desarrollo sólo comienza con el dinero y los esfuerzos requeridos como entrada, y la salida es el software desarrollado que puede ser o no según los requisitos del cliente. 
+      - Este modelo de Big Bang no sigue un proceso / procedimiento y se requiere muy poca planificación. Incluso el cliente no está seguro de lo que quiere exactamente y los requisitos se implementan sobre la marcha sin mucho análisis.
+      - Por lo general, este modelo se sigue para proyectos pequeños donde los equipos de desarrollo son muy pequeños.
+
+      ---
+      # Modelos para el desarrollo de software:
+
+      ## Big-bang
+      - El modelo Big Bang consiste en enfocar todos los recursos posibles en el desarrollo y codificación de software, con muy poca o ninguna planificación. 
+      - Los requisitos se entienden e implementan a medida que se presentan. 
+      - Cualquier cambio requerido puede o no necesitar renovar el software completo.
+      - Este modelo es ideal para proyectos pequeños con uno o dos desarrolladores trabajando juntos y también es útil para proyectos académicos o de práctica. 
+      - Es un modelo ideal para el producto donde los requisitos no se entienden bien y no se da la fecha de lanzamiento final.
+      - La ventaja de este modelo Big Bang es que es muy simple y requiere muy poca o ninguna planificación. 
+
+      ---
+      # Modelos para el desarrollo de software:
+
+      ## Big-bang
+      - Fácil de administrar y no se requieren procedimientos formales.
+      - Sin embargo, el modelo Big Bang es un modelo de muy alto riesgo y los cambios en los requisitos o los requisitos malentendidos pueden incluso conducir a una reversión completa o raspado del proyecto. 
+      - Es ideal para proyectos repetitivos o pequeños con riesgos mínimos.   
+
+      ---
+      # Modelos para el desarrollo de software:
+
+      ## Big-bang
+
+      ### Ventajas:
+      - Este es un modelo muy simple.
+      - Se requiere poca o ninguna planificación
+      - Fácil de manejar
+      - Muy pocos recursos requeridos
+      - Da flexibilidad a los desarrolladores
+      - Es una buena ayuda de aprendizaje para recién llegados o estudiantes.
+
+      ---
+      # Modelos para el desarrollo de software:
+
+      ## Big-bang
+      ### Desventajas:
+      - Muy alto riesgo e incertidumbre.
+      - No es un buen modelo para proyectos complejos y orientados a objetos.
+      - Modelo deficiente para proyectos largos y en curso.
+      - Puede resultar muy costoso si se malinterpretan los requisitos.
+      
+      ---
+      # Modelos para el desarrollo de software:
+
+      ## Modelos lineales o secuenciales
+
+      - Han sido ampliamente utilizados
+      - Ofrecen grandes facilidades a los gestores para controlar el progreso de los proyectos
+      - Proponen un enfoque sistemático, secuencial, para el desarrollo del software
+      - Comienza en un nivel de sistemas y progresa con el análisis, diseño, codificación, pruebas y mantenimiento
+      - Plantean fases separadas en la especificación y el desarrollo
+
+      ___Inconvenientes___
+
+      - La filosofía de estos modelos de proceso no es realista
+      - No se ajusta al proceso de desarrollo software (raramente sigue un flujo secuencial sino que exige diversas iteraciones)
+      - No ofrece un soporte adecuado a las técnicas de desarrollo basadas en objetos y componentes
+
+      ---
+      # Modelos para el desarrollo de software:
+
+      ## El modelo en cascada.
+
+      ![RN](./media/cascada.png)
+      ---
+      # Modelos para el desarrollo de software:
+
+      ## El modelo en cascada.
+      - Conocido también como modelo lineal o Clásico
+      - Versión original se debe a W. Royce [Royce, 1970]
+      - Se encuentra definido en la norma estándar 2167-A del DoD de EEUU
+
+      ___Características:___
+      - Considera las actividades fundamentales del proceso especificación, desarrollo, validación y evolución.
+      - Los representa como fases separadas del proceso, tales como la especificación de requerimientos, el diseño del software, la implementación, las pruebas, etcétera.
+      - Paso de fase al conseguir los objetivos
+      - Obtención de documentos como criterio de finalización de fase 
+      - El final de una fase puede suponer un punto de revisión
+      
+      ---
+      # Modelos para el desarrollo de software:
+
+      ## El modelo en cascada.
+      __Análisis y definición de requerimientos.__
+      - Los servicios restricciones y metas del sistema se definen a partir de las consultas con los usuarios.
+      - Entonces, se definen en detalle y sirven de manera específica al sistema.
+      
+      __Diseño del sistema y del software.__
+      - El proceso de diseño del sistema divide los requerimientos en sistemas.
+      - Establece una arquitectura completa del sistema.
+      - El diseño del software describe los elementos abstractos que son fundamentales para el software y sus relaciones. 
+      
+      ---
+      # Modelos para el desarrollo de software:
+
+      ## El modelo en cascada.
+      __Implementaciones prueba de unitarias.__
+      - Durante esta etapa el diseño del software se lleva a cabo como un conjunto de unidades de programas.
+      - La prueba unitaria implica verificar que cada una cumpla con su función específica.
+      
+      __Integración y prueba del sistema.__
+      - Los programas o las unidades individuales de programas se integran y se prueban como un sistema completo para así asegurar que se cumplan los requerimientos del software.
+      - El software se entrega al cliente.
+      
+      ---
+      # Modelos para el desarrollo de software:
+
+      ## El modelo en cascada.
+      __Funcionamiento y mantenimiento.__
+      - En esta fase el sistema se instala y se pone en funcionamiento práctico.
+      - El mantenimiento implica corregir errores no descubiertos en las etapas anteriores del ciclo de vida.
+      - Se pueden mejorar la implementación de las unidades del sistema y resaltar los servicios del sistema de acuerdo a nuevos requerimientos.
+      
+      ---
+      # Modelos para el desarrollo de software:
+
+      ## El modelo en cascada.
+      __Ventajas:__
+      - Simple y fácil de entender y usar
+      - Fácil de manejar debido a la rigidez del modelo. 
+      - Cada fase tiene entregables específicos y un proceso de revisión.
+      - Las fases se procesan y se completan una a la vez.
+      - Funciona bien para proyectos más pequeños donde los requisitos se entienden muy bien.
+      - Etapas claramente definidas.
+
+      ---
+      # Modelos para el desarrollo de software:
+
+      ## El modelo en cascada.
+      __Ventajas:__
+      - Hitos bien entendidos.
+      - Tareas fáciles de organizar.
+      - El proceso y los resultados están bien documentados.
+
+      ---
+      # Modelos para el desarrollo de software:
+
+      ## El modelo en cascada.
+      __Desventajas__
+      - No se produce ningún software que funcione hasta el final del ciclo de vida.
+      - Grandes cantidades de riesgo e incertidumbre.
+      - No es un buen modelo para proyectos complejos y orientados a objetos.
+      - Modelo deficiente para proyectos largos y en curso.
+      - No es adecuado para proyectos donde los requisitos tienen un riesgo de cambio moderado a alto. Entonces, el riesgo y la incertidumbre son altos con este modelo de proceso.
+      - Es difícil medir el progreso dentro de las etapas.      
+
+      ---
+      # Modelos para el desarrollo de software:
+
+      ## El modelo en cascada.
+      __Desventajas__
+      - No se pueden adaptar los requisitos cambiantes.
+      - Ajustar el alcance durante el ciclo de vida puede finalizar un proyecto.
+      - La integración se realiza como un "big-bang" al final, que no permite identificar temprano ningún cuello de botella tecnológico o comercial o desafíos.
+      - La linealidad no se corresponde con la realidad del proceso de software
+
+      ---
+      # Modelos para el desarrollo de software:
+
+      ## El modelo en cascada.
+
+      ![RN](./media/cascada2.png)
+
+      ---
+      # Modelos para el desarrollo de software:
+
+      ## El Modelo en V
+
+      - Es una variación del modelo en cascada que demuestra cómo se relacionan las actividades de prueba con las de análisis y desarrollo [GMD, 1992]
+      - Presenta una implantación ascendente
+      - Demuestra que el desarrollo de las pruebas se efectúa de manera síncrona con el desarrollo del programa
+      - Mientras que el modelo clásico centra su atención en los documentos y artefactos producidos, el modelo en V lo hace en la actividad y la exactitud
+
+      ---
+      # Modelos para el desarrollo de software:
+
+      ## El Modelo en V
+      
+      ![RN](./media/env.png)
+      ---
+
+      ---     
+      # Modelos para el desarrollo de software:
+
+      ## El modelo de iterativo. 
+      - El proceso iterativo comienza con una implementación simple de un pequeño conjunto de requisitos de software
+      - Mejora iterativamente las versiones en evolución hasta que el sistema completo se implemente y esté listo para desplegarse.
+      - No intenta comenzar con una especificación completa de los requisitos. 
+      - El desarrollo comienza especificando e implementando solo una parte del software, que luego se revisa para identificar requisitos adicionales. 
+      - Este proceso se repite, produciendo una nueva versión del software al final de cada iteración del modelo.
+
+      ---
+      # Modelos para el desarrollo de software:
+
+      ## El modelo de iterativo.
+      - El proceso iterativo comienza con una implementación simple de un subconjunto de los requisitos de software y mejora iterativamente las versiones en evolución hasta que se implementa el sistema completo. 
+      - En cada iteración, se realizan modificaciones de diseño y se agregan nuevas capacidades funcionales. 
+      - La idea básica detrás de este método es desarrollar un sistema a través de ciclos repetidos (iterativo) y en porciones más pequeñas a la vez (incremental).
+      
+      ---
+      # Modelos para el desarrollo de software:
+
+      ## El modelo de iterativo.
+
+      ![RN](./media/iterativo.png)
+      
+      ---
+      # Modelos para el desarrollo de software:
+
+      ## El modelo de iterativo.
+
+      - El desarrollo iterativo e incremental es una combinación de diseño iterativo o método iterativo y modelo de construcción incremental para el desarrollo. 
+      - "Durante el desarrollo de software, puede haber más de una iteración del ciclo de desarrollo de software al mismo tiempo". 
+      - Este proceso puede describirse como un enfoque de "adquisición evolutiva" o de "construcción incremental".
+      - En este modelo incremental, todo el requisito se divide en varias compilaciones. 
+      - Durante cada iteración, el módulo de desarrollo pasa por los requisitos, el diseño, la implementación y las fases de prueba. 
+
+      ---
+      # Modelos para el desarrollo de software:
+
+      ## El modelo de iterativo.
+      - Cada versión posterior del módulo agrega función a la versión anterior. 
+      - El proceso continúa hasta que el sistema completo esté listo según el requisito.
+      - La clave para un uso exitoso de un ciclo de vida de desarrollo de software iterativo es la validación rigurosa de los requisitos, y la verificación y prueba de cada versión del software con respecto a estos requisitos dentro de cada ciclo del modelo. 
+      - A medida que el software evoluciona a través de ciclos sucesivos, las pruebas deben repetirse y extenderse para verificar cada versión del software.
+
+      ---
+      # Modelos para el desarrollo de software:
+
+      ## El modelo de iterativo.
+      - Este modelo se usa con mayor frecuencia en los siguientes escenarios:
+       - Los requisitos del sistema completo están claramente definidos y entendidos.
+       - Deben definirse los requisitos principales; sin embargo, algunas funcionalidades o mejoras solicitadas pueden evolucionar con el tiempo.
+       - Hay un tiempo para la restricción del mercado.
+       - Se está utilizando una nueva tecnología y el equipo de desarrollo la está aprendiendo mientras trabaja en el proyecto.
+       - Los recursos con los conjuntos de habilidades necesarios no están disponibles y están planificados para ser utilizados por contrato para iteraciones específicas.
+       - Hay algunas características y objetivos de alto riesgo que pueden cambiar en el futuro.
+      
+      ---
+      # Modelos para el desarrollo de software:
+
+      ## El modelo de iterativo.
+
+      __Ventajas:__
+      - Algunas funcionalidades de trabajo se pueden desarrollar rápidamente y temprano en el ciclo de vida.
+      - Los resultados se obtienen temprano y periódicamente.
+      - El desarrollo paralelo se puede planificar.
+      - El progreso puede ser medido.
+      - Menos costoso para cambiar el alcance / requisitos.
+      - Probar y depurar durante una iteración más pequeña es fácil.
+      - Los riesgos se identifican y resuelven durante la iteración; y cada iteración es un hito fácil de administrar.
+
+      ---
+      # Modelos para el desarrollo de software:
+
+      ## El modelo de iterativo.
+
+      __Ventajas:__
+      - Gestión de riesgos más fácil: la parte de alto riesgo se realiza primero.
+      - Con cada incremento, se entrega el producto operativo.
+      - Los problemas, desafíos y riesgos identificados de cada incremento se pueden utilizar / aplicar al siguiente incremento.
+      - El análisis de riesgos es mejor.
+      - Es compatible con los requisitos cambiantes.
+      - El tiempo de operación inicial es menor.
+      - Más adecuado para proyectos grandes y de misión crítica.
+
+      ---
+      # Modelos para el desarrollo de software:
+
+      ## El modelo de iterativo.
+
+      __Ventajas:__
+      - Durante el ciclo de vida, el software se produce temprano, lo que facilita la evaluación y retroalimentación del cliente.
+      
+       
+      
+      
+      
+    </textarea>
+    <script src="scripts/remark.js"></script>
+    <script>
+       var slideshow = remark.create();
+    </script>
+  </body>
+</html>
