@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../estilos/estilos.css">
+  </head>
+  <body>
+    <textarea id="source">
+      name: inverse
+      layout: true
+      class: center, middle, inverse
+      ---
+      template: inverse
+      # Introducción a los compiladores
+      
+      ---
+      layout: false
+      # Introducción a los compiladores
+      
+
+      ## Contenidos
+      - Compilador
+
+
+      ---
+      # Compilador:
+
+      ![](./media/compiladores01.png)
+
+      > Un compilador es un programa que traduce un programa escrito en lenguaje fuente y produce otro equivalente escrito en un lenguaje destino
+
+      ---
+      # Programa fuente:
+
+      La entrada de un compilador es un programa que esta escrito en lenguaje de programación como:
+      - Lenguajes de alto nivel: C++, Java, C#
+      - Lenguajes especializados para alguna disciplina específica: simulink de Matlab
+
+      ![mini](./media/programa_fuente.png)
+
+      ---
+      # Programa objeto:
+      
+      La salida de un compilador es un programa que puede estar escrito en:
+      - ___Código Asembler:___ Implementa una representación simbólica de los códigos de máquina binarios y otras constantes necesarias para programar una arquitectura dada de CPU y constituye la representación más directa del código máquina específico para cada arquitectura legible por un programador.
+      - ___Código de máquina:___ Código con el que trabaja el microprocesador; para reaccionar y efectuar la operación que se desea, necesita de una secuencia de señales eléctricas almacenadas como "unos" y "ceros" en las posiciones de la memoria.
+      - ___Código binario:___ Sistema numérico usado para la representación de textos, o procesadores de instrucciones de computadora, utilizando el sistema binario (sistema numérico de dos dígitos, o bit: el "0" /cerrado/ y el "1" /abierto/).
+      - ___Lenguaje de alto nivel:___ Se caracteriza por expresar los algoritmos de una manera adecuada a la capacidad cognitiva humana, en lugar de la capacidad ejecutora de las máquinas.
+
+      ---
+      # Mensajes de error:
+      
+      Una de las misiones más importantes de un compilador, es manejar los errores aunque, al mismo tiempo, es lo que más dificulta su realización. Donde más se utiliza es en las etapas de análisis sintáctico y semántico, aunque los errores se pueden descubrir en cualquier fase de un compilador.
+
+      ![](./media/error.png)
+
+      ---
+      # Mensajes de error:
+
+      El manejo de los errores es una tarea difícil, por dos motivos:
+      - A veces unos errores ocultan otros.
+      - A veces un error provoca una avalancha de muchos errores que se solucionan con el primero.
+
+      Hay dos criterios a seguir a la hora de manejar errores:
+      - Pararse al detectar el primer error.
+      - Detectar todos los errores de una pasada.
+
+      ---
+      # Análisis de un programa fuente:
+
+      Consiste en un proceso compuesto por dos fases:
+      - ___Análisis:___ Durante esta etapa, el programa fuente se divide en sus elementos componentes, creándose una representación intermedia del mismo. Durante este proceso, es posible detectar posibles errores en la escritura del programa.
+      - ___Síntesis:___ Como resultado de esta etapa se obtiene la síntesis del programa objeto.
+
+      ![](./media/analisis.png)
+
+      ---
+      # Fases de un compilador:
+
+
+      ![](./media/fases.png)
+
+      ---
+      # Fases de un compilador:
+
+      ___Análisis:___ El cual se trata de la escritura correcta del código fuente. Esta a su vez comprende varias fases:
+      - ___Análisis léxico:___ esta fase es la encargada de leer el código fuente y separarlo en lotes para poder ser leído por el análisis sintáctico.
+      - ___Análisis sintáctico:___ esta fase evalúa los lotes de código con el fin de que este cumpla con los requerimientos definidos por el compilador.
+      - ___Análisis semántico:___ en esta fase se busca establecer que el código fuente cumpla con la semántica solicitada por el compilador, es decir que el código este correctamente escrito para poder ser interpretado.
+      
+      ---
+      # Fases de un compilador:
+
+      ___Síntesis:___ Después del proceso de análisis se procede a generar grupos de los componentes que conforman el programa, para generar una salida.
+      - ___Generación de código intermedio:___ este código se genera con el fin de mejorar el uso de la memoria con el fin de optimizar código fuente.
+      - ___Optimización de código:___ el objeto de esta fase es mejorar el código para que sea más rápido ejecutarlo.
+      - ___Generación de código:___ Aquí se crea el código final de salida que va a ser interpretado por la máquina.
+
+      
+      ___Detección y tratamiento de errores:___ Aunque es en la etapa de análisis donde se detectan la mayoría de los errores, cada etapa del proceso puede encontrar errores
+
+      ---
+      # Análisis (front-end)
+
+      ## Análisis lexicográfico:
+
+      - Se examina el programa fuente de izquierda a derecha, reconociendo las unidades básicas de información pertenecientes al lenguaje.
+      - Estas unidades básicas se denominan unidades léxicas o tokens.
+      - Un token es un elemento o cadena (secuencia de caracteres) que tiene un significado propio en el lenguaje.
+      - Además de reconocer cada token, almacena en la tabla de símbolos aquella información del símbolo que pueda ser necesaria para las restantes fases de compilación.
+      - En el caso de que no existan errores en este primer análisis, se obtiene una representación del programa formada por:
+       - La descripción de símbolos en la tabla de símbolos.
+       - Una secuencia de símbolos en la que se incluye, junto a cada símbolo, una referencia a la ubicación de dicho símbolo en la tabla de símbolos. 
+       - Esta secuencia es denominada tira de tokens.
+      
+      ---
+      # Análisis (front-end)
+ 
+      ## Análisis lexicográfico:
+       
+      - En esta nueva representación, se ha eliminado previamente toda la información superflua, como comentarios, tabulaciones y espacios en blanco no significativos.
+      - Los errores que pueden ser reconocidos se deben a la detección de cadenas de caracteres del programa fuente que no se ajustan al patrón de ningún token, como identificadores de variables incorrectos, números expresados incorrectamente, cadenas de caracteres mal delimitadas, etc.
+
+      ---
+      # Análisis (front-end)
+
+      ## Análisis sintáctico:
+
+      - La sintaxis de un lenguaje de programación especifica cómo deben escribirse los programas basándose en un conjunto de reglas sintácticas que determinan la gramática del lenguaje. 
+      - Un programa es sintácticamente correcto cuando sus estructuras (expresiones, sentencias, asignaciones, etc.) aparecen dispuestas de forma correcta de acuerdo a la gramática del lenguaje.
+      - El análisis sintáctico recibe la tira de tokens del analizador lexicográfico e investiga en ella los posibles errores sintácticos que aparezcan, como expresiones estructuradas incorrectamente, falta de algún token dentro de una sentencia, formato incorrecto en una asignación, etc.
+      - En caso de no encontrar errores, se agrupan los componentes léxicos en frases gramaticales que serán utilizadas en la síntesis del programa objeto. 
+      - Estas frases gramaticales se suelen representar mediante un árbol sintáctico que pone de manifiesto la estructura jerárquica de los componentes de un programa.
+
+      ---
+      # Análisis (front-end)
+
+      ## Análisis semántico:
+
+      - Una construcción de un lenguaje de programación puede ser sintácticamente correcta y carecer de significado. 
+      - Por tanto, si queremos generar código en lenguaje máquina con el mismo significado que el código fuente, tendremos que determinar la  validez semántica de las construcciones del código fuente.
+      - El análisis semántico se encarga de estudiar la coherencia semántica del código fuente a partir de la identificación de las construcciones sintácticas y de la información almacenada en la tabla de símbolos.
+      - El análisis semántico debe ser capaz de detectar construcciones sin un significado correcto. 
+      - Por ejemplo, asignar a una variable de tipo entero un valor de tipo cadena de caracteres, sumar dos valores booleanos, etc.
+
+      ---
+      # Síntesis (back-end)
+
+      ## Generación de código intermedio:
+
+      - Se traduce el resultado de la etapa de análisis (en el caso de ausencia de errores) a un lenguaje intermedio propio del compilador. 
+      - Esta representación intermedia (código intermedio) debe poseer las siguientes características:
+       - Debe ser independiente de la máquina.
+       - Debe ser fácil de producir.
+       - Debe ser fácil de traducir a un lenguaje máquina.
+      - Esta fase aparece, generalmente, en aquellos compiladores construidos para su implantación en distintas máquinas, ya que su existencia hace que todos los módulos de análisis del compilador sean comunes para todas las máquinas (aumenta la portabilidad del compilador y se abaratan sus costes de construcción).
+
+      ---
+      # Síntesis (back-end)
+
+      ## Optimización de código:
+
+      - Esta fase se suele introducir para mejorar la eficiencia del código producido por el compilador. Se toma el código  intermedio de forma global y se optimiza, adaptándolo a las características del procesador al que va dirigido para mejorar los resultados de su ejecución.
+      - La optimización se realiza en cualquier parte del programa, pero es en los bucles donde se consiguen los mejores resultados; por ejemplo, sacar una sentencia que se repite fuera del bucle, consiguiendo que sólo se ejecute una vez. 
+      - De esta forma, se consigue un programa igualmente correcto, pero que consume menos tiempo de ejecución.
+      - Un problema de la optimización es que incrementa el tamaño y la complejidad del compilador.
+
+      ---
+      # Síntesis (back-end)
+
+      ## Generación de código destino:
+
+      - Se traduce el código intermedio optimizado a código final, es decir, al lenguaje máquina (en algunos casos a ensamblador) del procesador al que va dirigido el compilador. 
+      - Para ello, se reserva la memoria necesaria para cada elemento del código intermedio, y cada instrucción en lenguaje intermedio es traducida a varias instrucciones en lenguaje máquina.
+
+      ---
+      # Detección y tratamiento de errores
+
+      - Aunque es en la etapa de análisis donde se detectan la mayoría de los errores, cada etapa del proceso puede encontrar errores. 
+      - Para tratar adecuadamente un error, interviene el módulo de tratamiento de errores que comprende generalmente la realización de dos acciones:
+       - ___Diagnóstico del error:___ Trata de buscar su localización exacta y la posible causa del mismo, para ofrecer al programador un mensaje de diagnóstico, que será incluido en el listado de compilación.
+       - ___Recuperación del error:___ Después de detectado un error, cada fase debe tratarlo de alguna forma para poder continuar con la compilación y permitir la detección de más errores, aunque no se genere código objeto.
+      
+      ## Tipos de errores:
+      - ___Errores lexicográficos:___ Se producen por la aparición de tokens no reconocibles, es decir, cadenas que no se ajustan al patrón de ningún símbolo elemental del lenguaje.
+      - ___Errores sintácticos:___ Aparecen cuando se violan las reglas de sintaxis del lenguaje.
+
+      ---
+      # Detección y tratamiento de errores
+
+      ## Tipos de errores:
+      - ___Errores semánticos:___ Se detectan cuando aparece una secuencia sintácticamente correcta, pero que carece de sentido dentro del contexto del programa fuente.
+      - ___Errores lógicos:___ Son debidos a la utilización de un algoritmo o expresión incorrecta para el problema que se trata de resolver.
+      - ___Errores de ejecución:___ Son errores relacionados con desbordamientos, operaciones matemáticamente irresolubles, etc.
+
+      ---
+      # Herramientas para construir un compilador
+
+      - ___Generadores de analizadores sintácticos (parsers):___ que producen analizadores sintácticos a partir de descripción gramatical.
+      - ___Generadores de escáneres:___ que producen analizadores léxicos a partir de tokens.
+      - ___Motores de traducción orientados a la sintaxis:___ que producen colecciones de rutinas para recorrer un árbol de análisis sintáctico.
+      - ___Generadores de generadores de código:___ que producen un generador de código a partir de una colección de reglas.
+      - ___Motores de análisis de flujos de datos:___ que facilitan la recopilación de información de cómo se transmiten los valores de una parte del programa a cada una de las otras partes.
+      - ___Kits de herramientas para a construcción de compiladores:___ que proporcionan un conjunto integrado de rutinas para construir fases de un compilador
+
+      ---
+      # Definición de Sintaxis
+      
+      La sintaxis de un lenguaje de programación describe el formato apropiado de sus programas, mientras que la semántica del lenguaje lo que sus programas significan.
+      - Definición de gramáticas
+      - Derivaciones
+      - Árboles de análisis sintáctico
+      - Ambigüedad
+      - Asociatividad de los operadores
+      - Precedencia de operadores
+
+      ---
+      # Definición de gramáticas
+      
+      Una gramática describe en forma natural la estructura jerárquica de la mayoría de las instrucciones de un lenguaje de programación.
+
+      Una gramática libre de contexto tiene cuatro componentes:
+      - Un conjunto de símbolos terminales (tokens). Los terminales son los símbolos elementales del lenguaje definido por la gramática.
+      - Un conjunto de no terminales (variables sintácticas). Cada no terminal representa un conjunto de cadenas o terminales.
+      - Un conjunto de producciones, cada producción consiste en un no terminal llamada encabezado o lado izquierdo de la producción, una flecha y una secuencia de terminales y no terminales llamada cuerpo o lado derecho de la producción.
+      - Una designación de una de los no terminales como símbolo inicial.
+
+      ---
+      # Derivaciones
+
+      Una gramática deriva cadenas empezando con el símbolo inicial y sustituyendo en forma repetida un no terminal, mediante el cuerpo de una producción para ese no terminal.
+
+      ![](./media/derivaciones.png)
+
+      ---
+      # Árboles de análisis sintáctico
+
+      Un árbol de análisis sintáctico muestra, en forma gráfica, la manera en que el símbolo inicial de una gramática deriva de una cadena en el lenguaje.
+
+      De manera formal un árbol de análisis sintáctico tiene las siguientes propiedades:
+      - La raíz se etiqueta con el símbolo inicial.
+      - Cada hoja se etiqueta con un terminal.
+      - Cada nodo interior se etiqueta con un no terminal.
+      - Cada árbol tiene una producción.
+
+      ---
+      # Ambigüedad
+
+      Cuando una gramática puede tener más de un árbol de análisis sintáctico que genere una cadena dada de terminales, se dice que dicha gramática es ambigua.
+
+      ![](./media/ambiguedad.png)
+
+      ---
+      # Asociatividad de operadores
+
+      - Cuando los operadores tienen la misma precedencia
+      - Hay operadores asociativos por la izquierda y por la derecha.
+      - Resuelven gramáticas ambiguas.
+
+      >> asociativo por la izquierda: + -
+
+      >> asociativo por la derecha: * /
+
+      ---
+      # Precedencia de operadores
+
+      - Hay operadores con mayor precedencia
+      - Se debe aplicar asociatividad para los de igual precedencia
+
+      ![](./media/precedencia.png)
+
+      ---
+      # Subdivisión de expresiones
+
+      ![](./media/subdivision.jpg)
+
+      ---
+      # Análisis léxico
+
+      Un analizador léxico lee los caracteres de la entrada y los agrupa en “objetos token”.
+
+      - Eliminación de espacio en blanco y comentarios
+      - Lectura adelantada
+      - Constantes
+      - Reconocimiento de palabras clave e identificadores
+      - Analizar léxico
+      
+      ___Eliminación de espacio en blanco y comentarios___
+
+      - La mayoría de los lenguajes de programación permiten espacios en blanco entre los tokens.
+      - Los analizadores sintácticos ignoran los espacios en blanco y los comentarios, los analizadores léxicos no.
+      - Cuando son eliminados por el analizar léxico, el analizador sintáctico no tendrá que considerarlo.
+
+      ---
+      # Análisis léxico
+
+      ___Lectura adelantada___
+
+      - Consiste en leer carácter siguiente o siguientes antes de determinar el token.
+      - Para símbolos
+      - Para algunos operadores
+      - Se determina si el carácter siguiente es parte de la secuencia.
+
+      ___Reconocimiento de palabras clave e identificadores___
+
+      - Las instrucciones condicionales, de control y otras (palabras clave) sirven como identificadores
+      - Los identificadores son tratados como terminales
+      - Solo las instrucciones que no son palabras clave sirven de identificadores.
+      
+      ---
+      # Tabla de Símbolos
+
+      Las tablas de símbolos son estructuras de datos que utilizan los compiladores para guardar información acerca de las construcciones de un programa fuente.
+
+      Las entradas en la tabla de símbolos contienen información acerca de un identificado, como su cadena de caracteres (lexema), su tipo, su posición en el espacio de almacenamiento, etc.
+
+      
+
+      ---
+      # Referencias Bibliográficas
+      
+      - Compiladores. principios, técnicas y herramientas. Segunda edición. Alfred V. Aho, Monica S. Lam. Ravi Sethi. Jeffrey D. Ullman. Pearson.
+      - Compiladores e intérpretes: teoría y práctica. Manuel Alfonseca Moreno, Marina de la Cruz Echeandía, Alfonso Ortega de la Puente, Estrella Pulido Cañabate. Departamento de Ingeniería Informática. Universidad Autónoma de Madrid. Pearson
+      - Compiladores, Traductores y Compiladores con Lex/Yacc, JFlex/cup y JavaCC. Sergio Gálvez Rojas, Miguel Ángel Mora Mata. Universidad de Málaga
+
+
+      
+
+
+    </textarea>
+    <script src="scripts/remark.js"></script>
+    <script>
+       var slideshow = remark.create();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="estilos.css">
+  </head>
+  <body>
+    <textarea id="source">
+      name: inverse
+      layout: true
+      class: center, middle, inverse
+      ---
+      template: inverse
+      # Calidad de software
+      ---
+      layout: false
+      # Calidad de software
+
+      ## Contenidos
+      - ¿Qué es Calidad?
+      - ¿Qué no es Calidad?
+      - Terminología (ISO 8402):
+      - La calidad del software:
+      - Factores que determinan la calidad del software
+      - Medir la calidad del software
+      - Un proceso "confiable"
+      - El Comité de Calidad != Calidad del producto
+      - El uso de estándares != Calidad del producto
+      - La industria de software
+
+      ---
+      # Calidad de software
+
+      ## Contenidos
+      - ¿Cómo se puede llegar a la Calidad?
+      - Sistema de Calidad
+      - Enfoques de calidad
+      - Software Quality Assurance (SQA)
+      - Atributos de Calidad
+      - Funciones y Actividades de SQA
+      - Habilidades y Capacidades requeridas en SQA
+      - ISO 25000
+      - Referencias
+
+
+
+      ---
+      # ¿Qué es Calidad?
+
+      > La Calidad puede definirse como el conjunto de características de una entidad, que le confieren la aptitud para satisfacer las necesidades establecidas y las implícitas [ISO 8402].
+
+      - El concepto de entidad se extiende tanto a ___procesos___, como a ___productos___ y ___servicios___, una organización, o combinación de ellos.
+      - Las ___necesidades establecidas___ son las que están especificadas, ya sea por un reglamento (necesidades para un proceso, producto, etc.), por un cliente (características para un producto o servicio), etc.
+      - Las ___necesidades implícitas___ son las que no están especificadas, pero que conviene identificar y definir.
+
+      ---
+      # ¿Qué no es Calidad?
+      - Unos lo confunden con un ___producto de unas cualidades inmejorables___. Sin embargo la calidad va más allá de las características de un producto o servicio.
+      - Otros la asocian con una ___acumulación de papeles___ que no sirven sino para ralentizar el trabajo, y el desarrollo de las actividades. Sin embargo, la calidad, o en este caso el ___SISTEMA DE CALIDAD___ en una organización, es algo más que una serie de documentos y papeles para rellenar.
+      - Y muchos otros identifican calidad con ___CONTROL DE CALIDAD___, siendo este último sólo una parte que constituyen un Sistema de Calidad.
+
+      ---
+      # Terminología (ISO 8402):
+      __Calidad:__
+      >> “Conjunto de propiedades y características de un producto o servicio que le confieren su aptitud para satisfacer unas necesidades explícitas o implícitas”.
+
+      __Control de calidad:__
+      >> “Conjunto de técnicas y actividades de carácter operativo, utilizadas para verificar los requerimientos relativos a la calidad del producto o servicio”.
+
+      ---
+      # Terminología (ISO 8402):
+
+      __Garantía de calidad:__
+      >> “Conjunto de acciones planificadas y sistemáticas necesarias para proporcionar la confianza adecuada de que un producto o servicio satisfará los requerimientos dados sobre calidad”.
+
+      ---
+      # Terminología (ISO 8402):
+      __Gestión de la calidad:__
+      >> “Aspecto de la función de gestión que determina y aplica la política de la calidad, los objetivos y las responsabilidades y que lo realiza con medios tales como la planificación de la calidad, el control de la calidad, la garantía de calidad y la mejora de la calidad”.
+
+      - La gestión de la calidad es responsabilidad de todos los niveles ejecutivos, pero debe estar guiada por la alta dirección. Su realización involucra a todos los miembros de la organización.
+      - En la gestión de la calidad, se tienen en cuenta también criterios de rentabilidad.
+
+      ---
+      # Terminología (ISO 8402):
+      __Sistema de gestión de la calidad:__
+      >> “Conjunto de la estructura de la organización, de responsabilidades, procedimientos, procesos y recursos que se establecen para llevar a término la gestión de calidad”.
+
+      - El QS debe tener el volumen y alcance suficiente para conseguir los objetivos de calidad.
+      - El QS de una organización está fundamentalmente previsto para satisfacer las necesidades internas de la organización. Es más amplio que los requerimientos de un cliente concreto que únicamente valor el QS que le interesa (directamente).
+      - Para finalidades contractuales o vinculantes en la valoración de la calidad, se puede exigir que se ponga de manifiesto la realización de ciertos elementos del QS.
+
+      ---
+      # La calidad del software:
+      >> “La calidad del software es el grado con el que un sistema, componente o proceso cumple los requerimientos especificados y las necesidades o expectativas del cliente o usuario”. (IEEE, Std. 610-1990).
+
+      >> “Concordancia del software producido con los requerimientos explícitamente establecidos, con los estándares de desarrollo prefijados y con los requerimientos implícitos no establecidos formalmente, que desea el usuario” (Pressman, 1998).
+
+      ---
+      # Factores que determinan la calidad del software:
+      Se pueden clasificar en dos grandes grupos:
+      - Factores que pueden ser medidos directamente.
+      - Factores que solo pueden ser medidos indirectamente.
+
+      Se centran en tres aspectos importantes de un producto software:
+      - Características operativas.
+      - Capacidad de soportar los cambios.
+      - Adaptabilidad a nuevos entornos.
+
+      ---
+      # Factores que determinan la calidad del software:
+
+      __Características operativas:__
+      - ___Corrección:___ ¿Hace lo que quiero?
+      - ___Fiabilidad:___ ¿Lo hace de forma fiable todo el tiempo?
+      - ___Eficiencia:___ ¿Se ejecutará en mi hardware lo mejor que pueda?
+      - ___Seguridad (Integridad):___ ¿Es seguro?
+      - ___Facilidad de uso:___ ¿Está diseñado para ser usado?
+
+      __Capacidad de soportar los cambios:__
+      - ___Facilidad de mantenimiento:___ ¿Puedo corregirlo?
+      - ___Flexibilidad:___ ¿Puedo cambiarlo?
+      - ___Facilidad de prueba:___ ¿Puedo probarlo?
+
+      ---
+      # Factores que determinan la calidad del software:
+      __Adaptabilidad a nuevos entornos:__
+      - ___Portabilidad:___ ¿Podré usarlo en otra máquina?
+      - ___Reusabilidad:___ ¿Podré reutilizar alguna parte del software?
+      - ___Interoperabilidad:___ ¿Podré hacerlo interactuar con otro sistema?
+
+      ---
+      # Medir la calidad del software:
+
+      __Dogmas__, __leyendas__ y __supersticiones__ sobre la creación de software de calidad que:
+      - no son congruentes con los hechos
+      - más y más gentes cuestionan cada vez menos.
+
+      y se convierten en:
+      - verdades cotidianas
+      - estándares a exigir.
+
+      ---
+      # Medir la calidad del software:
+
+      >> Es posible medir subjetivamente _(solicitando opiniones)_ la calidad del software
+
+      - ___Confiabilidad:___ Pocos errores.
+      - ___Flexibilidad:___ Adaptable a nuevas situaciones.
+      - ___Robustez:___ No falla.
+      - ___Comprensión:___ ¿Es entendible el código?
+      - ___Fácil de usar:___ Ergonómico.
+      - ___Reusable:___ Se pueden usar porciones en otro software.
+      - ___Rápido:___ (medición objetiva)
+      - ___Mantenible:___ Fácil de hacerle cambios.
+
+      ???
+      # Medir la calidad del software:
+
+      El problema surge cuando deseamos medir las cualidades anteriores en forma __objetiva__:
+
+      - ___Confiabilidad___ (pocos errores). Ver el número de mensajes de error del código fuente. A más mensajes, menos errores??
+      - ___Flexibilidad___ (adaptable a nuevas situaciones). Ver a cuántos estándares se apega??
+      - ___Robustez___ (no falla). Ver si se diseñó con UML o método conocido??
+      - ___Comprensión___ (el código es entendible). Si no contiene “GO TOs” ni variables libres??
+      - ___Facilidad de uso___ (ergonomía). Medir por el tamaño de los manuales??
+      - ___Reusabilidad___ (se puede usar en otras aplicaciones). Ver si las clases comparten pocas variables (coherencia)??
+      - ___Mantenibilidad___ (fácil de hacerle cambios). Medir la bondad de su documentación??
+      - ___Modularidad___ (descomposición en partes que desempeñan una función clara). Se mide contando los módulos o clases o componentes.??
+      - ___Complejidad___ (código enredado). Contando el nivel de anidación de los paréntesis??
+      - ___Portabilidad___ (usable en otros ambientes). Si se ocultan bien sus variables internas??
+
+      ---
+      # Medir la calidad del software:
+
+      - Pocas mediciones son objetivas
+      - Se mide altura en vez de volumen
+      - Muchas mediciones son estáticas
+
+      - Medimos lo que podemos, no lo que deberíamos
+      >> <div class="danger">“busco la llave donde hay luz”</div>
+
+      - Para cada atributo hay una medición confiable (objetiva)
+      >> <div class="danger">“Si no puede medir la liebre, mida al gato. Da lo mismo.”</div>
+
+      ---
+      # Un proceso "confiable"
+
+      >> <div class="danger">Un proceso confiable produce un producto confiable</div>
+
+      - Una manera de hacer buenos productos es seguir buenas recetas (buenos procesos, buenos algoritmos)
+       - Ejemplo: sopa de arroz
+       - Ejemplo: curtido de cuero
+
+      - Esto es cierto cuando la humanidad ha tenido mucha experiencia O cuando hay ciencias (Física, Química...) antiguas que apoyan tales procesos.
+
+      - Entonces, el proceso se vuelve observable (podemos ver si lo estamos siguiendo bien)
+
+      - Y el producto se vuelve controlable:
+       - Dado un defecto en el producto, sabemos qué parte del proceso modificar
+
+      ---
+      # Un proceso "confiable"
+
+      Pero esto no sucede con el software...
+      - Esto es cierto en la fabricación de bisagras o varillas de acero (leyes de la Física) .
+      - Pero no en la creación del software Más cercano a creación artística: sinfonías, novelas, pinturas, obras de teatro...
+      - Es creación, no fabricación!
+      - La calidad del software producido no está relacionada con el proceso seguido.
+      - Es posible diseñar un proceso confiable para producir buen software y si cumplimos con ese proceso, habremos hecho software de buena calidad.
+
+      >> <div class="danger">Un buen proceso implica producir software de buena calidad </div>
+
+      >> <div class="danger">“Seguir el proceso para pintar de Diego Rivera asegura obras de alta calidad”</div>
+
+      ---
+      # Un proceso "confiable"
+
+      Ejemplo de un proceso confiable, observable
+      - Reuniones cada lunes a las 9am; minutas
+      - Conformar un comité de calidad
+      - Que los integrantes del grupo de desarrollo conozcan las normas ISO 9000, 9000-3...
+      - Firme convicción de poder crear software de calidad
+      - Revisiones periódicas de código (walk-through)
+      - Llevar un Control de Cambios y un Control de Versiones
+
+      Todo esto no garantiza ___un producto de calidad___, el proceso es controlable; pero ¿el producto es controlable? ...
+
+      ---
+      # Un proceso "confiable"
+
+      - El proceso es observable (ver si se siguió)
+      - El proceso es controlable (fácil corregir: llegar más temprano a las juntas)
+      - El producto es observable (fácil ver si es de calidad)
+       - Está fallando la comunicación asíncrona entre procesos que van en distintos procesadores
+      - Si se detecta alguno de los siguientes errores, ¿qué parte  del proceso de creación de software modificar?
+       - La comunicación entre módulos en distintos procesadores a veces falla.
+       - El software producido no es reusable.
+       - Varias especificaciones no se cumplen.
+      - No se sabe
+      - El producto no es controlable vía el proceso
+
+      >> El producto (software) no es controlable directamente desde el proceso!! - no es corregible mediante correcciones al proceso -
+
+      ---
+      # El Comité de Calidad != Calidad del producto:
+
+      - El comité de calidad elabora normas sobre cómo conducir el proceso y vigila el apego a ellas del grupo desarrollador
+      - Exige apego a las normas.
+      - Regaños y sanciones
+      - El problema original (software poco reusable) seguirá sin corregirse o se corregirá “por casualidad”.
+
+      >> <div class="danger">
+      "El Comité de Calidad de Software es algo bueno y su actuación corrige los problemas de calidad"
+      </div>
+
+      ---
+      # El uso de estándares != Calidad del producto
+
+      - “Hay que usar UML”
+      - “Hay que usar CMM del Software Engineering Institute”
+      - “Hay que usar ISO 9001”
+      - No se sabe cómo hacer software de calidad, copiar a alguien con éxito (en producción de software, no en venta de estándares) puede ser útil, ¡o puede no ser!
+
+      >> <div class="danger">"Seguir estándares es bueno, si sigo un estándar internacional, no me puede ir mal.”</div>
+
+      ---
+      # La industria de software:
+
+      - No ha acabado de salir de la fase artesanal
+      - Padecemos de ___“prisa patológica”___, que es consecuencia directa de:
+       - Desorganización
+       - Falta de planificación
+       - Alta dependencia de los ___“héroes”___
+      - Dedicamos nuestros esfuerzos de hoy a arreglar lo que se hizo mal ayer.
+      - Carencia de un corpus de conocimiento aceptado mayoritariamente que sirva como fundamentos.
+      - La mayoría de las organizaciones son inmaduras en sus procesos.
+      - No somos concientes de la necesidad de formalizar los conocimientos, procesos y herramientas base.
+      - El software es mucho más que programas de computador.
+      - Construir software implica más tareas que el proceso de programar.
+      - Sin modelos de procesos y metodologías para gestionarlo el resultado es impredecible.
+
+      ---
+      # La industria de software:
+
+      >> <div class="danger">Crisis, Software sin calidad.</div>
+
+      ---
+      # ¿Cómo se puede llegar a la Calidad?
+
+      ![RN](./media/como_calidad.png)
+
+      ---
+      # Sistema de Calidad
+
+      - Un Sistema de Calidad identifica, documenta, coordina y mantiene las actividades necesarias para que los productos/servicios cumplan con los requisitos de calidad establecidos, sin tener en cuenta dónde estas actividades se producen.
+
+      - Un Sistema de Calidad pone requisitos a las actividades y procesos que se realizan en la empresa, y documenta cómo se realizan estas actividades.
+
+      - El objetivo de un Sistema de Calidad es satisfacer las necesidades internas de la gestión de la organización. Por tanto va más allá de satisfacer los requisitos que pone el cliente.
+
+      - Un Sistema de Calidad debe abarcar todas las actividades que se realizan en la empresa y que puedan afectar (directa o indirectamente) a la calidad del producto/servicio que suministra.
+
+      - Un Sistema de Calidad ayuda a evitar problemas en la ejecución de estas actividades, ya que la filtración de errores a través de las actividades de la empresa puede ocasionar importantes pérdidas.
+
+      ---
+      # Sistema de Calidad
+
+      - El costo de corregir un error entre proveedor y cliente antes de firmar el contrato, es mucho menor que si el error se detecta en la entrega al cliente del producto/servicio terminado.
+
+      - El espíritu de los Sistemas de Calidad es prevenir errores para evitar estas filtraciones y pérdidas económicas.
+
+      __¿Qué alcance tiene un sistema de calidad?__
+
+      .left-column[
+      - actividades de compra
+      - control del diseño
+      - control de la documentación
+      - realización de ofertas
+      - identificación de los productos
+      - control de los procesos
+      ]
+      .right-column[
+      - inspección de los productos
+      - tratamiento de productos no conformes
+      - almacenamiento
+      - formación del personal
+      - etc.
+      ]
+
+      ---
+      # Enfoques de calidad
+
+      El enfoque de calidad para la organización se puede afrontar en función de los siguientes factores:
+      - Tamaño de la empresa.
+      - Disponibilidad de recursos (entre ellos el tiempo).
+      - Motivo por el que necesita un Sistema de Calidad.
+
+      Los posibles enfoques son los siguientes:
+      - Enfoque global
+      - Enfoque práctico
+
+      ???
+      # Enfoque global
+
+      - Orientado para las medianas/grandes corporaciones.
+      - Plazo de implantación largo (entre 3 y 5 años).
+      - Su objetivo es conseguir el liderazgo.
+      - Está orientado a conseguir la satisfacción del cliente mediante la mejora continua.
+      - Los tres puntos fundamentales para conseguir esto son:
+       - Liderazgo de la dirección en la implantación del sistema.
+       - Participación de todo el personal de la organización.
+       - Formación continua.
+
+
+      Para este enfoque es importante entender las necesidades y requerimientos del mercado y se puede abordar:
+      - Mediante encuestas
+      - Identificando los valores clave del éxito
+      - Valor del producto para el cliente
+       - Cumplir con los compromisos
+       - Fabricar productos sin defectos
+       - Cumplir los plazos
+       - Dar un servicio de apoyo al cliente
+      - Analizando la competencia.
+      - Definir y analizar los procesos
+       - Identificando y determinando sus límites
+       - Designado sus responsables
+       - Analizando y mejorando estos procesos.
+      - Establecer mediciones y objetivos
+       - De la satisfacción de clientes
+       - De la calidad y el rendimiento de los procesos
+       - De la calidad de los proveedores y servicios
+       - Del cumplimiento de objetivos y compromisos, etc.
+      - Eliminar defectos
+       - Reducir los ciclos
+       - Identificando los puntos críticos en los procesos
+       - Estableciendo métodos y herramientas
+
+       Para la implantación de un Sistema de Calidad bajo este enfoque, existen modelos en los que puede basarse la implantación.
+       - Modelo Deming, o modelo japonés
+       - Modelo Malcom Baldridge, o modelo americano.
+
+      # Enfoque practico
+
+      - Puede ser adoptado por cualquier tipo de empresa o industria, fundamentalmente PYMES.
+      - El objetivo es mejorar en el corto plazo.
+      - Una forma de operar en estos casos es:
+        - Identificando y cuantificando los defectos
+        - Analizando las causas que los producen
+        - Estudiando las acciones a tomar para eliminarlos
+      - Existen distintas herramientas para la realización de estas actividades, como son las Metodologías de Evaluación y Mejora de Procesos, la Detección de Problemas,etc.
+      - Orientado a cualquier tipo de empresa.
+      - Su objetivo es el Aseguramiento de la Calidad como estrategia táctica de la empresa.
+      - Tiene como fin la certificación del Sistema de Calidad por un organismo externo acreditado para ello.
+      - El periodo de implantación suele estar entre 1 y 2 años dependiendo de la madurez de la organización.
+
+      ---
+      # Software Quality Assurance (SQA)
+
+      ![RN](./media/SQA.png)
+
+      El Aseguramiento de la Calidad del Software es un conjunto de actividades sistemáticas que proveen capacidad al proceso de software para producir un producto adecuado para el uso.
+
+      ---
+      # Software Quality Assurance (SQA)
+
+      - SQA forma parte fundamental de los procesos de la Inggeniería de Software.
+      - El proceso de aseguramiento de calidad se debe de dar en cada uno de los procesos de la Ingeniería de Software y no sólo hasta el final.
+      - El SQA es el principal control de calidad y consiste en la realización de pruebas a todos niveles.
+      - El Software Quality Assurance tiene como objetivo el lograr la calidad del software.
+      - SQA se define por un conjunto de mejores prácticas que llevan la verificación y validación del software desarrollado.
+      - El proceso de SQA aunque se enfoca más en la medición y control del código fuente aunque tiene que ver con las demás áreas del proceso.
+      - El SQA logra resolver la mayoría de los errores que se podrían presentar en el software, asegurando que este sea confiable, usable y costo-efectivo.
+
+      ---
+      # Atributos de Calidad
+
+      ___Calidad del producto:___
+      .left-column[
+      - usabilidad
+      - mantenibilidad
+      - correctitud
+      - rendimiento
+      - disponibilidad
+      - confiabilidad
+      ]
+      .right-column[
+      - performance
+      - amigabilidad
+      - robustez
+      - portabilidad
+      - reusabilidad
+      - etc.
+      ]
+
+      ___Calidad del proceso:___
+      - El proceso debe estar definido, documentado y debe ser practicado y medido
+
+      ---
+      # Funciones y Actividades de SQA
+
+      Cada desarrollo de software es en alguna medida único. Aún cuando se usen los mismos métodos y técnicas, existen diferencias por factores que tienen impacto en la calidad, por ejemplo:
+      - Requerimientos de plazo
+      - Presupuesto disponible
+      - Complejidad técnica
+      - Tamaño esperado del producto
+      - Experiencia relativa del grupo humano
+      - Recursos disponibles
+      - Requerimientos contractuales
+
+      ---
+      # Funciones y Actividades de SQA
+
+      - Mejorar la calidad de los procesos de desarrollo y mantenimiento del software, monitoreando, durante el transcurso del ciclo de vida de los diferentes proyectos, el cumplimiento de los estándares y procesos establecidos, antes de su puesta en producción.
+      - Establecer planes, estándares y procesos que satisfagan las políticas de la organización y se ajusten a las necesidades de cada proyecto en particular.
+      - Revisar y auditar los productos y actividades desarrolladas para verificar que ellos satisfacen los procesos y estándares definidos;
+      - Proveer las herramientas necesarias que den soporte al proceso definido, facilitando su ejecución, visualización, administración y seguimiento;
+      - Proveer al equipo de proyecto y a otros interesados, los resultados sobre las revisiones, auditorías y actividades;
+      - Escalar problemas no resueltos dentro del equipo de un proyecto hacia un nivel apropiado de administración para su resolución.
+
+      ---
+      # Habilidades y Capacidades requeridas en SQA
+
+      - Conocimiento de todo el proceso de desarrollo de software.
+      - Experiencia en varios roles dentro de la organización.
+      - Ser proactivo.
+      - Capacidad de seguimiento de actividades.
+      - Capacidad de trato con la gente.
+
+      ---
+      # ISO 25000
+
+      __Calida de software:__
+      >> “Grado en que el producto software satisface las necesidades expresadas o implícitas, cuando se usa bajo condiciones determinadas”. ISO 25000.
+
+      ___Aspectos de la calidad de software:___
+
+      - ___Interna:___ medible a partir de las características intrínsecas del propio producto software (como el código fuente).
+      - ___Externa:___ medible a partir del comportamiento del producto software (como durante una prueba)
+      - ___En uso:___ medible durante la utilización efectiva por parte del usuario (en un entorno de prueba o producción).
+
+      ---
+      # ISO 25000
+
+      ## Software Product Quality Requirements and Evaluation (SQuaRE)
+
+      - Nace por las inconsistencias entre ISO 9126 e ISO 14598.
+      - El objetivo es aglutinar bajo una misma familia el modelo de calidad y el proceso de evaluación.
+      - La versión de la primera parte es de 2005.
+      - Estado actual: 90.93 International Standard confirmed (ver estados en: http://www.iso.org/iso/stages_table.htm)
+
+      ![reducida](./media/estado_iso_25000.png)
+
+      ---
+      # ISO 25000
+
+      ## Software Product Quality Requirements and Evaluation (SQuaRE)
+
+      Formada por 5 partes (divisiones).
+
+      ![reducida](./media/secciones_iso_25000.png)
+
+      ???
+      # ISO 25000
+
+      ## ISO/IEC 2500n – División de Gestión de Calidad
+
+      Las normas que forman este apartado definen todos los modelos, términos y definiciones comunes referenciados por todas las otras normas de la familia 25000. Actualmente esta división se encuentra formada por:
+      - ISO/IEC 25000 - Guide to SQuaRE: contiene el modelo de la arquitectura de SQuaRE, la terminología de la familia, un resumen de las partes, los usuarios previstos y las partes asociadas, así como los modelos de referencia.
+      - ISO/IEC 25001 - Planning and Management: establece los requisitos y orientaciones para gestionar la evaluación y especificación de los requisitos del producto software.
+      
+      ## ISO/IEC 2501n – División de Modelo de Calidad
+
+      Las normas de este apartado presentan modelos de calidad detallados  incluyendo características para calidad interna, externa y en uso del producto software. Actualmente esta división se encuentra formada por:
+      - ISO/IEC 25010 - System and software quality models: describe el modelo de calidad para el producto software y para la calidad en uso. Esta Norma presenta las características y subcaracterísticas de calidad frente a las cuales evaluar el producto software.
+      - ISO/IEC 25012 - Data Quality model: define un modelo general para la calidad de los datos, aplicable a aquellos datos que se encuentran almacenados de manera estructurada y forman parte de un Sistema de Información.
+
+      ## ISO/IEC 2502n – División de Medición de Calidad
+
+      Incluyen un modelo de referencia de la medición de la calidad del producto, definiciones de medidas de calidad (interna, externa y en uso) y guías prácticas para su aplicación. Actualmente esta división se encuentra formada por:
+      - ISO/IEC 25020 - Measurement reference model and guide: presenta una explicación introductoria y un modelo de referencia común a los elementos de medición de la calidad. También proporciona una guía para que los usuarios seleccionen o desarrollen y apliquen medidas propuestas por normas ISO.
+      - ISO/IEC 25021 - Quality measure elements: define y especifica un conjunto recomendado de métricas base y derivadas que puedan ser usadas a lo largo de todo el ciclo de vida del desarrollo software.
+      - ISO/IEC 25022 - Measurement of quality in use: define específicamente las métricas para realizar la medición de la calidad en uso del producto.
+      - ISO/IEC 25023 - Measurement of system and software product quality: define específicamente las métricas para realizar la medición de la calidad de productos y sistemas software.
+      - ISO/IEC 25024 - Measurement of data quality: define específicamente las métricas para realizar la medición de la calidad de datos.
+
+      ## ISO/IEC 2503n – División de Requisitos de Calidad
+
+      Las normas que forman este apartado ayudan a especificar requisitos de calidad que pueden ser utilizados en el proceso de elicitación de requisitos de calidad del producto software a desarrollar o como entrada del proceso de evaluación. Para ello, este apartado se compone de:
+      - ISO/IEC 25030 - Quality requirements: provee de un conjunto de recomendaciones para realizar la especificación de los requisitos de calidad del producto software.
+
+      ## ISO/IEC 2504n – División de Evaluación de Calidad
+
+      Proporcionan requisitos, recomendaciones y guías para llevar a cabo el proceso de evaluación del producto software. Esta división se encuentra formada por:
+      - ISO/IEC 25040 - Evaluation reference model and guide: propone un modelo de referencia general para la evaluación, que considera las entradas al proceso de evaluación, las restricciones y los recursos necesarios para obtener las correspondientes salidas.
+      - ISO/IEC 25041 - Evaluation guide for developers, acquirers and independent evaluators: describe los requisitos y recomendaciones para la implementación práctica de la evaluación del producto software desde el punto de vista de los desarrolladores, de los adquirentes y de los evaluadores independientes.
+      - ISO/IEC 25042 - Evaluation modules: define lo que la Norma considera un módulo de evaluación y la documentación, estructura y contenido que se debe utilizar a la hora de definir uno de estos módulos.
+      - ISO/IEC 25045 - Evaluation module for recoverability: define un módulo para la evaluación de la subcaracterística Recuperabilidad (Recoverability).
+
+      La división de extensión de SQuaRE (ISO/IEC 25050 a ISO/IEC 25099) se reserva para normas o informes técnicos que aborden dominios de aplicación específicos o que puedan ser utilizados para complementar otras normas de la familia SQuaRE.
+
+      ---
+      # Referencias
+      - Pressman, R. (2010). Ingeniería del software (7ª ed.). México: McGrawHill.
+      - ISO/IEC 25000:2014 Systems and software engineering — Systems and software Quality Requirements and Evaluation (SQuaRE) — Guide to SQuaRE https://www.iso.org/standard/64764.html
+
+      ---
+      template: inverse
+
+      ***
+      .destacado[ Gracias!]
+      ***
+      
+      
+
+    </textarea>
+    <script src="scripts/remark.js"></script>
+    <script>
+       var slideshow = remark.create();
+    </script>
+  </body>
+</html>

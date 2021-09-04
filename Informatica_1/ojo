@@ -1,0 +1,13 @@
+
+      ??? 
+      - El Modelo es una representación de los ___datos del dominio___, aquellas entidades que nos sirven para almacenar información del sistema (entidades de información).
+
+      - Si la aplicación consume servicios prestados por otros sistemas, en el Modelo encontraremos las ___clases de transferencia de datos___ (DTO, Data Transfer Objects) que nos permitirán intercambiar información con estos.
+
+      - También representa ___la lógica de negocio___ de la aplicación, es decir, la implementación de las reglas, acciones y restricciones que nos permiten gestionar las entidades del dominio. 
+      
+      - Es el responsable de que el sistema se encuentre siempre en un estado consistente e íntegro.
+
+      - El Modelo será también el encargado de ___gestionar el almacenamiento y recuperación de datos y entidades del dominio___, es decir, incluirá mecanismos de persistencia o será capaz de interactuar con ellos. 
+      
+      - Dado que habitualmente la persistencia se delega a un motor de bases de datos, es muy frecuente encontrar en el Modelo la implementación de componentes tipo DAL (Data Access Layer, o Capa de Acceso a Datos) y ORMs.

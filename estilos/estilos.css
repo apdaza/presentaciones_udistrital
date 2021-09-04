@@ -3,25 +3,47 @@
 @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
 
 body {
-  font-family: 'Arial Narrow';
+  font-family: 'Droid Serif';
   text-align: justify;
 
 }
 h1, h2, h3 {
-  font-family: 'Arial Narrow';
+  font-family: 'Yanone Kaffeesatz';
   font-weight: 400;
   margin-bottom: 0;
 }
 .remark-slide-content {
-  background-image:url("../media/logo_escudo_horizontal.png");
   background-position:0px 600px;
   background-repeat: no-repeat;
 }
-.remark-slide-content blockquote {color:#0098cd; font-size: 1.2em; text-align: end; font-style: oblique; font-weight: bold; }
-.remark-slide-number {color: rgb(24, 44, 87); opacity: .8;}
-.remark-slide-content h1 { font-size: 2.2em; color:#0098cd; text-shadow: 0 0 8px #777872; border-bottom: groove; padding-bottom: 0.5em;}
-.remark-slide-content h2 { font-size: 1.6em; color:#2e5868; text-shadow: 0 0 5px #777872;}
-.remark-slide-content h3 { font-size: 1.2em; color:#117397; text-shadow: 0 0 3px #777872;}
+.remark-slide-content blockquote {
+  color:#cc4f14; 
+  font-size: 1em; 
+  text-align: end; 
+  font-style: oblique; 
+  font-weight: bold; 
+}
+.remark-slide-number {
+  color: rgb(24, 44, 87); 
+  opacity: 0.5;
+}
+.remark-slide-content h1 { 
+  font-size: 2.2em; 
+  color:#0098cd; 
+  text-shadow: 0 0 8px #777872; 
+  border-bottom: groove; 
+  padding-bottom: 0.5em;
+}
+.remark-slide-content h2 { 
+  font-size: 1.6em; 
+  color:#2e5868; 
+  text-shadow: 0 0 5px #777872;
+}
+.remark-slide-content h3 { 
+  font-size: 1.2em; 
+  color:#117397; 
+  text-shadow: 0 0 3px #777872;
+}
 
 .footnote {
   position: absolute;
@@ -33,6 +55,13 @@ h1, h2, h3 {
   border-radius: 5px;
   color:#cd0000;
   padding: 3px;
+}
+
+.destacado {
+  color:#cd0000;
+  font-size: 4em;
+  padding: 0.5em;
+  width: 100%;
 }
 
 li { margin-bottom: 15px; list-style-image: url("../media/li.png")}
@@ -73,15 +102,15 @@ code {
   padding: 15px;
 }
 .inverse {
-  background-image:url("../media/logo_escudo_horizontal.png"), url("../media/fondo_titulo.png");
-  background-position:0px 600px, right 250px;
-  background-repeat: no-repeat, no-repeat;
-  background-color:#0098cd;
-  color: #777872;
+  background-image: url("../media/fondo.png");
+  background-position:0px 0px;
+  background-repeat: no-repeat;
+  background-color:#ffffff;
+  color: #0963bd;
   text-shadow: 0 0 20px #333;
 }
 .inverse h1, .inverse h2 {
-  color: #f3f3f3;
+  color: rgb(66, 140, 201);
   line-height: 0.8em;
 }
 
@@ -173,12 +202,19 @@ img[alt="mini"] {
   margin: auto;
 }
 
+img[alt="nano"] {
+  max-width:  150px;
+  display: block;
+  margin: auto;
+}
+
 table {
    width: 100%;
    border: 1px solid #000;
 }
 th, td {
    text-align: left;
+   font-size: 0.8em;
    vertical-align: top;
    border: 1px solid #000;
    border-collapse: collapse;

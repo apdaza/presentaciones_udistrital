@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../estilos/estilos.css">
+  </head>
+  <body>
+    <textarea id="source">
+      name: inverse
+      layout: true
+      class: center, middle, inverse
+      ---
+      template: inverse
+      # El patrón MVC y el patrón DAO
+      
+      ---
+      template: inverse
+      # El patrón MVC
+      
+      ---
+      layout: false
+      # El patrón MVC
+      
+      ## Contenidos
+      - Qué es el patrón MVC.
+      - El Modelo
+      - La Vista
+      - El Controlador
+      - Relación entre Modelo, Vista y Controlador
+      - Ventajas y desventajas
+     
+      ---
+      #  Qué es el patrón MVC
+
+      ![RN](./media/tema04/mvc.png)
+
+      ???
+
+      MVC se puede ver como un ___patrón arquitectural___, un modelo o guía que expresa cómo organizar y estructurar los componentes de un sistema software, sus responsabilidades y las relaciones existentes entre cada uno de ellos.
+
+      MVC, parte de las iniciales de Modelo-Vista-Controlador, que son las capas o grupos de componentes en los que organizaremos nuestras aplicaciones bajo este modelo.
+
+      MVC no es un concepto nuevo, fue descrito en el año 1979 por Trygve Reenskaug, mientras trabajaba con el equipo de Smalltalk en los laboratorios Xerox PARC.
+
+      Existen implementaciones que aṕlican MVC para todo tipo de sistemas (escritorio, clientes y servidores web, servicios web, Single Page Applications o SPA, etc.) y lenguajes (Smalltalk, Java, Ruby, C++, Python, PHP, JavaScript, NodeJS, etc.).
+
+      La arquitectura MVC propone la separación de los componentes de una aplicación en tres grupos (o capas) principales: el modelo, la vista, y el controlador, y describe cómo se relacionarán entre ellos para mantener una estructura organizada, limpia y con un acoplamiento mínimo entre las distintas capas.
+
+      ---
+      # El Modelo
+
+      ![RN](./media/tema04/modelo.png)
+
+
+      > El Modelo contiene principalmente las entidades que representan el dominio, la lógica de negocio, y los mecanismos de persistencia de nuestro sistema.
+
+      ???
+      En la capa Modelo encontraremos siempre una representación de los datos del dominio, es decir, aquellas entidades que nos servirán para almacenar información del sistema que estamos desarrollando. Por ejemplo, si estamos desarrollando una aplicación de facturación, en el modelo existirán las clases Factura, Cliente o Proveedor, entre otras.
+
+      Si nuestra aplicación forma parte de un sistema distribuido, es decir, consume servicios prestados por otros sistemas, en el Modelo encontraremos las clases de transferencia de datos (DTO, Data Transfer Objects) que nos permitirán intercambiar información con ellos.
+
+      Asimismo, encontraremos la lógica de negocio de la aplicación, es decir, la implementación de las reglas, acciones y restricciones que nos permiten gestionar las entidades del dominio. Será por tanto el responsable de que el sistema se encuentre siempre en un estado consistente e íntegro.
+
+      Por último, el Modelo será también el encargado de gestionar el almacenamiento y recuperación de datos y entidades del dominio, es decir, incluirá mecanismos de persistencia o será capaz de interactuar con ellos. Dado que habitualmente la persistencia se delega a un motor de bases de datos, es muy frecuente encontrar en el Modelo la implementación de componentes tipo DAL (Data Access Layer, o Capa de Acceso a Datos) y ORMs.
+
+      ---
+      # La Vista
+
+      ![RN](./media/tema04/vista.png)
+
+      > En la Vista encontraremos los componentes responsables de generar la interfaz con el exterior, por regla general, aunque no exclusivamente, el UI de nuestra aplicación.
+
+      ???
+      Los componentes de la Vista son los responsables de generar la interfaz de nuestra aplicación, es decir, de componer las pantallas, páginas, o cualquier tipo de resultado utilizable por el usuario o cliente del sistema. De hecho, suele decirse que la Vista es una representación del estado del Modelo en un momento concreto y en el contexto de una acción determinada.
+
+      Por ejemplo, si un usuario está consultando una factura a través de una aplicación web, la Vista se encargará de representar visualmente el estado actual de la misma en forma de página visualizable en su navegador. Si en un contexto B2B el cliente de nuestro sistema es a su vez otro sistema, la vista podría ser un archivo XML con la información solicitada. En ambos casos se trataría de la misma factura, es decir, la misma entidad del Modelo, pero su representación es distinta en función de los requisitos.
+
+      Cuando las vistas componen la interfaz de usuario de una aplicación, deberán contener los elementos de interacción que permitan al usuario enviar información e invocar acciones en el sistema, como botones, cuadros de edición o cualquier otro tipo de elemento, convenientemente adaptados a la tecnología del cliente.
+
+      En el caso de las aplicaciones para la Web, normalmente en la Vista se encontrarán los componentes capaces de generar el lenguaje de marcado de la página que será enviada al usuario.
+
+      ---
+      # El Controlador
+
+      ![RN](./media/tema04/controlador.png)
+
+      > En el Controlador se encuentran los componentes capaces de procesar las interacciones del usuario, consultar o actualizar el Modelo, y seleccionar las Vistas apropiadas en cada momento.
+
+      ???
+      La misión principal de los componentes incluidos en el Controlador es actuar como intermediarios entre el usuario y el sistema. Serán capaces de capturar las acciones de éste sobre la Vista, como puede ser la pulsación de un botón o la selección de una opción de menú, interpretarlas y actuar en función de ellas. Por ejemplo, retornando al usuario una nueva vista que represente el estado actual del sistema, o invocando a acciones definidas en el Modelo para consultar o actualizar información.
+
+      Realizarán también tareas de transformación de datos para hacer que los componentes de la Vista y el Modelo se entiendan. Así, traducirán la información enviada desde la interfaz, por ejemplo los valores de campos de un formulario recibidos mediante el protocolo HTTP, a objetos que puedan ser comprendidos por el Modelo, como pueden las clases o las entidades del dominio.
+
+      Y de la misma forma, el Controlador tomará la información procedente del Modelo y la adaptará a formatos o estructuras de datos que la Vista sea capaz de manejar.
+
+      Por todo ello, podríamos considerar el Controlador como un coordinador general del sistema, que regula la navegación y el flujo de información con el usuario, ejerciendo también como intermediario entre la capa de Vista y el Modelo.
+
+
+      ---
+      # Relación entre Modelo, Vista y Controlador
+
+      ![RN](./media/tema04/mvc.png)
+
+      ???
+
+      Como se muestra en el diagrama, las acciones e información procedentes del usuario serán recogidas exclusivamente por los Controladores. Ningún componente de otra capa debe acceder a los datos generados desde el cliente, de la misma forma que sólo los componentes de la Vista estarán autorizados a generar interfaces de usuario con las que enviar información de retorno.
+
+      Destaca también el papel central del Controlador. Tiene acceso bidireccional al Modelo, es decir, será capaz tanto de actualizar su estado, invocando por ejemplo métodos o acciones incluidos en su lógica de negocio, como de consultar la información que sea necesaria para completar sus tareas. Sin embargo, en ningún caso el Modelo será consciente o mostrará acoplamiento alguno respecto a las clases Controlador que lo están utilizando, ni conocerá las distintas representaciones (Vistas) que pueden realizarse de él cara al usuario.
+
+      Por otra parte, el Controlador es el encargado de seleccionar la Vista más apropiada en función de la acción llevada a cabo por el usuario, suministrándole toda la información que necesite para componer la interfaz. Para pasar esta información, el Controlador puede usar clases del Modelo o, lo que es más habitual, clases específicamente diseñadas para ello, denominadas View-Models, que contendrán toda la información que la Vista necesite para maquetarse y mantendrá a ésta aislada de los cambios en el Modelo.
+
+      La responsabilidad de la Vista, por tanto, se reduce a generar la interfaz partiendo de los datos que le suministre el controlador.
+
+      ---
+      # Ventajas y desventajas
+
+      ## Ventajas
+
+      - Clara separación de responsabilidades.
+      - Mayor velocidad de desarrollo en equipo.
+      - Múltiples vistas a partir del mismo modelo.
+      - Facilidad para realización de pruebas unitarias.
+
+      ## Desventajas
+
+      - Hay que ceñirse a las convenciones y al patrón. 
+      - Curva de aprendizaje. 
+
+
+      ???
+      __Ventajas:__
+
+      - La clara separación de responsabilidades impuesta por el uso del patrón MVC hace que los componentes de nuestras aplicaciones tengan sus misiones bien definidas. Por lo tanto, nuestros sistemas serán más limpios, simples, más fácilmente mantenibles y, a la postre, más robustos.
+      - Mayor velocidad de desarrollo en equipo, que es consecuencia de lo anterior, ya que al estar separado en tres partes tan diferenciadas, diferentes programadores pueden ocuparse de cada parte en paralelo. Esto la hace ideal para el desarrollo de aplicaciones grandes.
+      - Múltiples vistas a partir del mismo modelo, pudiendo reaprovechar mucho mejor los desarrollos y asegurando consistencia entre ellas.
+      - Facilidad para realización de pruebas unitarias.
+
+      __Desventajas:__
+
+      - Hay que ceñirse a las convenciones y al patrón. El uso de las convenciones impuestas por el framework y la estructura propuesta por el patrón arquitectural MVC nos obliga a ceñirnos a las mismas, lo que puede resultar a veces algo tedioso si lo comparamos con la forma habitual de trabajar con otros frameworks que dan más libertad al desarrollador. La división impuesta por el patrón MVC obliga a mantener un mayor número de archivos, incluso para tareas simples.
+      - Curva de aprendizaje. Dependiendo del punto de partida, el salto a MVC puede resultar un cambio radical y su adopción requerirá cierto esfuerzo. Además, utilizarlo implica conocer bien las tecnologías subyacentes con las que se implemente: la plataforma de programación utilizada, además de la tecnología utilizada para la interfaz de usuario (HTML, CSS, JavaScript en el caso de la Web).
+
+      ---
+      template: inverse
+      # El patrón DAO
+      
+      ---
+      # El patrón DAO
+
+      ![RN](./media/tema04/dao.png)
+      
+      ???
+
+      - La mayoría de aplicaciones de hoy en día, requiere acceso al menos a una fuente de datos, dichas fuentes son por lo general base de datos relacionales, por lo que muchas veces no tenemos problema en acceder a los datos.
+      - En ocasiones se necesita tener ___más de una fuente de datos___ o la fuente de datos ___puede variar___, lo que nos obligaría a refactorizar gran parte del código. 
+      
+      - El patrón Arquitectónico Data Access Object (DAO), permite separar la lógica de acceso a datos de los Bussines Objects u Objetos de negocios, de tal forma que el DAO encapsula toda la lógica de acceso de datos al resto de la aplicación.
+
+      __Problemática:__
+      - Una de las grandes problemáticas al momento de acceder a los datos, es que la implementación y formato de la información puede variar según la fuente de los datos. 
+      
+      - Implementar la lógica de acceso a datos en la capa de lógica de negocio puedes ser un gran problema, pues tendríamos que lidiar con la lógica de negocio en sí, más la implementación para acceder a los datos, adicional, si tenemos múltiples fuentes de datos o estas pueden variar, tendríamos que implementar las diferentes lógicas para acceder las diferentes fuentes de datos, como podrían ser: bases de datos relacionales, No SQL, XML, archivos planos, Webservices, etc).
+
+      __Solución:__
+      - El patrón DAO propone separar por completo la lógica de negocio de la lógica para acceder a los datos, 
+      - El patrón DAO proporcionará los métodos necesarios para insertar, actualizar, borrar y consultar la información; 
+      
+      - La capa de negocio solo se preocupa por lógica de negocio y utiliza el DAO para interactuar con la fuente de datos.
+
+      __Componentes:__
+      - ___BusinessObject:___ representa un objeto con la lógica de negocio.
+      - ___DataAccessObject:___ representa una capa de acceso a datos que oculta la fuente y los detalles técnicos para recuperar los datos.
+      - ___TransferObject:___ este es un objeto plano que implementa el patrón Data Transfer Object (DTO), el cual sirve para transmitir la información entre el DAO y el Business Service.
+      - ___DataSource:___ representa de forma abstracta la fuente de datos, la cual puede ser una base de datos, Webservices, LDAP, archivos de texto, etc.
+            
+      ---
+      # El patrón DAO
+
+      ![RN](./media/tema04/dao_secuencia.png)
+
+      ???
+      El diagrama se interpreta de la siguiente manera:
+
+      - El BusinessObject creo u obtiene una referencia al DataAccessObject.
+      - El BusinessObject solicita información al DataAccessObject
+       - El DataAccessObject solicita la información al DataSource
+       - El DataAccessObject crea una instancia del TransferObject con los datos recuperados del DataSource
+       - El DataAccessObject responde con el TransferObject creado en los pasos anteriores.
+      - El BusinessObject actualiza algún valor del TransferObject
+       - Más actualizaciones
+      - El BusinessObject solicita el guardado de los datos actualizados al DataAccessObject.
+      - El DataAccessObject guarda los datos en el DataSource.
+      
+      
+    </textarea>
+    <script src="scripts/remark.js"></script>
+    <script>
+       var slideshow = remark.create();
+    </script>
+  </body>
+</html>

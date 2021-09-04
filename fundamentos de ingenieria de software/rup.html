@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../estilos/estilos.css">
+  </head>
+  <body>
+    <textarea id="source">
+      name: inverse
+      layout: true
+      class: center, middle, inverse
+      ---
+      template: inverse
+      ![RN](./media/rup/image2.jpeg)
+      # El Proceso Unificado de Desarrollo de Software
+      
+      ---
+      layout: false
+      # El Proceso Unificado de Desarrollo de Software
+      
+
+      ## Contenidos
+      1. Visión General del Proceso Unificado
+      2. Un proceso conducido por casos de Uso 
+      3. Un proceso centrado en la arquitectura
+      5. Conceptos clave 
+      6. Captura de Requisitos 
+      7. Análisis 
+      8. Diseño 
+      9. Implementación 
+      10. Prueba 
+      ---
+      # 1. Visión General del Proceso Unificado
+      ## Introducción
+
+      - El Proceso Unificado es un **proceso** de desarrollo de software:
+          > "conjunto de actividades necesarias para transformar los requisitos del usuario en un sistema software".
+
+      - RUP es un **marco genérico** que puede especializarse para una variedad de tipos de sistemas, diferentes áreas de aplicación, tipos de organizaciones, niveles de aptitud y diferentes tamaños de proyectos.
+
+      - RUP está *basado en componentes*. El sw esta formado por **componentes** software interconectados a través de **interfaces**.
+
+      - RUP está **dirigido por casos de uso**, **centrado en la arquitectura**, y es **iterativo e incremental**.
+      ---
+      ## Dirigido por Casos de Uso
+
+      - Un caso de uso es un fragmento de funcionalidad del sistema que proporciona un resultado de valor a un usuario.
+
+      - Los casos de uso modelan los requerimientos funcionales del sistema.
+
+      - Todos los casos de uso juntos constituyen el **modelo de casos de uso**.
+
+      - Los casos de uso también **guían el proceso de desarrollo** (diseño, implementación, y prueba).
+      - Basándose en los casos de uso los desarrolladores crean una serie de modelos de diseño e implementación que llevan a cabo los casos de uso.
+
+      - De este modo los casos de uso no solo inician el proceso de desarrollo sino que le proporcionan un hilo conductor, avanza a través de una serie de flujos de trabajo que parten de los casos de uso.
+      ---
+      ## Centrado en la Arquitectura
+
+      - La **arquitectura** de un sistema software se describe mediante diferentes **vistas** del sistema en construcción.
+
+      - El concepto de arquitectura software incluye los aspectos **estáticos** y **dinámicos** más significativos del sistema.
+
+      - La arquitectura es una vista del diseño completo con las características más importantes resaltadas, dejando los detalles de lado.
+
+      - **Arquitectura**:
+      > Conjunto de decisiones significativas acerca de la organización de un sistema software, la selección de los elementos estructurales a partir de los cuales se compone el sistema, las interfaces entre ellos, su comportamiento, sus colaboraciones, y su composición.
+
+      - Los casos de uso y la arquitectura están profundamente relacionados.
+
+      - Los casos de uso deben encajar en la arquitectura, y a su vez la arquitectura debe permitir el desarrollo de todos los casos de uso requeridos, actualmente y a futuro.
+      ---
+      ## Centrado en la Arquitectura
+
+      - El arquitecto desarrolla la forma o arquitectura a partir de la comprensión de un conjunto reducido de casos de uso fundamentales o críticos (usualmente no mas del 10 % del total).
+
+      - En forma resumida, podemos decir que el arquitecto:
+       - Crea un esquema en borrador de la arquitectura comenzando por la parte no específica de los casos de uso (por ejemplo la plataforma) pero con una comprensión general de los casos de uso fundamentales.
+       - A continuación, trabaja con un conjunto de casos de uso claves o fundamentales. Cada caso de uso es especificado en detalle y realizado en términos de subsistemas, clases, y componentes.
+       - A medida que los casos de uso se especifican y maduran, se descubre más de la arquitectura, y esto a su vez lleva a la maduración de más casos de uso.
+
+      - Este proceso continúa hasta que se considere que la arquitectura es estable.
+      ---
+      ## Iterativo e Incremental
+
+      - Es práctico dividir el esfuerzo de desarrollo de un proyecto de software en partes mas pequeñas o **mini proyectos**.
+
+      - Cada mini proyecto es una **iteración** que resulta en un **incremento**.
+
+      - Las iteraciones hace referencia a pasos en el flujo de trabajo, y los incrementos a crecimientos en el producto.
+
+      - Las iteraciones deben estar **controladas**. Esto significa que deben seleccionarse y ejecutarse de una forma **planificada**.
+
+      - Los desarrolladores basan la selección de lo que implementarán en cada iteración en dos cosas: el conjunto de casos de uso que amplían la funcionalidad, y en los riesgos mas importantes que deben mitigarse.
+
+      - En cada iteración los desarrolladores identifican y especifican los casos de uso relevantes, crean un diseño utilizando la arquitectura seleccionada como guía, para implementar dichos casos de uso.
+
+      - Si la  iteración cumple sus objetivos, se continúa con la próxima. Sino deben revisarse las decisiones previas y probar un nuevo enfoque.
+      ---
+      ## Beneficios del enfoque iterativo
+
+      - La iteración controlada reduce el riesgo a los costes de un solo incremento.
+
+      - Reduce el riesgo de retrasos en el calendario atacando los riesgos mas importantes primero.
+
+      - Acelera el desarrollo. Los trabajadores trabajan de manera más eficiente al obtener resultados a corto plazo.
+
+      - Tiene un enfoque más realista al reconocer que los requisitos no pueden definirse completamente al principio.
+
+      ---
+      ## El Ciclo de Vida del Proceso Unificado
+
+      ![](./media/rup/image7.jpeg)
+      ???
+      - El Proceso Unificado se repite a lo largo de una serie de ciclos que constituyen la vida de un sistema.
+
+      - Cada ciclo constituye una **versión** del sistema.
+
+      **Fases**
+      - Cada ciclo constas de cuatro fases:
+       - **inicio**
+       - **elaboración**
+       - **construcción**
+       - **transición**.
+
+      ---
+      ## El Ciclo de Vida del Proceso Unificado
+
+      ![](./media/rup/image8.jpeg)
+      ???
+      - Cada fase se subdivide en **iteraciones**.
+
+      - En cada iteración se desarrolla en secuencia un conjunto de **disciplinas** o flujos de trabajos.
+      ---
+      ## Disciplinas
+
+      ![](./media/rup/image10.jpeg)
+      ???
+      - Cada disciplina es un conjunto de actividades relacionadas (flujos de trabajo) vinculadas a un área específica dentro del proyecto total.
+
+      - El agrupamiento de actividades en disciplinas es principalmente una ayuda para comprender el proyecto desde la visión tradicional en cascada.
+
+      - Las más importantes son:
+       - **Requerimientos**
+       - **Análisis**
+       - **Diseño**
+       - **Codificación**
+       - **Prueba**.
+
+      ---
+      ## Disciplinas
+
+      ![](./media/rup/image11.png)
+
+      ???
+      - Cada disciplina está asociada con un conjunto de **modelos** que se desarrollan.
+
+      - Estos modelos están compuestos por **artefactos**.
+
+      - Los artefactos más importantes son los modelos que cada disciplina realiza:
+       - **modelo de casos de uso**
+       - **modelo de diseño**
+       - **modelo de implementación**
+       - **modelo de prueba**.
+      ---
+      ## Disciplinas
+
+      | Disciplina     | Modelos                                 |
+      |----------------|-----------------------------------------|
+      | Requisitos     | Modelo de Casos de Uso                  |
+      | Análisis       | Modelo de Análisis                      |
+      | Diseño         | Modelo de Diseño - Modelo de Despliegue |
+      | Implementación | Modelo de Implementación                |
+      | Prueba         | Modelo de Prueba                        |
+
+      ???
+
+      - El Proceso Unificado consiste en una serie de disciplinas o flujos de trabajo que van desde los requisitos hasta las pruebas.
+
+      - Los flujos de trabajo desarrollan modelos desde el modelo de casos de uso hasta el modelo de pruebas.
+
+      ---
+      ## Hitos
+      - Cada fase finaliza con un **hito**.
+
+      - Cada hito se determina por la disponibilidad de un conjunto de artefactos.
+
+      - Los hitos tienen varios objetivos.
+
+      - Los hitos también permiten controlar la dirección y progreso del trabajo.
+
+      - Al final se obtiene un conjunto de datos a partir del seguimiento del tiempo y esfuerzo consumidos en cada fase.
+
+      ???
+      - Cada fase finaliza con un **hito**.
+
+      - Cada hito se determina por la disponibilidad de un conjunto de artefactos, es decir un conjunto de modelos o documentos que han sido desarrollados hasta alcanzar un estado predefinido.
+
+      - Los hitos tienen muchos objetivos. El más crítico es que los directores deben tomar ciertas decisiones antes de que el trabajo continúe con la siguiente fase.
+
+      - Los hitos también permiten controlar la dirección y progreso del trabajo.
+
+      - Al final se obtiene un conjunto de datos a partir del seguimiento del tiempo y esfuerzo consumidos en cada fase. Estos datos son útiles para la estimaciones en futuros proyectos.
+
+      ---
+      ## Fase de Inicio
+      - Durante la fase de **inicio**
+       - Se desarrolla una descripción del producto final
+       - Se presenta el **análisis del negocio**.
+       - Se identifican y priorizan los **riesgos mas importantes**.
+
+      - Esta fase responde las siguientes preguntas:
+       - ¿Cuáles son las principales funciones del sistema para los usuarios mas importantes?
+       - ¿Cómo podría ser la mejor arquitectura del sistema?
+       - ¿Cuál es el plan del proyecto y cuanto costará desarrollar el producto?
+
+      - En esta fase se identifican y priorizan los **riesgos mas importantes**.
+
+      - El objetivo de esta fase es ayudar al equipo de proyecto a decidir cuales son los verdaderos objetivos del proyecto. Las iteraciones exploran diferentes soluciones posibles, y diferentes arquitecturas posibles.
+
+      ---
+      ## Fase de Inicio
+
+      - Puede que todo el trabajo físico realizado en esta fase sea descartado. Lo único que normalmente sobrevive a la fase de inicio es el incremento del conocimiento en el equipo.
+
+      - Los artefactos que típicamente sobreviven a esta fase son:
+       - Un enunciado de los mayores requerimientos planteados generalmente como casos de uso.
+       - Un boceto inicial de la arquitectura.
+       - Una descripción de los objetivos del proyecto.
+       - Una versión muy preliminar del plan del proyecto.
+       - Un modelo del negocio.
+
+      - La fase de inicio finaliza con el **Hito de Objetivos del Ciclo de Vida**.
+
+      ---
+      ## Fase de Inicio
+
+      - Este hito es alcanzado cuando el equipo de proyectos y los stakeholders llegan a un acuerdo sobre:
+       - Cuál es el conjunto de necesidades del negocio, y que conjunto de funciones satisfacen estas necesidades.
+       - Una planificación preliminar de iteraciones.
+       - Una arquitectura preliminar.
+       - Debe poder responderse las siguientes cuestiones:
+        - ¿Se ha determinado con claridad el ámbito del sistema? ¿Se ha determinado lo que va a estar dentro del sistema y fuera de el sistema?
+        - ¿Se ha llegado a un acuerdo con todas las personas involucradas (stakeholders) sobre los requisitos funcionales del sistema?
+        - ¿Se vislumbra una arquitectura que pueda soportar estas características?
+        - ¿Se identifican los riesgos críticos? ¿Se prevé forma de mitigarlos?
+        - ¿El uso del producto justifica la relación costo-beneficio?
+        - ¿Es factible para su organización llevar adelante el proyecto?
+        - ¿Están los inversores de acuerdo con los objetivos?
+
+      ---
+      ## Fase de Elaboración
+
+      - Durante la fase de **elaboración**:
+       - Se especifican en detalle la mayoría de los casos de uso del producto
+       - Se diseña la arquitectura.
+
+      - Las iteraciones en la fase de elaboración:
+       - Establecen una firme comprensión del problema a solucionar.
+       - Establece la fundación arquitectural para el software.
+       - Establece un plan detallado para las siguientes iteraciones.
+       - Elimina los mayores riesgos.
+
+      - El resultado de esta fase es la **línea base de la arquitectura**.
+
+      ---
+      ## Fase de Elaboración
+
+      - En esta fase se construyen típicamente los siguientes artefactos:
+       - El cuerpo básico del sw en la forma de un prototipo arquitectural.
+       - Casos de prueba
+       - La mayoría de los casos de uso (80%) que describen la funcionalidad del sistema.
+       - Un plan detallado para las siguientes iteraciones.
+
+      - La fase de elaboración finaliza con el **hito de la Arquitectura del Ciclo de Vida.**
+
+      - Este hito se alcanza cuando el equipo de desarrollo y los stakeholders llegan a un acuerdo sobre:
+       - Los casos de uso que describen la funcionalidad del sistema.
+       - La línea base de la arquitectura
+       - Los mayores riesgos han sido mitigados
+       - El plan del proyecto
+
+      ---
+      ## Fase de Elaboración
+
+      - Al alcanzar este hito debe poder responderse a preguntas como:
+       - ¿Se ha creado una línea base de la arquitectura? ¿Es adaptable y robusta? ¿Puede evolucionar?
+       - ¿Se han identificado y mitigado los riesgos más graves?
+       - ¿Se ha desarrollado un plan del proyecto hasta el nivel necesario para respaldar una agenda, costes, y calidad realistas?
+       - ¿Proporciona el proyecto, una adecuada recuperación de la inversión?
+       - ¿Se ha obtenido la aprobación de los inversores?
+
+      ---
+      ## Fase de Construcción
+
+      - Durante la fase de **construcción**:
+       - Se crea el producto.
+       - La línea base de la arquitectura crece hasta convertirse en el sistema completo.
+
+      - Al final de esta fase, el producto contiene todos los casos de uso implementados, sin embargo puede que no este libre de defectos.
+
+      - Los artefactos producidos durante esta fase son:
+       - El sistema software
+       - Los casos de prueba
+       - Los manuales de usuario
+
+      - La fase de construcción finaliza con el **hito de Capacidad Operativa Inicial**.
+
+      ---
+      ## Fase de Construcción
+
+      - Este hito se alcanza cuando el equipo de desarrollo y los stakeholders llegan a un acuerdo sobre:
+       - El producto es estable para ser usado
+       - El producto provee alguna funcionalidad de valor
+       - Todas las partes están listas para comenzar la transición
+
+      ---
+      ## Fase de Transición
+
+      - La fase de **transición** cubre el período durante el cual el producto se convierte en la versión beta.
+
+      - Las iteraciones en esta fase continúan agregando características al sw. Sin embargo las características se agregan a un sistema que el usuario se encuentra utilizando activamente.
+
+      - Los artefactos construidos en esta fase son los mismos que en la fase de construcción. El equipo se encuentra ocupado fundamentalmente en corregir y extender la funcionalidad del sistema desarrollado en la fase anterior.
+
+      - La fase de transición finaliza con el **hito de Lanzamiento del Producto**.
+
+      - Este hito se alcanza cuando el equipo de desarrollo y los stakeholders legan a un acuerdo sobre:
+       - Se han alcanzado los objetivos fijados en la fase de Inicio.
+       - El usuario está satisfecho.
+
+      ---
+      # 2. Un proceso conducido por casos de Uso
+
+      ## Introducción
+
+      - Veamos una visión general de cómo se desarrolla el trabajo a través de todos los flujos en un proceso dirigido por casos de uso.
+
+      - Tomaremos como ejemplo una versión simplificada de un sistema para un Cajero Automático (CA).
+
+      ---
+      ## El Modelo de Caso de Usos representa los requisitos funcionales
+
+      - La primer disciplina que se desarrolla dentro de cada iteración es la de requerimientos (posiblemente luego de realizar un modelado del dominio o del negocio).
+
+      - El objetivo de esta fase es determinar los requerimientos del sistema.
+
+      - Los requerimientos funcionales son plasmados a través de casos de uso en un Modelo de Casos de Uso.
+
+      - El modelo de casos de uso ayuda al cliente, a los usuarios, y a los desarrolladores a llegar a un acuerdo sobre cómo utilizar el sistema.
+
+      - Cada tipo de usuario del sistema se representa mediante un **actor** que define un **rol** de utilización del sistema.
+
+      - Los actores modelan el entorno del sistema, y los casos de uso especifican el sistema.
+
+      ---
+      ## El Modelo de Caso de Usos representa los requisitos funcionales
+
+      - Un diagrama de casos de uso describe parte del modelo de casos de uso y muestra un conjunto de casos de uso y actores asociados.
+
+      - Los casos de uso tambien se utilizan como "contenedores" para los **requisitos no funcionales**.
+
+      - Para cada caso de uso debe especificarse sus caminos o secuencias de acciones posibles.
+
+
+
+      ---
+      ## El Modelo de Caso de Usos representa los requisitos funcionales
+
+      **Ej.:** Modelo de Casos de Uso para el sistema Cajero Automático (CA)
+      ![](./media/rup/image16.png)
+
+
+      ???
+
+      **Ej.:** Secuencia de acciones para un camino del caso de uso Sacar Dinero (simplificada)
+
+      - El cliente del banco se identifica
+      - El cliente elige de que cuenta sacar dinero y especifica cantidad
+      - El sistema deduce la cantidad de la cuenta y entrega el dinero
+
+      ---
+      ## Creación del modelo de análisis a partir de los casos de uso
+
+      - El modelo del análisis es **opcional**.
+
+      - Describe un conjunto de Clases del Análisis que se utilizan para realizar una descripción abstracta de la **realización** de los casos de uso del modelo de casos de uso.
+
+      - Las clases del análisis luego evolucionan hacia otras clases más detalladas en el Modelo del Diseño.
+
+      - El modelo de análisis crece incrementalmente a medida que se analizan más y más casos de uso.
+
+      - En cada iteración elegimos un conjunto de casos de uso y los reflejamos en el modelo de análisis.
+
+      - Construimos el sistema como una estructura de clasificadores (clases del análisis) y relaciones entre ellas.
+
+      - También describimos las colaboraciones que llevan a cabo los casos de uso, es decir las realizaciones de los casos de uso.
+      ---
+      ## Creación del modelo de análisis a partir de los casos de uso
+
+      **Ej.:** Realización de un caso de uso en el modelo de análisis.
+
+      ![](./media/rup/image18.png)
+
+      ---
+      ## Creación del modelo de análisis a partir de los casos de uso
+
+      **Ej.:** Una clase puede participar en varias realizaciones.
+
+      ![](./media/rup/image20.png)
+
+      ---
+      ## Creación del modelo de análisis a partir de los casos de uso
+
+      - Durante el Análisis se utilizan **diagramas de colaboración** para describir la realización de un caso de uso.
+
+      ![](./media/rup/image22.png)
+
+      ???
+      - **Cada clase debe cumplir todos sus roles de colaboración**: las responsabilidades de una clase son sencillamente la recopilación de todos los roles que cumple en todas las realizaciones de casos de uso.
+
+      - Juntándolas y eliminando repeticiones entre los roles, obtenemos una especificación de todas las responsabilidades y atributos de la clase.
+
+      ---
+      ## Creación del modelo de diseño a partir del modelo de análisis
+
+      - El modelo de diseño se crea tomando el modelo de análisis como entrada principal (cuando este fue creado), y se lo adapta a un entorno de implementación particular.
+
+      - Esta adaptación incluye considerar por Ej. adecuaciones a un framework de construcción de GUI particular, uso de un ORB, frameworks, sistemas heredados, etc.
+
+      - El modelo de diseño es similar al modelo de análisis ya que incluye _clasificadores_, _relaciones_, y _realizaciones de casos de uso_ , y existe una relación de **traza** entre los artefactos del diseño y los del análisis, pero mientras estos últimos son conceptuales, los del diseño deben adecuarse al entorno de implementación específico.
+
+      ???
+      The design model is adapted to model the real implementation environment, and serves as an abstraction of the source code. It is a \"blueprint\" of how the source code is structured and written.
+
+      The design model is a hierarchy of packages (design subsystems and design-service packages), with \"leaves\" that are classes. Subsystems are a design \"view\" of the components that are defined in the Implementation Model.
+
+      The design model hierarchy consists of layers.
+
+      Classes represent abstractions of classes in the system\'s implementation. They define the objects, which in turn are abstractions of the objects in the system\'s implementation. The use cases are realized by the objects, and this is represented by use-case realizations in the Design Model. Each use-case realization has a realize dependency to a use case in the Use-Case Model.
+
+      ---
+      ## Creación del modelo de diseño a partir del modelo de análisis
+
+      **Ej.:** Las clases del diseño refinan las clases del análisis.
+
+      ![](./media/rup/image24.png)
+
+      ???
+      - La mayoría de las clases de diseño normalmente tienen una sola traza a una clase de análisis.
+
+      - Esto es habitual para las clases de diseño que son específicas de la aplicación, diseñadas para dar soporte a una aplicación o a un conjunto de ellas.
+
+      - De manera similar a como lo realizamos en el análisis, debemos identificar la interacción detallada entre los objetos de diseño que tiene lugar en la realización del caso de uso en el modelo del diseño.
+
+      - En el diseño sin embargo, utilizaremos principalmente diagramas de secuencia para representar esta interacción.
+
+      ---
+      ## Creación del modelo de diseño a partir del modelo de análisis
+
+      **Ej.:** Diagrama de secuencia para representar la realización del caso de uso Sacar Dinero en el modelo de diseño.
+
+      ![](./media/rup/image29.png)
+
+      ---
+      ## Creación del modelo de diseño a partir del modelo de análisis
+
+      **Agrupación de clases en subsistemas**
+
+      - Es imposible utilizar sólo clases para realizar los casos de uso en un sistema grande con cientos o miles de clases.
+
+      - Es imposible comprender el sistema sin una organización de más alto nivel. Las clases se agrupan en subsistemas.
+
+      - Un subsistema es un agrupamiento semánticamente útil de clases o de otros subsistemas.
+
+      - Los subsistemas de bajo nivel se denominan **subsistemas de servicio**.
+
+      - Los subsistemas de servicio constituyen una unidad manejable de funcionalidad **opcional**.
+
+      - Los subsistemas pueden diseñarse en forma **descendente** o **ascendente**.
+
+      ???
+      - El diseño ascendente se realiza a partir de la agrupación de clases ya identificadas. Se proponen subsistemas que empaquetan clases en unidades claramente definidas.
+
+      - El diseño descendente, implica la definición previa por parte del arquitecto de los subsistemas de más alto nivel y las interfaces entre ellos, antes de que se hayan identificado las clases.
+
+      ---
+      ## Creación del modelo de diseño a partir del modelo de análisis
+
+      **Ej.:** Para el sistema de CA se agrupan las clases en tres subsistemas:
+
+      ![](./media/rup/image36.png)
+      ???
+      - La ventaja de colocar todas las clases de interfaz en un subsistema permitiría reemplazar el subsistema completo para adecuarlo a otra interfaz sin mayores cambios en el resto del sistema.
+
+      - Los subsistemas implementan **interfaces**.
+
+      - Las interfaces se representa por un círculo vinculado con una línea de trazo continuo a la clase dentro del subsistema que proporciona la interfaz.
+
+      - Una línea de trazo discontinuo de una clase a una interfaz representa que la clase usa la interfaz.
+
+      ---
+      ## Creación del modelo de implementación a partir del modelo de diseño
+
+      **Ej.** Componentes implementan clases del diseño
+
+      ![](./media/rup/image39.png)
+
+      ???
+      - El modelo de implementación está formado por **componentes**, que incluyen:
+       - todos los **ejecutables** (Ej. ActiveX, JavaBeans, .exe),
+       - componentes como archivos (código fuente, shell scripts, etc.),
+       - componentes de tabla (elementos de base de datos),
+       - etc.
+
+      - Un **componente** es una parte física y reemplazable del sistema que cumple y proporciona la realización de un conjunto de interfaces.
+
+      ---
+      ## Prueba de casos de uso
+
+      - Durante la prueba, verificamos que el sistema implementa correctamente su especificación.
+
+      - El modelo de prueba está compuesto por: casos de prueba y procedimientos de prueba.
+
+      - Un **caso de prueba** es un conjunto de entradas de prueba, condiciones de ejecución, y resultados esperados, desarrollados para un objetivo concreto, tal como probar un camino concreto a través de un caso de uso, o verificar que se cumple un requisito específico.
+
+      - Un **procedimiento de prueba** es una especificación de cómo llevar a cabo la preparación, ejecución, y evaluación de los resultados de un caso de prueba particular.
+
+      ---
+      ## Prueba de casos de uso
+
+      **Ej.** un caso de prueba especifica la entrada, los resultados esperados, y otras condiciones relevantes para verificar el flujo básico del caso de uso Sacar Dinero:
+
+      Entradas:
+       - La cuenta 12-121-1211 del Cliente de Banco tiene un saldo de 350 \$
+       - El Cliente de Banco se identifica correctamente
+       - El Cliente de Banco solicita la retirada de 200 \$ de la cuenta 12-121-1211
+       - Hay suficiente dinero en el Cajero Automático
+
+      Resultados
+        - El saldo de la cuenta 12-121-1211 disminuye a 150 \$
+        - El Cliente de Banco recibe 200 \$ del Cajero Automático
+
+      Condiciones
+       - No se permite que ningún otro caso de uso (instancias de) acceda a la cuenta 12-121-1211 durante la ejecución del caso de prueba.
+
+      ---
+      # Un proceso centrado en la arquitectura
+
+      ## Introducción
+
+      La arquitectura software abarca decisiones importantes sobre:
+
+      - La organización del sistema sw.
+
+      - Los elementos estructurales que compondrán el sistema y sus interfaces.
+
+      - La composición de los elementos estructurales y del comportamiento en subsistemas progresivamente más grandes
+
+      - El estilo de la arquitectura que guía esta organización: los elementos y sus interfaces, sus colaboraciones y su composición.
+
+      ---
+      # Un proceso centrado en la arquitectura
+
+      ## Introducción
+
+      La arquitectura se representa mediante vistas del modelo:
+
+      - una vista del modelo de casos de uso
+
+      - una vista del modelo de análisis
+
+      - una vista del modelo de diseño
+
+      - una vista del modelo de despliegue
+
+      - una vista del modelo de implementación
+
+      ---
+      # Un proceso centrado en la arquitectura
+
+      ## Introducción
+
+      Estas vistas solo tienen elementos que son **arquitectónicamente significativos**.
+
+      Por Ej. la vista de los casos de uso tiene los actores y casos de uso arquitectónicamente significativos.
+
+      Lo mismo sucede en los modelos de análisis y diseño.
+
+      ---
+      # Un proceso centrado en la arquitectura
+
+      ## Importancia y necesidad de una arquitectura
+
+      Se necesita una arquitectura para:
+
+      - Comprender el sistema
+
+      - Organizar el desarrollo
+
+      - Fomentar la reutilización
+
+      - Hacer evolucionar el sistema
+
+      ---
+      # Un proceso centrado en la arquitectura
+
+      ## Desarrollo de la arquitectura
+
+      La arquitectura se desarrolla mediante iteraciones, principalmente en la etapa de elaboración.
+
+      El resultado de la fase de elaboración es: 
+      - **la línea base de la arquitectura**: un esqueleto del sistema con pocos músculos de software.
+
+      Los casos de uso que son relevantes para la arquitectura son: 
+      - aquellos que mitigan los mayores riesgos del proyecto.
+      - aquellos que son más importantes para el usuario.
+      - aquellos que nos ayudan a cubrir todas las funcionalidades significativas.
+
+      Al final de la fase de elaboración hemos desarrollado modelos del sistema que representan los casos de uso más importantes y sus realizaciones desde el punto de vista de la arquitectura.
+
+      ---
+      # Un proceso centrado en la arquitectura
+
+      ## Descripción de la arquitectura
+
+      La ___línea base de la arquitectura___, es la versión interna del sistema al final de la fase de elaboración.
+
+      El conjunto de modelos que describen esta línea base se denomina ___Descripción de la Arquitectura___.
+
+      El papel de la descripción de la arquitectura es guiar al equipo de desarrollo a través del ciclo de vida del sistema.
+
+      La descripción de la arquitectura puede adoptar diferentes formas:
+
+      - Puede ser un extracto de los modelos que son parte de la línea base de la arquitectura
+
+      - Puede ser una reescritura de los extractos de forma que sea más fácil leerlos.
+
+      ---
+      # Un proceso centrado en la arquitectura
+
+      ## Descripción de la arquitectura
+
+      La descripción de la arquitectura tiene cinco secciones, una para cada modelo:
+
+      - una vista del modelo de casos de uso.
+      - una vista del modelo de análisis (opcional / descartable).
+      - una vista del modelo de diseño.
+      - una vista del modelo de despliegue.
+      - una vista del modelo de implementación.
+
+      ---
+      # Un proceso centrado en la arquitectura
+
+      ## Descripción de la arquitectura
+
+      ___La vista de la arquitectura del modelo de casos de uso___ presenta los actores y casos de uso más importantes.
+
+      **Ej.** la vista de la arquitectura del modelo de casos de uso del sistema CA
+
+      - En el ejemplo del CA el caso de uso más importante es Sacar Dinero. Sin él, no tendría sentido el CA.
+
+      - Para definir la arquitectura por tanto, el arquitecto sugiere que el caso de uso Sacar Dinero se implemente en su totalidad durante la fase de elaboración.
+
+      ---
+      # Un proceso centrado en la arquitectura
+
+      ## Descripción de la arquitectura
+
+      ___La vista de la arquitectura del modelo de diseño___ presenta los clasificadores más importantes para la arquitectura pertenecientes al modelo de diseño: 
+      - los subsistemas e interfaces más importantes
+      - algunas pocas clases muy importantes, fundamentalmente clases activas.
+      - tambien presentan como se realizan los casos de uso en términos de esos clasificadores.
+
+      **Ej.** vista de la arquitectura del modelo de diseño CA
+
+      - Se incluyen las tres clases activas: Gestor de Clientes, Gestor de Transacciones, y Gestor de Cuentas.
+
+      - También se incluyen los subsistemas: Interfaz del CA, Gestión de Transacciones, y Gestión de Cuentas, por ser necesarios para la realización del caso de uso Sacar Dinero.
+
+      ---
+      # Un proceso centrado en la arquitectura
+
+      ## Descripción de la arquitectura
+
+      ___La vista de la arquitectura del modelo de despliegue___ presenta los nodos interconectados y las clases activas que se ejecutan en ellos identificados durante el diseño y esto puede mostrarse por diagramas de despliegue.
+
+      **Ej.** vista de la arquitectura del modelo de despliegue CA
+
+      - Se incluyen los siguientes nodos y objetos activos:
+
+      |    Nodo | Objeto activo |
+      | ---- | -- |
+      | Cliente CA |Gestor de Clientes |
+      | Servidor de aplicaciones CA | Gestor de transacciones |
+      | Servidor de datos CA | Gestor de Cuentas |
+
+      ---
+      # Un proceso centrado en la arquitectura
+
+      ## Descripción de la arquitectura
+
+      ![reducida](./media/rup/image46.png)
+
+      ---
+      # Un proceso centrado en la arquitectura
+
+      ## Descripción de la arquitectura
+
+      __La vista de la arquitectura del modelo de implementación__
+
+      - El modelo de implementación es una correspondencia directa de los modelos de diseño y de despliegue.
+
+      - Cada subsistema de servicio del diseño normalmente termina siendo un componente por cada tipo de nodo en el que deba instalarse.
+
+      ---
+      # Un proceso iterativo e incremental
+
+      ## Desarrollo en pequeños pasos
+
+      La tercera clave importante del RUP consiste en desarrollar un producto software en pasos pequeños manejables:
+      - Planificar un poco.
+      - Especificar, diseñar, e implementar un poco.
+      - Integrar, probar, y ejecutar un poco en cada iteración.
+
+      Las iteraciones en las primeras fases tratan en su mayor parte con:
+      - la determinación del ámbito del proyecto
+      - la eliminación de los riesgos críticos
+      - la creación de la línea base de la arquitectura. 
+      
+      Después, a medida que se avanza en el proyecto y se reduce gradualmente los riesgos restantes implementando los componentes, generando incrementos como resultados.
+
+      ---
+      # Un proceso iterativo e incremental
+
+      ##  ¿Por qué un desarrollo iterativo e incremental?
+
+      - Para tomar las riendas de los riesgos críticos y significativos desde el principio.
+
+      - Para poner en marcha una arquitectura que guíe el desarrollo del software.
+
+      - Para proporcionar un marco de trabajo que gestione de mejor forma los inevitables cambios en los requisitos y en otros aspectos.
+
+      - Para construir el sistema a lo largo del tiempo en lugar de hacerlo de una sola vez cerca del final, cuando el cambiar algo se ha vuelto costoso.
+
+      - Para proporcionar un proceso de desarrollo a través del cual el personal puede trabajar de manera más eficaz.
+
+      ---
+      # Un proceso iterativo e incremental
+
+      ## La iteración genérica
+
+      Una iteración es un mini proyecto, un recorrido más o menos completo a lo largo de todos los flujos de trabajo fundamentales, que obtiene como resultado una versión interna del sistema.
+
+      ---
+      # Conceptos clave
+
+      ![](./media/rup/image48.jpeg)
+
+      ???
+
+      **Proceso de Ingeniería de Software**
+
+      Un proceso es un conjunto de pasos ordenados para alcanzar un objetivo. En ingeniería de software, el objetivo es construir un producto de software nuevo o extender uno existente. En RUP esto se organiza en un conjunto de Disciplinas que define un flujo de trabajo.
+
+      **Disciplina**
+
+      Una disciplina es una colección de actividades relacionadas vinculadas con un área específica del proyecto. Este agrupamiento de actividades en disciplinas es principalmente para facilitar la comprensión del proyecto desde la perspectiva tradicional del modelo en cascada.
+
+      **Flujo de trabajo**
+
+      Un flujo de trabajo describe la secuencia en que se realizan las actividades en una disciplina, quienes la realizan (trabajadores) y que artefactos producen.
+
+      **Trabajador (Rol)**
+
+      Un trabajador o **rol**, define un comportamiento o responsabilidades de un individuo o grupo de individuos trabajando en equipo, en el contexto de una organización de ingeniería de software.
+
+      **Actividad**
+
+      Los trabajadores realizan actividades. Una actividad es algo que realiza un trabajador para proveer un resultado de valor en el contexto de un proyecto.
+
+      **Pasos (steps)**
+
+      Las actividades son descompuestas en pasos. Podemos distinguir tres categorías de pasos:
+      - Pasos de análisis: donde el trabajador comprende la naturaleza de la tarea, examina los artefactos de entrada, y formula las salidas.
+      - Pasos de acción: donde los trabajadores crean o actualizan algunos artefactos.
+      - Pasos de revisión: donde los trabajadores inspeccionan los resultados según determinados criterios.
+
+      **Artefactos**
+
+      Las actividades tienen artefactos de entrada y de salida. Un artefacto es un producto de trabajo en un proceso: los trabajadores utilizan artefactos para realizar actividades y producen artefactos como resultado de sus actividades.
+
+      Los artefactos son responsabilidad de un único trabajador y promueven la idea de que toda pieza de información en el proceso debe ser responsabilidad de un rol específico.
+
+      Un trabajador es el "propietario" de un artefacto, pero otros trabajadores pueden usarlo y tal vez modificarlo si tienen permiso para ello.
+
+      ---
+      # Conceptos clave
+
+      **Artefactos**
+      ![reducida](./media/rup/image50.png)
+
+      ???
+      Principales artefactos en el proceso y flujo de información entre ellos.
+
+      El diagrama muestra como la información fluye a través del proyecto vía los artefactos. Por claridad se han omitido muchos artefactos
+
+      ---
+      # Conceptos clave
+
+      **Resumen de Trabajadores, Actividades, y Artefactos en las Disciplinas**
+
+      ___Requisitos:___
+
+      | Actividad | Trabajador | Resp. de artefacto (salida) | Artefactos (entrada) |
+      |-----------|------------|-----------------------------|----------------------|
+      | Encontrar actores y casos de uso | Analista de Sistemas | Modelo de casos de uso (esbozado), Glosario | Modelo del negocio o Modelo del dominio, Requisitos adicionales y Lista de características |
+      | Priorizar casos de uso | Arquitecto | Descripción de la arquitectura (vista del mod.de casos de uso) | Modelo de casos de uso (esbozado), Requisitos adicionales y Glosario |
+      | Detallar Casos de Uso | Especificador de casos de uso | Caso de uso (detallado) | Modelo de casos de uso (esbozado), Requisitos adicionales, Glosario |
+      | Estructurar el modelo de casos de uso | Analista de Sistemas | Modelo de casos de uso (estructurado) | Modelo de casos de uso (esbozado), Requisitos adicionales, Caso de uso (detallado), Glosario |
+      | Prototipar interfaz de usuario | Diseñador de Interfaz de usuario | Prototipo de interfaz de usuario | Modelo de casos de uso, Requisitos adicionales, Caso de uso (detallado), Glosario |
+      
+      ---
+      # Conceptos clave
+
+      **Resumen de Trabajadores, Actividades, y Artefactos en las Disciplinas**
+
+      ___Análisis:___
+
+      | Actividad | Trabajador | Resp. de artefacto (salida) | Artefactos (entrada) |
+      |-----------|------------|-----------------------------|----------------------|
+      | Análisis de la arquitectura | Arquitecto | Paquete del análisis (esbozado), Clase del análisis (esbozada), Descripción de la arquitectura (vista del modelo de análisis) | Modelo de casos de uso, Requisitos adicionales, Modelo del negocio o modelo del dominio, Descripción de la arquitectura (vista del modelo de casos de uso) |
+      | Analizar un caso de uso | Ingeniero de casos de uso | Realización de caso de uso análisis, Clase del análisis (esbozo) | Modelo de casos de uso, Requisitos adicionales, Modelo del negocio o modelo del dominio, Descripción de la arquitectura (vista del modelo de análisis) |
+      | Analizar una clase | Ingeniero de componentes | Clase del análisis (terminada) | Realización de caso de uso-análisis, Clase del análisis (esbozo) |
+      | Analizar un paquete | Ingeniero de componentes | Paquete del análisis (terminado) | Descripción de la arquitectura (vista del modelo de análisis), Paquete del análisis (esbozo) |
+
+      ---
+      # Conceptos clave
+
+      **Resumen de Trabajadores, Actividades, y Artefactos en las Disciplinas**
+
+      ___Diseño:___
+
+      | Actividad | Trabajador | Resp. de artefacto (salida) | Artefactos (entrada) |
+      |-----------|------------|-----------------------------|----------------------|
+      | Diseño de la arquitectura | Arquitecto | Subsistema (esbozado), Interfaz (esbozada), Clase de diseño (esbozada), Modelo de despliegue (esbozado), Desc.de la arq. (vista de los modelos de diseño y distr.) | Modelo de casos de uso, Requisitos adicionales, Modelo de análisis, Desc.de la arq. (vista del modelo de análisis) |
+      | Diseño de un caso de uso | Ingeniero de casos de uso | Realización de caso de uso (diseño), Clase de diseño (esbozada), Subsistema (esbozado), Interfaz (esbozada) | Modelo de casos de uso, Requisitos adicionales, Modelo de análisis, Modelo de diseño, Modelo de despliegue |
+      | Diseño de una clase | Ingeniero de componentes | Clase de diseño (terminada) | Realización de casos de uso – diseño, Clase de diseño (esbozada), Interfaz (esbozada), Clase del análisis (terminada) |
+      | Diseño de un subsistema | Ingeniero de componentes | Subsistema (terminado), Interfaz (terminada) | Desc. de la arquitectura (vista del mod. de diseño), Subsistema (esbozado), Interfaz (esbozada) |
+      
+      
+      ---
+      # Conceptos clave
+
+      **Resumen de Trabajadores, Actividades, y Artefactos en las Disciplinas**
+
+      ___Implementación:___
+
+      | Actividad | Trabajador | Resp. de artefacto (salida) | Artefactos (entrada) |
+      |-----------|------------|-----------------------------|----------------------|
+      | Implementación de la arquitectura | Arquitecto | Componente (esbozado y posib.asignado a nodos), Descripción de la arquitectura (vista de los modelos de impl.y despl.) | Modelo de diseño, Modelo de despliegue, Descrip.de la arquitectura (vista de los mod.de diseño y despliegue) |
+      | Integrar el sistema | Integrador de sistemas | Plan de integración de  construcciones, Modelo de implementación (construcciones anteriores) | Requisitos adicionales, Modelo de casos de uso, Modelo de diseño, Modelo de implementación (construcciones anteriores) |
+      | Implementar un subsistema | Ingeniero de componentes | Subsistema de implementación (implementado para una construcción), Interfaz (implementado para una construcción) | Plan de integración de construcciones, Descrip.de la arquitec. (vista del modelo de implementac), Subsistema de diseño (terminado) |
+      | Implementar una clase | Ingeniero de componentes | Componente (implentado) | Clase de diseño (terminada), Interfaz (proporcionada por la clase de diseño) |
+      | Realizar prueba de unidad | Ingeniero de componentes | Componente (probado) | Componente (implementado), Interfaz |
+      
+      
+      ---
+      # Conceptos clave
+
+      **Resumen de Trabajadores, Actividades, y Artefactos en las Disciplinas**
+
+      ___Prueba:___
+
+      | Actividad | Trabajador | Resp. de artefacto (salida) | Artefactos (entrada) |
+      |-----------|------------|-----------------------------|----------------------|
+      | Planificar prueba | Ingeniero de pruebas | Plan de Prueba | Requisitos adicionales, Modelo de casos de uso, Modelo de análisis, Modelo de diseño, Modelo de implementación, Descripción de arqu.(vistas arquitec.de los modelos) |
+      | Diseñar prueba | Ingeniero de pruebas | Caso de prueba, Procedimiento de prueba | Requisitos adicionales, Modelo de casos de uso, Modelo de análisis, Modelo de diseño, Modelo de implementación, Descripción de arqu.(vistas arquitec.de los modelos), Plan de prueba (estrategia de prueba y planific.) |
+      | Implementar prueba | Ingeniero de componentes | Componente de prueba | Caso de prueba, Procedimiento de prueba, Modelo de implement. (construida para ser probada) |
+      | Realizar pruebas de integración | Ingeniero de pruebas de integración | Defecto | Caso de prueba, Procedimiento de prueba, Modelo de implement. (construida para ser probada) |
+      
+      ---
+      # Conceptos clave
+
+      **Resumen de Trabajadores, Actividades, y Artefactos en las Disciplinas**
+
+      ___Prueba:___
+
+      | Actividad | Trabajador | Resp. de artefacto (salida) | Artefactos (entrada) |
+      |-----------|------------|-----------------------------|----------------------|
+      | Realizar prueba de sistema | Ingeniero de pruebas de sistema | Defecto | Caso de prueba, Procedimiento de prueba, Modelo de implement. (construida para ser probada) |
+      | Evaluar prueba | Ingeniero de pruebas | Evaluación de prueba (para una iteración) | Plan de prueba, Modelo de prueba, Defecto |
+
+      ---
+      # Captura de Requisitos
+
+
+
+      
+
+    </textarea>
+    <script src="scripts/remark.js"></script>
+    <script>
+       var slideshow = remark.create();
+    </script>
+  </body>
+</html>

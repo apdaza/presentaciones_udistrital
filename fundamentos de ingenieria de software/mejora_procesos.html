@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="estilos/estilos.css">
+  </head>
+  <body>
+    <textarea id="source">
+      name: inverse
+      layout: true
+      class: center, middle, inverse
+      ---
+      template: inverse
+      # La mejora del proceso de software
+      ***
+      ---
+      layout: false
+      # La mejora del proceso de software
+      ***
+
+      ## Contenidos
+      1. Introducción y objetivos	
+      2. La mejora del proceso de software	
+      3. El proceso de mejora de procesos	
+      4. Modelos de madurez	
+      5. El modelo CMMI	
+      6. CMMI V2.0	
+      7. CMMI y Ágil	
+      8. Referencias
+      
+      
+      ---
+      ![reducida](./media/tema09/esquema.png)
+
+      ---
+      # 1.  Introducción y objetivos
+
+      Actualmente, es necesario desarrollar software cada vez ___de manera más rápida y con menor costo___. 
+      
+      Estos dos objetivos se encuentran en clara contraposición entre sí, y una solución para aunar ambos consiste en ___centrar la atención en la mejora continua de los procesos empleados___. 
+      
+      Esta necesidad de mejora es especialmente crítica —pero no única— en los procesos que emplean metodologías tradicionales, donde a menudo es necesario coordinar grandes equipos de personas.
+
+      Todos los procesos de mejora del proceso software siguen, en general, una serie de fases que pasan por el ___establecimiento de métricas___ que permitan observar el proceso, el análisis del estado actual y la propuesta de cambios. 
+      
+      Además, existen una serie de ___modelos de madurez___ que pueden ayudar a las organizaciones a sentar las bases para la optimización de sus procesos. Entre ellos destaca el Modelo de madurez de capacidades integrado. 
+      
+      ---
+      # 1.  Introducción y objetivos
+      
+      Con todo ello alcanzaremos los siguientes objetivos:
+
+      -	Comprender la importancia de la mejora del proceso de software para aumentar la eficiencia de los procesos y mejorar la calidad del producto final.
+      
+      -	Conocer los factores que intervienen en la calidad final del producto software y su importancia relativa.
+      
+      -	Conocer las actividades necesarias para conseguir una mejora en el proceso del software.
+      
+      -	Comprender los conceptos de capacidad y madurez.
+      
+      -	Conocer los aspectos generales del modelo CMMI para la mejora de procesos, y los dos modelos que propone: por etapas y continuo.
+      
+      -	Saber utilizar el CMMI en combinación con las metodologías ágiles para mejorar el proceso de desarrollo de software.
+      
+      
+      ---
+      # 2. La mejora del proceso de software
+
+      La mejora del proceso de software abarca un conjunto de actividades que buscan optimizar los procesos de construcción del software con el objetivo final de obtener un producto de mayor calidad, más rápidamente, y con menor coste (Pressman, 2010). 
+
+      Estas actividades pueden adoptar dos enfoques posibles (Sommerville, 2011):
+
+      ![reducida](./media/tema09/mejoras01.png)
+
+      ---
+      # 2. La mejora del proceso de software
+
+      Aparentemente, ambos enfoques resultan contrapuestos. 
+
+      -	El primero se ocupa por facilitar el desarrollo de planes precisos que contemplen una serie de prácticas necesarias para la buena calidad del proceso.
+      
+      - El segundo da menos importancia a la planificación y a la estandarización de procesos, y busca la adaptación (agilidad) como mejor manera para resolver los problemas y conseguir los objetivos del proyecto. 
+
+      -	En el primer caso se pueden introducir algunas prácticas que suponen una sobrecarga de trabajo (no necesariamente relacionadas con la programación).
+      
+      - En el segundo se intenta eludir toda carga burocrática y el foco está en el desarrollo.
+      
+      ---
+      # 2. La mejora del proceso de software
+      
+      No debemos olvidar que algunas metodologías ágiles, como XP, hacen énfasis precisamente en determinadas prácticas de ingeniería (buenas prácticas) al conocerse que redundan en un beneficio de la calidad final del producto. 
+      
+      En este sentido, un equipo de desarrollo XP es «maduro» en la medida en que es capaz de adoptar el conjunto de prácticas recomendadas.
+
+      ---
+      # 2. La mejora del proceso de software
+      ## Conclusión
+
+      En términos generales, las prácticas ágiles resultan beneficiosas en proyectos pequeños y medianos, donde es fundamental focalizar los recursos en la entrega del producto y en la satisfacción del cliente, y los procesos son adaptables en función de las necesidades concretas. 
+
+      En proyectos grandes, construcción de sistemas críticos, y cuando el equipo integra desarrolladores de varias compañías, distribuidos geográficamente y con culturas diferentes, el enfoque basado en la mejora y estandarización de procesos puede resultar más adecuado.
+
+      ---
+      # 2. La mejora del proceso de software
+      ## Factores que afectan a la calidad del producto software
+
+      Los primeros esfuerzos en el ámbito de la ingeniería orientados a la mejora de los procesos tuvieron su origen en el ___ámbito de la fabricación___. Este enfoque no resulta del todo apropiado en el caso del desarrollo de software por dos motivos:
+
+      -	En los procesos de fabricación hay una clara relación entre el proceso y el producto. En el caso del desarrollo software, esta restricción no existe y, además, cada producto es único.
+
+      - En el ámbito de la fabricación es fácil establecer métricas de calidad para un producto. El software es un producto intangible y, a menudo, su calidad final viene determinada por un conjunto de atributos más subjetivos.
+
+      ---
+      # 2. La mejora del proceso de software
+      ## Factores que afectan a la calidad del producto software
+
+      En términos generales, la calidad de un producto software está influenciada por: 
+
+      ![reducida](./media/tema09/mejoras02.png)
+
+      ---
+      # 2. La mejora del proceso de software
+      ## Factores que afectan a la calidad del producto software
+
+      ___En proyectos grandes:___ 
+      - Tienden a ser más determinantes la calidad del proceso empleado y la correcta calendarización y estimación del coste del proyecto. 
+      
+      - Los procesos definidos permiten asignar responsabilidades, controlar el proceso y establecer los cauces de comunicación adecuados y claros. 
+      
+      - Errores de planificación pueden resultar desastrosos y difíciles de corregir.
+
+      ---
+      # 2. La mejora del proceso de software
+      ## Factores que afectan a la calidad del producto software
+
+      ___En proyectos pequeños___
+      - Donde a menudo los recursos son más limitados, resulta fundamental la experiencia del equipo y el correcto aprovechamiento de las herramientas tecnológicas. 
+      
+      - La falta de procesos estandarizados y claros se suple con la experiencia y conocimientos del equipo, mientras que, al no poder dedicarse recursos a actividades de gestión, es necesario contar con herramientas tecnológicas que maximicen el resultado del tiempo empleado en desarrollo.
+
+      ---
+      # 2. La mejora del proceso de software
+      ## Factores que afectan a la calidad del producto software
+
+      > Un proceso es un conjunto de actividades ejecutadas de una determinada manera para obtener un propósito concreto. 
+
+      La mejora de procesos asume la idea de que la calidad de un producto o sistema depende fundamentalmente de la calidad de los procesos empleados. 
+
+      También es cierto que solo si el proceso seguido es el adecuado en cada caso, este repercutirá positivamente en la calidad del producto final (Garzás, 2012). 
+      
+      Muchas veces se institucionalizan prácticas y procesos en una organización que, al no ser los más apropiados, ocasionan que la mala calidad también se institucionalice en el producto software.
+      
+      ---
+      # 3. El proceso de mejora de procesos
+
+      > Un proceso de software es una secuencia de actividades que permite la construcción de un sistema software. 
+      
+      Como sabemos, existen diferentes modelos, de manera que no hay un modelo ideal o canónico aplicable a todas las compañías y tipos de producto. 
+      
+      Cada compañía ___o incluso cada proyecto___ debe adoptar el modelo que en cada caso resulte más adecuado. 
+      
+      Tampoco existe, por tanto, un proceso de mejora estandarizado.
+
+      Por otro lado, cada organización deberá determinar qué aspectos de sus procesos quiere mejorar. 
+      
+      Según Sommerville (2011), es ___«imposible optimizar simultáneamente todos los atributos del proceso»___. 
+      
+      ---
+      # 3. El proceso de mejora de procesos
+
+      Cualquier proceso de mejora de procesos debe adoptar un enfoque incremental y cíclico (figura 3), con tres subprocesos:
+
+      ![RN](./media/tema09/mejoras03.png)
+
+      ---
+      # 3. El proceso de mejora de procesos
+
+      ___La medición del proceso.___ 
+      
+      Se trata de definir métricas que permitan evaluar los distintos atributos del proyecto o del propio producto. 
+      
+      Estas métricas tienen relación con los objetivos del proceso de mejora, y permitirán valorar la efectividad de las modificaciones introducidas.
+      
+      ___El análisis del proceso.___ 
+      
+      Evaluando el proceso actualmente implantado se detectan posibles debilidades. El análisis se centra en determinadas características que se desea mejorar.
+      
+      ___El cambio del proceso.___ 
+      
+      Se introducen las medidas de corrección estimadas convenientes.
+
+      ---
+      # 3. El proceso de mejora de procesos
+      ## Medición del proceso
+
+      Lo principal es definir métricas adecuadas que permitan valorar la calidad del proceso, y que sirvan como referencia para poder evaluar el nivel de mejora de los cambios introducidos. Identificamos tres tipos de métricas:
+      
+      ![reducida](./media/tema09/mejoras04.png)
+      
+      ---
+      # 3. El proceso de mejora de procesos
+      ## Medición del proceso
+
+      El principal problema está en determinar las métricas adecuadas. Para ello se puede emplear el paradigma ___Goal–Question–Metric (Meta–Pregunta–Métrica)___:
+
+      ___Metas:___ 
+      
+      - Indican los objetivos que quiere lograr la organización (reducir los tiempos de entrega, reducir el costo de los proyectos, aumentar la calidad del producto, mejorar la cualificación técnica del equipo, etc.).
+      
+      ___Preguntas:___ 
+      
+      - Se trata de identificar áreas de incertidumbre relacionadas con las metas. 
+      
+      ---
+      # 3. El proceso de mejora de procesos
+      ## Medición del proceso
+
+      - Si queremos aumentar la calidad del producto, deberemos preguntarnos por cuestiones como: ¿empleamos la tecnología adecuada? ¿Está suficientemente cualificado el equipo? ¿Desarrollamos bien el proceso de requisitos?
+      
+      ___Métricas:___ 
+      
+      - Es el conjunto de medidas que debemos obtener para poder responder a las preguntas. 
+      
+      - La métrica puede estar asociada a diferentes preguntas.
+
+      ---
+      # 3. El proceso de mejora de procesos
+      ## Medición del proceso
+
+      ![RN](./media/tema09/mejoras05.png)
+
+      ---
+      # 3. El proceso de mejora de procesos
+      ## Análisis del proceso
+
+      .text-column[El análisis es la actividad en la que se evalúan las características clave del proceso y cómo las personas implicadas los realizan. 
+
+      Del análisis del proceso surgen nuevas métricas necesarias, y las nuevas medidas aportan más información sobre el proceso, de manera que ambas actividades están entrelazadas.]
+      
+      .img-column[![RN](./media/tema09/mejoras06.png)]
+      
+      ---
+      # 3. El proceso de mejora de procesos
+      ## Análisis del proceso
+
+      Para evaluar estos elementos se recurre habitualmente al empleo de cuestionarios como primera aproximación, seguidos por entrevistas personales con los participantes del proceso. 
+      
+      También se realizan estudios etnográficos, que consisten en la observación directa de los participantes durante su actividad —esta última técnica permite obtener información que es difícil que aflore en un cuestionario o durante una entrevista—. 
+
+      El resultado de esta fase es un conjunto de modelos o mapas del proceso, que permiten describirlo y razonar sobre ellos.
+
+      ---
+      # 3. El proceso de mejora de procesos
+      ## Cambios en los procesos
+
+      El paso final en cada iteración es la modificación del proceso. 
+      
+      Para ello, se puede variar el orden de sus actividades, introducir o eliminar prácticas o herramientas, definir nuevos roles, etc. 
+
+      La introducción de los cambios requiere de cinco etapas:
+
+      ![reducida](./media/tema09/mejoras07.png)
+
+      ---
+      # 3. El proceso de mejora de procesos
+      ## Cambios en los procesos
+
+      ___Identificación de mejoras.___ 
+      
+      - Se parte del análisis realizado y se proponen opciones de mejora. 
+      
+      - Por ejemplo, si se encuentra que un problema es la falta de comunicación entre el equipo y el cliente, se pueden definir nuevos roles encargados de esta interacción, o mejorar el proceso introduciendo nuevas técnicas de elicitación.
+
+      ___Planificación de mejoras.___ 
+      
+      - Se valora el conjunto de propuestas y se decide una priorización y orden de implementación. Cuando su número es grande, resulta difícil introducirlas de una vez y conviene analizar su importancia relativa.
+
+      ---
+      # 3. El proceso de mejora de procesos
+      ## Cambios en los procesos
+
+      ___Introducción de cambios.___ 
+      
+      - Conviene dedicar el suficiente tiempo a la introducción (o eliminación) de actividades, herramientas y roles, asegurando su compatibilidad con el resto de los procesos y restricciones de la organización.
+
+      ___Capacitación de ingenieros.___ 
+      
+      - Es necesario incluir las actividades formativas necesarias para que los participantes conozcan y comprendan los cambios, y se familiaricen con las nuevas actividades, herramientas y roles.
+
+      ---
+      # 3. El proceso de mejora de procesos
+      ## Cambios en los procesos
+
+      ___Afinación del cambio.___ 
+      
+      - Finamente, es necesario comprobar la implementación de los cambios y corregir posibles problemas menores que puedan detectarse.
+
+
+      ---
+      # 4. Modelos de madurez
+
+      Los modelos de madurez se utilizan en el contexto de procesos de mejora del software proporcionando indicadores sobre la «madurez de los procesos» o, dicho de otra manera, sobre su calidad o «nivel de capacidad». 
+
+      Esta valoración se realiza habitualmente empleando escalas ordinales, de manera que es posible asignar puntuaciones numéricas en función del nivel de madurez considerado para cada proceso, o sobre la organización en su conjunto. 
+
+      Estos modelos de madurez van a acompañados de sus correspondientes marcos conceptuales para el proceso de mejora. 
+
+      > «Contienen los elementos esenciales de los procesos eficaces de una o más disciplinas y describen un camino evolutivo de mejora desde procesos ad hoc e inmaduros a procesos disciplinados y maduros con calidad y eficacia mejoradas.» SEI (2010, p. 5) 
+
+      ---
+      # 4. Modelos de madurez
+      
+      Un marco conceptual de mejora define, al menos, según Pressman (2010, p.677):
+
+      - ___Un conjunto de características deseables para cada proceso.___ Estas características se basan en la observación de buenas prácticas a lo largo del tiempo.
+
+      - ___Un método para evaluar el proceso.___ El marco conceptual define la manera de analizar los procesos y decidir en qué medida se ajusta a las características deseadas.
+      
+      -	___Un sistema de informes.___ Se proporciona una manera de resumir los resultados de las valoraciones.
+      
+      -	___Estrategia de apoyo.___ El marco también ofrece a la compañía unos procesos para acompañarla en la transición hacia la implementación del cambio.
+
+      ---
+      # 4. Modelos de madurez
+
+      Los marcos conceptuales que permiten la mejora del proceso de software más extendidos son el CMM y el CMMI del SEI (Software Engineering Institute). 
+      
+      Sin embargo, existen algunas otras alternativas que vale la pena señalar (Pressman, 2010):
+
+      
+      ![RN](./media/tema09/mejoras08.png)
+
+      ---
+      # 4. Modelos de madurez
+
+      ___ITIL (Information Technology Infrastructure Library)___, o La Biblioteca de infraestructura de tecnologías de información. 
+      
+      Proporciona un conjunto de buenas prácticas para la gestión de servicios de tecnologías de la información (TI), el desarrollo de tecnologías y las operaciones en general. 
+      
+      Fue desarrollado en Reino Unido para fortalecer los procesos desde cinco enfoques: 
+      -	Perspectiva de negocio. 
+      
+      - Entrega del servicio. 
+      
+      - Soporte del servicio. 
+      
+      -	Manejo de la infraestructura y el manejo de las aplicaciones.
+
+      ---
+      # 4. Modelos de madurez
+
+      ___SPICE (Software Process Improvement and Capability Determination)___, o determinación de mejora y capacidad del proceso de software. 
+      
+      Es un marco conceptual de mejora compatible con ISO 15504:2003 e ISO 12207. 
+      
+      Es más flexible que el modelo del SEI, e incluye niveles de madurez equivalentes.
+
+      ___Bootstrap___ comenzó como un proyecto para adaptar el modelo del SEI a un amplio rango de compañías. 
+      
+      Usa los mismos niveles de madurez que el CMMI, pero propone un modelo de proceso básico, basado en el de la Agencia Espacial Europea (ESA), como punto de partida para la definición de procesos. 
+      
+      -	Examinar la necesidad
+      
+      -	Iniciar el proceso de mejora
+      
+      -	Preparación	
+      
+      ---
+      # 5. El modelo CMMI
+
+      .text-column[___El Modelo de madurez de capacidades de software (CMM–SW)___ fue desarrollado por el Instituto de Ingeniería del Software de la Universidad Carnegie Mellon —Software Engineering Institute (SEI)— durante la década de 1990, proporcionando un marco conceptual para abordar procesos de mejora del software. ]
+
+      .img-column[![reducida](./media/tema09/mejoras09.png)]
+
+      ---
+      # 5. El modelo CMMI
+      
+      Como vemos, históricamente se han desarrollado diferentes modelos de madurez para distintas áreas de interés (adquisiciones, desarrollo o servicios). 
+      
+      Por su evolución, todas ellas comparten elementos comunes. Estos componentes forman lo que se conoce como ___CMMI Model Foundation (CMF)___. 
+      
+      De esta manera, el framework CMMI ofrece un conjunto de componentes (unos comunes y otros específicos para un área de interés) que se agrupan para formar modelos o constelaciones. 
+      
+      Actualmente existen tres constelaciones: 
+
+      -	CMMI para desarrollo (CMMI–DEV)
+      
+      -	CMMI para adquisiciones (CMMI–ACQ) 
+      
+      -	CMMI para servicios (CMMI–SVC)
+
+      ---
+      # 5. El modelo CMMI
+      ## Conceptos básicos
+
+      __CONCEPTOS GENERALES SOBRE CMMI Y CALIDAD__
+      <table>
+        <tr><th>CONCEPTO</th><th>DEFINICIÓN</th></tr>
+        <tr><td>Marco CMMI (CMMI Framework)</td><td>Estructura básica que agrupa componentes CMMI y contiene elementos de los modelos actuales, así como reglas y métodos para generar nuevos modelos, métodos de evaluación y materiales de formación.</td></tr>
+        <tr><td>Modelo CMMI</td><td>Modelo generado a partir del marco CMMI.</td></tr>
+        <tr><td>Componente del modelo CMMI</td><td>Cualquiera de los principales elementos de la arquitectura de componentes de un modelo CMMI (prácticas específicas y genéricas, metas específicas y genéricas, áreas de proceso, niveles de capacidad y niveles de madurez).</td></tr>
+        <tr><td>Constelación</td><td>Colección de componentes CMMI empleados para construir modelos, evaluaciones y materiales de formación para un área de interés (adquisición, desarrollo, servicios…).</td></tr>
+        <tr><td>Capacidad de un proceso</td><td>Rango de resultados esperados que se pueden conseguir siguiendo un proceso.</td></tr>
+        <tr><td>Institucionalización</td><td>Forma de trabajar arraigada en una organización y seguida de manera rutinaria como parte de su cultura corporativa.</td></tr>
+      </table>
+
+      ---
+      # 5. El modelo CMMI
+      ## Conceptos básicos
+
+      __CONCEPTOS GENERALES SOBRE CMMI Y CALIDAD__
+      <table>
+        <tr><th>CONCEPTO</th><th>DEFINICIÓN</th></tr>  
+        <tr><td>Madurez de la organización</td><td>Grado en el que una organización ha desplegado procesos que están documentados, gestionados, medidos, controlados y mejorados continuamente.</td></tr>
+        <tr><td>Evaluación (appraisal)</td><td>Un examen de uno o más procesos que realiza un equipo de profesionales cualificados, empleando un modelo de referencia como base para determinar, al menos, fortalezas y debilidades.</td></tr>
+        <tr><td>Gestión cuantitativa</td><td>Gestión utilizando técnicas estadísticas y otras técnicas cuantitativas para analizar el rendimiento de los procesos, en relación con los objetivos, y definir posibles acciones correctivas.</td></tr>
+      </table>
+      	
+      
+      ---
+      # 5. El modelo CMMI
+      ## Conceptos básicos
+
+      __CONCEPTOS RELACIONADOS CON LOS PROCESOS__
+      <table>
+        <tr><th>CONCEPTO</th><th>DEFINICIÓN</th></tr>
+        <tr><td>Proceso</td><td>Conjunto de actividades relacionadas que transforman entradas en salidas para alcanzar un propósito.</td></tr>
+        <tr><td>Proceso capaz</td><td>Puede satisfacer sus objetivos de calidad de producto y servicio y de rendimiento del proceso.</td></tr>
+        <tr><td>Proceso estable</td><td>Se han eliminado las causas especiales de variación (causa de un defecto que se debe a alguna circunstancia transitoria) previniendo su reaparición, y solo permanecen causas comunes de variación (debidas a la interacción normal entre componentes del proceso).</td></tr>
+        <tr><td>Proceso incompleto</td><td>El proceso no se realiza, o se realiza parcialmente. No se satisface una o más de las metas específicas del área de proceso.</td></tr>
+        <tr><td>Proceso realizado</td><td>Se realiza el trabajo necesario para producir los productos de trabajo. Se satisfacen las metas específicas del área de proceso.</td></tr>
+        <tr><td>Proceso gestionado</td><td>Proceso realizado que se planifica y ejecuta de acuerdo con la política. Emplea personas adecuadas con acceso a los recursos necesarios. Involucra a las partes interesadas relevantes. Se monitoriza, controla y revisa.</td></tr>
+        <tr><td>Proceso definido</td><td>Proceso gestionado que se ha adaptado empleando un conjunto de procesos estándar de la organización y de acuerdo con sus guías de adaptación.</td></tr>
+      </table>
+      	
+      	
+      ---
+      # 5. El modelo CMMI
+      ## Conceptos básicos
+
+      __CONCEPTOS RELACIONADOS CON LOS COMPONENTES DEL MODELO__
+      <table>
+        <tr><th>CONCEPTO</th><th>DEFINICIÓN</th></tr>
+        <tr><td>Componentes informativos</td><td>Ayudan a los usuarios del modelo a comprender los componentes esperados y requeridos (ejemplos, explicaciones detalladas o subprácticas).</td></tr>
+        <tr><td>Componentes esperados</td><td>Describen actividades que son importantes para lograr un componente requerido (prácticas genéricas y específicas).</td></tr>
+        <tr><td>Componentes requeridos</td><td>Son esenciales para alcanzar la mejora de un área de proceso determinada, metas genéricas y específicas.</td></tr>
+        <tr><td>Área de proceso</td><td>Conjunto de prácticas relacionadas que, implementadas correctamente, satisfacen un conjunto de metas consideradas importantes para mejorar en esa área.</td></tr>
+        <tr><td>Meta específica</td><td>Componente requerido del modelo, que describe características únicas que deben estar presentes para satisfacer el área de proceso.</td></tr>
+        <tr><td>Meta genérica</td><td>Componente requerido del modelo que describe características que deben estar presentes para institucionalizar los procesos que implementan un área de proceso.</td></tr>
+      </table>
+
+      ---
+      # 5. El modelo CMMI
+      ## Conceptos básicos
+
+      __CONCEPTOS RELACIONADOS CON LOS COMPONENTES DEL MODELO__
+      <table>
+        <tr><th>CONCEPTO</th><th>DEFINICIÓN</th></tr>  
+        <tr><td>Práctica específica</td><td>Componente esperado del modelo que se considera importante para alcanzar la meta específica asociada.</td></tr>
+        <tr><td>Práctica genérica</td><td>Componente esperado del modelo que se considera importante para alcanzar las metas genéricas asociadas.</td></tr>
+        <tr><td>Subpráctica</td><td></td></tr>
+        <tr><td></td><td>Componente informativo del modelo que da orientaciones para interpretar e implementar prácticas asociadas.</td></tr>
+        <tr><td>Nivel de capacidad</td><td>Logro en la mejora de procesos dentro un área de proceso individual (se define mediante metas genéricas y específicas apropiadas para cada área de proceso).</td></tr>
+        <tr><td>Perfil de nivel de capacidad</td><td>Lista de áreas de proceso y sus correspondientes niveles de capacidad. Es un «perfil alcanzado» cuando representa la situación actual, o «perfil objetivo» cuando representa un objetivo de mejora.</td></tr>
+        <tr><td>Representación continua</td><td>Estructura del modelo donde los niveles de capacidad ofrecen un orden recomendado para abordar la mejora en cada área de proceso.</td></tr>
+      </table>
+
+      ---
+      # 5. El modelo CMMI
+      ## Conceptos básicos
+
+      __CONCEPTOS RELACIONADOS CON LOS COMPONENTES DEL MODELO__
+      <table>
+        <tr><th>CONCEPTO</th><th>DEFINICIÓN</th></tr>
+        <tr><td>Nivel de madurez</td><td>Logro en la mejora de procesos en un conjunto predefinido de áreas de proceso en las que se alcanzan todas las metas. Cada nivel es una base para alcanzar los niveles siguientes.</td></tr>
+        <tr><td>Representación por etapas</td><td>Estructura del modelo donde el alcance de metas de un conjunto de áreas de proceso establece un nivel de madurez.</td></tr>
+      </table>
+      
+      ---
+      # 5. El modelo CMMI
+      ## Estructura del modelo
+
+      El modelo CMMI–DEV es muy complejo, pero podemos simplificarlo, según Sommerville (2011) en los siguientes componentes (p. 722):
+
+      -	___Un conjunto de 22 áreas de proceso relacionadas con las actividades del proceso software y agrupadas en 4 categorías___. De ellas, 16 son «áreas de proceso base», o core process areas, y son comunes al resto de constelaciones elaboradas dentro del framework CMMI (aunque sus contenidos se adaptan al área de interés específica). Asociados a cada área de proceso hay tres elementos informativos:
+
+       - ___Declaración del propósito.___ Indica la finalidad del área de proceso. 
+      
+       - ___Notas introductorias.___ Describe conceptos principales cubiertos en esa área. 
+       
+       - ___Áreas de proceso relacionadas.___ Enumera referencias a otras áreas de proceso reflejando relaciones de alto nivel.
+
+      ---
+      # 5. El modelo CMMI
+      ## Estructura del modelo
+      <table>
+        <tr><th>CATEGORÍA</th><th>ÁREA DE PROCESO</th></tr>
+        <tr><td>Gestión de procesos</td>
+          <td>
+            - Definición de procesos de la organización (OPD)<br>
+            - Enfoque en procesos de la organización (OPF)<br>
+            - Gestión del rendimiento de la organización (OPM)<br>
+            - Formación en la organización (OT)<br>
+            - Rendimiento de procesos de la organización (OPP)
+          </td></tr>
+        <tr><td>Gestión de proyectos</td>
+          <td>
+            - Planificación del proyecto (PP)<br>
+            - Monitorización y control del proyecto (PMC)<br>
+            - Gestión integrada del proyecto (IPM)<br>
+            - Gestión de riesgos (RSKM)<br>
+            - Gestión de requisitos (REQM)<br>
+            - Gestión cuantitativa del proyecto (QPM)<br>
+            - Gestión de acuerdos con proveedores (SAM)
+          </td></tr>
+        <tr><td>Ingeniería</td>
+          <td>
+            - Desarrollo de requisitos (RD)<br>
+            - Solución técnica (TS)<br>
+            - Integración de producto (PI)<br>
+            - Verificación (VER)<br>
+            - Validación (VAL)
+          </td></tr>
+        <tr><td>Soporte</td>
+          <td>
+            - Gestión de configuración (CM)<br>
+            - Aseguramiento de la calidad de proceso y del producto (PPQA)<br>
+            - Medición y análisis (MA)<br>
+            - Análisis de decisiones y resolución (DAR)<br>
+            - Análisis causal y resolución (CAR)
+          </td></tr>
+      </table>
+      	
+      ---
+      # 5. El modelo CMMI
+      ## Estructura del modelo
+
+      -	___Un conjunto de metas específicas asociadas a cada área de proceso.___ Cada meta define las características de sus actividades para que el proceso resulte efectivo.
+
+      -	___Un conjunto de metas genéricas aplicables a múltiples áreas de proceso.___ Describen características necesarias para institucionalizar los procesos de esa área. 
+
+      -	___Un conjunto de prácticas específicas, o actividades concretas que permiten lograr una meta específica.___ Se trata de recomendaciones, y cada organización puede elegir la mejor manera para alcanzar las metas.
+
+      -	___Un conjunto de prácticas genéricas___, que describen actividades importantes para poder lograr metas genéricas y contribuir a la institucionalización de los procesos.
+
+      ---
+      # 5. El modelo CMMI
+      ## Estructura del modelo
+
+      - ___Subprácticas.___ Son descripciones detalladas que ayudan a interpretar las prácticas específicas o genéricas. 
+      
+      Como vemos, el CMMI establece metas generales y específicas para cada una de las áreas de proceso, y propone una serie de prácticas para poder alcanzarlas. 
+      
+      CMMI no impone un modelo de proceso específico, es válido tanto para metodologías tradicionales como ágiles.
+
+      En la siguiente figura se aprecia la relación jerárquica entre áreas de proceso, metas, prácticas y subprácticas, y la pertenencia a las diferentes categorías generales (informativo, requerido y esperado).
+
+      ---
+      # 5. El modelo CMMI
+      ## Estructura del modelo
+
+      ![reducida](./media/tema09/mejoras10.png)
+       
+      ---
+      # 5. El modelo CMMI
+      ## Niveles de capacidad y niveles de madurez
+
+      Los niveles se utilizan en CMMI–DEV para ___describir un camino evolutivo recomendado para una organización que quiera mejorar los procesos que utiliza___. 
+
+      Existen dos tipos de niveles:
+
+      ___Niveles de capacidad.___ Se refieren a la consecución de mejoras dentro de áreas de proceso individuales. Definen una escala de capacidad de 0 a 3.
+
+      ---
+      # 5. El modelo CMMI
+      ## Niveles de capacidad y niveles de madurez
+
+      <table>
+        <tr><th>3</th><th>Definido</th><td>Los procesos son gestionados y además se adaptan a partir de un conjunto de procedimientos estándar de la organización. Es decir, los procesos están institucionalizados, y se adaptan según el proyecto empleando guías.</td></tr>
+        <tr><th>2</th><th>Gestionado</th><td>Los procesos gestionados, además de estar realizados, se planifican y ejecutan de acuerdo con la política, emplean personal cualificado con acceso a los recursos necesarios y se monitoriza, controla y revisa. Esta disciplina garantiza que las prácticas existentes perdurarán.</td></tr>
+        <tr><th>1</th><th>Realizado</th><td>Los procesos existen y llevan a cabo el trabajo necesario para producir los productos de trabajo. Se logran todas las metas específicas de esa área. Las mejoras pueden perderse si no se institucionalizan (niveles 2 y 3).</td></tr>
+        <tr><th>0</th><th>Incompleto</th><td>El área de proceso no existe o no logra todas las metas específicas. No hay metas genéricas en este nivel, porque no tiene sentido institucionalizar procesos que se realizan parcialmente.</td></tr>
+      </table>
+      
+      ___Niveles de madurez.___ Se refieren a la consecución de mejoras en múltiples áreas de proceso de manera simultánea. En este caso, se define una escala de madurez de 1 a 5.
+
+      ---
+      # 5. El modelo CMMI
+      ## Niveles de capacidad y niveles de madurez     
+
+      <table>
+        <tr><th>5</th><th>En optimización</th><td>La organización optimiza sus procesos empleando medios estadísticos que permiten la adaptación y la mejora continua. Este nivel se centra en la mejora continua de procesos y tecnología a nivel de la organización, integrando información de todos los proyectos.</td></tr>
+        <tr><th>4</th><th>Gestionado cuantitativamente</th><td>La organización y los proyectos establecen objetivos cuantitativos que se interpretan en términos estadísticos y se utiliza la información durante la gestión de los proyectos. Esto aumenta la predictibilidad de resultados a nivel de proyecto, respecto del nivel 3.
+        <tr><th>3</th><th>Definido</th><td>Los procesos están definidos y, por tanto, existen estándares y procedimientos para adaptarlos a cada proyecto.</td></tr>
+        <tr><th>2</th><th>Gestionado</th><td>Los procesos tienen un nivel de capacidad gestionado, y por tanto existe una disciplina que permite repetir los éxitos a nivel de proyecto.</td></tr>
+        <tr><th>1</th><th>Inicial</th><td>Los procesos son ad hoc y caóticos, y aunque se pueden completar proyectos, los resultados no son repetibles. El éxito depende de la competencia del equipo, pero con frecuenta se excede el presupuesto y plazos planificados.</td></tr>
+      </table> 
+      
+      ---
+      # 5. El modelo CMMI
+      ## Niveles de capacidad y niveles de madurez
+      ___Comparación entre niveles de capacidad y niveles de madurez.___
+      <table>
+        <tr><th>NIVEL</th><th>NIVELES DE CAPACIDAD</th><th>NIVELES DE MADUREZ</th></tr>
+        <tr><th>0</th><td>Incompleto</td><td></td></tr>
+        <tr><th>1</th><td>Realizado</td><td>Inicial</td></tr>
+        <tr><th>2</th><td>Gestionado</td><td>Gestionado</td></tr>
+        <tr><th>3</th><td>Definido</td><td>Definido</td></tr>
+        <tr><th>4</th><td></td><td>Gestionado cuantitativamente</td></tr>
+        <tr><th>5</th><td></td><td>En optimización</td></tr>
+      </table>      
+    
+
+      ---
+      # 5. El modelo CMMI
+      ## La representación continua y la representación por etapas
+
+      Los niveles de capacidad y los niveles de madurez dan lugar, respectivamente, a la representación continua y la representación por etapas. 
+
+      - ___La representación continua___ permite una clasificación más fina de los procesos, calificándolos por áreas de proceso. Permite un proceso de mejora mejor adaptado a las necesidades específicas de la organización.
+      
+      - ___La representación por etapas___, compatible con el CMM, asigna un nivel de madurez, de 1 a 5, al conjunto de los procesos que implementa una empresa.
+
+      Muchas compañías no necesitan (o no pueden, por falta de recursos) mejorar todos sus procesos de manera simultánea y abordan el modelo continuo que proporciona flexibilidad
+      
+      ---
+      # 6. CMMI V2.0
+
+      En 2018 aparece la última versión del Modelo de madurez de capacidades, las principales modificaciones introducidas respecto de la versión 1.3 son:
+
+      - Mayor énfasis en el rendimiento. Se han incluido nuevas prácticas relacionadas con la mejora del rendimiento en todos los niveles de madurez, ayudando a las empresas a mejorar su ROI (Return Of Investment).
+      
+      - Se incluye una guía específica para organizaciones que emplean métodos ágiles para mejorar sus procesos y escalar sus prácticas.
+      
+      - Mejora de la usabilidad. Se ha tendido cuidado en utilizar un lenguaje no demasiado técnico para facilitar la comprensión de lectores de habla no inglesa.
+      
+      - Las prácticas siguen también un camino evolutivo, de manera que las prácticas de cada nivel se construyen sobre las del nivel inferior.
+      
+      - Los niveles de madurez son similares a los definidos en la versión 1.3.
+      
+      ---
+      # 6. CMMI V2.0
+
+      - Ofrece una guía de adopción paso a paso para ayudar a las organizaciones a hacer la transición desde CMMI V1.3.
+      
+      - Las «áreas de proceso» se llaman ahora «áreas de práctica» para hacer énfasis en que CMMI V2.0 es ante todo una colección de buenas prácticas, y no de procesos que deben implementarse.
+
+
+      ---
+      # 7. CMMI y Ágil
+
+      Como ya hemos mencionado, CMMI y las metodologías ágiles parecen estar en aparente contraposición. 
+      
+      - Los métodos ágiles valoran más a los individuos y sus interacciones, el software funcional o la respuesta al cambio.
+      
+      - CMMI se ocupa de la mejora de procesos estandarizados y ayuda a las empresas a poder planificarse mejor y a utilizar las herramientas adecuadas.
+
+      ## Cómo combinar Ágil y CMMI
+
+      >> La clave para el éxito de las organizaciones es la adecuada combinación de ___agilidad___ y ___estabilidad___. 
+      
+      Se trata de construir capacidades dinámicas sobre una estructura de procesos estable y una estructura organizacional sólida. 
+      
+      Es posible identificar problemas concretos en los proyectos ágiles que están relacionados con áreas de proceso (o áreas de práctica) contempladas en CMMI:
+
+      ---
+      # 7. CMMI y Ágil
+      <table>
+        <tr><th>PROBLEMA</th><th>TÉCNICA ÁGIL RELACIONADA</th><th>ÁREAS DE PROCESO CMMI</th></tr>
+        <tr><th>Los requisitos cambian demasiado</th>
+          <td>-	Planificación de sprint<br>
+            -	Product Backlog<br>
+            -	Historias de usuario<br>
+            -	Planificación de la release<br>
+          </td>
+          <td>-	Gestión de requisitos (REQM)<br>
+            -	Monitorización y control de proyecto (PMC)<br>
+            -	Desarrollo de requisitos (RD)<br>
+            -	Verificación (VER)<br>
+          </td></tr>
+        <tr><th>Los clientes están frustrados con el progreso</th>
+          <td>-	Planificación de la release<br>
+            -	Planificación de sprint<br>
+            -	Revisión de sprint<br>
+          </td>
+          <td>-	Gestión del proyecto integrada (IPM)<br>
+            -	Validación (VAL)<br>
+            -	Planificación del proyecto (PP)<br>
+            -	Monitorización y control de proyecto (PMC)<br>
+          </td></tr>
+        <tr><th>Mala comunicación en el proyecto</th>
+          <td>-	Scrum diario<br>
+            -	Planificación de release<br>
+            -	Planificación de sprint<br>
+            -	Revisión de sprint<br>
+            -	Reuniones del PO con clientes<br>
+          </td>
+          <td>-	Monitorización y control de proyecto (PMC)<br>
+            -	Planificación del proyecto (PP)<br>
+            -	Gestión del proyecto integrada (IPM)<br>
+          </td></tr>
+        <tr><th>La calidad del código es mala</th>
+          <td>-	Programación en parejas<br>
+            -	TDD<br>
+            -	Integración continua<br>
+            -	Retrospectivas<br>
+          </td>
+          <td>-	Solución técnica (TS)<br>
+            -	Verificación (VER)<br>
+            -	Validación (VAL)<br>
+            -	Gestión del proyecto integrada (IPM)<br>
+            -	Aseguramiento de la calidad de proceso y producto (PPQA)<br>
+          </td></tr>
+        <tr><th>No se descubren los problemas potenciales</th>
+          <td>-	Scrum diario<br>
+            -	Planificación de release<br>
+            -	Retrospectivas de sprint
+          </td>
+          <td>-	Monitorización y control de proyecto (PMC)<br>
+            -	Gestión de riesgos (RSKM)<br>
+            -	Gestión del proyecto integrada (IPM)<br>
+          </td></tr>
+      </table>
+        
+      ---
+      # 7. CMMI y Ágil
+
+      De esta manera, las prácticas específicas propuestas por CMMI para cada área de proceso pueden emplearse para mejorar ciertos aspectos de los procesos ágiles. Algunos ejemplos de ello se muestran en la tabla 9.
+
+      ---
+      # 8. Referencias
+
+      - Callejas–Cuervo, M., Alarcón-Aldana, A. C. y Álvarez-Carreño, A. M. (2017). Modelos de calidad del software, un estado del arte. Entramado, 13(1), 236–250. https://doi.org/10.18041/entramado.2017v13n1.25125
+
+      - CMMI Institute. (2016). A Guide to Scrum and CMMI: Improving Agile Performance with CMMI [Guía pdf]. CMMI Institute. Recuperado de http://www.broadswordsolutions.com/wp-content/uploads/2016/12/Scrum_XP_Profile_Final.pdf 
+
+      - CMMI Institute. (2018a). How is CMMI V2.0 different from V1.3? [Web]. Recuperado de http://cmmiinstitute.zendesk.com/hc/en-us/articles/360000175667-How-is-CMMI-V2-0-different-from-V1-3-
+
+      - CMMI Institute. (2018b). How is the terminology changing in CMMI V2.0? [Web]. Recuperado de http://cmmiinstitute.zendesk.com/hc/en-us/articles/360000711887-How-is-the-terminology-changing-in-CMMI-V2-0-
+
+      ---
+      # 8. Referencias
+
+      - Doyle, K. (2018). CMMI 2.0 Technical Overview: Introducing CMMI Development V2.0 to Pan-India Spin (p. 25). Software Engineering Institute. Recuperado de https://cmmiinstitute.com/resource-files/public/v2-0-materials/cmmi-v2-0-technical-overview
+
+      - Garzás, J. (1 de agosto de 2012). No es lo mismo calidad del PRODUCTO software, que calidad del EQUIPO [Blog personal]. Recuperado  de http://www.javiergarzas.com/2012/08/calidad-del-producto-software-proceso-equipo.html
+
+      - Linders, B. (2016). CMMI V1.3 Process Areas [Web]. Recuperado  de https://www.benlinders.com/tools/cmmi-v1-3-process-areas/
+
+      - O’Neill, D. (2016). The Way Forward: A Strategy for Harmonizing Agile and CMMI. CrossTalk. The Journal of Defense Software Engineering, 29(4). Recuperado de https://cmmiinstitute.com/resource-files/public/marketing/document/cmmi-the-agile-way
+
+      ---
+      # 8. Referencias
+
+      - Pressman, R. S. (2010). Ingeniería del software: un enfoque práctico (7ª ed.). México: McGraw-Hill Educación.
+
+      - SEI. (2010a). CMMI® for Development, Version 1.3 CMMI-DEV, V1.3 (No. CMU/SEI-2010-TR-033) (p. 482). Software Engineering Institute. Recuperado de https://cmmiinstitute.com/resource-files/public/marketing/v1-3models/cmmi-for-development-v1-3
+
+      - SEI. (2010b). CMMI para Desarrollo, Versión 1.3 (No. CMU/SEI-2010-TR-033). Software Engineering Institute. Recuperado de https://resources.sei.cmu.edu/asset_files/WhitePaper/2010_019_001_28782.pdf
+
+      - Sommerville, I. (2011). Ingeniería de software (9ª ed.). México: Pearson Educación de México.
+
+      - Tuya, J., Ramos, I. y Dolado, J. J. (2007). Técnicas cuantitativas para la gestión en la ingeniería del software. La Coruña: Netbiblo.
+
+    </textarea>
+    <script src="scripts/remark.js"></script>
+    <script>
+       var slideshow = remark.create();
+    </script>
+  </body>
+</html>

@@ -13,6 +13,135 @@
       # Requerimientos
       ---
       layout: false
+      # Contenido
+
+      - Introducción
+      - Ingeniería de requerimientos
+      - Proceso de Ingeniería de requerimientos
+      - El factor Humano
+      - Qué son los requerimientos?
+      - Ejemplos de requerimientos
+      - Requerimientos
+      - Dimensiones de los requerimientos
+      - RSM - Requirements Specification Model
+      - Especificación de requerimientos del software
+      - Propiedades deseables de los requerimientos
+
+      ---
+      # Contenido
+      
+      - Interesados en la especificación
+      - Requerimientos funcionales y no funcionales
+      - Los requerimientos en un enfoque predictivo
+      - Los requerimientos funcionales en las metodologías ágiles
+
+      ---
+      # Introducción
+
+      > La correcta obtención de los requerimientos es uno de los aspectos más críticos de un proyecto software, independientemente del tipo de proyecto que se trate, dado que una mala captura de los mismos es la causa de la mayor parte de los problemas que surgen a lo largo del ciclo de vida. [Johnson, 1995]
+
+      > La parte más difícil de construir de un sistema software es decidir qué construir. [...] Ninguna otra parte del trabajo afecta más negativamente al sistema final si se realiza de manera incorrecta. Ninguna otra parte es más difícil de rectificar después. [Brooks, 1995]
+
+      > El coste de un cambio en los requerimientos, una vez entregado el producto, es entre 60 y 100 veces superior al coste que hubiera representado el mismo cambio durante las fases iniciales de desarrollo. [Pressman, 2002]
+
+      ---
+      # Introducción
+
+      ![intermedia](./media/requerimientos/culumpio.jpg)
+
+      ---
+      # Ingeniería de requerimientos:
+
+      ## Una visión global
+
+      ![](./media/requerimientos/ingenieria_requerimientos.png)
+
+      ???
+      - Primera fase del ciclo de vida del software en la que se produce una especificación a partir de ideas informales.
+      - Deben obtenerse y documentarse: requerimientos de información, requerimientos funcionales, requerimientos no funcionales y los criterios para medir el grado de su consecución.
+      - El proceso de desarrollo de dicha especificación de requerimientos es lo que se conoce como ___ingeniería de requerimientos___
+
+      __Importancia creciente de:__ 
+      - El correcto entendimiento (obtención), documentación (especificación) y    validación de las necesidades de los usuarios y clientes.
+      - La medida de la calidad de los sistemas en función del grado de satisfacción de los usuarios
+      ---
+      # Ingeniería de requerimientos:
+
+      ## Según Zave:
+      
+      - Rama de la ingeniería del software que trata con el establecimiento de los objetivos, funciones y restricciones de los sistemas software.
+      - Asimismo, se ocupa de la relación entre estos factores con el objeto de establecer especificaciones precisas.
+
+      ## Según Boehm:
+      - Ingeniería de Requerimientos es la disciplina para desarrollar una especificación completa, consistente y no ambigua, la cual servirá como base para acuerdos comunes entre todas las partes involucradas y en dónde se describen las funciones que realizará el sistema.
+
+      ---
+      # Ingeniería de requerimientos:
+      
+      ## Según Loucopoulos:
+
+      - Trabajo sistemático de desarrollo de requerimientos, a través de un proceso iterativo y cooperativo de análisis del problema, documentando los resultados en una variedad de formatos y probando la exactitud del conocimiento adquirido.
+
+      ## Según Leite:
+      - Es el proceso mediante el cual se intercambian diferentes puntos de vista para recopilar y modelar lo que el sistema va a realizar. 
+      - Este proceso utiliza una combinación de métodos, herramientas y actores,
+      cuyo producto es un modelo del cual se genera un documento de requerimientos.
+
+      ---
+      # Ingeniería de requerimientos
+
+      La ingeniería de requerimientos engloba el conjunto de tareas y técnicas que facilitan la comprensión de los requerimientos que debe cumplir el software.
+
+      Está compuesta por siete tareas, algunas de las cuales se desarrollan en paralelo:
+ 
+      - Concepción.
+      - Indagación.
+      - Elaboración.
+      - Negocoación.
+      - Especificación.
+      - Validación.
+      - Administración.
+
+      ---
+      # Proceso de Ingeniería de requerimientos
+
+      ![](./media/requerimientos/proceso.png)
+      
+      ???
+      __Obtención (elicitación) de requerimientos__
+      - Este subproceso, probablemente el más crítico y el más difícil de realizar, tiene como objetivos buscar, investigar y ayudar a los clientes y usuarios a documentar sus necesidades
+      - La documentación de los requerimientos deberá hacerse siempre usando el vocabulario de clientes y usuarios, de forma que estos puedan entenderlos, siendo lo más habitual emplear lenguaje natural
+      - Las técnicas más comunes son las entrevistas, reuniones en grupo, estudio in situ.
+
+      __Análisis de requerimientos__
+      - Se denomina análisis a la distinción y separación de las partes de un todo hasta llegar a conocer sus principios o elementos; Estudio, mediante técnicas informáticas, de los límites, características y posibles soluciones de un problema al que se aplica un tratamiento por ordenador [RAE, 2014]
+      - Esta actividad es parte del subproceso de aseguramiento de la calidad    
+      - Tiene como objetivo principal detectar conflictos en los requerimientos obtenidos, normalmente mediante técnicas de modelado conceptual y de prototipado de interfaz de usuario.
+      - Los modelos generados son también una importante herramienta de comunicación con diseñadores y programadores.
+
+      __Verificación de requerimientos__
+      - Esta actividad de calidad tiene como objetivo detectar defectos en los requerimientos previamente analizados, normalmente mediante técnicas como revisiones formales, listas de comprobación ( checklists )...
+
+      __Validación de requerimientos__
+      - Esta tercera actividad de calidad intenta asegurar que los requerimientos verificados reflejan realmente las necesidades de clientes y usuarios
+      - Las técnicas empleadas suelen ser reuniones en las que se revisan los requerimientos mediante el apoyo de prototipos de interfaz de usuario
+
+      __Negociación de requerimientos__
+      - El objetivo de este subproceso es buscar soluciones a los conflictos detectados que satisfagan a los distintos stakeholders
+
+      __Gestión de requerimientos__
+      - Este subproceso gestiona todo el proceso, en especial las peticiones de cambios en los requerimientos, el impacto de dichas peticiones, las distintas versiones de los requerimientos...
+      ---
+      # El factor Humano
+
+      - La comunicación es uno de los aspectos más destacables en la ingeniería de requerimientos
+
+      > el factor humano es el responsable de que la Ingeniería de requerimientos tenga
+      aspectos sociales y culturales y no solo técnicos [Goguen, 1994]
+
+      - hace de la ingeniería de requerimientos una disciplina especialmente compleja
+      ---
+      
       # Qué son los requerimientos?
 
       ## Según la IEEE:
@@ -21,6 +150,196 @@
       - Condición o capacidad que debe satisfacer o poseer un sistema o una componente de un sistema para satisfacer un contrato, un standard, una especificación u otro documento formalmente impuesto.
       - Representación documentada de una condición o capacidad.
 
+      ## Otras definiciones:
+      - Una característica del sistema que es una condición para su aceptación [DoD, 1994]
+      - Una propiedad que debe exhibirse para solucionar algún problema del mundo real [Sawyer y Kontoya, 2001]
+
+      ---
+      # Ejemplos de requerimientos
+
+      ___Descripción de una utilidad para el usuario:___
+      - “El tratamiento de textos ha de incluir la comprobación y corrección gramatical”
+
+      ___Descripción de una propiedad general del sistema:___
+      - “El sistema ha de garantizar que la información personal solamente será accesible mediante autorización explícita”
+
+      ___Descripción de una restricción general del sistema:___
+      - “El sensor ha de muestrearse 10 veces por segundo”
+
+      ___Descripción de cómo llevar a cabo cierto cálculo:___
+      - “Calificación final = nota examen + 2*nota trabajo + 2/3 nota ejercicios”
+
+      ___Descripción de una restricción sobre el desarrollo del sistema:___
+      - “El sistema ha de implementarse en C#”
+
+      ---
+      # Requerimientos
+
+      Es frecuente encontrar el término requerimiento calificado con adjetivos que pueden resultar confusos en un primer momento
+
+      - de sistema
+      - hardware
+      - software
+      - de usuario
+      - de cliente
+      - funcional
+      - no funcional
+
+      ---
+      # Dimensiones de los requerimientos
+      
+      La gran cantidad de calificativos que se aplican al término requerimiento muestra distintos aspectos ortogonales que a menudo se consideran aisladamente
+
+      Para clarificar la situación es frecuente identificar dimensiones para clasificar los requerimientos:
+      
+      - Ámbito.
+      - Característica que define.
+      - Audiencia.
+      - Representación.
+
+      ???
+      __Ámbito:__
+      Indica en qué contexto se debe entender el requerimiento
+      - Sistema
+      - Software 
+      - Hardware
+
+      __Característica que define:__
+      Los requerimientos se clasifican en función de la naturaleza de la característica del sistema que se especifica
+      - requerimientos funcionales
+      - requerimientos no funcionales
+
+      __Audiencia:__
+      Indica a quién está dirigido el requerimiento, es decir, las personas que deben ser capaces de entenderlo. Implica un nivel de descripción determinado
+      - requerimientos-C, requerimientos-D [Rombach, 1990; Brackett, 1990]
+      - requerimientos de usuario o requerimientos de cliente, requerimientos software [Mazza et al., 1994]
+      - requerimientos de usuario, requerimientos de sistema, Especificaciones de diseño [Sommerville, 2002]
+
+      __Representación:__
+      Establece la forma cómo se definen los requerimientos
+      - Formal
+      - Semiformal
+      - No formal
+
+      ---
+      # RSM - Requirements Specification Model
+
+      K. Pohl (1997) establece una completa clasificación de requerimientos
+
+      ![](./media/requerimientos/rsm.png)
+      ???
+      - __requerimientos funcionales:__
+      Describen la funcionalidad o los servicios que se espera que este proveerá
+       - De usuario: descripción general
+       - De sistema: descripción detallada (función, entradas, salidas...)
+
+      - __requerimientos de datos__
+      - __requerimientos no funcionales__
+
+      ---
+      # Especificación de requerimientos del software
+      - Los requerimientos se recogen en documentos técnicos que reciben el nombre genérico de __ERS (Especificación de requerimientos del Software)__
+      - Este documento debe contemplar tanto los ___requerimientos–C___ como los ___requerimientos–D___
+      - Hay metodologías que abogan por la separación de estas representaciones en dos documentos diferentes
+       - DRS (Documento de requerimientos del Sistema), también denominado catálogo de requerimientos, donde se recogen los requerimientos–C
+       - ERS propiamente dicha, donde se recogen los requerimientos–D
+      - En la realización de una ERS participan:
+       - Ingenieros de software (analistas)
+       - Clientes y usuarios
+
+      ---
+      # Especificación de requerimientos del software
+
+      ## Según la IEEE:
+
+      > Una especificación es un documento que define, de forma completa, precisa y verificable, los requerimientos, el diseño, el comportamiento u otras características de un sistema o componente de un sistema [IEEE, 1999a]
+
+      > La ERS es la documentación de requerimientos esenciales (funciones, rendimiento, diseño, restricciones y atributos) del software y de sus interfaces [IEEE, 1999a]
+
+      ---
+      # Propiedades deseables de los requerimientos
+      - Comprensible por clientes y usuarios
+      - No ambigua
+      - Completa
+      - Consistente
+      - Verificable
+      - Modificable
+      - Trazable
+      - Anotada con importancia y estabilidad
+      - Independiente del diseño y de la implementación
+      
+      ???
+      __Comprensible por clientes y usuarios__
+      - Una especificación debe servir como canal de comunicación entre los participantes en el proceso de ingeniería de requerimientos
+      - La mejor forma de lograr esta comunicación es pensar en la audiencia a la que van dirigidos los requerimientos
+
+      __No ambigua__
+      - Cada requerimiento solo tiene una interpretación
+
+      __Completa__
+      - Incluye todos los requerimientos significativos
+      - Define la respuesta a todo tipos de entradas
+      - Es conforme con el estándar de especificación a cumplir
+      - Están etiquetadas y referenciadas todas las figuras, tablas...
+      
+      __Consistente__
+      - No hay conflictos ni contradicciones
+      - Es consistente externamente si y solo si todo requerimiento contenido en ella no está en conflicto con otros documentos de nivel superior
+      - Es consistente internamente si y solo si no existen conflictos entre los requerimientos que contiene
+      - Tipos de conflictos entre requerimientos [Davis, 1993]
+       - __Conflictos de conducta.__ Dos o más requerimientos especifican conductas distintas del sistema para las mismas condiciones y el mismo estímulo externo
+       - __Conflictos de términos.__ Se utilizan términos distintos para referirse al mismo concepto
+       - __Conflictos de característica.__ Dos o más requerimientos especifican aspectos contradictorios para la misma característica del sistema
+       - __Conflictos temporales.__ Dos o más requerimientos exigen características temporales contradictorias al sistema
+      
+      __Verificable__
+      - Todo requerimiento contenido en ella es verificable. Existe un proceso finito y de coste razonable por el que una persona o una máquina pueda comprobar que el sistema final cumple el requerimiento
+      - Una condición absolutamente necesaria para que un requerimiento sea verificable es que no sea ambiguo y que se defina de forma mensurable
+      - Los procedimientos de observación para comprobar que el sistema cumple los requerimientos son la base para las pruebas de aceptación por parte del cliente [Wieringa, 1996]
+      
+      __Modificable__
+      - Su estructura y estilo de redacción permiten que los cambios se puedan realizar fácil, completa y consistentemente
+      - Debe tener una organización coherente
+      - No debe ser redundante
+      - Los requerimientos deben expresarse individualmente y no de forma conjunta
+      
+      __Trazable__
+      - Para cada requerimiento contenido en ella se conoce su origen y puede referenciarse como origen en posteriores documentos
+      - Cada requerimiento puede seguirse hacia atrás y hacia delante
+      
+      __Anotada con importancia y estabilidad__
+      - Cada requerimiento contenido en ella está anotado con la importancia que tiene su cumplimiento para clientes y usuarios y la estabilidad que se espera del requerimiento, es decir, la probabilidad de que cambie durante el desarrollo
+      
+      __Independiente del diseño y de la implementación__
+      - No especifica una determinada descomposición del sistema (arquitectura) ni ningún aspecto de su posible implementación
+      - Solo deben admitirse requerimientos que limiten la libertad de los diseñadores y programadores en el caso de que el cliente lo solicite explícitamente
+
+      ---
+      # Interesados en la especificación
+
+      - Clientes
+      - Gestores
+      - Desarrolladores
+      - Encargados de pruebas
+      - Encargados de mantenimiento
+
+      ???
+      __Clientes:__
+      - Especifican los requerimientos y los leen para comprobar que estos satisfacen sus necesidades.
+      - También especifican los cambios en los requerimientos.
+
+      __Gestores:__
+      - Utilizan el documento de requerimientos para planificar una oferta por el sistema y para planificar el proceso de desarrollo del sistema
+
+      __Desarrolladores:__
+      - Usan los requerimientos para entender qué es lo que hay que desarrollar
+
+      __Encargados de pruebas:__
+      - Se basan en los requerimientos para desarrollar tests para la validación del sistema
+
+      __Encargados de mantenimiento:__
+      - Utilizan los requerimientos como ayuda para comprender el sistema y las relaciones entre sus partes
+
       ---
       # Requerimientos funcionales y no funcionales
 
@@ -28,27 +347,20 @@
 
       Según la guía del Business Analysis Body of Knowledge (BABOK):
 
-      >> Los requerimientos funcionales son las descripciones explicitas del comportamiento que debe tener una solución de software y que información debe manejar.
-
-      __los requerimientos funcionales:__
+      > Los requerimientos funcionales son las descripciones explicitas del comportamiento que debe tener una solución de software y que información debe manejar.
 
       - Expresan las capacidades o cualidades que debe tener la solución para satisface los requerimientos de los interesados de proyecto.
       
       - Se expresan en términos de cuál debe ser el comportamiento de la solución y que información debe manejar.
+      
+      - Deben proporcionar una descripción lo suficientemente detallada para permitir el desarrollo e implementación de la solución.
       
       ---
       # Requerimientos funcionales y no funcionales
 
       ## Requerimientos funcionales
 
-      __los requerimientos funcionales:__
-
-      - Deben proporcionar una descripción lo suficientemente detallada para permitir el desarrollo e implementación de la solución.
-      
       - Son los que más influyen en si la solución será aceptada o no por los usuarios.
-
-      ---
-      # Requerimientos funcionales y no funcionales
 
       ## Importancia de definir los requerimientos funcionales
 
@@ -151,43 +463,6 @@
       - __Usabilidad:__ Definido como la facilidad de uso y aprendizaje de un Sistema, Software o Servicio de Tecnología de Información
 
       
-      ---
-      # Ingeniería de requerimientos:
-
-      ## Según Zave:
-      
-      - Rama de la ingeniería del software que trata con el establecimiento de los objetivos, funciones y restricciones de los sistemas software.
-      - Asimismo, se ocupa de la relación entre estos factores con el objeto de establecer especificaciones precisas.
-
-      ## Según Boehm:
-      - Ingeniería de Requerimientos es la disciplina para desarrollar una especificación completa, consistente y no ambigua, la cual servirá como base para acuerdos comunes entre todas las partes involucradas y en dónde se describen las funciones que realizará el sistema.
-
-      ---
-      # Ingeniería de requerimientos:
-      
-      ## Según Loucopoulos:
-
-      - Trabajo sistemático de desarrollo de requisitos, a través de un proceso iterativo y cooperativo de análisis del problema, documentando los resultados en una variedad de formatos y probando la exactitud del conocimiento adquirido.
-
-      ## Según Leite:
-      - Es el proceso mediante el cual se intercambian diferentes puntos de vista para recopilar y modelar lo que el sistema va a realizar. 
-      - Este proceso utiliza una combinación de métodos, herramientas y actores,
-      cuyo producto es un modelo del cual se genera un documento de requerimientos.
-
-      ---
-      # Ingeniería de requerimientos
-
-      La ingeniería de requerimientos engloba el conjunto de tareas y técnicas que facilitan la comprensión de los requerimientos que debe cumplir el software.
-
-      Está compuesta por siete tareas, algunas de las cuales se desarrollan en paralelo:
- 
-      - Concepción.
-      - Indagación.
-      - Elaboración.
-      - Negocoación.
-      - Especificación.
-      - Validación.
-      - Administración.
 
       ---
       # Los requerimientos en un enfoque predictivo
@@ -234,12 +509,6 @@
       - El enfoque ágil fomenta la constante comunicación entre interesados y usuarios, los requerimientos se van elaborando progresivamente, priorizando para el desarrollo los que estén definidos sin ambigüedades.
       
 
-      ---
-      # Referencias
-      
-      - Pressman, R. (2010). Ingeniería del software (7ª ed.). México: McGrawHill.
-      
-      - Thompson, J. (2019 ). Gang of Four Design Patterns. Recuperado de: https://springframework.guru/gang-of-four-design-patterns/ 
       
       
 

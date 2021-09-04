@@ -166,11 +166,11 @@ table {
 }
 th, td {
    text-align: left;
-   font-size: 0.7em;
+   font-size: 0.2em;
    vertical-align: top;
    border: 1px solid #000;
    border-collapse: collapse;
-   padding: 0.3em;
+   padding: 0.1em;
    caption-side: bottom;
    background: #fff;
 }
