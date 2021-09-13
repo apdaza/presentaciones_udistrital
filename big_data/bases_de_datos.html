@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../estilos/estilos.css">
+  </head>
+  <body>
+    <textarea id="source">
+      name: inverse
+      layout: true
+      class: center, middle, inverse
+      ---
+      template: inverse
+      # Introducción a las Bases de Datos
+      
+      ---
+      layout: false
+      # Introducción a las Bases de Datos
+      
+      ## Contenidos
+      - 
+      
+      ---
+      # Dato, información y conocimiento
+      
+      ![intermedia](./media/dato-informacion-conocimiento.jpg)
+      
+      ???
+
+      Según el Diccionario de la Lengua Española de la RAE:
+      - ___un dato___ se entiende como el antecedente o testimonio para llegar al conocimiento exacto de algo o deducir las consecuencias legítimas de un hecho; 
+      
+      - ___la información___ es la comunicación o adquisición de conocimientos que permiten ampliar o precisar los que se poseen sobre una materia determinada; 
+      
+      - mientras que ___el conocimiento___ es el efecto de conocer (del latín cognoscěre), es decir, entender por el ejercicio de las facultades intelectuales, la naturaleza, cualidades y relaciones de las cosas.
+
+      Según el Dictionary for Library and Information Science:
+      
+      - ___los datos___ (en plural) son hechos representados de forma que pueden ser comprendidos, interpretados y comunicados; 
+      
+      - ___la información___ es la representación de datos en una forma comprensible a los que se les ha asignado significado respecto a un contexto de uso; 
+      
+      - mientras que ___el conocimiento___ es información que ha sido comprendida y evaluada en base a la experiencia, incorporada (interiorizada) en el entendimiento intelectual del conocedor de un tema. 
+      
+      En general:
+      
+      - ___Los datos___ no son más que la antesala, la materia prima, para obtener la estructuración-significación de los mismos en información. Agregando las acepciones más comunes, se puede decir que los datos son evidencias de hechos discernibles, discretos (que no implica que sean atómicos sino instancias) y objetivos, obtenidos de la observación (de un dispositivo o mediante la percepción directa) y que sirven de antecedente para obtener una conclusión legítima.
+      
+      - ___La información___ las podemos ver como la reificación de datos que se convierten en signos con forma (representación y estructura) y con significado (interpretación) en base a su conexión relacional (dependencias) y su estructura cognitiva (categorías), en un contexto y para alguien (o algo), sobre la que se pueden identificar patrones de concordancias presentes en los datos (las instancias).
+      
+      - ___El conocimiento___ tiene en la toma de decisiones como su fin último para afirmar que estamos ante conocimiento y no información. Es el entendimiento (interiorización por alguien o algo) mediante la estructuración y formación de creencias verdaderas justificadas acerca de la naturaleza, cualidades y relaciones de las cosas (modelo), en base a la identificación de patrones invariantes de concordancias   presentes en los datos embebidos en la información (experiencia en un contexto), obteniendo generalizaciones (y excepciones) que soportan la toma de decisiones y la acción.
+
+      ---
+      # Dato, información y conocimiento
+
+      - Los ___datos___ son considerados como hechos aislados
+      - El procesamiento de los datos da lugar a la ___información___
+      - El procesamiento de la información da lugar al ___conocimiento___
+
+      La información es uno de los recursos más importantes con que cuentan las organizaciones debido a:
+      - Es la base para la planificación.
+      - Determina el acierto de decisiones en las organizaciones.
+      ---
+      # Bases de datos
+
+      Una __base de datos__ es una colección de datos interrelacionados que pueden ser procesados por uno o más sistemas de aplicación.
+      .left-column[
+      Un sistema de base de datos está formado por:
+      - el hardware
+      - el software
+      - los datos
+      - el personal
+      ]
+      .right-column[
+      ![mini](./media/db.jpg)
+      ]
+
+      ???
+      Una __base de datos__ es una colección de datos integrados, con redundancia controlada, y con una estructura que refleja las interrelaciones y restricciones semánticas existentes en el mundo real; los datos, que han de ser compartidos por diferentes usuarios y aplicaciones, deben mantenerse independientes de éstas y su definición y descripción, únicas para cada tipo de datos, han de estar almacenadas con los mismos. Los procesos de actualización y recuperación, comunes y bien determinados habrán de ser capaces de conservar la integridad, seguridad y confidencialidad del conjunto de los datos.
+
+      El __hardware__ es el conjunto de dispositivos físicos sobre los que reside la base de datos. Consiste en una o más computadoras, unidades de disco, monitores, impresoras, unidades de almacenamiento, cableado y  otros equipos auxiliares.
+
+      El __software__ puede incluir:
+      - El sistema de gestión de bases de datos (SGBD)
+      - El software de aplicación, que usa las facilidades del SGBD para manipular la base de datos
+      - Herramientas para el desarrollo de aplicaciones. Como los generadores de pantallas, de menús y de informes; los generadores de aplicaciones; y las facilidades para la definición de los datos y las vistas de los datos.
+
+      Los __Datos__ son el objeto principal del sistema, constituyen la base sobre la que se fundamenta las necesidades de información y de procesamiento. Los datos contenidos en una base de datos tienen que ser cuidadosa y lógicamente estructurados y las funciones del negocio deben ser analizadas en profundidad, los datos y las interrelaciones entre ellos deben identificarse y definirse correctamente.
+
+      Las __Personas__ pueden ser:
+      - Usuarios no informáticos: qienes necesitan la información de la base de datos para desarrollar su trabajo en el negocio. 
+      - Usuarios informáticos: cuya misión está en el diseño y el mantenimiento del sistema de base de datos y su paquete de programas de aplicación asociado. 
+
+      ---
+      # Arquitectura de una Base de Datos
+
+      Una de las características más importantes del modelo relacional fue la separación de la estructura lógica y la manipulación de los datos, tal y como lo concibe el usuario final, de la representación física que requiere el hardware de la computadora.
+
+      Los tres niveles de abstracción bajo los que se ve una B.D. son:
+      - El nivel externo.
+      - El nivel conceptual.
+      - El nivel interno.
+
+      ???
+      - El __nivel externo__ está constituido por las vistas que tiene cada usuario de la base de datos.
+      - El __nivel conceptual__ es el nivel en el que se hace el diseño conceptual de la base de datos. Consiste en una simple y lógica descripción de todos los elementos de los datos y sus interrelaciones
+      - El __nivel interno__ es la vista física de la base de datos: los dispositivos de disco, las direcciones físicas, los índices, los punteros y demás elementos
+
+      Para representar los datos en los niveles conceptual y externo del usuario, el sistema debe traducir las direcciones físicas a sus correspondientes nombres lógicos e interrelaciones.
+      
+      Esta traducción también debe tener lugar en el sentido inverso: del lógico al físico 
+      
+      El beneficio de este proceso es la independencia de la representación lógica de los datos de su representación física
+
+      La implementación de estos tres niveles requiere que el SGBD haga corresponder cada nivel con el otro
+      ---
+      # Sistemas Gestores de Base de Datos (SGDB)
+
+      Un SGDB es el medio que permite examinar y manipular los datos de la B.D y se puede definir como: 
+      
+      > “Un conjunto coordinado de programas, procedimientos, lenguaje, etc., que suministra los medios necesarios para describir, recuperar y manipular los datos almacenados en la base, manteniendo su integridad, confidencialidad y seguridad ”
+
+      ___Funciones:___
+      - Función de descripción o definición
+      - Función de manipulación
+      - Función de utilización
+
+      ???
+      ___Funciones:___
+      - Función de ___descripción___ o ___definición___: 
+       - Mediante esta función el administrador especificará los elementos que integran la B.D., su estructura, y las relaciones que existen entre ellos, las reglas de integridad semántica, así como las características de tipo físico y las vistas lógicas de los usuarios.
+       - El diseñador utiliza esta función mediante el lenguaje de definición o descripción de datos ___LDD___, de tal forma que defina las tres estructuras de datos (externa, lógica global, e interna).
+      - Función de ___manipulación___:
+       - Mediante ella se pueden realizar las operaciones de buscar, añadir, suprimir, y modificar los datos de la B.D., siempre según las especificaciones y las normas de seguridad previstas por el administrador.
+       - Esta función se realiza con el lenguaje de manipulación de datos ___LMD___ que facilita las técnicas necesarias para la realización de estas actividades.
+      - Función de ___utilización___:
+       - También llamada de control, reúne toda la interfaz que utilizaran los distintos usuarios, y proporciona al administrador un conjunto de procedimientos para mantener el control, la integridad, y la seguridad de la BD.
+       - Esta función se realiza con el lenguaje de control de datos ___LCD___.
+
+      ---
+      # Lenguajes de los Sistemas Gestores de Base de Datos
+
+      - ___Lenguaje de descripción de los datos (LDD)___: mediante el cual se definirán y construirán las diferentes estructuras: lógica global, externa, e internas
+      - ___Lenguaje de manipulación de datos (LMD)___:, que hará posible todas las operaciones de selección, borrado, modificación, e inserciónde datos, Pueden ser procedimentales, y de cuarta generación.
+      - ___Lenguaje de control de datos (LCD)___: con el cual se controlarán los temas referentes a seguridad y administración de la base de datos.
+
+      ![reducida](./media/lenguajes_sql.jpeg)
+
+      ---
+      # Entorno de los Sistemas Gestores de Base de Datos
+
+      Un entorno de un SGBD se compone de:
+
+      - Programas de aplicación y procesadores de lenguaje de aplicación.
+      - Herramientas de Gestión
+      - Sistema de Diccionario de Datos
+      - Sistemas Operativo y de Gestión de archivos
+      - Protocolos y Sistemas Distribuidos
+
+      ???
+      ___Programas de aplicación y procesadores de lenguaje de aplicación:___
+      - Facilidades gr á ficas para la creación de tablas, vistas, consultas, etc
+      - Facilidades para la creación de pantallas y menús
+      - Facilidades para la creación de informes
+
+      ___Herramientas de Gestión para:___
+      - Realizar copias de seguridad
+      - Realizar estadísticas
+      - Reorganizar la B.D.
+      - Redistribuir la base de datos
+      - Importar datos de otra B.D.
+      - Reparar la B.D., etc
+      ---
+      # Diseño de una Base de Datos
+
+      El desarrollo de una base de datos se divide en:
+
+      - Preanálisis.
+      - Definición de requisitos.
+      - Diseño conceptual
+      - Implementación
+      - Mantenimiento de la base de datos
+
+      ???
+      En el __preanálisis__ se incluye la planificación preliminar y un estudio de viabilidad
+      - La ___planificación preliminar___: tiene lugar durante el proyecto de planificación estratégica de la B.D. En este proceso, se recoge información del sistema que actualmente se encuentra en uso 
+      - El ___estudio de viabilidad___: determinar á la viabilidad económica, tecnológica, y operativa de la base de datos
+
+      La __definición de requisitos__ involucra la definición del alcance de la base de datos, la identificación de los requisitos de información de las áreas funcionales y administrativas y la determinación de los requisitos de software y el hardware.
+
+      La etapa de __diseño conceptual__ crea el esquema o nivel conceptual de la BD
+      - Se desarrollan las especificaciones hasta el punto en que puede comenzar la implementación.
+      - Se crean modelos detallados de las vistas de los usuarios y se integran en un modelo conceptual de datos que registra todos los elementos colectivos que se deben mantener en la base de datos.
+
+      Durante __la implementación__ de la BD: 
+      - Se selecciona y adquiere un SGBD. 
+      - Luego el modelo conceptual detallado se convierte al modelo soportado por el SGBD.
+      - Se construye el diccionario de datos
+      - Se introducen los datos en la base de datos
+      - Se desarrollan los programas de aplicación.
+      - Se entrenan los usuarios
+
+      ---
+      # Modelos de Base de Datos
+      
+      .left-column[
+      ![reducida](./media/modelo.png)
+      ]
+      .right-column[
+      - Un ___modelo___ es un conjunto de conceptos, reglas y convenciones que nos permiten describir los datos de una parcela del mundo real (Universo del discurso).
+      - ___Modelar___ consiste en definir un mundo abstracto y teórico tal que las conclusiones que se pueden deducir
+      de él coincidan con las manifestaciones aparentes del mundo real.
+      - El diseño de una BD supone un proceso de ___abstracción___ en el que se trata de modelar el mundo real.
+      ]
+
+      ???
+      Una base de datos incorpora un modelo de la realidad
+      - Hay que especificar qué información en concreto acerca del mundo real es la que interesa y la que no interesa, y de qué forma se va a utilizar esta información
+      - Un modelo es una representación de la realidad que conserva sólo los detalles relevantes
+      - Dependiendo del problema que se desee resolver, algunos detalles considerados irrelevantes por un usuario pueden ser muy importantes para otros usuarios.
+      
+      un __Modelo de Datos___, considerado así como una herramienta que facilita la interpretación de nuestro universo de discurso y su representación en forma de datos en el sistema de información.
+
+      El ___modelo de datos___ debe recoger las propiedades del universo del discurso, que son de dos tipos:
+      - Estáticas, no varían con el tiempo. Se definen con el ___LDD___
+      - Dinámicas, varían con el tiempo. Se definen con el ___LMD___
+      ---
+      # Referencias
+
+      - Guillén Miguel Ángel. Cadena Datos-Información-Conocimiento. Documentación de las Ciencias de la Información Vol. 38 (2015) 153-177
+
+    </textarea>
+    <script src="scripts/remark.js"></script>
+    <script>
+       var slideshow = remark.create();
+    </script>
+  </body>
+</html>
