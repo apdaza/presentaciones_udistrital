@@ -1,6 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Droid+Serif);
 @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
 @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+@import url(https://fonts.googleapis.com/css?family=Reenie+Beanie:regular);
+@import url(http://fonts.googleapis.com/css?family=UnifrakturMaguntia);
 
 body {
   font-family: 'Droid Serif';
@@ -172,6 +174,29 @@ code {
   float: right;
   padding-top: 1em;
 }
+
+.nota {
+  font-family:"Reenie Beanie",arial,sans-serif;
+  font-size:1.2em;
+  color:#9b0606;
+  border:1px solid #000;
+  background-color: #f0e3a6;
+  padding: 5px;
+  border-top-right-radius: 12px;
+  /* Firefox */
+  -moz-box-shadow:5px 5px 7px rgba(33,33,33,1);
+  /* Safari+Chrome */
+  -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  /* Opera */
+  box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  float: right;
+  margin: 10px;
+  width: 30%;
+  min-height: 100px;
+  -webkit-transform:rotate(-6deg);
+  -o-transform:rotate(-6deg);
+  -moz-transform:rotate(-6deg);
+}
 img {
   max-width: 100%;
   display: block;
@@ -208,11 +233,16 @@ img[alt="nano"] {
   margin: auto;
 }
 
-table {
+.remark-slide-content table {
    width: 100%;
-   border: 1px solid #000;
+   border: 1px solid rgb(96, 117, 235);
+   background-color: #c7e9eb;
+   padding: 5px;
 }
-th, td {
+.remark-slide-content tr {
+  border: 1px solid;
+}
+.remark-slide-content th, td {
    text-align: left;
    font-size: 0.8em;
    vertical-align: top;
@@ -220,7 +250,9 @@ th, td {
    border-collapse: collapse;
    padding: 0.3em;
    caption-side: bottom;
+   background-color: azure;
 }
-th {
-   background: #eee;
+.remark-slide-content th {
+   background: rgb(114, 116, 119);
+   color: floralwhite;
 }

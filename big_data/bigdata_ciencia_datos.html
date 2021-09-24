@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../estilos/estilos.css">
+    <link rel="stylesheet" href="../estilos/jqmath-0.4.3.css">
+	
+	<script src="scripts/jquery-1.4.3.min.js"></script>
+	<script src="scripts/jqmath-etc-0.4.6.min.js" charset="utf-8"></script>
+	<!-- <script>M.MathPlayer = false; M.trustHtml = true;</script> -->
+  </head>
+  <body>
+    <textarea id="source">
+      name: inverse
+      layout: true
+      class: center, middle, inverse
+      ---
+      template: inverse
+      # Introducción a BigData y la Ciencia de Datos
+      
+      ---
+      layout: false
+      # Introducción a BigData y la Ciencia de Datos
+      
+      ## Contenidos
+      - El mundo gira en torno a los Datos
+
+      ---
+      # El mundo gira en torno a los Datos
+      
+      __Ciencia:__
+      - Bases de datos de astronomía, genómica, datos medio-ambientales, datos de transporte, …
+
+      __Ciencias Sociales y Humanidades:__
+      - Libros digitales, documentos históricos, datos sociales, …
+    
+      __Negocio y Comercio:__
+      - Ventas de corporaciones, transacciones de mercados, censos, tráfico de aerolíneas, …
+
+      __Entretenimiento y Ocio:__
+      - Internet, películas, vídeos, música, …
+
+      ---
+      # El mundo gira en torno a los Datos
+      
+      __Medicina:__
+      - Datos de pacientes, datos de escaner, radiografías, Telemedicina, Teleconsulta, Telediagnostico …
+
+      __Industria:__
+      - Energía, Sensores, …
+
+      >> Somos ricos en datos pero pobres en información.
+
+      >> Debemos aprovechar la data disponible y trascender la dimensión de la información hacia el conocimiento.
+     
+      ---
+      # Minería de Datos
+
+      .left-column[![mini](./media/mineria-de-datos.png)]
+      .right-column[
+      La ___Minería de datos___ (MD) es el proceso de extracción de patrones de información (implícitos, no triviales, desconocidos y potencialmente útiles) a partir de grandes cantidades de datos.
+
+      También se conoce como: 
+
+      - Descubrimiento de conocimiento en bases de datos (KDD).
+      - Extracción del conocimiento.
+      - Análisis inteligente de datos.
+      - Descubrimeinto de patrones.
+      - ...
+      ]
+
+      ---
+      # Mineria de datos
+
+      Muchas de las técnicas utilizadas en la ___Mineria de Datos___ ya se conocían previamente, pero en la actualidad convergen los siguientes factores:
+      - Los datos se están produciendo masivamente
+      - Los datos se están almacenando 
+      - La potencia computacional necesaria está disponible 
+      - Existe una gran presión competitiva a nivel empresarial
+      - Las herramientas software están disponibles.
+
+      > ¿Para qué se utiliza el ‘conocimiento’ obtenido?
+
+      - Predicciones sobre nuevos datos
+      - Explicar los datos existentes
+      - Resumir datos masivos para facilitar la toma de decisiones
+      - Visualizar datos altamente dimensionales, extrayendo estructura local simplificada
+      - ...
+
+      ---
+      # Big Data
+
+      >> “El concepto de big data se puede definir como las múltiples fuentes de información de alto volúmen, alta velocidad y alta variedad que exigen de formas innovadoras y costo efectivas para ser procesadas con el fin de generar descubrimientos, procesos de desición y automatización de procesos” (Gartner, 2018)
+
+      - Big data es una colección de datos grande, complejos, muy difícil de procesar a través de herramientas de gestión y procesamiento de datos tradicionales.
+      
+      ## Las 5v de BigData
+      - Volumen.
+      - Velocidad.
+      - Variedad.
+      - Veracidad.
+      - Valor.
+
+      ???
+      __Volumen__
+      Todo este tiempo atrás, los datos se han obtenido de forma manual, sin la ayuda de ninguna máquina ni tecnología que facilite este trabajo. Sin embargo, si hubiera que analizar el volumen masivo de datos ahora, hacerlo manualmente llevaría mucho tiempo y no se haría con exactitud. Seguramente, muchos de esos datos se perderían.
+      
+      Pero gracias al Big Data, hoy en día estos datos se pueden extraer, almacenar y clasificar de forma automática y adecuada.
+      
+      __Velocidad__
+      Los datos se generan a una gran velocidad. Por ese motivo, muchos de ellos quedarán obsoletos en cuestión de poco tiempo y perderán su valor cuando aparezcan otros más recientes.
+      
+      El reto para las empresas será reaccionar lo más rápido posible y almacenar esos datos antes de que pierdan valor. Para ello, será necesario un profesional en la empresa que, apoyado de una tecnología eficiente, se encargue de identificar esos datos útiles.
+      
+      No en vano entre los profesionales con más empleo en España figuran los científicos de datos, los desarrolladores de Big Data y los ingenieros de datos, según el Informe Empleos Emergentes 2020, desarrollado por Linkedin.
+      
+      __Variedad__
+      Los datos provienen de diferentes canales: redes sociales, dispositivos propios (smartphones, cámaras, GPS…) y fuentes. 
+      
+      Por ello, otro de los desafíos de las empresas será reconocer la información en diferentes formatos (imágenes, vídeo, voz y texto) para almacenar, clasificar y recopilar datos útiles para la empresa.
+      
+      __Veracidad__
+      Es probable que debido al gran volumen de datos que recibimos, algunos lleguen incompleto.  Y es que todo lo que recibimos de Internet y sobre todo de las redes sociales no es fiable.
+      
+      Por esa razón, es clave hacer un filtrado con la tecnología del Big Data de lo que puede ser falso o no.
+      
+      __Valor__
+      Hace referencia a la información útil que se puede extraer de los datos. Esa misma que te ayudará a generar un valor agregado para tu negocio, que se convierte en conocimiento y en una acción o decisión.
+      
+      ---
+      # Big Data
+
+      ![rn](./media/bigdata.png)
+
+      ---
+      # Big Data
+
+      - Representa una ___oportunidad:___ Tomar decisiones basadas en el uso intensivo de los datos.
+      - Representa un ___reto:___
+       - Hay que manejar inconsistencias, datos incompletos, escalabilidad, corriente continua de datos, problemas de seguridad.
+       - Se requieren nuevas tecnologías para el almacenamiento, operaciones de entrada/salida de datos y procesamiento.
+      - ___Obliga___ a romper con el enfoque relacional de las bases de datos abordando modelos ___NoSQL___ mas acordes con las dimensiones y naturaleza de los datos.
+      - ___Requiere___ otro enfoque para la programación paralela.
+      - ___Rompe___ con los conceptos clásicos de seguridad de los datos.
+      
+      ???
+      - NoSQL no es ‘‘not SQL’’, es romper con los enfoques rígidos normalizados.
+      - NoSQL DBMS son útiles cuando ellos trabajan con grandes cantidades de datos, y la naturaleza de los datos no requiere el modelo relacional para su estructura.
+      - Los gestores de bases de datos NoSQL están usualmente altamente optimizados para las operaciones de recuperación y adición (appending).
+      - Extraer conocimiento desde fuentes distribuidas puede generar modelos de decisión dependientes de ese contexto, son necesarios mecanismos de intercambio y fusión de información que garantizan que trabajando con información distribuida se encuentre un modelo global. 
+      
+      ---
+      # Big Data
+
+      - ___Obliga___ a trabajar con mucha informacion privada (Data anonymization).
+      - ___Obliga___ a manipular enormes cantidades de datos no estructurados.
+      - ___Requiere___ intercambio y cooperacion internacional.
+
+      ---
+      # Big Data
+
+      ## ¿Que tan grande es Big Data?
+      
+      Algunas estadísticas tomadas de https://seedscientific.com/
+
+      - The amount of data in the world was estimated to be __44 zettabytes__ at the dawn of 2020.
+      - By 2025, the amount of data generated each day is expected to reach __463 exabytes__ globally.
+      - Google, Facebook, Microsoft, and Amazon store at least __1,200 petabytes__ of information.
+      - The world spends almost __$1 million__ per minute on commodities on the Internet.
+      - Electronic Arts process roughly __50 terabytes__ of data every day.
+      - By 2025, there would be __75 billion__ Internet-of-Things (IoT) devices in the world
+      - By 2030, nine out of every ten people aged six and above would be digitally active.
+
+      ???
+      - By 2025, there will be 175 zettabytes of data in the global datasphere. (Seagate UK)
+      - In 2018, more than 2.5 quintillion bytes of data were created every day. (Social Media Today)
+      - The amount of data in the world was estimated to be 44 zettabytes at the dawn of 2020. (World Economic Forum)
+      - At the beginning of 2020, the number of bytes in the digital universe was 40 times bigger than the number of stars in the observable universe. (World Economic Forum)
+      - By 2025, the amount of data generated each day is expected to reach 463 exabytes globally. (World Economic Forum, High Scalability)
+      - Google, Facebook, Microsoft, and Amazon store at least 1,200 petabytes of information. (Science Focus)
+      - As of July 2020, there were over 4.8 billion internet users in the world.  (Internet World Stats)
+      - 80% of online content is available in just one-tenth of all languages. (World Economic Forum)
+      - Google handles a staggering 1.2 trillion searches every year. (Internet Live Stats)
+      - Despite processing just 6.62% of all searches in the US, Bing makes almost $5 billion in ad revenues. (Pro Rank Tracker, StatCounter GlobalStats)
+      - There were 71.5 billion apps downloaded worldwide in the first half of 2020. (Business of Apps)
+      - The world spends almost $1 million per minute on commodities on the Internet. (Visual Capitalist)
+      - In 2020, roughly 306.4 billion emails were sent and received each day. (Statista)
+      - Almost 5 billion videos on Youtube are watched every day. (Fortune Lords)
+      - In 2019, nearly 695,000 hours of Netflix content were watched per minute across the world. (Visual Capitalist)
+      - Netflix released approximately 2,769 hours of original content in 2019. (Statista)
+      - Four petabytes is the estimated amount of new data being generated by Facebook daily. (Facebook Research, Statista)
+      - Every 24 hours, 500 million tweets are published on Twitter. (Internet Live Stats, Statista)
+      - Snaps created on Snapchat reached over 210 million each day in 2020. (Oberlo)
+      - Global Instagram users surpassed the 1 billion mark in 2020. (Sprout Social)
+      - 18.7 billion text messages are sent every day worldwide. (SHSO Vermont)
+      - 20% of online users watched a live stream of other people playing games in 2020. (DataReportal)
+      - Nearly 1 in 4 American adults owns a smart speaker. (Marketing Land)
+      - Electronic Arts process roughly 50 terabytes of data every day. (Datafloq)
+      - 5G can increase data transmission speed by up to 100 times and decrease latency from about 20 milliseconds to one millisecond. (CNET, Fierce Wireless, Light Reading, Statista)
+      - By 2025, there will be 75 billion IoT devices. (FinancesOnline, Visual Capitalist)
+      - By 2030, 90% of the population older than six will be online. (Cybersecurity Ventures, Data Reportal)
+      
+      ---
+      # Big Data
+
+      - El volumen de datos crece ___exponencialmente___
+
+      ![intermedia](./media/medidas_data.png)
+      .left-column[![intermedia](./media/storage_grow.png)]
+      .right-column[
+      ![intermedia](./media/proyeccion_bd.png)
+      - Crecimiento x 44 de 2009 a 2020
+      - De 0.8 zettabytes a 35ZB
+      ]
+
+      ---
+      # Big Data
+
+      ![intermedia](./media/bigdata2.png)
+
+      Big data se peuede dar en diferentes escalas y se puede ver como cualquier característica sobre los datos que represente un reto para las funcionalidades de un sistema.
+
+      ---
+      # Ciencia de datos
+      
+      .left-column[![peque](./media/ciencia_datos.png)]
+      .right-column[
+      La ciencia de datos es un campo interdisciplinario que aplica técnicas de:
+
+      - Matemáticas
+      - Estadísticas
+      - Computación      
+      ]
+
+      Estas técnicas se aplican a diferentes áreas del conocimiento.
+
+      ---
+      # Ciencia de datos
+
+      ![intermedia](./media/ciencia_datos3.png)
+
+      ---
+      # Ciencia de datos
+
+      la Ciencia de Datos incorpora diferentes campos del conocimiento como: 
+      - matemáticas
+      - estadística
+      - ingeniería de datos
+      - reconocimiento de patrones y aprendizaje
+      - computación avanzada
+      - visualización
+      - modelado de incertidumbre
+      - almacenamiento de datos
+      - informática de alto rendimiento
+      
+      con el objetivo de extraer el significado de datos y la creación de productos de datos.
+
+      ---
+      # Ciencia de datos
+
+      La ciencia de datos tiene como objetivos modelar, analizar, visualizar y extraer conocimiento a partir de los datos.
+
+      La ciencia de datos abarca la preparación de los datos para el análisis, incluida la limpieza, la agregación y la manipulación de los datos para realizar análisis avanzados. 
+      
+      Las aplicaciones analíticas y los científicos de datos pueden revisar los resultados para descubrir patrones y permitir la toma de decisiones basada en información fundamentada.
+
+      La ciencia de datos busca utilizar todos los datos disponibles y relevantes para _“extraer conocimiento”_ que pueda ser fácilmente comprendido por los expertos en el área de aplicación.
+
+      ---
+      # ¿Por qué es tan importante la ciencia de datos?
+
+      - Tenemos un tesoro de datos sin aprovechar. 
+      - La tecnología ha permitido la creación y el almacenamiento de cantidades cada vez mayores de datos.
+      - Se estima que el 90% de los datos en el mundo se crearon en los últimos dos años. 
+      - Los datos frecuentemente solo están inmóviles en las bases de datos y los data lakes.
+      - La gran cantidad de datos recopilados y almacenados puede generar beneficios transformadores para las organizaciones y sociedades solo si sabemos interpretarlos. ___ oportunidad para la ciencia de datos___.
+      - La ciencia de datos revela tendencias y genera información que las empresas pueden utilizar para tomar mejores decisiones. 
+
+      ---
+      # ¿Por qué es tan importante la ciencia de datos?
+
+      - Permite que los modelos de aprendizaje automático (ML) aprendan de las grandes cantidades de datos que se les suministran en vez de depender principalmente de los analistas de negocios.
+      - Los datos son la base de la innovación, cuando de ellos extraemos información.
+      
+      .left-column[![reducida](./media/gartner.png)]
+      .right-column[
+      > Muchas empresas han hecho de la ciencia de datos una prioridad y están realizando grandes inversiones en ella. Los directores de informática ven las tecnologías asociadas a la ciencia de datos como las más estratégicas para sus empresas y están realizando las inversiones correspondientes.
+      ]
+
+      ---
+      # ¿Por qué es tan importante la ciencia de datos?
+
+      ## Datos de MinTic
+
+      ![rn](./media/mintic.png)
+
+      ---
+      # Ciencia de datos, la inteligencia artificial y el aprendizaje automático
+
+      - __IA__ significa hacer que una computadora imite de alguna manera el comportamiento humano (_inteligencia_).
+      - La __ciencia de datos__ es un subconjunto de la __IA__ que se refiere más a las áreas superpuestas de las estadísticas, los métodos científicos y el análisis de datos, que se utilizan todas para extraer significado y conocimientos de los datos.
+      - El __aprendizaje automático__ es otro subconjunto de la __IA__ y consiste en las técnicas que permiten que las computadoras descubran cosas a partir de los datos y realicen aplicaciones de IA.
+      - El __aprendizaje profundo__, es un subconjunto del aprendizaje automático que permite que las computadoras resuelvan problemas más complejos.
+
+      ---
+      # ¿Que nos permite la Ciencia de Datos?
+
+      - Determinar la fuga de clientes analizando los datos que se recopilan de los centros de llamadas, para que el departamento de Marketing pueda tomar medidas a fin de retenerlos.
+      - Mejorar la eficiencia al analizar los patrones de tráfico, las condiciones climáticas y otros factores para que las empresas de logística puedan mejorar los tiempos de entrega y reducir los costos.
+      - Mejorar los diagnósticos de los pacientes mediante el análisis de los exámenes médicos y los síntomas informados para que los médicos puedan diagnosticar antes las enfermedades y tratarlas de manera más eficaz.
+      - Optimizar la cadena de suministro al predecir cuándo se producirán fallos en los equipos.
+      - Detectar los fraudes en los servicios financieros mediante el reconocimiento de los comportamientos sospechosos y las acciones anómalas.
+      - Mejorar las ventas al crear recomendaciones para los clientes basadas en las compras anteriores.
+      
+      ---
+      # El proceso de la ciencia de datos
+
+      El proceso de analizar y utilizar los datos es iterativo más que lineal, e incluye etapas como:
+
+      - ___Planificación:___  Definición del proyecto y sus resultados.
+      - ___Construcción del modelo de datos:___  Partiendo de una variedad de bibliotecas de código abierto o herramientas para construir los modelos.
+      - ___Evalución del modelo:___  En pro de lograr un alto porcentaje de exactitud en sus modelos antes de poder implementarlos con confianza. 
+      - ___Explicar los modelos:___  Retroalimentación automática sobre el modelo.
+      - ___Implementción del modelo:___  Tomar un modelo de aprendizaje automático entrenado e implementarlo en los sistemas correctos.
+      - ___Monitorear los modelos:___  Los modelos siempre deben monitorearse después de la implementación para garantizar el funcionamiento correcto. 
+      ???
+      - ___Planificación:___  Definir un proyecto y sus posibles resultados.
+      - ___Construir un modelo de datos:___  Los científicos de datos frecuentemente usan una variedad de bibliotecas de código abierto o herramientas en la base de datos para construir modelos de aprendizaje automático. A menudo, los usuarios necesitan API para que los ayuden con la ingestión de datos, la visualización y creación de perfiles de datos o la ingeniería de funciones. Necesitan las herramientas adecuadas, así como acceso a los datos correctos y otros recursos como la capacidad de proceso.
+      - ___Evaluar un modelo:___  Los científicos de datos deben lograr un alto porcentaje de exactitud en sus modelos antes de poder implementarlos con confianza. La evaluación del modelo habitualmente genera un conjunto completo de métricas de evaluación y visualizaciones para medir el rendimiento del modelo frente a los datos nuevos y también para clasificarlos a lo largo del tiempo a fin de permitir un comportamiento óptimo en la producción. La evaluación del modelo va más allá del rendimiento en bruto para tener en cuenta el comportamiento de referencia esperado.
+      - ___Explicar los modelos:___  No siempre hemos sido capaces de explicar la mecánica interna de los resultados de los modelos de aprendizaje automático en términos humanos, pero esto es cada vez más importante. Los científicos de datos desean recibir explicaciones automatizadas de la ponderación relativa y la importancia de los factores que intervienen en la generación de una predicción, junto con detalles explicativos específicos del modelo sobre las predicciones del modelo.
+      - ___Implementar un modelo:___  Tomar un modelo de aprendizaje automático entrenado e implementarlo en los sistemas correctos es frecuentemente un proceso difícil y laborioso. Esto se puede simplificar operacionalizando los modelos como API escalables y seguras, o usando modelos de aprendizaje automático dentro de la base de datos.
+      - ___Monitorear los modelos:___  Desafortunadamente, la implementación del modelo no es el paso final. Los modelos siempre deben monitorearse después de la implementación para garantizar que funcionen correctamente. Con el paso del tiempo, los datos con los que se entrenó el modelo pueden quedar obsoletos para las predicciones futuras. En la detección de fraudes, por ejemplo, los delincuentes siempre encuentran nuevas formas de piratear las cuentas.
+      
+
+      ---
+      # El científico de datos
+    
+      > El científico de Datos es aquel que puede crear puentes entre los datos crudos y el análisis haciéndolos accesibles . Es un rol democratizarte en la medida que lleva los datos a la gente común, haciendo el mundo un poco mejor paso a paso.
+
+      .left-column[![mini](./media/kaggle_tokio2020.png)]
+      .right-column[
+      > Los científicos de datos están involucrados con el agrupamiento de datos desde distintas fuentes, su edición en formas mas tratables y entendibles de forma que cuenten una historia que pueda ser presentada por ellos para ser entendida por todos
+      ]
+      ???
+
+      Un científico de datos es un profesional que debe dominar las ciencias matemáticas, la estadística, la programación, la ciencias de la computación y la analítica.
+
+      ---
+      # Herramientas de tecnología
+
+      ![intermedia](./media/TopDataLanguage.png)
+      ## Lenguajes de programación
+      ---
+      # Herramientas de tecnología
+
+      ## Librerías o frameworks
+
+      ![intermedia](./media/Toplibrariestoolsandframeworks.png)
+      
+
+    </textarea>
+    <script src="scripts/remark.js"></script>
+    <script>
+       var slideshow = remark.create();
+    </script>
+  </body>
+</html>

@@ -10,6 +10,7 @@
       class: center, middle, inverse
       ---
       template: inverse
+      ![nano](../media/escudo_ud.png)
       # Programación extrema
       
       ---
@@ -18,7 +19,7 @@
       
 
       ## Contenidos
-      1. Introducción y objetivos	
+      1. Introducción
       2. Justificación y visión general de XP	
       3. El ciclo de vida en XP	
       4. Los cinco valores básicos	
@@ -29,7 +30,7 @@
       9. Referencias bibliográficas	
 
       ---
-      # 1. Introducción y objetivos
+      # 1. Introducción
 
       La Programación Extrema ___eXtreme Programming (XP)___, es posiblemente la metodología ágil mejor conocida y más estudiada. 
       
@@ -53,15 +54,18 @@
       ---
       # 2. Justificación y visión general de XP  
 
-      ***
+      .nota[Cuando los problemas se detectan __tarde__ puede resultar __técnica__ o __económicamente__ difícil solucionarlos.]
+
       En el modelo tradicional en cascada, el proceso comienza con la interacción con clientes y usuarios, obteniendo información sobre las características del sistema deseado. 
       
       A continuación, se diseña el sistema, se implementa el código, y finalmente se realizan las pruebas para garantizar que el sistema entregado es el correcto. 
-      ***
 
-      Esto presenta en ocasiones algunos inconvenientes: bien el usuario no conoce o no sabe expresar sus necesidades, o cambia de opinión, o simplemente desde el equipo no se entienden bien estas necesidades, de manera que el sistema final no es el correcto. 
-
-      Cuando los problemas se detectan tarde puede resultar técnica o económicamente difícil solucionarlos.
+      Esto presenta en ocasiones algunos inconvenientes: 
+      - el usuario no conoce o no sabe expresar sus necesidades
+      - o cambia de opinión
+      - o simplemente desde el equipo no se entienden bien estas necesidades
+      
+      de manera que el sistema final no es el correcto. 
 
       ---
       # 2. Justificación y visión general de XP  
@@ -75,7 +79,7 @@
 
       Este modelo permite detectar con mayor antelación posibles errores, y resulta más flexible y adaptable al cambio. 
 
-      Con la Programación extrema se lleva al límite este principio ___reduciendo al máximo la duración de las iteraciones___. 
+      .nota[Con la Programación extrema se lleva al límite este principio ___reduciendo al máximo la duración de las iteraciones___.] 
       
       Se plantea un modelo con iteraciones muy cortas, con fases de diseño, implementación y pruebas solapadas entre sí, y dedicando a las labores de análisis en cada iteración el tiempo estrictamente necesario para resolver los problemas correspondientes a ese incremento concreto. 
       
@@ -86,7 +90,7 @@
 
       Cabe destacar que XP considera dedicar un tiempo a ___labores de análisis___ antes del comienzo del proyecto, definiendo de la manera más precisa posible el funcionamiento esperado del sistema. 
       
-      > Ken Beck propone una ___duración mínima de un mes___ para esta tarea —suponiendo un proyecto de 10 personas de un año de duración (Beck, 1999)—. 
+      .nota[Ken Beck propone una ___duración mínima de un mes___ para esta tarea —suponiendo un proyecto de 10 personas de un año de duración (Beck, 1999)—.] 
       
       El resultado es una especificación inicial del sistema materializada en ___un conjunto de historias de usuario___ que redacta el cliente. 
       
@@ -103,12 +107,12 @@
 
       - Cada release se divide en una o más iteraciones. En cada iteración se escoge un grupo de historias asociadas al release, y cada una de ellas se ___descompone en tareas___ que se asignan los miembros del equipo.
 
+      - La implementación de las tareas comienza con la definición de ___las pruebas unitarias___, que es posiblemente la práctica más importante que se encuentra en el corazón de XP. 
+
       ---
       # 2. Justificación y visión general de XP
 
       __El flujo general de un proyecto en XP:__
-
-      - La implementación de las tareas comienza con la definición de ___las pruebas unitarias___, que es posiblemente la práctica más importante que se encuentra en el corazón de XP. 
       
       - La definición de las pruebas, el diseño del incremento y la codificación hasta que todas las pruebas sean superadas son operaciones que se realizan siempre en ___parejas de programadores___. 
       
@@ -133,13 +137,15 @@
 
       __Las historias de usuario:__
 
-      -	Capturan los requisitos definidos por el cliente y contienen funcionalidades que aportan valor al producto desde el punto de vista del negocio y de los usuarios finales. 
+      -	Capturan los requisitos ___definidos por el cliente___ y contienen funcionalidades que aportan valor al producto desde el punto de vista del negocio y de los usuarios finales. 
       
-      -	Son creadas por el cliente y sirven como base para la definición de las pruebas de aceptación del sistema. 
+      -	Son ___creadas por el cliente___ y sirven como base para la definición de las pruebas de aceptación del sistema. 
       
-      -	Su propósito es similar al de los casos de uso, pero están más orientadas a realizar estimaciones de complejidad y tiempo de implementación durante la fase de planificación de la release (Wells, 1999). Este tiempo suele ser de una a tres semanas y si resulta superior es síntoma de que la historia debe descomponerse. 
+      .nota[Su propósito es similar al de los casos de uso, pero están más orientadas a realizar __estimaciones de complejidad y tiempo de implementación__ durante la fase de planificación de la release (Wells, 1999).] 
       
-      -	Las escribe el propio cliente, evitando el empleo de lenguaje técnico, y generalmente se escribe cada una en una tarjeta numerada, de manera que cada historia queda identificada. 
+      - El tiempo de desarrollo suele ser de __una__ a __tres__ semanas y si resulta superior es síntoma de que la historia debe descomponerse. 
+      
+      -	Las escribe el propio cliente, ___evitando el empleo de lenguaje técnico___, y generalmente se escribe cada una en una tarjeta numerada, de manera que cada historia queda identificada. 
 
       ---
       # 3. El ciclo de vida en XP
@@ -182,7 +188,12 @@
 
       Niveles de planificación en XP:
 
-      ![RN](./media/tema03/niveles_planeacion_xp.png)
+      | Nivel | Tiempo | Entradas | Salidas |
+      | ----- | ------ | -------- | ------- |
+      | Release | Meses | Todas las historias restantes | Historias por implementar en el release |
+      | Iteración | Semanas | Historias restantes del release | Historias por implementar en la iteración |
+      | Tareas | Días - horas | Historias por implementar en la iteración | tareas asignadas a los desarrolladores |
+
 
       ---
       # 3. El ciclo de vida en XP
@@ -190,11 +201,11 @@
       __Descomposición de una historia de usuario en tareas:__
 
       Una posible descomposición de la historia representada anteriormente podría ser la siguiente:
-      - Diseñar la interfaz de usuario para inserción de nuevas citas (8 días).
+      .nota[__Diseñar la interfaz de usuario__ para inserción de nuevas citas __(8 días)__.]
       
-      - Construir el modelo de datos que representa una cita individual y actualizar la base de datos (1 día).
+      .nota[__Construir el modelo de datos__ que representa una cita individual y actualizar la base de datos __(1 día)__.]
       
-      - Escribir la lógica del controlador que relaciona la interacción del usuario con el calendario y la modificación del modelo (2 días).
+      .nota[__Escribir la lógica del controlador__ que relaciona la interacción del usuario con el calendario y la modificación del modelo __(2 días)__.]
       
       En este caso, la suma de horas correspondientes a estas tres tareas no coincide con la estimación inicial para la historia en su conjunto. 
       
@@ -219,11 +230,8 @@
       
       Ejemplo de CRC de la historia de usuario «creación de nueva cita».
       
-      ![RN](./media/tema03/CRC.png)
-      
-      ---
-      # 3. El ciclo de vida en XP
-      
+      ![intermedia](./media/tema03/CRC.png)
+          
       La fase de diseño no es simplemente la primera en cada iteración, sino que ___las labores de diseño se realizan continuamente___, incluso durante el proceso de codificación, aplicando así las prácticas recomendadas de mantener el diseño lo más sencillo posible y la refactorización
 
       ---
@@ -246,18 +254,60 @@
       
       Estas pruebas permiten comprobar la correcta implementación de cada una de las tareas y, por tanto, dan por finalizada la labor de los desarrolladores.
       
+
+      ```python
+      # Prueba para verificar el valor total de una mano
+      # Resultado: 21 (True)
+      def test_get_hand_total():
+          dealer.hand = ['A','J']
+          assert dealer.get_hand_total() == 21
+
+      # Prueba para verificar el valor total de una mano
+      # Resultado: 18 (True)
+      def test_get_hand_total_noases():
+          dealer.hand = ['3','Q','5']
+          assert dealer.get_hand_total() == 18
+      ```
+      ---
+      # 3. El ciclo de vida en XP
+      ## Pruebas
+
       Se ejecutan en último momento ___las pruebas de aceptación___, definidas por el cliente, que ___validan que la historia de usuario en su conjunto ha sido correctamente implementada___.
 
+      ```python
+      Feature: The dealer for the game of 21
+
+      Scenario: Deal initial cards
+        Given a dealer
+        When the round starts
+        Then the dealer gives itself two cards
+      ```
+
+      ```python
+      @given('a dealer')
+      def step_impl(context):
+          context.dealer = Dealer()
+
+      @when('the round starts')
+      def step_impl(context):
+          context.dealer.new_round()
+
+      @then('the dealer gives itself two cards')
+      def step_impl(context):
+          assert (len(context.dealer.hand) == 2)
+      ```
       ---
       # 4. Los cinco valores básicos
 
       Kent Beck establece cinco valores básicos que guían todas las actividades dentro de un proyecto desarrollado bajo XP (Beck, 2000): 
+
+      .nota[__Comunicación__]
+      .nota[__Simplicidad__]
+      .nota[__Retroalimentación__]
+      .nota[__Valentía__]
+      .nota[__Respeto__]
       
-      ![RN](./media/tema03/valores_xp.png)
-
-      ---
-      # 4. Los cinco valores básicos
-
+      ???
       __La comunicación__
 
       - Este es el primer valor propuesto por Beck y ello refleja de la importancia que se da a los procesos de comunicación en XP, y en los procesos ágiles en general. 
@@ -268,18 +318,10 @@
       
       - Estos problemas de comunicación, a su vez, pueden estar producidos por diversos factores, desde problemas interpersonales, hasta una pobre gestión de la documentación, pasando por la variabilidad de estados de ánimo de los programadores y su capacidad para absorber información. 
       
-      ---
-      # 4. Los cinco valores básicos
-
-      __La comunicación__
-
       - La programación extrema favorece las comunicaciones interpersonales antes que la documentación por escrito, siempre que resulte posible. 
       
       - Para ello, introduce una serie de prácticas que, como veremos, no pueden ser aplicadas sin que exista comunicación de por medio (las pruebas unitarias, la programación en parejas, la involucración del cliente o la estimación de esfuerzos en el juego de la planificación).
       
-      ---
-      # 4. Los cinco valores básicos
-
       __La simplicidad__
 
       - La idea general consiste en construir aquello que como desarrolladores se nos pide, pero nada más. 
@@ -289,20 +331,12 @@
       - En términos prácticos, esto se traduce en realizar pequeños incrementos en la construcción del sistema final, abordando posibles problemas a medida que estos se presenten. 
       
       - Se trata también de eliminar elementos innecesarios en el proceso de construcción del software, manteniendo el diseño lo más sencillo posible. 
-      
-      ---
-      # 4. Los cinco valores básicos
-
-      __La simplicidad__
 
       - En XP se considera que es preferible hacer hoy algo simple, aunque sea necesario modificarlo o mejorarlo mañana, que anticiparnos construyendo algo más complejo con características que pueden no ser necesarias.
       
       - Valorar la comunicación ayuda a que el equipo tenga claro qué debe hacerse, y sobre todo qué no debe hacerse, favoreciendo la simplicidad. 
       
       - Del mismo modo, un sistema sencillo facilita la comunicación; primero porque es más sencillo de explicar, y segundo porque puede permitir un equipo de desarrollo más reducido.
-      
-      ---
-      # 4. Los cinco valores básicos
 
       __La retroalimentación (feedback)__
 
@@ -310,26 +344,13 @@
       
       - Esta retroalimentación se produce a través de diferentes canales (el propio software, el cliente y los usuarios, y el resto de los miembros del equipo), y a diferentes niveles:
       
-      ![RN](./media/tema03/niveles_retroalimentacion00.png)
-
-      ---
-      # 4. Los cinco valores básicos
-
       ![RN](./media/tema03/niveles_retroalimentacion.png)
-
-      ---
-      # 4. Los cinco valores básicos
 
       Como vemos, la ___retroalimentación___ está muy relacionada con los valores de ___comunicación___ y ___simplicidad___. 
 
       Una buena comunicación facilita la retroalimentación, mientras que la retroalimentación proporciona información que enriquece el proceso de comunicación. 
 
       Por otro lado, es más fácil definir pruebas para sistemas sencillos, mientras que el proceso de definición de pruebas puede ayudar a razonar sobre aquellos elementos que no son imprescindibles.
-
-      ---
-      # 4. Los cinco valores básicos
-
-      __El coraje/valentía__
 
       - Este valor está estrechamente relacionado con la competitividad del mundo actual, y la necesidad de ser permanentemente mejores que la competencia. 
       
@@ -338,9 +359,6 @@
       - En ocasiones será necesario probar varias alternativas de implementación para encontrar la óptima, lo cual puede obligar a eliminar cientos de líneas de código inservibles u obsoletas. 
       
       - Este coraje, o valentía, o disciplina facilita que cada desarrollador tome en cada momento la decisión adecuada.
-
-      ---
-      # 4. Los cinco valores básicos
 
       El ___valor del coraje___ adquiere pleno significado en combinación con los tres anteriores. 
       
@@ -351,10 +369,7 @@
       - El coraje favorece la simplicidad porque anima a no desaprovechar cualquier oportunidad de simplificación que encontremos. 
       
       - La retroalimentación nos permite ser más arriesgados, al saber que cualquier modificación realizada se validará inmediatamente a partir del conjunto de pruebas previamente definidas.
-      
-      ---
-      # 4. Los cinco valores básicos
-
+     
       __El respeto__
 
       - Los cuatro valores anteriores se articulan en torno a la idea del respeto; tanto entre los participantes del proyecto, como entre los participantes y el proyecto en sí mismo. 
@@ -365,7 +380,7 @@
       # 5. Las doce prácticas básicas en XP
 
       La programación extrema propone una serie de prácticas de programación que tienen en cuenta los valores en los que se apoya la metodología, e intentan plasmarlos en técnicas concretas.
-      
+      .left-column[
       - El juego de la planificación
       - Las pequeñas entregas
       - La metáfora del sistema
@@ -373,15 +388,14 @@
       - Test-Driven Development
       - La refactorización
       - La programación en parejas
+      ]
+      .right-column[
       - La propiedad del código compartida
       - La integración continua
-
-      ---
-      # 5. Las doce prácticas básicas en XP
-      
       - La semana de 40 horas
       - La involucración del cliente
       - Empleo de estándares de programación
+      ]
 
       ---
       # 5. Las doce prácticas básicas en XP
@@ -444,7 +458,7 @@
       
       - El cliente está encargado de construir las pruebas funcionales que servirán para validar que las historias han sido correctamente implementadas.
       
-      - En el contexto de XP, cualquier característica que no tenga al menos una prueba automatizada asociada, simplemente no existe. 
+      .nota[En el contexto de XP, cualquier característica que no tenga al menos una prueba automatizada asociada, __simplemente no existe__.] 
       
       ---
       # 5. Las doce prácticas básicas en XP
@@ -597,7 +611,7 @@
       # 6. Roles de los participantes
       ## Rastreador (tracker)
       
-      El ___metric man___ observa sin molestar y almacena datos históricos del proceso. 
+      .nota[El ___metric man___ observa sin molestar y almacena datos históricos del proceso.] 
       
       Su labor está estrechamente relacionada con la estimación de esfuerzo de las tareas, que está eminentemente basada en la experiencia. El rastreador analiza las estimaciones realizadas por los miembros del equipo, y detecta posibles desviaciones sistemáticas. 
       
