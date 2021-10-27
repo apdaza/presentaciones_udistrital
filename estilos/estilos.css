@@ -3,6 +3,7 @@
 @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
 @import url(https://fonts.googleapis.com/css?family=Reenie+Beanie:regular);
 @import url(http://fonts.googleapis.com/css?family=UnifrakturMaguntia);
+@import url(https://fonts.googleapis.com/css?family=Tangerine);
 
 body {
   font-family: 'Droid Serif';
@@ -196,6 +197,59 @@ code {
   -webkit-transform:rotate(-6deg);
   -o-transform:rotate(-6deg);
   -moz-transform:rotate(-6deg);
+}
+
+.nota_destacada {
+  font-family:"Reenie Beanie",arial,sans-serif;
+  font-size:1.5em;
+  color:#f7f7f4;
+  font-weight: 500;
+  text-align: end;
+  border:2px solid #000;
+  background-color: #f8491d;
+  padding: 5px;
+  border-top-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  /* Firefox */
+  -moz-box-shadow:5px 5px 7px rgba(33,33,33,1);
+  /* Safari+Chrome */
+  -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  /* Opera */
+  box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  float: right;
+  margin: 10px;
+  width: 30%;
+  min-height: 100px;
+  -webkit-transform:rotate(5deg);
+  -o-transform:rotate(5deg);
+  -moz-transform:rotate(5deg);
+}
+
+.nota_normal {
+  font-family:"Reenie Beanie",arial,sans-serif;
+  font-size:1em;
+  color:#9b0606;
+  border:1px solid #000;
+  background-color: #f0e3a6;
+  padding: 5px;
+  border-top-right-radius: 12px;
+  /* Firefox */
+  -moz-box-shadow:5px 5px 7px rgba(33,33,33,1);
+  /* Safari+Chrome */
+  -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  /* Opera */
+  box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  float: right;
+  margin: 10px;
+  width: 25%;
+  min-height: 100px;
+  -webkit-transform:rotate(-6deg);
+  -o-transform:rotate(-6deg);
+  -moz-transform:rotate(-6deg);
+}
+.nota_destacada ul li {
+  text-align: left;
+  margin-bottom: 2px
 }
 img {
   max-width: 100%;

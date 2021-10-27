@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="estilos/estilos.css">
+    <link rel="stylesheet" type="text/css" href="../estilos/estilos.css">
   </head>
   <body>
     <textarea id="source">
@@ -11,11 +11,11 @@
       ---
       template: inverse
       # Patrones de diseño de software
-      ***
+      
       ---
       layout: false
       # Patrones de diseño de software
-      ***
+      
 
       ## Contenidos
       1. Introducción y objetivos	
@@ -30,24 +30,19 @@
       ---
       # 1. Introducción y objetivos
 
-      En este tema vamos a estudiar un conjunto de patrones específicos que permiten resolver problemas habituales en el diseño de aplicaciones. 
-
       > Los patrones de diseño son herramientas que permiten aplicar la reutilización de conocimiento en nuestros proyectos. 
 
       La experiencia acumulada a lo largo de décadas de proyectos de desarrollo software ha ido mostrando ciertas arquitecturas de componentes a nivel de clase que permiten resolver problemas comunes, relacionados con ___la creación de objetos___, su ___organización dentro del sistema___, o la ___manera en que deben implementarse sus comportamientos___. 
 
-      Mediante el estudio de este tema alcanzaremos los siguientes objetivos: 
+      Es importante: 
 
-      - ___Comprender la importancia de los patrones de diseño___ en el desarrollo de aplicaciones y sus características fundamentales. 
+      .nota_normal[___Comprender la importancia de los patrones de diseño___ en el desarrollo de aplicaciones y sus características fundamentales. ]
 
-      - ___Conocer los elementos que suelen acompañar a la descripción___ de un patrón de diseño. 
+      .nota_normal[___Conocer los elementos que suelen acompañar a la descripción___ de un patrón de diseño.] 
       
-      ---
-      # 1. Introducción y objetivos
-
-      - ___Saber utilizar los principales patrones de diseño___ para la creación, estructuración y comunicación entre objetos.
+      .nota_normal[___Saber utilizar los principales patrones de diseño___ para la creación, estructuración y comunicación entre objetos.]
       
-      - ___Comprender la importancia de los patrones de diseño___ de interacción en el desarrollo de aplicaciones interactivas.
+      .nota_normal[___Comprender la importancia de los patrones de diseño___ de interacción en el desarrollo de aplicaciones interactivas.]
 
       ---
       # 2. Los patrones de diseño	
@@ -113,9 +108,15 @@
       ## Tipos de patrones
       
       ### Patrones de creación
-      
+      .nota_destacada[
+      - abstract factory
+      - factory method
+      - builder
+      - prototype
+      - singleton
+      ]
       Los patrones de creación o creacionales abstraen la forma en la que se crean los objetos, permitiendo tratar las clases a crear de forma genérica dejando para más tarde la decisión de qué clases crear o cómo crearlas.
-
+      
       ---
       # 3. Patrones de Gamma	
       
@@ -177,6 +178,16 @@
       ## Tipos de patrones
 
       ### Patrones estructurales
+
+      .nota_destacada[
+      - adapter
+      - bridge
+      - composite
+      - decorator
+      - facade
+      - flyweight
+      - proxy
+      ]
 
       Tratan de conseguir que cambios en los requisitos de la aplicación no ocasionen cambios en las relaciones entre los objetos. Lo fundamental son las relaciones de uso entre los objetos, y, éstas están determinadas por las interfaces que soportan los objetos.
 
@@ -265,7 +276,19 @@
       ## Tipos de patrones
 
       ### Patrones de comportamiento
-
+      .nota_destacada[
+      - chain of responsibility
+      - command
+      - interpreter
+      - iterator
+      - mediator
+      - memento
+      - observer
+      - state
+      - strategy
+      - template method
+      - visitor
+      ]
       Los patrones de comportamiento estudian las relaciones entre llamadas entre los diferentes objetos, normalmente ligados con la dimensión temporal.
 
       ---

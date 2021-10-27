@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../estilos/estilos.css">
+    <link rel="stylesheet" href="../estilos/jqmath-0.4.3.css">
+	
+	<script src="scripts/jquery-1.4.3.min.js"></script>
+	<script src="scripts/jqmath-etc-0.4.6.min.js" charset="utf-8"></script>
+	<!-- <script>M.MathPlayer = false; M.trustHtml = true;</script> -->
+  </head>
+  <body>
+    <textarea id="source">
+      name: inverse
+      layout: true
+      class: center, middle, inverse
+      ---
+      template: inverse
+      # Introducción a la Seguridad Informática
+      
+      ---
+      layout: false
+      # Introducción a la Seguridad Informática
+
+      ## Contenidos
+      - 
+
+      ---
+      template: inverse
+      # Introducción
+      
+      ---
+      # Sistema de información:
+
+      Conjunto que resulta de la integración de cuatro elementos: Hardware, software, datos y usuarios, para hacer posible el procesamiento automático de los datos, mediante el uso de computadores.
+      
+      ___Datos:___
+      - Símbolos que representan hechos, situaciones, condiciones o valores. Los datos son la materia prima que procesamos para producir información. 
+
+      Las organizaciones dependen cada día más de sus sistemas de información, y son más vulnerables. 
+      
+      La mayoría de los SI no han sido diseñados con criterios de seguridad (no era prioritario)
+
+      ---
+      # Información:
+
+      El resultado de procesar o transformar los datos. La información es significativa para el usuario.
+      Activo más importante de una organización.
+            
+      ___Múltiples estados:___
+      - En proceso.
+      - Almacenada.
+      - En transmisión.
+      
+      ___Múltiples formas:___
+      - Papel.
+      - Digital.
+
+      Cada estado y forma dispone de una serie de amenazas y vulnerabilidades de diferentes niveles contra las que hay que protegerla.
+      
+      ---
+      # Información:
+
+      Antiguamente todo era soporte papel, y la seguridad principalmente física. 
+      
+      Actualmente lo primordial es el soporte informático y la seguridad lógica.
+      
+      La información y todos los soportes que la sustentan en una organización (sistemas y redes) están sometidos cada vez a más amenazas desde más fuentes
+
+      Las clásicas amenazas: fraude, espionaje, sabotaje, vandalismo, fuego, inundaciones, etc.
+      
+      Las nuevas amenazas: virus, hackers, negación de servicio, etc.
+      
+      Puede estar almacenada en computadores independientes o conectados a redes.
+      
+      Puede tener el carácter de confidencial para individuos o para organizaciones.
+
+      ---
+      # Información
+
+      Generalmente no está centralizada y su valor es muy alto.
+      
+      Puede ser usada sin autorización.
+      
+      Puede estar sujeta a robo, fraude, etc.
+      
+      Puede usarse con fines no éticos.
+
+      ---
+      template: inverse
+      # Definiciones
+
+      ---
+      # Seguridad de la Información:
+
+      No puede verse como un bien, un producto o un tópico técnico.
+
+      Es un conjunto de métodos y herramientas destinados a proteger la información y por ende los sistemas informáticos ante cualquier amenaza.
+
+      Es la disciplina que se ocupa de diseñar las normas, procedimientos, métodos y técnicas, orientados a proveer condiciones seguras y confiables, para el procesamiento de datos en sistemas informáticos.
+
+      Es un proceso metodológico apoyado en herramientas que pretende proteger la información de posibles ataques y amenazas.
+
+      Es la protección de la información de un rango amplio de amenazas para poder asegurar la continuidad del negocio, minimizar el riesgo comercial y maximizar el retorno de las inversiones y las oportunidades comerciales.
+      
+      ---
+      # Seguridad de la Información
+
+      ___Debe estar impuesta por:___
+
+      - Políticas
+      - Normas
+      - Procedimientos
+      - Control de cambios
+      - Educación de usuarios
+      - Gestión de incidentes
+      - Auditorías continuas
+
+      ---
+      # Seguridad de la Información
+
+      Es un proceso donde se debe ___involucrar toda la organización___:
+
+      - Personas:
+       - Líderes del negocio.
+       - Ejecutivos.
+       - Asesores y terceros.
+       - Personal.
+      - Procesos.
+      - Funciones.
+      - Activos / Recursos. 
+
+      ---
+      # Seguridad de la Información
+
+      Debe estar fundamentada en un ___enfoque global___:
+      - Diagnostico inicial
+      - Plan director de seguridad.
+      - Aplicación con enfoques parciales.
+
+      No se debe confundir con ___seguridad informática___:
+      - Subconjunto técnico de la seguridad de la información.
+      - Preocupada por:
+       - Virus.
+       - Spam.
+       - Malware.
+       - Claves.
+       - Exploits.
+       - Iptables.
+       - Ataques DOS.
+       - etc...
+
+      ---
+      # Seguridad de la Información:
+
+      ___Objetivos___:
+      
+      _Disponibilidad_:
+      - Garantizar el acceso a quienes lo requieren y están autorizados.
+      
+      _Confidencialidad_:
+      - Acceso únicamente por entes autorizados.
+      
+      _Integridad_:
+      - Modificación / eliminación únicamente por entes autorizados
+      - Incluye: autenticidad, no repudio, contabilidad.
+
+      ---
+      # Seguridad de la Información:
+      ## Objetivos:
+      
+      __Disponibilidad__:
+      - Se refiere a la continuidad de acceso a los elementos de información almacenados y procesados en un sistema informático. 
+      - Se debe reforzar la permanencia del sistema informático, en condiciones de actividad adecuadas para que los usuarios accedan a los datos con la frecuencia y dedicación que requieran.
+      - Es importante en sistemas informáticos cuyo compromiso con el usuario, es prestar servicio permanente.
+
+      ---
+      # Seguridad de la Información:
+      ## Objetivos:
+      
+      __Confidencialidad__:
+      - Se refiere a la privacidad de los elementos de información almacenados y procesados en un sistema informático. 
+      - Se debe proteger al sistema de invasiones, intrusiones y accesos, por parte de personas o programas no autorizados.
+      - Es importante en sistemas distribuidos, es decir, aquellos en los que usuarios, ordenadores y datos residen en localidades diferentes, pero están física y lógicamente interconectados.
+
+      ---
+      # Seguridad de la Información:
+      ## Objetivos:
+      
+      __Integridad__:
+      - Se refiere a la validez y consistencia de los elementos de información almacenados y procesados en un sistema. 
+      - Se debe asegurar que los procesos de actualización estén sincronizados y no se dupliquen, de forma que todos los elementos del sistema manipulen adecuadamente los mismos datos.
+      - Es importante en sistemas descentralizados, es decir, aquellos en los que diferentes usuarios, ordenadores y procesos comparten la misma información.
+
+      ---
+      # Seguridad de la Información:
+
+      Conceptos relacionados:
+      - Vulnerabilidad.
+      - Amenaza.
+      - Ataque.
+      - Riesgo.
+      - Salvaguarda.
+      - Impacto.
+
+      ---
+      # Seguridad de la Información:
+
+      ## Vulnerabilidad.
+      - Debilidad del sistema que se pueda usar para causar daño.
+      
+      ## Amenaza.
+      - Circunstancia con potencial suficiente para dañar el sistema:
+       - Interrupción.
+       - Interceptación.
+       - Modificación.
+       - Fabricación.
+      
+      ## Ataque.
+      - Aprovechamiento de una vulnerabilidad.
+      
+      ---
+      # Seguridad de la Información:
+
+      ## Riesgo.
+      - Probabilidad de que una amenaza ocurra.
+      
+      ## Salvaguarda.
+      - Medidas de protección contra amenazas.
+      
+      ## Impacto.
+      - Consecuencia del ataque.
+      
+    
+      ---
+      template: inverse
+      # ¿Cómo?
+
+      ---
+      # Seguridad de la Información:
+
+      ## Como lograrla:
+
+      - Se logra implementando un adecuado conjunto de controles; incluyendo políticas, procesos, procedimientos, estructuras organizacionales y funciones de software y hardware.
+      - Requiere la participación de los accionistas, proveedores, terceros, clientes u otros grupos externos.
+      - Se debe apoyar en la asesoría especializada de organizaciones externas.
+      - Se necesitan establecer, implementar, monitorizar, revisar y mejorar estos controles cuando sea necesario para asegurar que se cumplan los objetivos (no es estática)
+
+      ---
+      # Seguridad de la Información:
+
+      ## Por que es necesaria:
+
+      - La información y los procesos, sistemas y redes de apoyo son activos comerciales importantes.
+      - Es esencial para mantener una ventaja competitiva, el flujo de caja, rentabilidad, observancia legal e imagen comercial.
+      - Las organizaciones y sus sistemas y redes de información enfrentan amenazas de seguridad de un amplio rango de fuentes.
+      - Las causas de daño como código malicioso, pirateo computarizado o negación de ataques de servicio se hacen cada vez más comunes, más ambiciosas y cada vez más sofisticadas.
+      - Es un facilitador para lograr objetivos del negocio y para evitar o reducir los riesgos relevantes.
+      - La interconexión de redes públicas y privadas y el intercambio de fuentes de información incrementan los riesgos.
+
+      ---
+      # Seguridad de la Información:
+
+      ## Por que es necesaria:
+
+      - La tendencia a la computación distribuida también ha debilitado la efectividad de un control central y especializado.
+      - Los sistemas de información no han sido diseñados para ser seguros.
+      - La seguridad que se puede lograr a través de medios técnicos es limitada, y debiera ser apoyada por la gestión y los procedimientos adecuados.
+
+      ---
+      # Seguridad de la Información:
+
+      ## Puntos de inicio:
+
+      __Legislativo__:
+      - Protección de data y privacidad de la información personal.
+      - Protección de los registros organizacionales.
+      - Derechos de propiedad intelectual.
+      
+      __Práctica común__:
+      - Documento de la política de seguridad de la información.
+      - Asignación de responsabilidades de la seguridad de la información.
+      - Conocimiento  educación y capacitación en seguridad de la información.
+      - Procesamiento correcto en las aplicaciones.
+      - Gestión de la vulnerabilidad técnica.
+      - Gestión de la continuidad comercial.
+      - Gestión de los incidentes y mejoras de la seguridad de la información.
+
+      ---
+      # Seguridad de la Información:
+
+      ## Fuentes de requerimientos:
+
+      - Evaluar los riesgos para la organización:
+       - Tomando en cuenta la estrategia general y los objetivos de la organización.
+       - Permiten identificar las amenazas para los activos, evaluar la vulnerabilidad y la probabilidad de ocurrencia y calcular el impacto potencial.
+      - Requerimientos legales, reguladores, estatutarios y contractuales que tienen que satisfacer una organización.
+      - Principios, objetivos y requerimientos comerciales para el procesamiento de la información que una organización ha desarrollado para sostener sus operaciones.
+
+      ---
+      # Seguridad de la Información:
+
+      ## Evaluación de los riesgos:
+
+      - Ayuda a identificar los requerimientos de seguridad.
+      - Permite establecer un equilibrio entre el gasto en controles y el daño comercial probable resultado de fallas en la seguridad.
+      - Ayuda a guiar y determinar la acción de gestión apropiada.
+      - Ayuda a establecer las prioridades para manejar los riesgos de seguridad de la información.
+      - Permite determinar prioridades al implementar los controles seleccionados para protegerse contra los riesgos.
+      - Debe  ser periódica.
+
+      ## Selección de controles:
+
+      - Depende de las decisiones organizacionales.
+      - Deben estar sujetas a todas las regulaciones y legislación nacionales e internacionales relevantes.
+
+      ---
+      # Seguridad de la Información:
+
+      ## Factores de éxito críticos:
+
+      - Política, objetivos y actividades de seguridad de información que reflejan los objetivos comerciales.
+      - Un enfoque y marco referencial para implementar, mantener, monitorizar y mejorar la seguridad de la información que sea consistente con la cultura organizacional.
+      - Soporte visible y compromiso de todos los niveles de gestión.
+      Un buen entendimiento de los requerimientos de seguridad de la información, evaluación del riesgo y gestión del riesgo.
+      - Marketing efectivo de la seguridad de la información con todo los gerentes, empleados y otras partes para lograr conciencia sobre el tema.
+      - Distribución de lineamientos sobre la política y los estándares de seguridad de la información para todos los gerentes, empleados y otras partes involucradas.
+      
+      ---
+      # Seguridad de la Información:
+
+      ## Factores de éxito críticos:
+
+      - Provisión para el financiamiento de las actividades de gestión de la seguridad de la información.
+      - Proveer el conocimiento, capacitación y educación apropiados.
+      - Establecer un proceso de gestión de incidentes de seguridad de la información.
+      - Implementación de un sistema de medición que permita evaluar el desempeño en la gestión de la seguridad de la información y retroalimentación de sugerencias para el mejoramiento.
+
+      ---
+      # Seguridad de la Información:
+
+      ## Como abordar la seguridad:
+
+      >> Se deben definir requisitos e implantar soluciones técnicas y organizativas con una visión global
+      
+      La seguridad es un proceso, no un producto y se utilizan medidas de varios tipos:
+      - Adoptar políticas y procedimientos
+      - Implantar medidas técnicas con productos
+      - Gestionar todos los incidentes de seguridad
+      - Auditorias continuas
+      - Abordarla desde un punto de vista global
+       - Diagnóstico inicial de la seguridad	
+       - Plan director de seguridad
+       - Abordar proyectos parciales
+      
+      ---
+      # Seguridad de la Información:
+
+      ## Plan director de seguridad:
+
+      ___Fase 1___: Diagnóstico de la situación.
+      - Conocer la organización, áreas funcionales y procesos de negocio
+      - Identificar activos, realizar entrevistas
+      - Evaluar la seguridad de comunicaciones, sistemas, aplicaciones
+      
+      ___Fase 2___: Análisis de riesgos.
+      - Análisis de las amenazas y vulnerabilidades
+      - Identificación, cálculo y clasificación de los riesgos
+
+      ---
+      # Seguridad de la Información:
+
+      ## Plan director de seguridad:
+
+      ___Fase 3___: Grado de cumplimiento ISO 27002
+      - Informe de cumplimiento de cada uno de los capítulos de la norma
+       - Políticas de SI
+       - Organización de la SI	
+       - Seguridad de los recursos humanos 
+       - Gestión de activos
+       - Control de acceso
+       - Criptografía
+       - Seguridad física y ambiental 
+       - Operaciones de seguridad	
+       - …..
+      
+      ---
+      # Seguridad de la Información:
+ 
+      ## Plan director de seguridad:
+
+      ___Fase 4___: Plan de proyectos de seguridad
+      - Agrupar las vulnerabilidades y definir proyectos a acometer
+      - Clasificar y valorar proyectos a corto, medio y largo
+       
+      ___Fase 5___: Gestión de los riesgos
+      - Disminuir con proyectos, externalizar con seguros o asumir.
+
+
+      ---
+      # Seguridad de la Información:
+ 
+      ## Análisis de riesgos:
+
+      - Identificación y valoración de activos
+      - Identificación y valoración de las amenazas
+      - Identificación de las medidas de seguridad existentes
+      - Identificación y valoración de vulnerabilidades
+      - Identificación de restricciones y objetivos de seguridad
+      - Determinar medidas del riesgo
+      - Determinar el impacto
+      - Identificación y seleccionar las medidas de protección
+
+      ---
+      # Seguridad de la Información:
+ 
+      ## Inventario y clasificación de activos:
+
+      - Físicos, edificios
+      - Equipos de soporte: climatización,
+      - Suministros varios
+      - Personal: propio y externo, función, perfil, formación
+      - Hardware: Mainframe, Servidores, PC, portátiles
+      - Software: S.O., aplicaciones comerciales y propias, herramientas de desarrollo y otros
+      - Equipos de comunicaciones: routers, modems
+      - Equipos y sistemas de back-up: discos, cintas, robot, cartuchos
+      - Información: bases de datos, ficheros
+      
+      ---
+      # Seguridad de la Información:
+ 
+      ## Inventario y clasificación de activos:
+
+      - Documentación: procedimientos operativos, manuales de los sistemas, planes de contingencia
+      - Confianza de los clientes
+      - Imagen de la organización
+      - Otros...
+
+      ---
+      # Seguridad de la Información:
+ 
+      ## Valoración de activos:
+
+      - El valor representa la importancia del activo en la organización
+      - No tiene por qué ser directamente económico (Imagen de la empresa)
+      - El método debe permitir valoración cualitativa (Alto, Medio, Bajo) y cuantitativa ($)
+      - El valor ha de tener en cuenta todo: su adquisición, desarrollo, mantenimiento, sustitución, credibilidad....
+      - Identificar y valorar los activos críticos
+
+      ---
+      # Seguridad de la Información:
+ 
+      ## Tabla inventario de activos:
+
+      - Clave: Código que lo identifique
+      - Activo: Nombre del activo
+      - Propietario
+      - Administrador
+      - Usuario (s)
+      - Confidencialidad: Alta, Media, Baja(actual / requerida)
+      - Integridad: Alta, Media, Baja(actual / requerida)
+      - Disponibilidad: Alta, Media, Baja(actual / requerida)
+      - Control de acceso: Alta, Media, Baja (actual / requerida)
+      
+      ---
+      # Seguridad de la Información:
+ 
+      ## Tabla inventario de activos:
+
+      - Criticidad 
+      - Valoración: Alta, Media, Baja 
+      - Valor estimado
+      - Observaciones.
+
+      ---
+      # Seguridad de la Información:
+ 
+      ## Identificación de las amenazas:
+
+      - Desastres naturales (Tormentas, rayos, terremotos, inundaciones)
+      - Estructurales (Incendios, inundaciones, humedad, cortes de electricidad, agua, refrigeración, comunicaciones)
+      - Hardware (Fallo total o parcial de Servidores, Estaciones PC, portátiles)
+      - Software (Errores en los SO, BD, software base, Web servers, aplicaciones, elementos de seguridad)
+      - Red LAN y WAN (red interna, redes con delegaciones, sistemas de seguridad de las comunicaciones, redes públicas ajenas)
+      - Copias de seguridad (Fallos en elementos de copias, fallos en soportes cintas, discos, robot)
+      - Información (Bases de datos, ficheros, manuales, procedimientos, planes de contingencia)
+
+      ---
+      # Seguridad de la Información:
+ 
+      ## Identificación de las amenazas:
+
+      - Personal (Errores y ataques de personal interno, externo, funciones, perfiles, formación)
+      - Riesgos contra el patrimonio (Robo, pérdida no intencionada de activos)
+      - Otros riesgos (Terrorismo, epidemias, confianza de los clientes, imagen de empresa, insolvencia de servicios externos, seguros, outsourcing...)
+
+      ---
+      # Seguridad de la Información:
+ 
+      ## Valoración de las amenazas:
+
+      - Establecer la importancia de la amenaza
+      - Para cada amenaza hay que identificar:
+       - El origen (qué o quién)
+       - El blanco (elementos que pueden ser afectados)
+      - En una fase posterior del análisis se identificará:
+       - La probabilidad de ocurrencia
+       - El impacto y consecuencias de su ocurrencia
+      - Clasificación de su importancia en tres o cinco niveles
+       - Alta, Media, Baja
+       - Muy alta, Alta, Media, Baja, Muy baja
+
+      ---
+      # Seguridad de la Información:
+  
+      ## Identificación de las medidas de seguridad existentes:
+
+      - Identificar las medidas de seguridad existentes
+      - Conocer su grado de efectividad
+      - Identificar a los activos que aplican
+      - Clasificación de las medidas existentes:
+       - Medidas organizativas
+       - Medidas de seguridad física
+       - Medidas de seguridad lógica (tecnológicas)
+       - Medidas legales
+      - Estimación de su criticidad y estado (bien, mejorable, malo)
+
+      ---
+      # Seguridad de la Información:
+  
+      ## Identificación de las medidas de seguridad existentes:
+
+      ___Medidas organizativas___:
+      - Política de seguridad		
+      - Procedimientos, recomendaciones y normas
+      - Formación y concienciación
+      
+      ___Seguridad física___:
+      - Acceso a edificios y salas de SI (Vigilancia,..)
+      - Sistemas anti-intrusión (puertas blindadas, arcos detectores, control de accesos por llave, tarjeta...)
+      - Sistemas anti-incendio y anti-inundación
+      - Sistemas de alimentación eléctrica (general, baterías, generadores,...)
+      - Aire acondicionado	
+      - Suministro de agua para refrigeración
+     
+      ---
+      # Seguridad de la Información:
+  
+      ## Identificación de las medidas de seguridad existentes:
+
+      ___Seguridad lógica___:
+      - Integridad de los sistemas
+      - Confidencialidad: cifrado en transmisión o almacenamiento, ...
+      - Disponibilidad: redundancia,...
+      - Identificación y autenticación de usuarios: estándar o fuerte,...
+      - Auditorias: habilitación de logs y pistas
+      
+      ___Cumplimiento con la legislación___:
+      - Identificación de la legislación aplicable
+      - Cumplimiento con ley de protección de datos y otras
+
+      ---
+      # Seguridad de la Información:
+  
+      ## Identificación / Valoración de vulnerabilidades:
+
+      - Han de identificarse las vulnerabilidades generales para la organización
+      - Han de identificarse las vulnerabilidades específicas para cada activo o grupo de activos inventariados, especialmente los identificados como críticos
+      - Clasificar por categorías utilizando las mismas que las amenazas (01 a 10 categorías)
+      - Ha de evaluarse la importancia de la vulnerabilidad identificando si existe o no medida de protección frente a la misma, así como su eficacia
+      - Conviene ampliar el estudio con pruebas:
+       - Test de intrusión (hacking ético) interno y externo
+       - Ingeniería social
+      
+      ---
+      # Seguridad de la Información:
+   
+      ## Identificación / Valoración de vulnerabilidades:
+      - Criterios de valoración en tres o cinco niveles
+       - Alta, Media, Baja
+       - Muy alta, Alta, Media, Baja, Muy baja
+      - Tabla de vulnerabilidades
+       - Código
+       - Descripción
+       - Activo(s) a los que afecta
+       - Impacto
+       - Valoración
+       - Recomendaciones
+
+      ---
+      # Seguridad de la Información:
+  
+      ## Identificación de restricciones:
+
+      - Afectan a las medidas de protección a implantar
+      - Restricciones de tiempo: que sea aceptable, limitar el tiempo máximo para un riesgo específico
+      - Restricciones financieras: el coste de las medidas no debe ser mayor que el de los activos que protegen
+      - Restricciones técnicas: mejor implantar medidas en la fase de diseño que en explotación. Si no existen medidas, implantar alguna compensatoria mediante procedimientos o de seguridad física.
+      - Restricciones sociológicas: costumbres, cultura, mentalización, aceptación de la organización. Ante la negatividad, las medidas serán inoperativas.
+      - Restricciones ambientales: superficie y espacio disponible, entorno, etc.
+      - Restricciones legales: informáticas y otras (edificios, laboral...), Suelen ser medidas impulsoras más que restricciones.
+
+      ---
+      # Seguridad de la Información:
+  
+      ## Identificación de objetivos de seguridad:
+
+      - Identificar lo que se espera del plan de seguridad de los Sistemas de Información
+      - Objetivos estratégicos definidos en la Política de seguridad
+      - Objetivos específicos cualitativos y cuantitativos referentes a un activo o grupo de activos
+      - Pueden definirse en relación a los servicios de Integridad, Confidencialidad y Disponibilidad
+      - Pueden identificarse fases limitando el alcance, teniendo en cuenta las restricciones identificadas
+
+      ---
+      # Seguridad de la Información:
+  
+      ## Determinar medidas del riesgo:
+
+      - Es la probabilidad de que una amenaza ocurra
+      - Es la facilidad con que un ataque se implementa (Amenaza x Vulnerabilidad)
+      - Un riesgo resulta de la existencia de una amenaza explotando una vulnerabilidad
+      - Una amenaza sin vulnerabilidad no presenta riesgo, y una vulnerabilidad sin amenaza tampoco
+      - Si la combinación de amenaza y vulnerabilidad no produce impacto, tampoco han de implantarse las medidas de protección necesarias
+      - Un riesgo puede estar compuesto por varias amenazas
+
+      ---
+      # Seguridad de la Información:
+  
+      ## Determinar medidas del riesgo:
+
+      - Existen tres medidas del riesgo a considerar:
+       - Inherente: medido sin tener en cuenta el efecto de las medidas de protección existentes
+       - Actual: medido teniendo en cuenta las medidas de protección existentes
+       - Residual: medido teniendo en cuenta las medidas de protección existentes, recomendadas y planificadas
+      - La diferencia entre 1, 2 y 3 es una medida de la efectividad de las medidas de protección
+
+      ---
+      # Seguridad de la Información:
+  
+      ## Determinación de las probabilidades:
+
+      - Clasificación para amenazas naturales (4 niveles)
+       - Alta (A): 1 ocurrencia cada año
+       - Media (M): 1 ocurrencia cada 5 años
+       - Baja (B): 1 ocurrencia cada 10 años
+       - Muy baja (MB): 1 ocurrencia cada 20 años
+
+      - Clasificación para amenazas accidentales o intencionadas (5 niveles)
+       - Extremadamente frecuente (EF) (60%)
+       - Muy frecuente (MF) (20%)
+       - Frecuente (F) (6%)
+       - Frecuencia normal (FN) (2%)
+       - Poco frecuente (PF) (0,6%)
+      
+      ---
+      # Seguridad de la Información:
+  
+      ## Determinar el impacto:
+
+      - El impacto representa la consecuencia de la realización de un riesgo (parcial o total) en un sistema determinado o en la organización
+      - Es la medida de las pérdidas estimadas (económicas, de rendimiento, de imagen, etc.)
+      - La salvaguarda no ha de ser más cara que el impacto
+      - La valoración del impacto sirven para seleccionar las salvaguardas o medidas de protección, teniendo en cuenta los objetivos de seguridad y restricciones existentes
+      - Pueden utilizarse diferentes métricas, cualitativas o cuantitativas
+
+      ---
+      # Seguridad de la Información:
+  
+      ## Medidas del impacto:
+
+      - Tipos de impacto
+       - Daño: cuando un activo no puede usarse temporalmente
+       - Destrucción: Cuando un activo queda destruido y no es reparable
+       - Revelación: cuando se accede a un activo de forma no autorizada
+       - Indisponibilidad: cuando el servicio informático no puede ofrecerse en un margen aceptable de tiempo
+      
+      - Medidas Cualitativas:
+       - Leve: tanto interno como públicamente
+       - Moderado: interno, en la imagen pero sin sanciones
+       - Grave: interno y público, con daño en la imagen y sanciones económicas
+
+      ---
+      # Seguridad de la Información:
+  
+      ## Identificación de las medidas de protección:
+
+      - Debe establecerse una lista de medidas de protección (salvaguardas) lo más amplia posible, sin ninguna restricción que se aplicarán posteriormente
+      - Se identificarán las medidas existentes, evaluando su mejora si fuese necesaria
+      - Seleccionar un conjunto de medidas equilibrado
+      - Ha de abarcar todas las áreas:
+       - Organización, procedimientos, documentación
+       - Medidas físicas y lógicas
+       - Hardware, Software, Comunicaciones
+       - Personal
+      
+      ---
+      # Seguridad de la Información:
+  
+      ## Identificación de las medidas de protección:
+
+      - Pueden ser medidas que:
+       - Eviten o transfieran el riesgo: normalmente no se dan
+       - Reduzcan la amenaza: son difíciles de implantar, sobre todo en sistemas existentes
+       - Reduzcan la vulnerabilidad: son las más comunes y recomendadas (siempre existirá un nivel residual de riesgo)
+       - Reduzcan el impacto: detectan el ataque y facilitan la recuperación. Son normalmente necesarias
+      - Además, las restricciones limitan normalmente la aplicación de las medidas
+
+      ---
+      # Seguridad de la Información:
+  
+      ## Selección de las medidas de protección:
+
+      - Atendiendo a los objetivos de seguridad, restricciones y resultados del análisis de riesgos, se seleccionarán las medidas de protección a utilizar
+      - Se emitirán los siguientes documentos finales:
+       - Análisis de riesgos
+       - Recomendaciones de seguridad
+       - Plan de proyectos de seguridad a implantar
+
+    </textarea>
+    <script src="scripts/remark.js"></script>
+    <script>
+       var slideshow = remark.create();
+    </script>
+  </body>
+</html>

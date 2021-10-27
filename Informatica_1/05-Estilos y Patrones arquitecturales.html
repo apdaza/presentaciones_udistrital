@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../estilos/estilos.css">
+  </head>
+  <body>
+    <textarea id="source">
+      name: inverse
+      layout: true
+      class: center, middle, inverse
+      ---
+      template: inverse
+      # Estilos y patrones arquitecturales
+      
+      ---
+      layout: false
+      # Estilos y patrones arquitecturales
+      
+      ## Contenidos
+      - Introducción
+      - Estilos Arquitectónicos
+       - Data-Flow
+       - Data-Centered
+       - Call and Return
+       - Independet component
+       - Virtual Machines
+       - Interactive Systems
+     
+      ---
+      # Introducción
+
+      Un __patrón__ es una solución de diseño reutilizable
+  
+      Tipos de patrones:
+      - De sistemas o arquitecturales.
+      - De diseño.
+      - Anti-patrones.
+      - De codificación.      
+      
+      .nota_destacada[Una arquitectura es la combinación de varios patrones.]
+
+      ---
+      # Introducción
+      Los decisiones estructurales del software contemplan:
+      - Organización a gran escala.
+      - Control global estructural.
+      - Protocolos de comunicación.
+      - Sincronización.
+      - Acceso a datos.
+      - Asignación de funcionalidad a elementos de diseño.
+      - Distribución física.
+      - Composición de los elementos de diseño.
+      - Escalabilidad.
+      - Rendimiento.
+      - Selección de una gran variedad de alternativas.
+
+      ---
+      # Introducción
+
+      El diseño arquitectural de software incluye:
+      - Contemplar lenguajes de interconexión de módulos.
+      - Seleccionar templates y frameworks para sistemas de dominios específicos.
+      - Modelos formales de mecanismos de integración de componentes.
+      - Mecanismos de descripción de sistemas.
+
+      .nota_destacada[No hay tiempo para re-inventar la rueda]
+
+      ---
+      # Estilos Arquitectónicos
+      Un patrón arquitectural define:
+      - La forma de los componentes.
+      - La forma de comunicación de estos componentes.
+      - Las restricciones que rigen dicha comunicación.
+
+      ---
+      # Estilos Arquitectónicos
+
+      Algunos estilos Arquitectónicos:
+      .left-column[
+      - Data-Flow.
+       - Batch Sequential
+       - Pipes and filters.
+      - Data-Centered.
+       - Data base.
+       - BlackBoard.
+      - Call and Return.
+       - Main program.
+       - Object oriented.
+       - Hierarchical layers.]
+       .right-column[
+      - Independet component.
+       - Communicating processes.
+       - Event systems.
+       - Micro Kernel.
+       - Broker.
+       - Reflection
+      - Virtual Machines.
+       - Interpreters.
+       - Ruled Based.
+      - Interactive Systems.
+       - MVC
+       - PAC]
+      
+      ---
+      # Data-Flow
+      - Serie de transformaciones de sucesivos datos de entrada.
+      - Los datos pasan a través de los componentes del sistema.
+      
+      __Batch Sequential:__
+      - Los pasos de procesamiento se realizan por programas independientes.
+      - Cada paso se completa antes de iniciar el siguiente.
+      - Los datos se transmiten entre los programas como un todo.
+
+      ![RN](./media/tema05/batch_sequential.png)
+
+      ---
+      # Data-Flow
+
+      __Pipes and Filters:__
+      - Transformación incremental de los datos.
+      - Los filtros transforman datos sin retener estados.
+      - Las tuberias mueven los datos entre los filtros.
+      
+      ![RN](./media/tema05/pipe_filter.png)
+
+      ---
+      # Data-Centered
+      - Lo que importa es el acceso y la actualización de los datos
+      - Se dividen en pasivos (repositorio) y activos (pizarra)
+      
+      __Repositorio:__
+      - Almacén de datos centralizado
+      - El acceso a los datos lo realizan los clientes del repositorio.
+
+      ![reducida](./media/tema05/repository.png)
+
+      ---
+      # Data-Centered
+
+      __Balck Board:__
+      - A diferencia del anterior, puede enviar notificaciones a los usuarios.
+      - Los clientes son independientes uno del otro.
+      - El almacén es independiente de los clientes.
+      - Es altamente escalable.
+
+      ![reducida](./media/tema05/blackboard.png)
+
+      ---
+      # Call and Return
+      - Estilo arquitectónico dominante
+      - El sistema se ve como una serie de llamadas a procedimientos y funciones.
+
+      __Main program:__
+      - Paradigma clásico.
+      - Descompone un programa jerarquicamente en unidades mas pequeñas
+
+      ![reducida](./media/tema05/main.png)
+      
+      ---
+      # Call and Return
+
+      __Object Oriented:__
+      - Cada objeto posee:
+       - Datos propios.
+       - Operaciones sobre estos datos.
+      - Basado en encapsulamiento, herencia y polimorfismo.
+
+      ![reducida](./media/tema05/poo.png)
+
+      ---
+      # Call and Return
+
+      __Hierarchical Layers:__
+      .left-column[
+      - Cada capa provee servicios a la capa superior.
+      - Cada capa es cliente de la capa inferior.
+      - No todos los sistemas pueden ser estructurados en capas.
+      - Gran dificultad para encontrar los niveles de abstracción requeridos y adecuados.]
+      .right-column[
+      ![mini](./media/tema05/layered.png)
+      ]
+      ---
+      # Independent Components
+
+      - Procesos, objetos o agentes independientes.
+      - Comunicación mediante mensajes.
+      - Se desacoplan las tareas.
+
+      .left-column[
+      ![mini](./media/tema05/cs.png)
+      ]
+      .right-column[
+      
+
+      __Commnicating Processes:__
+      - Sistemas clásicos de multiproceso.
+      - Cliente – servidor.
+      - Comunicación síncrona o asíncrona.
+      ]
+      ---
+      # Independent Components
+
+      __Event Systems:__
+      - Invocaciones Implícitas.
+      - Un componente publica eventos.
+      - Otros componentes se registran para escuchar los eventos.
+      - El comportamiento se asocia a los eventos.
+      - Suele usarse un gestor de mensajes que controla la comunicación.
+
+      ![reducida](./media/tema05/events.png)
+      ---
+      # Independent Components
+
+      __Micro Kernel:__
+      - Permite sistemas adaptables.
+      - Separa el núcleo y los componentes específicos.
+
+      ![rn](./media/tema05/mk.png)
+      ---
+      # Independent Components
+
+      __Broker:__
+      - Sistemas estructurados para interactuar de forma distribuida.
+      - Coordina la comunicación y maneja errores.
+
+      ![rn](./media/tema05/broker.png)
+      ---
+      # Independent Components
+
+      __Reflection:__
+      - Sistemas estructurados dinámicamente
+      - Soporta cambios de tipos de estructura y la invocación de funciones.
+      - Separa la aplicación en un meta-nivel y nivel base.
+
+      ![rn](./media/tema05/meta.png)
+      ---
+      # Virtual Machines
+      - Simulan funcionalidad que no es nativa del hardware o software en el cual se implementan.
+      - Utilizados para simular o testear plataformas:
+       - No construidas.
+       - Muy complejas.
+       - Muy costosas.
+      
+      __Interpreter:__
+      - Acorta diferencias entre lo que se espera del software y lo que permite el hardware.
+      - Añade flexibilidad.
+      - Permite interrupciones y verificación del programa.
+      - Brindan libertad para introducir cambios en tiempos de ejecución.
+      - Aumentan costos de rendimiento.
+
+      ---
+      # Virtual Machines
+
+      __Interpreter:__
+
+      ![rn](./media/tema05/interpreter.png)
+      ---
+      # Virtual Machines
+
+      __Ruled based:__
+      - Motores de inferencia.
+      - Motores de validación.
+      - Rule engines.
+      - Workflows.
+
+      ---
+      # Interactive Systems
+
+      __MVC (model – view - controller):__
+      - Componentes:
+       - Modelo.
+       - Vista.
+       - Controlador.
+      - Cambios en el modelo implican cambios en todas las capas.
+      - Se basa en separación de incumbencias.
+
+      ![mini](./media/tema05/mvc_component.jpg)
+
+      ---
+      # Interactive Systems
+
+      __PAC (presentation - abstraction - control):__
+      - Separación en agentes:
+       - Cada agente es responsable de una tarea específica.
+       - Cada agente tiene su interfaz de usuario.
+
+      .left-column[
+      ![RN](./media/tema05/pac_design.jpg)
+      ]
+      .right-column[
+      ![RN](./media/tema05/multiple_agent_in_pac.jpg)
+      ]
+      
+
+    </textarea>
+    <script src="scripts/remark.js"></script>
+    <script>
+       var slideshow = remark.create();
+    </script>
+  </body>
+</html>
