@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../estilos/estilos.css">
+    <link rel="stylesheet" href="../estilos/jqmath-0.4.3.css">
+	
+	<script src="scripts/jquery-1.4.3.min.js"></script>
+	<script src="scripts/jqmath-etc-0.4.6.min.js" charset="utf-8"></script>
+	<!-- <script>M.MathPlayer = false; M.trustHtml = true;</script> -->
+  </head>
+  <body>
+    <textarea id="source">
+      name: inverse
+      layout: true
+      class: center, middle, inverse
+      ---
+      template: inverse
+      # Introducción a la Seguridad Informática
+      
+      ---
+      layout: false
+      # Introducción a la Seguridad Informática
+
+      ## Contenidos
+      - 
+
+      ---
+      template: inverse
+      # Introducción
+      ---
+      # Introducción
+
+      .nota[![RN](./media/Gene-spafford.jpg)]
+
+      >> The only truly secure system is one that is powered off, cast in a block of concrete and sealed in a lead-lined room with armed guards - and even then I have my doubts.
+
+      >> “El único sistema totalmente seguro es aquel que está apagado, desconectado de la red, guardado en una caja fuerte de titanio, encerrado en un bunker de concreto, rodeado por gas venenoso y cuidado por guardias muy bien armados y muy bien pagados. Aún ası́, no apostarı́a mi vida por él.” 
+
+      ___Eugene Spafford.___
+
+      .reducido[Eugene Howard Spafford , commonly known as Spaf, is an American professor of computer science at Purdue University and a leading computer security expert. ]
+      
+      ---
+      # Errores comunes en seguridad
+
+      ## No tratar la seguridad como una prioridad. 
+      
+      - Pese al flujo de noticias de fallos de seguridad, muchas empresas siguen relegando los problemas de seguridad a un segundo plano. 
+      
+      > “La seguridad es un elemento caro y no parece considerarse una parte esencial de la empresa” . 
+      
+      > “Consume una gran cantidad de capital que los ejecutivos prefieren invertir en cualquier otra área de la organización.”
+
+      ## Estrategia de respuesta inadecuada. 
+      
+      - Cuando aparece una amenaza de seguridad y no hay nadie que tome las riendas, los retrasos y la indecisión pueden arruinar cualquier respuesta efectiva. 
+      
+      > “Hoy dı́a, muchas organizaciones son capaces de identificar incidentes de seguridad dentro de su entorno de TI, pero carecen de la habilidad para responder de forma eficaz, especialmente en el caso de las amenazas que pueden surgir”.
+
+      ---
+      # Errores comunes en seguridad
+
+      ## Sistemas de seguridad integrados de forma deficiente.
+
+      - Dado que las amenazas de seguridad cambian continuamente, muchas organizaciones tienen que enfrentarse a una maraña de aplicaciones, configuraciones de hardware, administradores internos, código de programación y consultores, lo que, en su conjunto, puede crear incompatibilidades e ineficiencias.
+
+      > “Llega un momento en el que todo se derrumba y la empresa se ve inmersa en el desastre”. 
+
+      ---
+      # Errores comunes en seguridad
+
+      ## Falta de aprendizaje para los empleados. 
+      
+      - Cada vez es mayor el número de amenazas, que además se diseñan para explotar el vı́nculo de seguridad más débil de la cadena: sus empleados. 
+      
+      - En concreto, las técnicas de ingenierı́a social como la suplantación de identidad (phishing) y el spear phishing (esta última está dirigida a una persona en concreto o a un grupo reducido) están haciendo estragos. 
+      
+      > “Muchas empresas consideran el aprendizaje algo superfluo o creen que es poco productivo que los empleados no estén es su puesto de trabajo durante el más mı́nimo perı́odo de tiempo”.
+
+      ---
+      # Errores comunes en seguridad
+
+      ## Reglas y procedimientos no efectivos. 
+      
+      - Ante una amenaza, es fácil optar por bloquear la mensajerı́a instantánea o prohibir las unidades flash USB (bus serie universal), que pueden trasladar datos fuera de los lı́mites fı́sicos de una oficina.
+
+      - También puede crear la ilusión de una seguridad más férrea exigiendo a los empleados que cambien sus contraseñas cada mes. 
+      
+      - Por desgracia, estas reglas molestas pueden reducir la productividad o simplemente promover que los empleados busquen otros métodos. 
+      
+      > “Las directivas insuficientes pueden convertirse en un obstáculo para el trabajo y aumentar los riesgos de seguridad”
+
+      ---
+      # Errores comunes en seguridad
+
+      ## Amenazas internas.
+      
+      - A pesar de todo lo que se insiste en la existencia de hackers e intrusos, muchas infracciones de seguridad se producen dentro de la empresa. 
+      
+      - Los empleados descontentos o sin escrúpulos son una amenaza constante, por lo que la despreocupación puede ser catastrófica, especialmente entre los empleados móviles con equipos portátiles y asistentes digitales personales. 
+      
+      - Los administradores y los ejecutivos superiores con privilegios de acceso prácticamente sin control, también son imparables. 
+
+      - Además, el personal de entrega, los trabajadores temporales e incluso los conserjes, a menudo, pueden deambular libremente por las instalaciones.
+
+      ---
+      # Problemática
+
+      ## Computadores personales
+
+      - __Accesibilidad fı́sica al hardware__: Facilidad de robo.
+      - __Software Código malicioso (virus)__: compromete la integridad de información, disponibilidad del servicio, confidencialidad, etc.
+      - __Respaldos__: No se ejecutan por falta de interés de los usuarios.
+      - __Concientización de seguridad a los usuarios__: El mejor software del mundo para proteger los activos de información no sirve si los usuarios no ponen en práctica buenos hábitos de seguridad.
+
+      ## Internet
+
+      - Internet y TCP/IP no fueron diseñados pensando en seguridad, su filosofı́a es el procesamiento distribuido y las comunicaciones abiertas. 
+      
+      - De este hecho se derivan sus principales vulnerabilidades.
+
+      ---
+      # Problemática
+
+      ## Ataques famosos
+
+      - Gusano Morris 1988
+      - Ciberataque PlayStation (2011)
+      - Yahoo / eBay (2013)
+      - Linkedin (2016)
+      - Marriot International (2018)
+      - Wikileaks (2016)
+      - Vacunas contra el COVID-19 (2020)
+      - El hackeo a Twitter (2020)
+      - El ataque cibernético de Toll Group (2020)
+      - Ciberataque de Magellan (2020)
+
+      ???
+      __Gusano Morris__
+      
+      El 2 de noviembre de 1988 pasaría a la historia como el día en el que las reglas de internet cambiaron para siempre, evidenciando que existían vulnerabilidades informáticas que debían corregirse.
+
+      El punto de partida de este progresivo cambio fue la creación, lanzamiento y rápida expansión de un malware autorreplicable llamado Morris, que debe su nombre al inventor, Robert Tappan Morris, hijo de un famoso criptógrafo.
+
+      Los efectos de este virus informático fueron devastadores: afectó a la actividad de los equipos, obstruyó las conexiones durante días y accedió a información sensible.
+
+      En total, se estima que pudo afectar hasta 60.000 servidores conectados a la red, incluyendo equipos de la NASA, las universidades de Berkeley y Stanford, el MIT y el Pentágono, durante casi 72 horas.
+
+      La erradicación de este malware autorrepicable costó al gobierno de los Estados Unidos cerca de un millón de dólares y ocasionó pérdidas de más de 96 millones de dólares.
+
+      A partir de 1988, quedo claro que la seguridad en internet no estaba garantizada. Con el tiempo y el nacimiento de nuevas tecnologías, fueron apareciendo diferentes tipos de virus informáticos que afectaron a grandes multinacionales. Estos son algunos de los ataques informáticos más famosos a lo largo de la última década. 
+
+      __Sony PlayStation Network - Ciberataque PlayStation__
+
+      En abril de 2011, PlayStation Network, el servicio de PlayStation que permite a los usuarios comprar juegos online, dejó de funcionar por la intrusión de un ciberatacante.
+
+      Durante el ciberataque, el delincuente obtuvo información personal relativa a nombres de usuario, correos electrónicos, datos de acceso y también datos financieros de las tarjetas de crédito o débito de los clientes de PlayStation.
+
+      El ataque afectó a un total de 77 millones de usuarios en todo el mundo durante 23 días y supuso unas pérdidas de aproximadamente 180 millones de dólares para Sony.
+
+      Además, transcurridos unos meses del incidente, la compañía fue condenada a pagar una multa más de 300 mil dólares por sus vulnerables medidas de seguridad informáticas en el servicio PlayStation Network.
+
+      __Yahoo / eBay__
+
+      En el año 2013, Yahoo sufrió uno de los mayores ataques informáticos en la historia de Internet. Sin embargo, la compañía no lo reconoció hasta el año 2016.
+
+      La compañía global de medios sufrió un robo masivo de datos en más de 1.000 millones de cuentas suscritas a su portal, con información que iba desde fechas de nacimiento o direcciones de correo electrónico hasta números de teléfono y contraseñas.
+
+      Al año siguiente, eBay, una de las compañías más famosas de comercio electrónico, sufrió un ataque similar por parte de piratas informáticos que afectó gravemente a su red interna corporativa.
+
+      Durante esta intrusión, se robaron datos de 145 millones de usuarios. Con el objetivo de mermar el daño, eBay emitió un comunicado oficial en el que instaba a sus clientes a cambiar sus contraseñas.
+
+      La información recopilada por los ciberdelincuentes incluía: nombres, contraseñas cifradas, direcciones de correo electrónico, domicilios, números de teléfono, fechas de nacimiento, etcétera.
+
+      Si bien, en ambos casos, según afirmaron eBay y Yahoo en varios comunicados, los datos financieros de sus usuarios, así como las cuentas vinculadas de PayPal, no sufrieron robo alguno.
+
+      __Linkedin__
+
+      En 2016, el jefe de seguridad de Linkedin confirmaba la anulación de 100 millones de contraseñas de la red social de contactos profesionales debido a un ataque informático sufrido cuatro años antes.
+
+      Los datos robados fueron puestos a la venta a cambio de cinco bitcoins (cuyo valor alcanzó casi 2.200 dólares) en un portal de la web oscura o dark web.
+
+      __Marriot__
+
+      En 2018, Marriot International, la cadena de hoteles de lujo estadounidense con más de 6.700 propiedades en todo el mundo y un total de 30 marcas hoteleras, sufrió el segundo mayor hackeo en la historia de internet.
+
+      El 30 de noviembre, su base de datos fue vulnerada por un individuo no autorizado. En el ataque, se produjo el robo de datos de más de 500 millones de clientes .
+
+      La información robada contenía, en su mayoría, datos personales, como: nombres, direcciones, teléfonos, correos electrónicos, números de pasaporte, llegadas y salidas al hotel del cliente, etcétera.
+
+      El gigante hotelero afirmó que algunos registros incluían información financiera utilizada para el pago de la reserva, por lo que no descartó el robo de tarjetas de crédito/débito.
+
+      No es la única vez que la compañía sufre un ataque informático. De hecho, este mismo año 2020, los datos de alrededor de 5,2 millones de clientes quedaron expuestos en una operación de similares características.
+
+      Según se cree, para el acceso a la información de los clientes se hizo uso de las credenciales de inicio de sesión de dos empleados, que trabajan en un hotel franquiciado de Rusia.
+
+      __Wikileaks__
+      
+      No podemos olvidar la filtración de datos más importante de los últimos años, hablamos de WikiLeaks, creada en 2006 por el australiano Julian Assange.
+
+      Wikileaks ganó popularidad en 2010. Todo comenzó en noviembre, al publicar 251.287 telegramas diplomáticos intercambiados entre algo más de 250 embajadas de Estados Unidos y el Departamento de Estados de Estados Unidos. Dentro de esas filtraciones había más de 55.000 cables emitidos desde España o dirigidos a las delegaciones estadounidenses en el país. 
+
+      __Vacunas contra el COVID-19__
+      
+      En julio del 2020, la Agencia de Seguridad Nacional de Estados Unidos, la autoridad canadiense de ciberseguridad y el Centro de Ciberseguridad Nacional del Reino Unido, alertaron de ataques informáticos contra científicos británicos para conseguir por la vía rápida los secretos de las vacunas del COVID-19.
+      
+      Parece que un grupo de piratas informáticos de alto nivel, conocidos como “The Dukes’’ o “Cozy Bear” y relacionados con la inteligencia rusa, estaría detrás de los hackeos, según la NSA. 
+      
+      En noviembre del mismo año, Microsoft detectó ataques cibernéticos de malware de hackers de Rusia y Corea del Norte dirigidos contra compañías farmacéuticas ubicadas en Canadá, Francia, India, Corea del Sur y los EE. UU. que participaron en las vacunas en varias etapas de los ensayos clínicos. 
+      
+      También se identificó un incidente de ciberseguridad norcoreano contra la vacuna de Astra Zeneca con sede en Reino Unido. 
+      
+      __El hackeo a Twitter__
+
+      El pasado verano, un ciberataque masivo llevó a Twitter a suspender las cuentas de numerosas personalidades. Todo empezó cuando un empleado de esta red social recibió una contraprestación económica por permitir a los atacantes el uso de determinadas herramientas de administración que solo son accesibles para el personal de la compañía. 
+      
+      Los estafadores lograron acceder a cientos de cuentas, incluso a las de personas muy relevantes a nivel mundial, como Barack Obama, Joe Biden, Jeff Bezos, Elon Musk y Bill Gates. Los mensajes publicados en las cuentas afectadas ofrecían un vínculo a una billetera digital de bitcoin para que el público hiciera donaciones bajo la promesa de que el dinero sería duplicado para causas benéficas.
+      
+      Por ejemplo, el mensaje publicado en el nombre de Barack Obama fue el siguiente: 
+      
+      «I am giving back to my community due to COVID-19!
+      
+      All Bitcoin sent to my address below will be sent back doubled. If you send $1,000, I will send back $2,000!
+      
+      Only doing this for the next 30 minutes! Enjoy.»
+      
+      En el corto tiempo que duró el ataque informático, los ciberdelincuentes lograron estafar más de 100.000 dólares, según registros públicos de blockchain disponibles. 
+
+      __El ataque cibernético de Toll Group__
+
+      Toll Group encabeza la lista de los peores ataques cibernéticos del año 2020, porque fue golpeado por malware dos veces en tres meses. Sin embargo, un portavoz del Grupo de Toll contó que los dos incidentes no estaban conectados y se “basan en diferentes formas de ransomware”.
+      
+      El 3 de febrero del 2020, la compañía logística con sede en Australia anunció en Twitter que había sufrido un ataque cibernético. “Como medida de precaución, Toll ha tomado la decisión de cerrar una serie de sistemas en respuesta a un incidente de seguridad cibernética. Varias aplicaciones de atención al cliente se ven afectadas como resultado. Nuestra prioridad inmediata es reanudar los servicios a los clientes tan pronto como sea posible”, escribió Toll Group en Twitter.
+      
+      __Ciberataque de Magellan__
+
+      Magellan Healthcare fue víctima de un sofisticado ataque de malware, en el que los hackers primero exfiltraron datos antes de implementar la carga útil de ransomware. Al aprovechar un esquema de phishing de ingeniería social en que pretendía ser un cliente de Magellan, los atacantes pudieron acceder al sistema cinco días antes del ataque de malware.  
+      
+      La investigación determinó que los hackers primero instalaron malware capaces de robar credenciales y contraseñas de los empleados para obtener acceso al servidor afectado. Los datos de los pacientes también se comprometieron en el evento, incluida la información relacionada con la salud, como los datos de la cuenta de seguro de salud y la información sobre el tratamiento, pero los datos financieros no se vieron comprometidos. El ataque afectó a 365.000 de víctimas. 
+      
+      Todos los pacientes recibieron dos años de monitoreo de crédito gratuito. Los aseguradores han tomado medidas para garantizar la seguridad de los portales de miembros, al mismo tiempo implementando controles adicionales para prevenir futuros incidentes.
+
+      ---
+      # Problemática
+
+      ## La importancia de la seguridad
+
+      .nota_normal[Proteger de manera adecuada las redes corporativas.]
+      .nota_destacada[Gestión segura de los datos de los usuarios.]
+      .nota_normal[Ecosistema de hiperconexión.]
+      .nota_destacada[La era digital y las nuevas formas de ataque]
+
+
+      >> “Un sistema de cómputo es seguro si se puede confiar en que él y
+      su software se comportarán como se espera que lo hagan, y que la
+      información almacenada en él se mantendrá inalterada y accesible
+      durante tanto tiempo como su dueño lo desee.”
+
+      ???
+      
+      - Esta serie de ataques informáticos evidencia el peligro de no proteger de manera adecuada las redes corporativas. 
+      - Debe tomarse como prioridad la adquisición de herramientas específicas que permitan una gestión segura de los datos de los usuarios.
+      - Cada vez son más los dispositivos tecnológicos que forman parte de nuestras vidas. Con la llegada del Internet de las Cosas (IoT), ese ecosistema de hiperconexión proporciona oportunidades para que los ciberdelincuentes obtengan datos sensibles.
+      - Es por ello que la inversión en ciberseguridad en la era digital para proteger la red interna corporativa y prevenir las nuevas formas de ataques cibernéticos se vuelve aún más importante. 
+      - Aspectos como la encriptación, los firewalls, la ciberseguridad HTTPS, SSL y TLS, las pruebas de intrusión o la prevención de pérdida de datos (DLP) deben considerarse como los cimientos de la protección y privacidad de los datos en las grandes corporaciones.
+
+      ---
+      # Problemática
+
+      ![RN](./media/problematica.png)
+
+      ---
+      # Problemática
+
+      ## Algunas estadísticas
+
+      - Estadísticas sobre Seguridad Informática
+      - Costos de la Seguridad Informática
+      - Estadísticas sobre Ransomware
+      - Estadísticas sobre Phishing
+      - Otras Estadísticas sobre Seguridad Informática
+
+      ???
+      __Estadísticas sobre Seguridad Informática__
+      - El 78% de líderes de seguridad TI creen que sus organizaciones no tienen suficiente protección contra ciberataques a pesar de las inversiones en ciberseguridad realizadas en 2020. (Insight Enterprises)
+      - Más del 90 por ciento de todas las organizaciones de salud han reportado al menos una brecha de ciberseguridad en los últimos tres años. (Frost & Sullivan)
+      - 62,7% de las empresas creen que los ciberataques han aumentado desde el año 2020 debido a la pandemia de COVID-19. (Prey)
+      43% de los ciberataques afectan a pequeños negocios. (Small Business Trends)
+      - Los ataques de Malware en el año 2020 aumentaron en un 358% respecto a años anteriores y en un 435% respecto al 2019. (Deep Instinct)
+      - 93% del malware observado el año 2019 es polimórfico, es decir que es capaz de modificar su programación para evitar ser detectado. (Webroot)
+      - A una compañía le toma aproximadamente 6 meses detectar una brecha de seguridad. (ZD Net)
+      - Windows es el sistema operativo más atacado por hackers, Android viene en segundo lugar. (Computer World)
+      
+      __Costos de la Seguridad Informática__
+      - El costo total del cibercrimen es equivalente al 1% del producto interno bruto mundial, y ha aumentado en un 50% respecto al 2019. (McAfee)
+      - Un 91% de empresas han aumentado sus costos en seguridad informática durante el 2021, o planean hacerlo durante el año (Insight Enterprises)
+      - El componente más caro de un ataque virtual es la pérdida de datos, que representa un 43% de los costos. (Accenture)
+      - Se proyecta que el daño relacionado a ciberataques llegará a los $10,5 trillones de dólares anuales para el 2025. (CyberSecurity Ventures)
+      - El 86 por ciento de las brechas de seguridad tienen una motivación financiera. (Verizon)
+      - Los dos ataques más frecuentes son los ataques de malware y aquellos basados en la web. Las empresas gastan un estimado de $2.4 millones en defensa. (Accenture)
+      - Microsoft pagó $13,7 millones de dólares americanos como recompensa por bugs encontrados en sus plataformas, mientras que el programa de “bug bounties” de Google ha pagado $21 millones de dólares desde el año 2010. (Microsoft, Google)
+      
+      __Estadísticas sobre Ransomware__
+      - Ocurren más de 4,000 ataques de ransomware por día. (FBI)
+      - 75% de las organizaciones infectadas con ransomware tenían protección activa. (Sophos)
+      - Los daños globales relacionados a ataques de ransomware llegarán a $20 billones al final del 2021. (Cybersecurity Ventures)
+      - El costo promedio de la resolución de un ataque de ransomware entre 2019 y 2020 fue de $761 mil dólares americanos. (Sophos)
+      Se estima que habrá un ataque de ransomware cada 11 segundos para fines del 2021. Esto no incluye ataques a individuos, que ocurren con mayor frecuencia. (Cybersecurity Ventures)
+      
+      __Estadísticas sobre Phishing
+      - En una encuesta realizada a más de 1300 profesionales de TI se descubrió que 56% de las organizaciones identificaron al phishing como su mayor riesgo de seguridad informática. (CyberArk)
+      - A enero del 2021, Google indexó poco más de dos millones de sitios de phishing. (Tessian)
+      - Verizon reporta que usuarios Estadounidenses abren un 30% de todos los correos maliciosos y un 12% de ellos dan clic al enlace peligroso. (Verizon)
+      - 38% de los archivos adjuntos maliciosos enviados a través de correo electrónico fueron formatos de Microsoft Office, como Word, Powerpoint o Excel.Por su parte, los archivos PDF representan el 14% del total. (Cisco)
+      - 91% de los ataques comienzan con la técnica de spear phishing, que apunta a vulnerar correos e infectar organizaciones. (KnowBe4)
+      
+      __Otras Estadísticas sobre Seguridad Informática__
+      - Dos tercios (67%) de los profesionales TI creen que el mal uso de dispositivos en sus organizaciones creció de alguna forma u otra. (Prey)
+      - Los ataques “next gen” a la cadena de suministros aumentaron 420% durante todo el año 2020. (Sonatype)
+      - 63% de las intrusiones maliciosas en redes son resultado de datos de autenticación (nombres de usuario y contraseñas) que han sido comprometidos en otros ciberataques. (Microsoft)
+      - Según una encuesta a organizaciones en Estados Unidos y el Reino Unido, la mayor preocupación de las empresas son las fugas o exfiltraciones de datos con un 36%, superando incluso al malware. (Prey)
+      - El 35 por ciento de empresas en una encuesta global aseguran haber sufrido un ataque encriptado, basado en SSL o TLS. (Gartner)
+
+      ---
+      # Amenazas
+
+      4 tipos de amenazas principales a los sistemas que explotan las vulnerabilidades de los activos en el sistema
+
+      ## Interrupción
+
+      - Un activo del sistema se pierde, se hace no disponible o inutilizable.
+
+      ## Intercepción
+
+      - Alguna parte no autorizada logra acceso a un activo del sistema.
+
+      ## Modificación
+
+      - Cuando una parte no autorizada logra acceso al activo del sistema y puede manipular ese activo.
+
+      ## Fabricación
+
+      - Una parte no autorizada puede fabricar objetos falsos en un sistema.
+
+      ---
+      # Amenazas
+
+      ![RN](./media/amenazas.png)
+
+      ???
+      __Interrupción__: Un activo del sistema se pierde, se hace no disponible o inutilizable.
+
+      Ejemplos:
+      - Destrucción maliciosa de un dispositivo.
+      - Borrado de un programa o de un archivo de datos.
+      - Malfuncionamiento del manejador de archivos del sistema operativo que trajera como consecuencia que no se pueda hallar un archivo particular en el disco duro.
+
+      __Intercepción__: Alguna parte no autorizada logra acceso a un activo del sistema.
+      
+      Ejemplos:
+      - Copiado ilı́cito de programas o archivos de datos.
+      - La intervención del canal para obtener datos sobre la red.
+
+      __Modificación__: Cuando una parte no autorizada logra acceso al activo del sistema y puede manipular ese activo.
+
+      Ejemplos:
+      - Cambiar datos en una base de datos.
+      - Alterar un programa para que realice alguna computación adicional o distinta a la que realiza.
+      - Modificar datos en una comunicación, entre otras acciones.
+
+      __Fabricación__: Una parte no autorizada puede fabricar objetos falsos en un sistema.
+
+      Ejemplos:
+      - Inserción de transacciones espurias en un sistema de comunicación en red.
+      - Agregar registros a una base datos ya existente.
+
+      ---
+      # Ataques comunes
+
+      ## Spam
+
+      - Mensajes no solicitados, habitualmente de tipo publicitario, enviados en grandes cantidades (incluso masivas) que perjudican de alguna o varias maneras al receptor.
+
+      - También se llama spam a los virus sueltos en la red y páginas filtradas (casino, sorteos, premios, viajes y pornografı́a), se activa mediante el ingreso a páginas de comunidades o grupos o acceder a links en diversas páginas.
+
+      ## Bugs
+
+      - Es el resultado de un fallo o deficiencia durante el proceso de creación de programas (software).
+
+      - En 1947, los creadores de Mark II informaron del primer caso de error en un ordenador causado por un bicho (literalmente).
+
+      ---
+      # Ataques comunes
+
+      ## Negación de Servicio
+
+      - Ataque a un sistema de computadoras o red que causa que un servicio o recurso sea inaccesible a los usuarios legı́timos. 
+      
+      - Normalmente provoca la pérdida de la conectividad de la red por el consumo del ancho de banda de la red de la vı́ctima o sobrecarga de los recursos computacionales del sistema de la vı́ctima.
+
+      - Se genera mediante la saturación de los puertos con flujo de información, haciendo que el servidor se sobrecargue y no pueda seguir prestando servicios, por eso se le dice ”denegación”, pues hace que el servidor no dé abasto a la cantidad de usuarios. 
+      
+      - Esta técnica es usada por los llamados crackers para dejar fuera de servicio a servidores objetivo.
+
+      ---
+      # Ataques comunes
+
+      ## Código Malicioso
+
+      - Es un software que tiene como objetivo infiltrarse en el sistema y dañar la computadora sin el conocimiento de su dueño, con finalidades muy diversas, ya que en esta categorı́a encontramos desde un troyano a un spyware.
+
+      ## Worm
+
+      - Agente infeccioso capaz de autoduplicarse de manera autónoma, capaz de buscar nuevos sistemas e infectarlos a través de la red.
+
+      ---
+      # Top 10 de la OWASP
+
+      Los atacantes pueden, potencialmente, utilizar diferentes rutas a través de los sistemas. En ocaciones, estos caminos son fáciles de encontrar y explotar, mientras que otras no. De la misma manera, el perjuicio ocasionado puede no tener consecuencias, o puede que si.
+
+      ![RN](./media/camino_ataque.png)
+
+      ---
+      # Top 10 de la OWASP
+
+      ## Inyección
+
+      - Las fallas de inyección, como SQL, NoSQL, OS o LDAP ocurren cuando se envían datos no confiables a un intérprete, como parte de un comando o consulta. 
+      - Los datos dañinos del atacante pueden engañar al intérprete para que ejecute comandos involuntarios o acceda a los datos sin la debida autorización.
+
+      ## Pérdida de Autenticación
+
+      - Las funciones de la aplicación relacionadas a autenticación y gestión de sesiones son implementadas incorrectamente, permitiendo a los atacantes comprometer usuarios y contraseñas, token de sesiones, o explotar otras fallas de implementación para asumir la identidad de otros usuarios (temporal o permanentemente).
+
+      ---
+      # Top 10 de la OWASP
+
+      ## Exposición de datos sensibles
+
+      - Muchas aplicaciones web y APIs no protegen adecuadamente datos sensibles, tales como información financiera, de salud o Información Personalmente Identificable (PII). 
+      
+      - Los atacantes pueden robar o modificar estos datos protegidos inadecuadamente para llevar a cabo fraudes con tarjetas de crédito, robos de identidad u otros delitos. 
+      
+      - Los datos sensibles requieren métodos de protección adicionales, como el cifrado en almacenamiento y tránsito.
+
+      ---
+      # Top 10 de la OWASP
+
+      ## Entidades Externas XML (XXE)
+
+      - Muchos procesadores XML antiguos o mal configurados evalúan referencias a entidades externas en documentos XML. 
+      
+      - Las entidades externas pueden utilizarse para revelar archivos internos mediante la URI o archivos internos en servidores no actualizados,  escanear puertos de la LAN, ejecutar código de forma remota y realizar ataques de denegación de servicio (DoS).
+
+      ## Pérdida de Control de Acceso
+
+      - Las restricciones sobre lo que los usuarios autenticados pueden hacer no se aplican correctamente. 
+      
+      - Los atacantes pueden explotar estos defectos para acceder, de forma no autorizada, a funcionalidades y/o datos, cuentas de otros usuarios, ver archivos sensibles, modificar datos, cambiar derechos de acceso y permisos, etc.
+
+      ---
+      # Top 10 de la OWASP
+
+      ## Configuración de Seguridad Incorrecta
+
+      - La configuración de seguridad incorrecta es un problema muy común y se debe en parte a establecer la configuración de forma manual, ad hoc o por omisión (o directamente por la falta de configuración). 
+      
+      - Son ejemplos: S3 buckets abiertos, cabeceras HTTP mal configuradas, mensajes de error con contenido sensible, falta de parches y actualizaciones, frameworks, dependencias y componentes desactualizados, etc.
+
+      ## Secuencia de Comandos en Sitios Cruzados (XSS)
+
+      - Los XSS ocurren cuando una aplicación toma datos no confiables y los envía al navegador web sin una validación y codificación apropiada; o actualiza una página web existente con datos suministrados por el usuario utilizando una API que ejecuta JavaScript en el navegador. 
+      
+      - Permiten ejecutar comandos en el navegador de la víctima y el atacante puede secuestrar una sesión, modificar (defacement) los sitios web, o redireccionar al usuario hacia un sitio malicioso.
+
+      ---
+      # Top 10 de la OWASP
+
+      ## Deserialización Insegura
+
+      - Estos defectos ocurren cuando una aplicación recibe objetos serializados dañinos y estos objetos pueden ser manipulados o borrados por el atacante para realizar ataques de repetición, inyecciones o elevar sus privilegios de ejecución. 
+      
+      - En el peor de los casos, la deserialización insegura puede conducir a la ejecución remota de código en el servidor.
+
+      ## Componentes con vulnerabilidades conocidas
+
+      - Los componentes como bibliotecas, frameworks y otros módulos se ejecutan con los mismos privilegios que la aplicación. 
+      
+      - Si se explota un componente vulnerable, el ataque puede provocar una pérdida de datos o tomar el control del servidor. 
+      
+      - Las aplicaciones y API que utilizan componentes con vulnerabilidades conocidas pueden debilitar las defensas de las aplicaciones y permitir diversos ataques e impactos. 
+
+      ---
+      # Top 10 de la OWASP
+
+      ## Registro y Monitoreo Insuficientes
+
+      - El registro y monitoreo insuficiente, junto a la falta de respuesta ante incidentes permiten a los atacantes mantener el ataque en el tiempo, pivotear a otros sistemas y manipular, extraer o destruir datos. 
+      
+      - Los estudios muestran que el tiempo de detección de una brecha de seguridad es mayor a 200 días, siendo típicamente detectado por terceros en lugar de por procesos internos.
+
+
+    </textarea>
+    <script src="scripts/remark.js"></script>
+    <script>
+       var slideshow = remark.create();
+    </script>
+  </body>
+</html>

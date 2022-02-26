@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../estilos/estilos.css">
+    <link rel="stylesheet" href="../estilos/jqmath-0.4.3.css">
+	
+	<script src="scripts/jquery-1.4.3.min.js"></script>
+	<script src="scripts/jqmath-etc-0.4.6.min.js" charset="utf-8"></script>
+	<!-- <script>M.MathPlayer = false; M.trustHtml = true;</script> -->
+  </head>
+  <body>
+    <textarea id="source">
+      name: inverse
+      layout: true
+      class: center, middle, inverse
+      ---
+      template: inverse
+      # Controles ISO 27002
+      
+      ---
+      layout: false
+      # Controles ISO 27002
+    
+      ## Contenidos:
+
+      - __A5__ Políticas de Seguridad de la Información
+      - __A6__ Organización de la seguridad de la información
+      - __A7__ Seguridad relativa a los recursos
+      - __A8__ Gestión de activos
+      - __A9__ Control de acceso
+      - __A10__ Criptografía
+      - __A11__ Seguridad física y del entorno
+      - __A12__ Seguridad de las operaciones
+      - __A13__ Seguridad en las comunicaciones
+      
+      ---
+      layout: false
+      # Controles ISO 27002
+    
+      ## Contenidos:
+
+      - __A14__ Adquisición, desarrollo y mantenimiento de los sistemas de información
+      - __A15__ Relación con proveedores
+      - __A16__ Gestión de incidentes de la seguridad de la información
+      - __A17__ Aspectos de seguridad de la información en la gestión de continuidad del negocio
+      - __A18__ Cumplimiento
+      ---
+      # Controles ISO 27002
+
+      ## A5 POLÍTICAS DE SEGURIDAD DE LA INFORMACIÓN
+
+      __Objetivo 1:__
+      
+      > Proporcionar orientación y apoyo de la dirección para la seguridad de la información, de acuerdo con los requisitos del negocio y con las regulaciones y leyes pertinentes
+       
+      ### 5.1.1 Políticas para la seguridad de la información
+
+      Este control requiere que se definan políticas de la seguridad de la información:
+      - Sean aprobadas por la dirección
+      - Deben publicarse y comunicarse a los empleados y partes externas pertinentes
+
+      ???
+      ## Recomendaciones:
+
+      - La comunicación de las políticas debe realizarse a todos los niveles, no solo al nivel de los directivos y responsables
+      
+      - El objetivo de la Seguridad de la información pasa por involucrar a toda la organización en esta tarea
+      
+      ## Algunos ejemplos de políticas de Seguridad pueden ser:
+      
+      - Política de control de acceso
+      - Política de clasificación y manejo de la información
+      - Política de seguridad física y ambiental (ver 11)
+      - Política de temas finales orientados al usuario, tales como:
+      - Política de uso aceptable de activos
+      - Política de escritorio y pantalla limpios
+      - Política de transferencia de información
+      - Política de dispositivos móviles y teletrabajo
+      - Política de restricciones a las instalaciones y uso del software
+      - Política de copia de seguridad
+      - Política de transferencia de información
+      - Política de protección contra software malicioso
+      - Política de gestión de vulnerabilidades
+      - Política de controles criptográficos
+      - Política de seguridad de las comunicaciones
+      - Política de privacidad y protección de la información personal identificable
+      - Política de relación con los proveedores
+      
+      ---
+      # Controles ISO 27002
+
+      ## A5 POLÍTICAS DE SEGURIDAD DE LA INFORMACIÓN
+
+      __Objetivo 1:__
+
+      ### 5.1.2 Revisión de las políticas de seguridad de la información
+
+      Las políticas de la Seguridad de la información deben adaptarse continuamente a las necesidades y cambios de la organización por lo que no pueden permanecer estáticas.
+
+      Se debe mantener actualizada la política de la seguridad de la información. Para ello se recomienda:
+
+      - Desarrollar una política general de la alta dirección para expresar el compromiso de toda la organización con la seguridad de la información
+      - Desarrollar otras políticas definidas por departamentos o áreas de la organización
+      - Desarrollar instrucciones técnicas o documentos de aplicabilidad de las políticas definidas en las políticas especificas
+      ---
+      # Controles ISO 27002
+
+      ## A6 ORGANIZACIÓN DE LA SEGURIDAD DE LA INFORMACIÓN
+
+      __Objetivo 1:__ ORGANIZACIÓN INTERNA
+       
+      > Establecer un marco de gestión para iniciar y controlar la implementación y la operación de la seguridad de la información dentro de la organización.
+
+      Aquí se nos presentan una serie de requisitos o controles para garantizar que la organización organice las funciones y responsabilidades para gestionar la seguridad de la información
+
+      ---
+      # Controles ISO 27002
+
+      ## A6 ORGANIZACIÓN DE LA SEGURIDAD DE LA INFORMACIÓN
+
+      __Objetivo 1:__ ORGANIZACIÓN INTERNA
+
+      ### 6.1.1 Funciones y responsabilidades de la Seguridad de la información
+
+      Se trata de definir las responsabilidades de cada empleado o puesto de trabajo en relación a la Seguridad de la información. 
+      
+      Hay que sumar a las funciones de cada puesto aquellas funciones que tengan que ver con la seguridad de la información (si es pertinente)
+
+      También deberemos comunicar a cada persona implicada en la Seguridad de la Información sus roles y responsabilidades
+
+      Siempre que sea aplicable, deberemos hacer partícipes de las responsabilidades a las partes externas que sean pertinentes tales como: _Usuarios externos_ y _Proveedores_
+
+      
+      ---
+      # Controles ISO 27002
+
+      ## A6 ORGANIZACIÓN DE LA SEGURIDAD DE LA INFORMACIÓN
+
+      __Objetivo 1:__ ORGANIZACIÓN INTERNA
+
+      ### 6.1.2 Separación de funciones
+
+      Se trata de evitar usos o accesos indebidos a la información o a las aplicaciones o sistemas que la gestionan (activos de información) mediante la separación de las funciones asignando distintos perfiles o áreas de responsabilidad
+
+      Explicado de otra forma, podemos determinar las responsabilidades, tareas, accesos, etc. que conllevan un riesgo de mal uso, accidental o deliberado, si son compartidas por una misma persona
+
+      ???
+      ## Ejemplos de separación o segregación de responsabilidades (ISO 27002)
+
+      - En el proceso de compras deberíamos separar las responsabilidad de quien hace los pedidos y de quien los aprueba o realiza los pagos para evitar el riesgo de fraude o pedidos innecesarios o en desacuerdo con las políticas de compras.
+      - Evitar que personal de desarrollo tenga acceso administrativo a los sistemas en producción evitara el riesgo de usos indebidos de aplicaciones que deben controlar solamente aquellas personas autorizadas a administrar sistemas con clientes reales
+      - Separar las funciones de petición y concesión de permisos administrativos de acceso a sistemas o áreas restringidas evitando que la misma persona que realiza las solicitudes de acceso sea quien se concede las autorizaciones o maneja la asignación de contraseñas de acceso
+      
+      ## Alternativas a la segregación de funciones
+      
+      A veces por motivos de costes no podemos diferenciar las responsabilidades o tareas. Entonces la pregunta es ¿qué podemos hacer si nuestra empresa es demasiado pequeña y no tenemos más remedio que concentrar funciones en las mismas personas?
+      
+      La alternativa está en establecer controles que mitiguen los riesgos provocados por la imposibilidad práctica de segregar las funciones
+      
+      Estos pueden ser:
+      
+      __Controles de seguimiento y monitorización:__
+      
+      Establecer controles de supervisión de las actividades en tiempo real puede darnos mayor seguridad de que se realizan correctamente
+      
+      __Controles de Auditorias__
+      
+      Establecer controles mediante registros que revelen los datos necesarios en las auditorias periódicas para evaluar las posibles violaciones de seguridad. También es aconsejable aumentar la frecuencia de las auditorias en temas sensibles con el objeto de transmitir a los empleados la continuidad en la vigilancia de la seguridad de la información
+      
+      __Registros automatizados__
+      
+      Registrar de forma automática los cambios, accesos o tareas sensibles con la seguridad de la información como la asignación de permisos, contraseñas o modificaciones en aplicaciones de desarrollo
+
+      ---
+      # Controles ISO 27002
+
+      ## A6 ORGANIZACIÓN DE LA SEGURIDAD DE LA INFORMACIÓN
+
+      __Objetivo 1:__ ORGANIZACIÓN INTERNA
+
+      ### 6.1.3 Contacto con autoridades
+
+      En caso de incidentes en la seguridad de la información puede resultar necesario mantener informados a los organismos de control del estado o administración. 
+      
+      Estos pueden ser comúnmente
+      - Agencia de protección de datos
+      - Fuerzas y Cuerpos de seguridad del estado
+      - Otros
+
+      ???
+      Este control debe ser implementado en caso de empresas u organizaciones:
+
+      - Grandes empresas que mantienen servicios particularmente relevantes para al ámbito público, telecomunicaciones, organizaciones bancarias, servicios de emergencia etc.
+      - Empresas más pequeñas que manejen datos sensibles y cuya difusión indebida o robo pueda causar daños a las personas involucradas
+      - Cuando los incidentes contra la seguridad de la información provienen de una fuente externa como Internet y resulte útil o necesario que varias autoridades y proveedores deban ser llamados a la acción para desviar, suprimir o mitigar la amenaza.
+      
+      ---
+      # Controles ISO 27002
+
+      ## A6 ORGANIZACIÓN DE LA SEGURIDAD DE LA INFORMACIÓN
+
+      __Objetivo 1:__ ORGANIZACIÓN INTERNA
+
+      ### 6.1.4 Contacto con grupos de interés especial
+
+      Mantenerse al día en Seguridad de la información parece una tarea imposible de realizar de forma autónoma aun para grandes corporaciones por lo que este control nos indica que deberemos identificar todos aquellos grupos de interés tales como: foros especializados en Seguridad de la información, organismos administrativos o empresas expertas en seguridad de la información.
+
+      Se trata de mantenernos actualizados en cuanto a las noticias sobre la seguridad de la información y permanecer alerta ante las nuevas amenazas para la seguridad de la información y si es necesario que adoptemos alguna recomendación de estos grupos especializados.
+
+      ---
+      # Controles ISO 27002
+
+      ## A6 ORGANIZACIÓN DE LA SEGURIDAD DE LA INFORMACIÓN
+
+      __Objetivo 1:__ ORGANIZACIÓN INTERNA
+
+      ### 6.1.5 Seguridad de la información en la gestión de proyectos
+       
+      Este control pretende decirnos que la __Seguridad de la Información__ _debe involucrarse en todos los procesos de la organización_.
+
+      La seguridad es algo que generalmente se olvida en los proyectos; es decir, cuando un proyecto se aborda en una organización, generalmente no tiene en cuenta la seguridad de la información.
+      
+      Para afrontar este requisito bastaría con realizar una evaluación de riesgos, centrada en la seguridad de la información, al comienzo de cualquier proyecto para identificar amenazas, vulnerabilidades y riesgos asociados al proyecto y adoptar los controles necesarios.
+
+      ???
+      
+      Con esto cumplimos con lo que dice la norma:
+      
+      >> La seguridad de la información debe abordarse en la gestión de proyectos, independientemente del tipo de proyecto.
+      
+      Si queremos ser más rigurosos podemos establecer un proceso para integrar la Seguridad de la información en cualquier proyecto:
+      
+      __PASO1 Objetivos de Seguridad__
+
+      Plantearse como una actividad más dentro de las actividades de cualquier proyecto de cara a determinar los objetivos de para preservar la confidencialidad, integridad y disponibilidad de la información relacionada o afectada por el proyecto
+      
+      __PASO2 Evaluación de riesgos__
+
+      En la fase de diseño o planificación del proyecto se puede realizar un análisis de riesgos que nos permita identificar y ponderar los riesgos asociados a la seguridad de la información
+      
+      __PASO3 Controles de Seguridad__
+
+      La evaluación de riesgos nos permitirá tomar las decisiones adecuadas para establecer los controles necesarios para mitigar los riesgos
+      
+      __PASO4 Proceso de Seguridad de la Información__
+
+      Una vez que hemos realizado un ejercicio según los pasos anteriores podemos entonces establecer un proceso documentado para integrar la seguridad de la información en cualquier proceso con el conocimiento de lo que hemos aprendido
+      
+      __Beneficios de la integración de la Seguridad de la Información__
+      
+      - Cumplir con los requisitos de la norma
+      - La consideración de la Seguridad de la información en todos los proyectos otorgara un mayor valor a todos sus proyectos y a toda la organización
+      - Mejora la evaluación de costes de un proyecto al considerar anticipadamente riesgos, que después pueden suponer costes no evaluados
+      
+
+      ---
+      # Controles ISO 27002
+
+      ## A6 ORGANIZACIÓN DE LA SEGURIDAD DE LA INFORMACIÓN
+
+      __Objetivo 2:__ DISPOSITIVOS MÓVILES Y TELETRABAJO
+      
+      > Garantizar la seguridad del teletrabajo y del uso de dispositivos móviles.
+      
+      ### 6.2.1 Política de dispositivos móviles
+      ### 6.2.2 Teletrabajo
+
+
+      ---
+      # Controles ISO 27002
+
+      ## A7 SEGURIDAD RELATIVA A LOS RECURSOS
+      
+      __Objetivo 1:__ PREVIO AL EMPLEO
+      
+      > Asegurar que los empleados y contratistas entulturaiendan sus responsabilidades y que sean aptos para los roles para los cuales están siendo considerados
+      
+      ### 7.1.1 Selección
+      ### 7.1.2 Términos y condiciones de empleo
+      
+      ---
+      # Controles ISO 27002
+
+      ## A7 SEGURIDAD RELATIVA A LOS RECURSOS
+
+      __Objetivo 2:__ Durante el empleo
+      
+      > Asegurar que los empleados y contratistas sean conscientes de y cumplan con las responsabilidades de seguridad de la información
+      
+      ### 7.2.1 Responsabilidades de la dirección
+      ### 7.2.2 Concientización, educación y formación en seguridad de la información
+      ### 7.2.3 Proceso disciplinario
+      
+      ---
+      # Controles ISO 27002
+
+      ## A7 SEGURIDAD RELATIVA A LOS RECURSOS
+
+      __Objetivo 3:__ Finalización o cambio de la relación laboral o empleo
+      
+      ### 7.3.1 Responsabilidades en la desvinculación
+
+      ---
+      # Controles ISO 27002
+
+      ## A8 GESTION DE ACTIVOS
+
+      __Objetivo 1:__ Responsabilidad de los activos
+      
+      > Identificar los activos y definir las responsabilidades de protección adecuadas
+      
+      ### 8.1.1 Inventario de activos
+      ### 8.1.2 Propiedad de los activos
+      ### 8.1.3 Uso aceptable de los activos
+      ### 8.1.4 Devolución de activos
+
+      ---
+      # Controles ISO 27002
+
+      ## A8 GESTION DE ACTIVOS
+
+      __Objetivo 2:__ Clasificación de la información
+      
+      > Asegurar que la información recibe el nivel de protección adecuado de acuerdo con su importancia en la organización.
+      
+      ### 8.2.1 Clasificación de la información
+      ### 8.2.2 Etiquetado de la información
+      ### 8.2.3 Manejo de los activos
+      
+      ---
+      # Controles ISO 27002
+
+      ## A8 GESTION DE ACTIVOS
+
+      __Objetivo 3:__ Manejo de los Soportes
+      
+      ### 8.3.1 Gestión de Soportes extraíbles
+      ### 8.3.2 Eliminación de Soportes
+      ### 8.3.3 Traslado de soportes físicos
+
+      ---
+      # Controles ISO 27002
+
+      ## A9 CONTROL DE ACCESO
+
+      __Objetivo 1:__ Requisitos de negocio para el control de acceso
+      
+      > Limitar el acceso a la información y a las instalaciones de procesamiento de información.
+      
+      ### 9.1.1 Política de control de acceso
+      ### 9.1.2 Acceso a las redes y a los servicios de red
+      
+      ---
+      # Controles ISO 27002
+
+      ## A9 CONTROL DE ACCESO
+
+      __Objetivo 2:__ Gestión del acceso de usuarios
+      
+      > Asegurar el acceso de usuarios autorizados y prevenir el acceso no autorizado a los sistemas y servicios de información.
+      
+      ### 9.2.1 Registro de usuarios y cancelación del registro
+      ### 9.2.2 Gestión de acceso a los usuarios
+      ### 9.2.3 Gestión de derechos de acceso privilegiados
+      ### 9.2.4 Gestión de la información de autenticación secreta de los usuarios
+      ### 9.2.5 Revisión de derechos de acceso de usuario
+      ### 9.2.6 Remoción o ajuste de los derechos de acceso
+      
+      ---
+      # Controles ISO 27002
+
+      ## A9 CONTROL DE ACCESO
+
+      __Objetivo 3:__ Responsabilidades del usuario
+      
+      > Hacer a los usuarios responsables de salvaguardar su información de autenticación.
+      
+      ### 9.3.1 Uso de la información de autenticación secreta
+      
+      ---
+      # Controles ISO 27002
+
+      ## A9 CONTROL DE ACCESO
+
+      __Objetivo 4:__ Responsabilidades del usuario
+      
+      > Impedir el acceso no autorizado a los sistemas y las aplicaciones.
+      
+      ### 9.4.1 Restricción de acceso a la información
+      ### 9.4.2 Procedimientos de conexión (log-on) seguros
+      ### 9.4.3 Sistema de gestión de contraseñas
+      ### 9.4.4 Uso de programas de utilidad privilegiados
+      ### 9.4.5 Control de acceso al código de programas fuente
+
+      ---
+      # Controles ISO 27002
+
+      ## A10 CRIPTOGRAFIA
+
+      __Objetivo 1:__ Controles criptográficos
+      
+      ### 10.1.1 Política sobre el empleo de controles criptográficos
+      ### 10.1.2 Gestión de claves
+
+      ---
+      # Controles ISO 27002
+
+      ## A11 SEGURIDAD FISICA Y DEL ENTORNO
+
+      __Objetivo 1:__ Áreas seguras
+      
+      > Evitar accesos físicos no autorizados, daños e interferencias contra las instalaciones de procesamiento de información y la información de la organización
+      
+      ### 11.1.1 Perímetro de seguridad física
+      ### 11.1.2 Controles de acceso físico
+      ### 11.1.3 Seguridad de oficinas, despachos e instalaciones
+      ### 11.1.4 Protección contra amenazas externas y del ambiente
+      ### 11.1.5 El trabajo en las áreas seguras
+      ### 11.1.6 Áreas de entrega y de carga
+      
+      ---
+      # Controles ISO 27002
+
+      ## A11 SEGURIDAD FISICA Y DEL ENTORNO
+
+      __Objetivo2:__ Equipamiento
+      
+      > Prevenir pérdidas, daños, hurtos o comprometer los activos así como la interrupción de las actividades de la organización.
+      
+      ### 11.2.1 Ubicación y protección del equipamiento
+      ### 11.2.2 Elementos de soporte
+      ### 11.2.3 Seguridad en el cableado
+      ### 11.2.4 Mantenimiento del equipamiento
+      ### 11.2.5 Retiro de bienes
+      ### 11.2.6 Seguridad del equipamiento y de los activos fuera de las instalaciones
+      ### 11.2.7 Seguridad en la reutilización o eliminación de equipos
+      ### 11.2.8 Equipamiento desatendido por el usuario
+      ### 11.2.9 Política de escritorio y pantalla limpios
+      
+      ---
+      # Controles ISO 27002
+
+      ## A12 SEGURIDAD DE LAS OPERACIONES
+
+      __Objetivo 1:__ Procedimientos operacionales y responsabilidades
+      
+      > Se trata de asegurar la operación correcta y segura de las instalaciones de procesamiento de información.
+      
+      ### 12.1.1 Procedimientos documentados de operación
+      ### 12.1.2 Gestión de cambios
+      ### 12.1.3 Gestión de la capacidad
+      ### 12.1.4 Separación de los ambientes para desarrollo, prueba y operación
+      
+      ---
+      # Controles ISO 27002
+
+      ## A12 SEGURIDAD DE LAS OPERACIONES
+
+      __Objetivo2:__ Protección ante software malicioso
+      
+      > Garantizar que la información y las instalaciones de procesamiento de información se encuentren protegidos contra el código malicioso..
+      
+      ### 12.2.1 Controles ante software malicioso
+      
+      ---
+      # Controles ISO 27002
+
+      ## A12 SEGURIDAD DE LAS OPERACIONES
+
+      __Objetivo 3:__ Respaldo
+      
+      > Registrar eventos y generar evidencia
+      
+      ### 12.3.1 Respaldo de la información
+      
+      ---
+      # Controles ISO 27002
+
+      ## A12 SEGURIDAD DE LAS OPERACIONES
+
+      __Objetivo 4:__ Registros y supervisión
+      
+      ### 12.4.1 Registro de eventos
+      ### 12.4.2 Protección de la información de registros (logs)
+      ### 12.4.3 Registros del administrador y operador
+      ### 12.4.4 Sincronización de relojes
+      
+      ---
+      # Controles ISO 27002
+
+      ## A12 SEGURIDAD DE LAS OPERACIONES
+
+      __Objetivo 5:__ Control de software en la producción
+      
+      > Garantizar la integridad de los sistemas operativos
+      
+      ### 12.5.1 Instalación de software en los sistemas operativos
+      
+      ---
+      # Controles ISO 27002
+
+      ## A12 SEGURIDAD DE LAS OPERACIONES
+
+      __Objetivo 6:__ Gestión de vulnerabilidad técnica
+      
+      > Prevenir la explotación de vulnerabilidades técnicas
+      
+      ### 12.6.1 Gestión de vulnerabilidades técnicas
+      ### 12.6.2 Restricciones en la instalación de software
+      
+      ---
+      # Controles ISO 27002
+
+      ## A12 SEGURIDAD DE LAS OPERACIONES
+
+      __Objetivo 7:__ Consideraciones sobre la auditoría de sistemas de información
+      
+      > Minimizar el impacto de las actividades de auditoría en los sistemas operativos
+      
+      ### 12.7.1 Controles de auditoría de sistemas de información
+
+      ---
+      # Controles ISO 27002
+
+      ## A13 SEGURIDAD EN LAS COMUNICACIONES
+
+      __Objetivo 1:__ Gestión de la seguridad de red
+      
+      > Asegurar la protección de la información en redes y la protección de la infraestructura de soporte
+      
+      ### 13.1.1 Controles de Red
+      ### 13.1.2 Seguridad de los servicios de red
+      ### 13.1.3 Separación en redes
+      
+      ---
+      # Controles ISO 27002
+
+      ## A13 SEGURIDAD EN LAS COMUNICACIONES
+
+      __Objetivo 2:__ Intercambio de información
+      
+      > Mantener la seguridad de la información intercambiada dentro de una organización y con cualquier otra entidad.
+      
+      ### 13.2.1 Políticas y procedimientos de intercambio de información
+      ### 13.2.2 Acuerdos de intercambio de información
+      ### 13.2.3 Mensajería electrónica
+      ### 13.2.4 Acuerdos de confidencialidad y de no divulgación
+
+      ---
+      # Controles ISO 27002
+
+      ## A14 ADQUISICIÓN, DESARROLLO Y MANTENIMIENTO DE LOS SISTEMAS DE INFORMACIÓN
+      
+      __Objetivo 1:__ Requisitos de seguridad de los Sistemas de información
+
+      > Garantizar que la seguridad de la información es una parte integral de los sistemas de información en todo su ciclo de vida. Esto también incluye los requisitos para los sistemas de información que proporcionan servicios través de. Redes públicas.
+      
+      ### 14.1.1 Análisis y especificación de los requisitos de seguridad
+      ### 14.1.2 Aseguramiento de los servicios de aplicación en las redes públicas
+      ### 14.1.3 Transacciones en línea
+      
+      ---
+      # Controles ISO 27002
+
+      ## A14 ADQUISICIÓN, DESARROLLO Y MANTENIMIENTO DE LOS SISTEMAS DE INFORMACIÓN
+      
+      __Objetivo 2:__ Seguridad den los procesos de desarrollo y soporte
+      
+      > Garantizar que la seguridad de la información ha sido diseñada e implementada dentro del ciclo de vida del desarrollo de los de los sistemas de la información.
+      
+      ### 14.2.1 Política de desarrollo seguro
+      ### 14.2.2 Procedimiento de control de cambio del sistema
+      ### 14.2.3 Revisión técnica de aplicaciones después de cambios de las plataformas operativas
+      ### 14.2.4 Restricciones a los cambios en los paquetes de software
+      ### 14.2.5 Principios de la ingeniería de Sistemas Seguros
+      ### 14.2.6 Ambiente de desarrollo seguro
+
+      ---
+      # Controles ISO 27002
+
+      ## A14 ADQUISICIÓN, DESARROLLO Y MANTENIMIENTO DE LOS SISTEMAS DE INFORMACIÓN
+      
+      __Objetivo 2:__ Seguridad den los procesos de desarrollo y soporte
+
+      ### 14.2.7 Desarrollo subcontratado
+      ### 14.2.8 Pruebas de seguridad del sistema
+      ### 14.2.9 Pruebas de aceptación del sistema
+      
+      ---
+      # Controles ISO 27002
+
+      ## A14 ADQUISICIÓN, DESARROLLO Y MANTENIMIENTO DE LOS SISTEMAS DE INFORMACIÓN
+      
+      __Objetivo 3:__ Datos de prueba
+      
+      > Garantizar la protección de los datos utilizados para las pruebas
+      
+      ### 14.3.1 Protección de datos de prueba
+
+      ---
+      # Controles ISO 27002
+
+      ## A15 RELACION CON PROVEEDORES
+
+      __Objetivo 1:__ Seguridad de la información en las relaciones con los proveedores
+      
+      > Garantizar la protección de los activos de la organización, que sean accesibles por los proveedores.
+      
+      ### 15.1.1 Política de seguridad de la información para las relaciones con los proveedores
+      ### 15.1.2 Tener en cuenta la seguridad en los acuerdos con proveedores
+      ### 15.1.3 Cadena de suministro de tecnologías de la información y las comunicaciones
+      
+      ---
+      # Controles ISO 27002
+
+      ## A15 RELACION CON PROVEEDORES
+
+      __Objetivo 2:__ Gestión de la entrega del servicio por terceras partes
+      
+      > Mantener un nivel apropiado de seguridad de la información y la entrega del servicio acorde con los acuerdos por sus terceras partes.
+      
+      ### 15.2.1 Seguimiento y revisión de los servicios de proveedores
+      ### 15.2.2 Gestión de cambios en los servicios de los proveedores
+
+      ---
+      # Controles ISO 27002
+
+      ## A16 GESTION DE INCIDENTES DE LA SEGURIDAD DE LA INFORMACION
+
+      __Objetivo 1:__ Gestión de incidentes y mejoras de seguridad de la información
+      
+      > Garantizar un enfoque consistente y eficaz para la gestión de incidentes de seguridad de la información, incluyendo la comunicación de eventos de seguridad y debilidades. .
+      
+      ### 16.1.1 Responsabilidades y procedimientos
+      ### 16.1.2 Reporte de eventos de seguridad de la información
+      ### 16.1.3 Reporte de debilidades de seguridad de la información
+      ### 16.1.4 Evaluación y decisión sobre los eventos de seguridad de información
+      ### 16.1.5 Respuesta a incidentes de seguridad de la información
+      ### 16.1.6 Aprendiendo de los incidentes de seguridad de la información
+      ### 16.1.7 Recolección de evidencia
+
+      ---
+      # Controles ISO 27002
+
+      ## A17 ASPECTOS DE SEGURIDAD DE LA INFORMACIÓN EN LA GESTIÓN DE CONTINUIDAD DEL NEGOCIO
+
+      __Objetivo 1:__ Continuidad de la seguridad de la información
+
+      > La continuidad de seguridad del negocio debe estar integrada en los sistemas de gestión de continuidad del negocio de la organización.
+      
+      ### 17.1.1 Planificación de la continuidad de la seguridad de la información
+      ### 17.1.2 Implementación de la continuidad de seguridad de la información
+      ### 17.1.3 Verificar, revisar y evaluar la continuidad de la seguridad de la información
+      
+      ---
+      # Controles ISO 27002
+
+      ## A17 ASPECTOS DE SEGURIDAD DE LA INFORMACIÓN EN LA GESTIÓN DE CONTINUIDAD DEL NEGOCIO
+
+      __Objetivo 2:__ Redundancia
+      
+      > Garantizar la disponibilidad de las instalaciones de procesamiento de información
+      
+      ### 17.2.1 Disponibilidad de las instalaciones de procesamiento de información
+
+      ---
+      # Controles ISO 27002
+
+      ## A18 CUMPLIMIENTO
+
+      __Objetivo 1:__ Cumplimiento de los requisitos legales y contractuales
+      
+      > Evitar los incumplimientos de las obligaciones legales, estatutarias, reglamentarias o contractuales relacionadas con la seguridad de la información y con los requisitos de seguridad.
+      
+      ### 18.1.1 Identificación de la legislación aplicable y de los requisitos contractuales
+      ### 18.1.2 Derechos de propiedad intelectual (/PR)
+      ### 18.1.3 Protección de los registros
+      ### 18.1.4 Protección de los datos y privacidad de la información personal
+      ### 18.1.5 Regulación de los controles criptográficos
+      
+      ---
+      # Controles ISO 27002
+
+      ## A18 CUMPLIMIENTO
+
+      __Objetivo 2:__ Revisiones de seguridad de la información
+      
+      > Garantizar que la seguridad de la información es implementada y operada de acuerdo con las políticas y procedimientos organizacionales
+      
+      ### 18.2.1 Revisión independiente de la seguridad de la información
+      ### 18.2.2 Cumplimiento de la política y las normas de seguridad
+      ### 18.2.3 Revisión del cumplimiento técnico
+
+      
+    </textarea>
+    <script src="scripts/remark.js"></script>
+    <script>
+       var slideshow = remark.create();
+    </script>
+  </body>
+</html>

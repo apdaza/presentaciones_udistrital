@@ -4,6 +4,7 @@
 @import url(https://fonts.googleapis.com/css?family=Reenie+Beanie:regular);
 @import url(http://fonts.googleapis.com/css?family=UnifrakturMaguntia);
 @import url(https://fonts.googleapis.com/css?family=Tangerine);
+@import "compass/css3";
 
 body {
   font-family: 'Droid Serif';
@@ -156,6 +157,8 @@ code {
 .left-column {
   width: 48%;
   float: left;
+  padding-right: 10px;
+  border-right: #000 solid 1px;
 }
 
 .right-column {
@@ -191,13 +194,14 @@ code {
   /* Opera */
   box-shadow: 5px 5px 7px rgba(33,33,33,.7);
   float: right;
-  margin: 10px;
+  margin: 30px;
   width: 30%;
   min-height: 100px;
   -webkit-transform:rotate(-6deg);
   -o-transform:rotate(-6deg);
   -moz-transform:rotate(-6deg);
 }
+
 
 .nota_destacada {
   font-family:"Reenie Beanie",arial,sans-serif;
@@ -287,11 +291,15 @@ img[alt="nano"] {
   margin: auto;
 }
 
+.reducido {
+  font-size: small;
+}
 .remark-slide-content table {
    width: 100%;
    border: 1px solid rgb(96, 117, 235);
    background-color: #c7e9eb;
    padding: 5px;
+   margin: 1em 0.2em;
 }
 .remark-slide-content tr {
   border: 1px solid;
@@ -310,3 +318,49 @@ img[alt="nano"] {
    background: rgb(114, 116, 119);
    color: floralwhite;
 }
+.post-it-note {
+  font-family:"Reenie Beanie",arial,sans-serif;
+  font-size:1.8em;
+  color:#9b0606;
+  border:1px solid #000;
+  background-color: #f0e3a6;
+  padding: 5px;
+  border-top-right-radius: 12px;
+  /* Firefox */
+  -moz-box-shadow:5px 5px 7px rgba(33,33,33,1);
+  /* Safari+Chrome */
+  -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  /* Opera */
+  box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  float: right;
+  margin: 10px;
+  width: 25%;
+  min-height: 100px;
+  -webkit-transform:rotate(4deg);
+  -o-transform:rotate(4deg);
+  -moz-transform:rotate(4deg);
+}
+
+.post-it-note-huge {
+  font-family:"Reenie Beanie",arial,sans-serif;
+  font-size:1.8em;
+  color:#f3f6fa;
+  border:1px solid #000;
+  background-color: #1f665c;
+  padding: 5px;
+  border-top-right-radius: 12px;
+  /* Firefox */
+  -moz-box-shadow:5px 5px 7px rgba(33,33,33,1);
+  /* Safari+Chrome */
+  -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  /* Opera */
+  box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  float: right;
+  margin: 10px;
+  width: 75%;
+  min-height: 100px;
+  -webkit-transform:rotate(-4deg);
+  -o-transform:rotate(-4deg);
+  -moz-transform:rotate(-4deg);
+}
+

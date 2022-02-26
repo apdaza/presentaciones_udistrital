@@ -22,7 +22,9 @@
       # Introducción a la Seguridad Informática
 
       ## Contenidos
-      - 
+      - Introducción
+      - Definiciones
+      - ¿Cómo?
 
       ---
       template: inverse
@@ -714,6 +716,157 @@
        - Análisis de riesgos
        - Recomendaciones de seguridad
        - Plan de proyectos de seguridad a implantar
+
+      ---
+      template: inverse
+      # El Proceso de la Seguridad
+
+      ---
+      # El Proceso de la Seguridad
+      ![RN](./media/proceso_seguridad.png)
+
+      ???
+      __Asegurar__:
+      configurar adecuadamente los sistemas para protegerlos frente a ataques conocidos
+      - instalar lo mínimo (versiones recientes)
+      - instalar los parches disponibles
+      - denegar primero, permitir después
+      - habilitar el máximo nivel de registro posible
+
+      __Preparar__:
+      caracterizar el sistema para reconocer ataques/problemas nuevos/inesperados
+      - definir el comportamiento esperado
+      - identificar la información necesaria
+      - gestionar los mecanismos de recopilación de información
+      - seleccionar, instalar y comprender las herramientas de respuesta
+
+      __Detectar__:
+      monitorizar el comportamiento, analizar la necesidad de cambios
+      - detección de comportamiento anómalo
+      - avisos externos de vulnerabilidades
+      - disponibilidad de nuevos parches
+      - disponibilidad de nuevas versiones de sw
+
+      __Responder__:
+      recuperar el comportamiento normal del sistema
+      - establecer el alcance del daño
+      - contener los efectos
+      - eliminar la posibilidad de nuevas intrusiones
+      - devolver el sistema a su funcionamiento normal
+
+      __Mejorar__:
+      aprovechar el incidente para aumentar la seguridad del sistema
+      - comunicarse con otros grupos afectados
+      - reunirse para identificar lo aprendido
+      - actualizar políticas y procedimientos
+      - actualizar la configuración de las herramientas, seleccionar nuevas herramientas
+
+      ---
+      # Requisitos de seguridad
+      __Confidencialidad__:
+      - lectura
+      - conocimiento de existencia
+      - Ejemplo: empresas e instituciones (patentes industriales, secretos de estado...)
+
+      __Integridad__:
+      - consistencia de la información
+      - modificación de los datos
+      - Ejemplo: modificación de un saldo
+      
+      __Disponibilidad__:
+      - disponibilidad para los usuarios autorizados
+      - evitar el uso no autorizado
+      - Ejemplo: el gusano de Intern
+
+      ---
+      # Amenazas a los componentes del sistema
+
+      __Soporte físico__:
+      - disponibilidad: el equipo puede ser dañado
+      - medidas físicas y administrativas
+
+      __Soporte lógico (sw)__:
+      - confidencialidad: copias no autorizadas
+      - integridad: modificación del sw
+      - disponibilidad: borrado o dañado del sw
+      - medidas: administración cuidadosa del sistema
+
+      __Datos__:
+      - confidencialidad: lectura, copia, información indirecta
+      - disponibilidad: eliminación, modificación del control de acceso
+      - integridad: modificación, creación
+      - medidas: administración + colaboración de los usuarios
+
+      ---
+      # Principios de diseño
+
+      __Principio del menor privilegio__:
+      - cada acción realizada con los privilegios estrictamente necesarios
+
+      __Economía de mecanismos__:
+      - sencillez para verificación
+      - parte integral del diseño del sistema
+
+      __Aceptabilidad__:
+      - completos, pero sin interferencias innecesarias
+      - sencillos de utilizar
+
+      __Intervención completa__:
+      - todos los accesos deben ser controlados
+
+      __Diseño abierto__:
+      - los mecanismos de seguridad no deben ser secretos
+
+      ---
+      template: inverse
+      # Políticas de seguridad
+
+      ---
+      # Políticas de seguridad
+
+      __Análisis previos__:
+      - análisis de las necesidades de seguridad
+      - análisis de riesgos
+      - análisis de costes y beneficios
+
+      __La política de seguridad establece__:
+      - qué se protege y por qué
+      - quién es responsable de esa protección
+      - cómo resolver problemas derivados de su aplicación
+
+      __La política de seguridad del sistema__:
+      - debe ser impulsada por la administración de la empresa/institución
+      - debe ser conocida y comprendida por todos los usuarios
+
+      ---
+      # Creación de la política de seguridad
+
+      - Usos y costumbres de los usuarios
+      - Reglas (escritas y no escritas) y la cultura de la organización
+      - Redacción del documento
+       - específico
+       - claro
+       - conciso
+       - realista
+      - Política bien escrita → ___fácil generar una lista de comprobación de que se cumple___
+
+      ---
+      template: inverse
+      # Tratamiento de incidentes
+      
+      ---
+      # Gestión de incidentes de seguridad
+
+      - Preparación
+      - Detección e identificación
+      - Contención
+       - contener y limpiar versus observar y aprender
+       - preparar futuros análisis mientras se limita el daño
+      - Erradicación
+       - reforzar las medidas de prevención (eliminar las nuevas vulnerabilidades)
+      - Recuperación
+       - necesidad de reforzar la vigilancia para comprobar la efectividad de los cambios
+      - Lecciones aprendidas 
 
     </textarea>
     <script src="scripts/remark.js"></script>
