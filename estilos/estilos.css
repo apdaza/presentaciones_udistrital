@@ -202,6 +202,23 @@ code {
   -moz-transform:rotate(-6deg);
 }
 
+.nota-img {
+  padding: 5px;
+  border-radius: 5px;
+  /* Firefox */
+  -moz-box-shadow:5px 5px 7px rgba(33,33,33,1);
+  /* Safari+Chrome */
+  -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  /* Opera */
+  box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  float: right;
+  margin: 30px;
+  min-width: 30%;
+  min-height: 100px;
+  -webkit-transform:rotate(-6deg);
+  -o-transform:rotate(-6deg);
+  -moz-transform:rotate(-6deg);
+}
 
 .nota_destacada {
   font-family:"Reenie Beanie",arial,sans-serif;

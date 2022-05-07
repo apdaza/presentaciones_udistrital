@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../estilos/estilos.css">
+  </head>
+  <body>
+    <textarea id="source">
+      name: inverse
+      layout: true
+      class: center, middle, inverse
+      ---
+      template: inverse
+      # Introducción a DevOps
+      ---
+      layout: false
+      # Introducción a DevOps
+      
+      ## Contenidos
+      - Introducción.
+      - Concepto de DevOPs.
+      - Practicas principales.
+      - Referencias.
+
+      ---
+      # Introducción a DevOps.
+
+      ![intermedia](./media/tema06/esquema.png)
+
+      ---
+      # Introducción
+
+      .nota-img[
+      ![mini](./media/tema06/devops01.png)
+      ]
+      - __DevOps__ es una cultura general.
+      - Busca acercar o unificar las actividades de desarrollo de software _development (Dev)_ y las operaciones relacionadas con la administración de sistemas _operations (Ops)_. 
+      - Los equipos de desarrollo se centran en la construcción del software. 
+      - Los administradores de sistemas se encargan de gestionar el hardware y garantizar que se dan las condiciones adecuadas para que el equipo de desarrollo trabaje, se desplieguen las aplicaciones y el software funcione de manera óptima.
+      - Ambos «mundos» han estado tradicionalmente separados en las empresas de desarrollo de software, y sus funciones han sido desempeñadas por perfiles a menudo muy diferentes.
+      
+      ---
+      # Introducción
+
+      En los últimos años se ha visto la necesidad de acercar ambos grupos debido a dos factores fundamentales:
+
+      - ___La adopción de metodologías ágiles___: con iteraciones cortas y liberaciones continuadas de software— hacen necesario mejorar la colaboración entre los desarrolladores y equipo de operaciones para que el proceso transcurra de la manera más fluida posible.
+      - ___La popularización de las aplicaciones cloud___, casi ubicuas, y el hecho de que estas aplicaciones se desplieguen a menudo en infraestructura de terceros, que es consumida como un servicio más, configurable a través de las API, hace que las operaciones y el desarrollo sean actividades cada vez más próximas.
+
+      En este contexto surge __DevOps__ como un enfoque que enfatiza la monitorización de todo el proceso de construcción de software, automatizando numerosas actividades relacionadas con la integración, pruebas y despliegue de las aplicaciones. 
+
+      ---
+      # Concepto de DevOps.
+      
+      > Conjunto de prácticas que persiguen la reducción del tiempo entre la introducción de un cambio en el código del sistema y la puesta en producción de ese cambio, al mismo tiempo que se garantiza la calidad del sistema. (Bass, Weber & Zhu, 2015)
+      
+      > Cultura, principios y procesos que automatizan y agilizan el flujo de trabajo, de extremo a extremo, desde el desarrollo de código hasta la entrega de las nuevas características y cambios a los usuarios en producción. (Ott, Pham y Saker, 2017)
+
+      > DevOps mejora el desarrollo ágil cubriendo una necesidad básica: la de tender un puente entre los equipos de desarrollo y operaciones, integrándolos en un «proceso y equipo unificados» (Ott et al., 2017, p. 1)
+
+
+      ---
+      # Concepto de DevOps.
+
+      .nota-img[
+      ![mini](./media/tema06/devops02.png)
+      ]
+
+      - Se trata de buscar la __intersección__ entre desarrollo y operaciones, teniendo en cuenta la calidad del producto y del proceso en su conjunto. 
+      
+      - No se trata de una metodología, ni de un conjunto de prácticas estándar, sino de un enfoque cultural que debe ser interpretado y adaptado por cada organización a sus propias necesidades.
+
+      - Esta idea está muy ligada a otras que aparecen en el origen de las metodologías ágiles. 
+      
+      - Encontramos palabras como _prácticas_, _reducción de tiempo_, _calidad_, _cultura_, _automatización_… Todas ellas vinculadas a conceptos de ___agilidad___.
+      
+      ---
+      # Concepto de DevOps.
+
+      ![RN](./media/tema06/devops03.png)
+      
+      ???
+      Al igual que sucede con otras metodologías desarrollo, Agile finaliza cuando comienza el despliegue a producción, y esto supone abrir una distancia entre los usuarios, desarrolladores y el equipo de operaciones.
+
+      ---
+      # Concepto de DevOps.
+      
+      - El término __DevOps__ está íntimamente relacionado con el de ___entregas continuas___. 
+      - Cada vez es más importante proporcionar actualizaciones frecuentes a nuestros usuarios aumentando o mejorando funcionalidades. 
+      - Las metodologías ágiles llevan esta idea al extremo, contemplando en principio la liberación de software funcional tras cada una de las iteraciones (a menudo de muy corta duración).
+      - El concepto de la entrega continua implica que muchos procesos —como las pruebas, el despliegue, o el propio desarrollo— deben automatizarse.
+      - Esto requiere una cierta adaptación por parte de la organización en su conjunto. 
+      - La adopción de metodologías ágiles ha supuesto un enorme cambio en la manera en que las organizaciones desarrollan software. 
+      - Las metodologías ágiles han surgido como respuesta a las necesidades cambiantes del entornoy han supuesto cambios en la manera en que los productos se desarrollan y entregan a los clientes.
+
+      ---
+      # Desarrollo y operaciones
+
+      __Desarrollo__: proceso que permite la creación de un producto software formado por un conjunto de actividades interrelacionadas como:
+      ◦ Análisis de requisitos.
+      ◦ Diseño arquitectónico.
+      ◦ Codificación.
+      ◦ Pruebas.
+      ◦ Integración.
+      ◦ Pruebas de aceptación.
+
+      __Operaciones__: proceso que pone en funcionamiento el sistema y ofrece al usuario final el soporte, durante su uso, en un entorno operacional. Aquí encontramos actividades como:
+      ◦ Instalación
+      ◦ Actualización
+      ◦ Migración
+      ◦ Monitorización
+      ◦ Gestión de configuración.
+      ◦ Alertas.
+      ◦ Disponibilidad.
+       
+    </textarea>
+    <script src="scripts/remark.js"></script>
+    <script>
+       var slideshow = remark.create();
+    </script>
+  </body>
+</html>
