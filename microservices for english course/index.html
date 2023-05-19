@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="estilos.css">
+  </head>
+  <body>
+    <textarea id="source">
+      name: inverse
+      layout: true
+      class: center, middle, inverse
+      ---
+      template: inverse
+      # Introduction to Microservices
+      ---
+      layout: false
+      # Introduction to Microservices
+      
+      ## Content:
+      - Introduction to Microservices
+      - Definition and key characteristics of microservices
+      - Contrasting monolithic architecture with microservices architecture
+      - Benefits of adopting microservices
+      - Architectural Principles of Microservices
+      - Litle example of microservices
+      - Conclusion
+      ---
+      # Introduction to Microservices
+
+      ![RN](./media/tema02/micro_servicios01.png)
+
+      - Microservices are a software architectural style that structures an application as a collection of small, loosely coupled, and independently deployable services.
+      - Unlike traditional monolithic architectures, microservices promote modularity, scalability, resilience, and autonomy.
+
+      ???
+
+      1.1 Definition and Overview of Microservices
+
+      - Microservices are an __architectural style__ for building software applications as a collection of small, independent services that work together to deliver the overall functionality of the application. 
+      - Each microservice is a __self-contained__ component that focuses on a specific business capability and can be developed, deployed, and scaled independently of the other services.
+      - Unlike monolithic architectures where the entire application is built as a single unit, microservices break down the application into smaller, loosely coupled services that communicate with each other through well-defined APIs. 
+      - These services are __designed to be autonomous__, meaning they can be developed and deployed by different teams using different technologies, programming languages, and databases.
+      - Microservices promote a modular approach to software development, where each service can be developed, tested, and deployed independently. This allows for greater flexibility, scalability, and maintainability of the application. 
+      - Each service can have its own codebase, database, and deployment pipeline, enabling teams to work in parallel, release updates more frequently, and scale specific services based on demand.
+      - The communication between microservices is typically achieved through lightweight protocols such as REST (Representational State Transfer) over HTTP or messaging systems like RabbitMQ or Apache Kafka. 
+      - Services can exchange data and messages, enabling them to collaborate and provide complex functionality as part of the larger application.
+      - Microservices also emphasize fault tolerance and resilience. Failures in one microservice should not bring down the entire application. Instead, failures are isolated, and the system should gracefully degrade or recover without affecting the overall functionality. This architecture allows for better fault isolation, easier troubleshooting, and improved system availability.
+      - Overall, microservices provide a flexible and scalable approach to building software applications. They offer advantages such as __modular development__, __independent scalability__, __fault isolation__, __technology diversity__, and __support for continuous delivery practices__. However, adopting microservices requires careful consideration of service boundaries, communication patterns, data management, testing, and operational complexity.
+      
+      ---
+      # Introduction to Microservices
+
+      Microservices architecture offers several advantages and benefits over traditional monolithic architectures. Here are some key advantages:
+
+      - Modularity and Flexibility
+      - Independent Scalability
+      - Technology Diversity
+      - Fault Isolation and Resilience
+      - Continuous Delivery and Deployment
+      - Organizational Scalability and Autonomy
+      - Easy Integration and Third-Party Services
+      - Enhanced Testing and Debugging
+
+      ???
+      Microservices architecture offers several advantages and benefits over traditional monolithic architectures. Here are some key advantages:
+
+      __1. Modularity and Flexibility:__ Microservices promote a modular approach to software development. By breaking down the application into smaller, independent services, each with its own codebase, teams can work on different services simultaneously. This modular structure enables easier maintenance, updates, and enhancements to specific services without impacting the entire application.
+
+      __2. Independent Scalability:__ With microservices, each service can be scaled independently based on its specific needs. This granular scalability allows for efficient resource utilization, as you can allocate resources to the services that require them the most. It also enables you to handle fluctuations in traffic and load by scaling only the necessary services, rather than scaling the entire application.
+
+      __3. Technology Diversity:__ Microservices architecture allows teams to choose the most suitable technologies and programming languages for each service. This flexibility allows for leveraging the strengths of different tools and frameworks, enabling teams to use the best technology for a specific task. It also facilitates the reuse of existing code and integrations with external systems.
+
+      __4. Fault Isolation and Resilience:__ In a microservices architecture, failures in one service do not bring down the entire application. Each service operates independently, with well-defined boundaries and communication protocols. If a service fails, the rest of the application can continue functioning, ensuring better fault isolation and improved resilience. This architecture promotes graceful degradation and faster recovery from failures.
+
+      __5. Continuous Delivery and Deployment:__ Microservices align well with modern software development practices like continuous delivery and deployment. With each service being developed, tested, and deployed independently, teams can release updates to specific services without affecting the entire application. This approach enables faster time-to-market, promotes agile development practices, and facilitates rapid iterations and feature releases.
+
+      __6. Organizational Scalability and Autonomy:__ Microservices allow for team autonomy and specialization. Different teams can work on different services, focusing on their specific areas of expertise. This distributed responsibility promotes better collaboration, faster development cycles, and greater scalability within large organizations.
+
+      __7. Easy Integration and Third-Party Services:__ Microservices make it easier to integrate with third-party services and external APIs. Since each service has its own well-defined API, it becomes simpler to connect and interact with other services or systems. This flexibility allows for seamless integration with external services, enabling the creation of complex and feature-rich applications.
+
+      __8. Enhanced Testing and Debugging:__ Testing and debugging are more manageable in a microservices architecture. With smaller and isolated services, it becomes easier to write focused unit tests, perform integration testing, and isolate issues when they occur. This results in better test coverage, easier bug identification, and faster troubleshooting.
+
+      Overall, microservices architecture provides benefits such as modularity, scalability, fault isolation, technology diversity, continuous delivery, and enhanced organizational scalability. However, it's essential to consider the trade-offs and challenges associated with microservices, including managing service boundaries, inter-service communication, data consistency, and increased operational complexity.
+      ---
+      # Key Principles and Characteristics 
+
+      Microservices architecture is guided by several key principles and characteristics that define its approach to building software applications:
+
+      - Service Independence
+      - API-Based Communication
+      - Data Management
+      - Scalability and Elasticity
+      - Fault Tolerance and Resilience
+      - Continuous Delivery and Deployment
+      - Decentralized Governance
+      - Organizational Culture and Communication
+      - Monitoring and Observability
+      - DevOps Practices
+      
+      ???
+      Microservices architecture is guided by several key principles and characteristics that define its approach to building software applications. Understanding these principles is essential for effectively designing and implementing microservices. Here are the key principles and characteristics of microservices:
+
+      1. Service Independence: Microservices are independent and autonomous components that encapsulate a specific business capability. Each service operates independently, with its own codebase, database, and deployment pipeline. They can be developed, deployed, and scaled independently, allowing teams to work on different services concurrently.
+
+      2. API-Based Communication: Microservices communicate with each other through well-defined APIs. They expose a set of endpoints that other services can interact with. This communication can be achieved through lightweight protocols such as REST (Representational State Transfer) over HTTP or messaging systems like RabbitMQ or Apache Kafka.
+
+      3. Data Management: Each microservice has its own data store. It can use different types of databases, including relational databases, NoSQL databases, or specialized storage systems. This data independence ensures that each service can choose the most appropriate data storage technology for its specific needs.
+
+      4. Scalability and Elasticity: Microservices architecture allows for independent scalability of services. Each service can be scaled horizontally by adding more instances to handle increased demand. This scalability is achieved without impacting other services, providing better resource utilization and improved performance.
+
+      5. Fault Tolerance and Resilience: Microservices promote fault isolation and resilience. Failures in one service should not affect the overall application. If a service fails, the rest of the application can continue functioning. This fault tolerance allows for graceful degradation and faster recovery from failures.
+
+      6. Continuous Delivery and Deployment: Microservices align well with continuous delivery and deployment practices. Each service can be developed, tested, and deployed independently. This enables teams to release updates and new features without affecting the entire application, leading to faster time-to-market and iterative development.
+
+      7. Decentralized Governance: Microservices architecture allows for decentralized decision-making and governance. Each service team has autonomy over its own service, including technology choices, development practices, and deployment strategies. This decentralized governance promotes agility and innovation within the organization.
+
+      8. Organizational Culture and Communication: Microservices require a culture of collaboration and effective communication between teams. Since services are developed independently, it is crucial to establish clear communication channels, shared understanding of APIs, and consistent documentation to ensure seamless integration and coordination among services.
+
+      9. Monitoring and Observability: Microservices architecture requires robust monitoring and observability practices. Each service should have its own monitoring system to track performance, logs, and metrics. Centralized logging and monitoring tools can provide visibility into the entire application and help identify issues and bottlenecks.
+
+      10. DevOps Practices: Microservices often go hand in hand with DevOps practices. The architecture promotes close collaboration between development and operations teams to enable efficient deployment, monitoring, and management of services. Continuous integration, delivery, and deployment pipelines are commonly used to automate the release process.
+
+      By adhering to these principles and characteristics, microservices architecture can deliver benefits such as modularity, scalability, fault isolation, continuous delivery, and organizational agility. However, it is important to consider the associated challenges, including managing service boundaries, communication complexity, data consistency, and operational overhead.
+
+      ---
+      # Challenges and Considerations of microservices
+
+      Microservices architecture offers numerous benefits, but it also comes with its own set of challenges and considerations:
+
+      - Service Boundaries
+      - Inter-Service Communication
+      - Data Consistency and Management
+      - Operational Complexity
+      - Testing and Debugging
+      - Organizational Impact
+      - Security and Governance
+      - Monitoring and Observability
+      - Development and Deployment Pipeline
+      - Service Versioning and Compatibility
+
+      ???
+
+      Microservices architecture offers numerous benefits, but it also comes with its own set of challenges and considerations. Understanding these challenges is essential for successfully adopting and implementing microservices. Here are some common challenges and considerations associated with microservices:
+
+      1. Service Boundaries: Defining the boundaries between microservices is crucial but challenging. Determining the appropriate granularity of services requires careful analysis of business capabilities, data dependencies, and communication requirements. Finding the right balance between overly fine-grained and monolithic services is essential to ensure maintainability and avoid excessive communication overhead.
+      
+      2. Inter-Service Communication: Communication between microservices adds complexity to the architecture. As services interact through APIs, it's important to choose appropriate communication protocols (such as REST or messaging systems) and ensure reliability, fault tolerance, and low latency. Implementing robust service discovery mechanisms, API gateways, and asynchronous communication patterns becomes crucial for managing inter-service communication effectively.
+      
+      3. Data Consistency and Management: Maintaining data consistency across multiple services can be challenging. Each service typically has its own database, leading to distributed data management. Ensuring data integrity, enforcing data consistency, and handling transactions that span multiple services require careful design and implementation. Techniques like eventual consistency, event sourcing, and distributed transactions may be employed to address these challenges.
+      
+      4. Operational Complexity: Microservices introduce increased operational complexity compared to monolithic architectures. Managing and monitoring a larger number of services, ensuring availability and fault tolerance, coordinating deployments, and implementing proper service orchestration become more challenging. Adopting containerization and orchestration tools like Docker and Kubernetes can help streamline deployment and management processes.
+      
+      5. Testing and Debugging: Testing and debugging distributed systems can be more complex in a microservices architecture. Each service needs to be individually tested, and integration testing becomes crucial to ensure proper functioning of the entire system. Debugging and tracing issues across multiple services require effective monitoring, logging, and distributed tracing tools.
+      
+      6. Organizational Impact: Adopting microservices often brings significant changes to the organization and team structure. Teams need to be cross-functional, with expertise in various technologies and the ability to work independently. Coordinating and aligning different teams and their respective services requires effective communication, collaboration, and a culture of shared responsibility.
+      
+      7. Security and Governance: Securing microservices architecture can be challenging. Ensuring proper authentication and authorization mechanisms, protecting sensitive data, and managing access control across services are critical considerations. Implementing centralized security measures, such as API gateways and identity providers, becomes essential for enforcing security policies consistently.
+      
+      8. Monitoring and Observability: Monitoring and observability become more complex in a distributed environment. Capturing and analyzing logs, metrics, and traces across multiple services and infrastructure components is necessary to ensure the health and performance of the system. Employing centralized monitoring tools, distributed tracing frameworks, and log aggregation solutions can help gain insights into the overall system behavior.
+      
+      9. Development and Deployment Pipeline: Establishing efficient development and deployment pipelines for microservices requires careful planning. Implementing automated build, testing, and deployment processes becomes crucial to ensure continuous integration and delivery. Adopting DevOps practices and leveraging containerization technologies can streamline the development and deployment workflows.
+      
+      10. Service Versioning and Compatibility: Managing backward compatibility and versioning of services is important to avoid breaking changes and ensure seamless evolution of the system. Implementing proper versioning strategies, API documentation, and communication protocols between services help mitigate compatibility issues and enable smooth upgrades.
+      
+      By acknowledging and addressing these challenges and considerations, organizations can successfully navigate the adoption of microservices architecture and leverage its benefits of modularity, scalability, flexibility, and continuous delivery. It is important to evaluate the specific context and requirements of the project to determine the suitability of microservices and plan accordingly.
+
+
+      ---
+      # Microservices vs Monolithic Architecture
+
+      ![RN](./media/tema02/micro_servicios02.png)
+
+      ???
+
+      Microservices architecture and monolithic architecture represent two different approaches to building software applications. Here's a comparison between the two:
+
+      ___Monolithic Architecture:___
+      - Structure: In a monolithic architecture, the entire application is built as a single, self-contained unit. All components, modules, and functionalities are tightly coupled and run within the same process.
+      - Communication: Components within a monolith communicate directly with each other through in-memory function calls and shared data structures.
+      - Deployment: The monolithic application is deployed as a single unit, often requiring the entire application to be redeployed for any changes or updates.
+      - Scaling: Scaling a monolithic application typically involves scaling the entire application, even if only a specific component requires additional resources.
+      - Technology Stack: The entire application shares the same technology stack and dependencies. Upgrading or changing technologies often requires modifying the entire monolith.
+      - Development and Team Structure: Development teams work on the entire application, sharing a common codebase and database. Collaboration is primarily vertical within the application layers.
+
+      ___Microservices Architecture:___
+      - Structure: Microservices architecture decomposes the application into a collection of smaller, independent services, each responsible for a specific business capability. Services are loosely coupled and communicate with each other through APIs.
+      - Communication: Microservices communicate through well-defined APIs, often using lightweight protocols such as REST or messaging systems. Services can be developed and deployed independently of each other.
+      - Deployment: Each microservice can be deployed independently, allowing for faster and more frequent deployments of specific services without affecting the entire application.
+      - Scaling: Microservices enable independent scaling of individual services based on their specific needs, allowing for more efficient resource utilization and scalability.
+      - Technology Stack: Each microservice can use a different technology stack and database, allowing teams to choose the most appropriate tools for each service's requirements.
+      - Development and Team Structure: Development teams work on individual services, focusing on their specific business capabilities. Teams can work autonomously, using different technologies and development practices.
+
+      __Comparison:__
+      - Flexibility: Microservices offer greater flexibility in terms of technology choice, deployment, and scalability compared to monolithic architecture.
+      - Scalability: Microservices enable independent scaling of individual services, providing more efficient resource utilization compared to scaling the entire monolith.
+      - Fault Isolation: In a monolithic architecture, a failure in one component can bring down the entire application. Microservices architecture isolates failures, ensuring that the rest of the services continue functioning.
+      - Development Speed: Microservices enable faster development cycles and more frequent releases, as teams can work independently on specific services.
+      - Complexity: Microservices introduce additional complexity in terms of service boundaries, inter-service communication, data consistency, and operational management compared to the more straightforward nature of monolithic architecture.
+      - Operational Overhead: Managing and monitoring multiple services in a microservices architecture requires additional tools and practices compared to the simpler deployment and monitoring of a monolith.
+
+      Choosing between microservices and monolithic architecture depends on various factors, including the size and complexity of the application, the scalability and agility requirements, team structure, and operational considerations. Microservices are well-suited for large and complex applications with evolving requirements, whereas monolithic architecture may be more suitable for smaller, less complex applications with straightforward deployment and scaling needs.
+      
+      ---
+      # Architectural Principles of Microservices
+
+      - Single Responsibility Principle (SRP)
+      - Loose Coupling
+      - Autonomous Services
+      - API-First Approach
+      - Decentralized Data Management
+      - Continuous Delivery and Deployment 
+      - Automation
+      - Resilience and Fault Isolation
+      - Observable and Monitorable
+      - Organizational Alignment and Culture.
+      
+      ???
+      Microservices architecture is guided by a set of architectural principles that shape its design and implementation. These principles help define the characteristics and behavior of microservices. Here are the key architectural principles of microservices:
+
+      1. Single Responsibility Principle (SRP): Each microservice should have a single responsibility or focus on a specific business capability. This principle ensures that services are focused, maintainable, and loosely coupled, allowing for independent development and scalability.
+      
+      2. Loose Coupling: Microservices should be loosely coupled, meaning they have minimal dependencies on other services. Services communicate with each other through well-defined APIs, which promotes independence, flexibility, and the ability to evolve services independently.
+      
+      3. Autonomous Services: Microservices are autonomous entities that can operate independently. They have their own codebase, database, and deployment pipeline. This autonomy enables teams to work independently on services, release updates separately, and scale services based on their specific needs.
+      
+      4. API-First Approach: Microservices communicate with each other through APIs. Adopting an API-first approach involves designing and defining APIs upfront, allowing for better communication and collaboration between teams working on different services. It also promotes decoupling and flexibility in service interactions.
+      
+      5. Decentralized Data Management: Each microservice has its own data store, typically a database specific to the service's requirements. Decentralizing data management allows for independent data access and modification by services, enabling better scalability and autonomy.
+      
+      6. Continuous Delivery and Deployment: Microservices architecture aligns well with continuous delivery and deployment practices. Services should be designed and implemented to enable frequent and automated deployments, allowing for faster time-to-market, rapid iterations, and incremental updates.
+      
+      7. Infrastructure Automation: Infrastructure automation is essential for managing the deployment and scalability of microservices. Adopting technologies like containerization and orchestration (e.g., Docker and Kubernetes) can simplify the management of services and enable efficient scaling and deployment.
+      
+      8. Resilience and Fault Isolation: Microservices should be designed to handle failures and ensure fault isolation. When one service fails, it should not bring down the entire system. Each service should be resilient and capable of gracefully degrading or recovering from failures independently.
+      
+      9. Observable and Monitorable: Microservices architecture requires comprehensive monitoring and observability capabilities. Each service should be instrumented to capture relevant metrics, logs, and traces. Centralized monitoring and logging systems help identify and troubleshoot issues across services and provide insights into the overall system's behavior.
+      
+      10. Organizational Alignment and Culture: Microservices architecture requires alignment and collaboration across teams. Establishing a culture of shared responsibility, effective communication, and knowledge sharing is crucial to ensure successful implementation and operation of microservices.
+      
+      By adhering to these architectural principles, organizations can design and build microservices that are modular, scalable, resilient, and maintainable. However, it's important to carefully consider the trade-offs, such as increased complexity, inter-service communication, data consistency, and operational overhead, associated with adopting microservices.
+
+      ---
+      # Litle example of Microservices in Python and Docker
+
+      __docker-compose file__
+
+      ```yaml
+      version: '2'
+      services:
+          nginx:
+              image: nginx:alpine
+              volumes:
+                  - ./nginx.conf:/etc/nginx/nginx.conf:ro
+              command: [nginx-debug, '-g', 'daemon off;']
+              links:
+                  - addition
+                  - subtraction
+                  - multiplication
+                  - division
+                  - web
+              ports:
+                  - "8080:80"
+      
+          addition:
+              build: ./addition
+          subtraction:
+              build: ./subtraction
+          multiplication:
+              build: ./multiplication
+          division:
+              build: ./division
+          web:
+              build: ./web
+      ```
+
+      ---
+
+      __app.py__
+
+      ```python
+      from flask import Flask, request
+
+      app = Flask(__name__)
+
+      @app.route("/addition", methods=['POST'])
+      def suma():
+          data = request.get_json()
+          num1 = data['num1']
+          num2 = data['num2']
+          result = num1 + num2
+          return {'result': result}
+
+      if __name__ == "__main__":
+          app.run(host='0.0.0.0',debug=True)
+      ```  
+      
+      __Docker file__
+      ```yaml
+      FROM python:alpine
+
+      WORKDIR /usr/src/app
+      COPY . .
+      RUN pip install --no-cache-dir -r requirements.txt
+      ENTRYPOINT ["python"]
+      CMD ["app.py"]
+      ```
+      __requirements file__
+      ```yaml
+      flask==2.0.3
+      ```
+
+      
+    </textarea>
+    <script src="scripts/remark.js"></script>
+    <script>
+       var slideshow = remark.create();
+    </script>
+  </body>
+</html>
