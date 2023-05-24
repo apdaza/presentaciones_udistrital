@@ -16,15 +16,15 @@
       # Introduction to Microservices
       
       ## Content:
-      - Introduction to Microservices
-      - Definition and key characteristics of microservices
-      - Contrasting monolithic architecture with microservices architecture
-      - Benefits of adopting microservices
-      - Architectural Principles of Microservices
-      - Litle example of microservices
-      - Conclusion
+      - Definition and Overview of microservices
+      - Key Principles and Characteristics
+      - Challenges and Considerations of microservices
+      - Microservices vs Monolithic Architecture
+      - Architectural Principles of microservices
+      - Litle example of Microservices
+      
       ---
-      # Introduction to Microservices
+      # Definition and Overview of Microservices
 
       ![RN](./media/tema02/micro_servicios01.png)
 
@@ -33,7 +33,7 @@
 
       ???
 
-      1.1 Definition and Overview of Microservices
+      # Definition and Overview of Microservices
 
       - Microservices are an __architectural style__ for building software applications as a collection of small, independent services that work together to deliver the overall functionality of the application. 
       - Each microservice is a __self-contained__ component that focuses on a specific business capability and can be developed, deployed, and scaled independently of the other services.
@@ -47,7 +47,7 @@
       - Overall, microservices provide a flexible and scalable approach to building software applications. They offer advantages such as __modular development__, __independent scalability__, __fault isolation__, __technology diversity__, and __support for continuous delivery practices__. However, adopting microservices requires careful consideration of service boundaries, communication patterns, data management, testing, and operational complexity.
       
       ---
-      # Introduction to Microservices
+      # Definition and Overview of Microservices
 
       Microservices architecture offers several advantages and benefits over traditional monolithic architectures. Here are some key advantages:
 
@@ -239,9 +239,18 @@
       By adhering to these architectural principles, organizations can design and build microservices that are modular, scalable, resilient, and maintainable. However, it's important to carefully consider the trade-offs, such as increased complexity, inter-service communication, data consistency, and operational overhead, associated with adopting microservices.
 
       ---
-      # Litle example of Microservices in Python and Docker
+      # Litle example of Microservices
 
-      __docker-compose file__
+      ![RN](./media/tema02/sample.png)
+
+      ---
+      # Litle example of Microservices
+
+      ![nano](./media/tema02/sample_files.png)
+
+      ---
+
+      ## docker-compose file
 
       ```yaml
       version: '2'
@@ -274,7 +283,7 @@
 
       ---
 
-      __app.py__
+      ## app.py
 
       ```python
       from flask import Flask, request
@@ -282,7 +291,7 @@
       app = Flask(__name__)
 
       @app.route("/addition", methods=['POST'])
-      def suma():
+      def addition():
           data = request.get_json()
           num1 = data['num1']
           num2 = data['num2']
@@ -293,7 +302,7 @@
           app.run(host='0.0.0.0',debug=True)
       ```  
       
-      __Docker file__
+      ## Dockerfile
       ```yaml
       FROM python:alpine
 
@@ -303,10 +312,49 @@
       ENTRYPOINT ["python"]
       CMD ["app.py"]
       ```
-      __requirements file__
+
+      ---
+
+      ## requirements file
       ```yaml
       flask==2.0.3
       ```
+
+      
+      ## nginx config file
+      ```conf
+        server {
+            listen       80;
+            server_name  localhost;
+
+            #locations
+            
+            location /addition {
+                proxy_pass http://addition:5000/addition;
+            }
+
+                ...
+
+            location /web {
+                proxy_pass http://web:5000/web;
+            }
+
+            location /calculate {
+                proxy_pass http://web:5000/calculate;
+            }
+
+                ...
+        }
+      ```
+      ---
+      # Some recommended readings on microservices
+      - Richardson, C. (2012). "Pattern: Microservices." Retrieved from http://microservices.io/patterns/microservices.html
+      - Fowler, M. (2014). "Microservices: a definition of this new architectural term." Retrieved from https://martinfowler.com/articles/microservices.html
+      - Fowler, M. (2014). "Microservices a definition of this new architectural term." Retrieved from https://martinfowler.com/articles/microservices.html
+      - Newman, S. (2015). "Building Microservices." Retrieved from https://www.nginx.com/wp-content/uploads/2015/01/Building_Microservices_Nginx.pdf
+
+      
+      
 
       
     </textarea>
