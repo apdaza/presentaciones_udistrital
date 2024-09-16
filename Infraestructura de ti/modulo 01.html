@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>modulo 01.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="introducci%C3%B3n-a-la-infraestructura-de-ti">Introducción a la Infraestructura de TI</h1>
+<p>La infraestructura de TI, o infraestructura de tecnología de la información, es la columna vertebral de cualquier organización moderna. Se refiere al conjunto de componentes de hardware, software, redes y servicios que permiten el funcionamiento y la gestión de los sistemas y procesos tecnológicos de una empresa.</p>
+<p><strong>Componentes clave de la infraestructura de TI:</strong></p>
+<ul>
+<li><strong>Hardware:</strong> Servidores, computadoras de escritorio, laptops, dispositivos móviles, equipos de red (routers, switches), sistemas de almacenamiento, etc.</li>
+<li><strong>Software:</strong> Sistemas operativos, aplicaciones empresariales, bases de datos, herramientas de gestión de TI, software de seguridad, etc.</li>
+<li><strong>Redes:</strong> Conexiones de red locales (LAN), redes de área amplia (WAN), internet, firewalls, etc.</li>
+<li><strong>Servicios:</strong> Servicios de nube, soporte técnico, consultoría, gestión de datos, etc.</li>
+</ul>
+<p><strong>Importancia de la infraestructura de TI:</strong></p>
+<p>Una infraestructura de TI sólida y bien gestionada es esencial para:</p>
+<ul>
+<li><strong>Operaciones eficientes:</strong> Permite a las empresas automatizar procesos, acceder a información crítica y colaborar de manera efectiva.</li>
+<li><strong>Toma de decisiones informadas:</strong> Proporciona datos y análisis para respaldar la toma de decisiones estratégicas.</li>
+<li><strong>Innovación:</strong> Permite a las empresas desarrollar nuevos productos y servicios, y adaptarse a los cambios del mercado.</li>
+<li><strong>Seguridad:</strong> Protege los datos y sistemas de la empresa contra amenazas cibernéticas.</li>
+<li><strong>Crecimiento:</strong> Permite a las empresas escalar sus operaciones y expandirse a nuevos mercados.</li>
+</ul>
+<p><strong>Tendencias en la infraestructura de TI:</strong></p>
+<ul>
+<li><strong>Computación en la nube:</strong> Permite a las empresas acceder a recursos de TI bajo demanda a través de internet.</li>
+<li><strong>Virtualización:</strong> Permite ejecutar múltiples sistemas operativos y aplicaciones en un solo servidor físico.</li>
+<li><strong>Automatización:</strong> Permite automatizar tareas rutinarias de TI para mejorar la eficiencia y reducir costos.</li>
+<li><strong>Inteligencia artificial (IA):</strong> Permite analizar grandes volúmenes de datos y tomar decisiones más inteligentes.</li>
+<li><strong>Seguridad:</strong> La creciente sofisticación de las amenazas cibernéticas requiere una mayor inversión en seguridad de TI.</li>
+</ul>
+<p><strong>Conclusión:</strong></p>
+<h1 id="componentes-de-la-infraestructura-de-ti">Componentes de la infraestructura de TI</h1>
+<p>La infraestructura de TI es un componente crítico para el éxito de cualquier organización en la era digital. Una infraestructura bien planificada y gestionada permite a las empresas operar de manera eficiente, innovar y crecer en un entorno cada vez más competitivo.</p>
+<p>La infraestructura de TI se compone de varios elementos interconectados que trabajan en conjunto para brindar soporte a las operaciones y procesos tecnológicos de una organización. Estos componentes se pueden clasificar en las siguientes categorías principales:</p>
+<p><strong>1. Hardware:</strong></p>
+<ul>
+<li><strong>Servidores:</strong> Equipos potentes que ejecutan aplicaciones y almacenan datos críticos. Pueden ser físicos o virtuales.</li>
+<li><strong>Almacenamiento:</strong> Dispositivos para guardar datos, como discos duros, unidades de estado sólido (SSD), cintas magnéticas y sistemas de almacenamiento en red (NAS, SAN).</li>
+<li><strong>Equipos de red:</strong> Dispositivos que permiten la comunicación entre diferentes componentes de la infraestructura, como routers, switches, firewalls y puntos de acceso inalámbrico.</li>
+<li><strong>Estaciones de trabajo:</strong> Computadoras de escritorio, laptops y dispositivos móviles utilizados por los empleados para acceder a los recursos y aplicaciones de la empresa.</li>
+<li><strong>Otros dispositivos:</strong> Impresoras, escáneres, cámaras de seguridad y otros periféricos conectados a la red.</li>
+</ul>
+<p><strong>2. Software:</strong></p>
+<ul>
+<li><strong>Sistemas operativos:</strong> Software base que gestiona el hardware y permite la ejecución de aplicaciones, como Windows, macOS, Linux y Unix.</li>
+<li><strong>Aplicaciones empresariales:</strong> Software utilizado para realizar tareas específicas, como procesamiento de texto, hojas de cálculo, gestión de relaciones con los clientes (CRM), planificación de recursos empresariales (ERP) y correo electrónico.</li>
+<li><strong>Bases de datos:</strong> Sistemas para almacenar, organizar y gestionar grandes cantidades de datos estructurados.</li>
+<li><strong>Herramientas de gestión de TI:</strong> Software para monitorear, administrar y solucionar problemas de la infraestructura de TI.</li>
+<li><strong>Software de seguridad:</strong> Soluciones para proteger la infraestructura contra amenazas cibernéticas, como antivirus, firewalls, sistemas de detección de intrusos y software de gestión de vulnerabilidades.</li>
+</ul>
+<p><strong>3. Redes:</strong></p>
+<ul>
+<li><strong>Redes de área local (LAN):</strong> Conectan dispositivos dentro de un área geográfica limitada, como una oficina o un edificio.</li>
+<li><strong>Redes de área amplia (WAN):</strong> Conectan dispositivos en diferentes ubicaciones geográficas, como sucursales de una empresa.</li>
+<li><strong>Internet:</strong> Red global que permite la comunicación e intercambio de información a nivel mundial.</li>
+<li><strong>Servicios de telecomunicaciones:</strong> Conexiones de voz y datos proporcionadas por proveedores de servicios.</li>
+</ul>
+<p><strong>4. Servicios:</strong></p>
+<ul>
+<li><strong>Servicios en la nube:</strong> Infraestructura, plataformas y software proporcionados a través de Internet por proveedores externos, como Amazon Web Services, Microsoft Azure y Google Cloud Platform.</li>
+<li><strong>Soporte técnico:</strong> Asistencia brindada por personal especializado para resolver problemas y mantener la infraestructura funcionando correctamente.</li>
+<li><strong>Consultoría:</strong> Servicios profesionales para asesorar a las empresas en la planificación, diseño e implementación de soluciones de TI.</li>
+<li><strong>Gestión de datos:</strong> Procesos para recopilar, almacenar, procesar y analizar datos para obtener información valiosa.</li>
+</ul>
+<p><strong>5. Instalaciones:</strong></p>
+<ul>
+<li><strong>Centros de datos:</strong> Edificios o espacios dedicados a alojar servidores, equipos de red y otros componentes críticos de la infraestructura de TI.</li>
+<li><strong>Sistemas de energía:</strong> Fuentes de alimentación ininterrumpida (UPS), generadores y otros sistemas para garantizar la disponibilidad de energía eléctrica.</li>
+<li><strong>Sistemas de enfriamiento:</strong> Aires acondicionados y otros sistemas para mantener una temperatura adecuada en los equipos y evitar el sobrecalentamiento.</li>
+<li><strong>Sistemas de seguridad física:</strong> Controles de acceso, cámaras de vigilancia y otros sistemas para proteger la infraestructura contra intrusiones y robos.</li>
+</ul>
+<p>Todos estos componentes trabajan en conjunto para crear una infraestructura de TI robusta y confiable que permita a las organizaciones alcanzar sus objetivos de negocio.</p>
+<h1 id="tendencias-de-las-plataformas-de-software">Tendencias de las plataformas de software</h1>
+<p>Las plataformas de software están experimentando una rápida evolución, impulsada por avances tecnológicos y cambios en las necesidades de los usuarios. Algunas de las tendencias más destacadas incluyen:</p>
+<ol>
+<li>
+<p><strong>Inteligencia Artificial y Aprendizaje Automático:</strong> La IA y el aprendizaje automático están transformando la forma en que interactuamos con el software. Desde chatbots y asistentes virtuales hasta análisis predictivo y personalización, estas tecnologías permiten a las plataformas ofrecer experiencias más inteligentes y eficientes.</p>
+</li>
+<li>
+<p><strong>Desarrollo Low-Code/No-Code:</strong> Estas plataformas permiten a los usuarios crear aplicaciones y automatizar procesos sin necesidad de conocimientos de programación avanzados. Esto democratiza el desarrollo de software y permite a las empresas responder más rápidamente a las necesidades cambiantes.</p>
+</li>
+<li>
+<p><strong>Computación en la Nube:</strong> La nube sigue siendo una tendencia dominante, ofreciendo escalabilidad, flexibilidad y rentabilidad. Las plataformas basadas en la nube permiten a las empresas acceder a recursos de TI bajo demanda y reducir los costos de infraestructura.</p>
+</li>
+<li>
+<p><strong>Ciberseguridad:</strong> Con el aumento de las amenazas cibernéticas, la seguridad es una prioridad crítica. Las plataformas de software están incorporando medidas de seguridad más robustas, como autenticación multifactor, cifrado y detección de amenazas en tiempo real.</p>
+</li>
+<li>
+<p><strong>Experiencia de Usuario (UX):</strong> La UX se ha convertido en un diferenciador clave. Las plataformas se centran en ofrecer interfaces intuitivas, diseños atractivos y experiencias fluidas en todos los dispositivos.</p>
+</li>
+<li>
+<p><strong>Blockchain y Web 3.0:</strong> Blockchain ofrece transparencia, seguridad y descentralización, lo que está impulsando la innovación en áreas como las finanzas, la cadena de suministro y la gestión de identidades. La Web 3.0, basada en blockchain, promete una internet más abierta y democrática.</p>
+</li>
+<li>
+<p><strong>Realidad Aumentada y Virtual:</strong> Estas tecnologías están encontrando aplicaciones en diversos campos, desde la capacitación y la educación hasta el entretenimiento y el marketing. Las plataformas de software están integrando AR/VR para ofrecer experiencias más inmersivas y atractivas.</p>
+</li>
+<li>
+<p><strong>Software como Servicio (SaaS):</strong> El modelo SaaS sigue creciendo en popularidad, ofreciendo a las empresas acceso a software a través de internet mediante suscripción. Esto reduce los costos iniciales y simplifica la implementación y el mantenimiento.</p>
+</li>
+<li>
+<p><strong>Edge Computing:</strong> Esta tendencia acerca el procesamiento de datos al borde de la red, lo que reduce la latencia y mejora el rendimiento de las aplicaciones en tiempo real, como IoT y vehículos autónomos.</p>
+</li>
+<li>
+<p><strong>Desarrollo Sostenible:</strong> La sostenibilidad se está convirtiendo en una consideración importante en el desarrollo de software. Las plataformas están adoptando prácticas más ecológicas, como la optimización del consumo de energía y la reducción de la huella de carbono.</p>
+</li>
+</ol>
+<p>Estas son solo algunas de las tendencias que están dando forma al futuro de las plataformas de software. A medida que la tecnología avanza, podemos esperar ver aún más innovación y transformación en este campo.</p>
+<h1 id="tendencias-de-las-plataformas-de-hardware-contemporaneas">Tendencias de las plataformas de hardware contemporaneas</h1>
+<p>Las plataformas de hardware contemporáneas están evolucionando a un ritmo acelerado, impulsadas por la demanda de mayor rendimiento, eficiencia energética y nuevas capacidades. Algunas de las tendencias más notables incluyen:</p>
+<ol>
+<li>
+<p><strong>Procesadores de Alto Rendimiento y Eficiencia Energética:</strong> Los procesadores continúan mejorando en términos de velocidad y capacidad de procesamiento, al mismo tiempo que se vuelven más eficientes en el consumo de energía. Esto permite dispositivos más potentes y con mayor duración de batería.</p>
+</li>
+<li>
+<p><strong>Computación en la Nube y Edge Computing:</strong> La nube sigue siendo una tendencia dominante, permitiendo el acceso a recursos de hardware bajo demanda. El edge computing, por otro lado, acerca el procesamiento de datos al borde de la red, mejorando la latencia y el rendimiento en aplicaciones en tiempo real.</p>
+</li>
+<li>
+<p><strong>Inteligencia Artificial y Aprendizaje Automático a Nivel de Hardware:</strong> Los chips especializados en IA y aprendizaje automático están acelerando el procesamiento de estas tareas, permitiendo aplicaciones más inteligentes y eficientes en dispositivos móviles y otros sistemas.</p>
+</li>
+<li>
+<p><strong>Almacenamiento de Alta Capacidad y Velocidad:</strong> Las tecnologías de almacenamiento, como SSD NVMe y memoria Optane, ofrecen velocidades de lectura y escritura mucho más rápidas, mejorando el rendimiento general del sistema.</p>
+</li>
+<li>
+<p><strong>Dispositivos Móviles Plegables y Flexibles:</strong> La innovación en pantallas flexibles está llevando a dispositivos móviles con diseños plegables y enrollables, ofreciendo nuevas posibilidades de interacción y portabilidad.</p>
+</li>
+<li>
+<p><strong>Realidad Aumentada y Virtual:</strong> Los avances en hardware están permitiendo experiencias de AR/VR más inmersivas y accesibles, con dispositivos más ligeros, potentes y asequibles.</p>
+</li>
+<li>
+<p><strong>Internet de las Cosas (IoT):</strong> La proliferación de dispositivos conectados está impulsando la demanda de hardware de bajo consumo y alta eficiencia para sensores, actuadores y otros componentes de IoT.</p>
+</li>
+<li>
+<p><strong>Computación Cuántica:</strong> Aunque todavía en desarrollo, la computación cuántica promete revolucionar la capacidad de procesamiento, abriendo nuevas posibilidades en áreas como la investigación científica y el desarrollo de fármacos.</p>
+</li>
+<li>
+<p><strong>Seguridad de Hardware:</strong> Con el aumento de las amenazas cibernéticas, la seguridad a nivel de hardware se está volviendo cada vez más importante, con tecnologías como Trusted Platform Modules (TPM) y Secure Enclaves.</p>
+</li>
+<li>
+<p><strong>Sostenibilidad:</strong> La conciencia ambiental está impulsando la adopción de prácticas más sostenibles en el diseño y fabricación de hardware, con un enfoque en la eficiencia energética, la reducción de residuos y el uso de materiales reciclados.</p>
+</li>
+</ol>
+<p>Estas son solo algunas de las tendencias que están configurando el futuro de las plataformas de hardware. A medida que la tecnología avanza, podemos esperar ver aún más innovación y disrupción en este campo, lo que llevará a dispositivos más potentes, eficientes y versátiles.</p>
+<h1 id="evoluci%C3%B3n-de-la-infraestructura-de-ti-eras-de-la-tecnolog%C3%ADa">Evolución de la infraestructura de ti: eras de la tecnología</h1>
+<p>La evolución de la infraestructura de TI ha sido un viaje fascinante, impulsado por avances tecnológicos que han transformado la forma en que las empresas operan y utilizan la tecnología. A continuación, se presenta un resumen de las principales eras de la tecnología y cómo han impactado la infraestructura de TI:</p>
+<p><strong>1. Era de las Mainframes (1950s - 1960s):</strong></p>
+<ul>
+<li><strong>Características:</strong> Grandes computadoras centrales que ocupaban salas enteras, procesaban datos por lotes y eran accedidas por terminales &quot;tontas&quot;.</li>
+<li><strong>Infraestructura:</strong> Centralizada, costosa y compleja, con un enfoque en el hardware y el procesamiento de datos a gran escala.</li>
+<li><strong>Impacto:</strong> Automatización de tareas básicas y mejora de la eficiencia en grandes organizaciones.</li>
+</ul>
+<p><strong>2. Era de las Minicomputadoras (1960s - 1970s):</strong></p>
+<ul>
+<li><strong>Características:</strong> Computadoras más pequeñas y asequibles que las mainframes, permitiendo a las empresas medianas acceder a la tecnología.</li>
+<li><strong>Infraestructura:</strong> Mayor descentralización, con departamentos o divisiones teniendo sus propios sistemas.</li>
+<li><strong>Impacto:</strong> Mayor adopción de la tecnología en diversos sectores y aumento de la productividad.</li>
+</ul>
+<p><strong>3. Era de las Computadoras Personales (1980s):</strong></p>
+<ul>
+<li><strong>Características:</strong> Aparición de las PCs, permitiendo a los individuos tener su propia computadora.</li>
+<li><strong>Infraestructura:</strong> Mayor descentralización, con usuarios individuales teniendo control sobre sus propios dispositivos.</li>
+<li><strong>Impacto:</strong> Democratización de la tecnología y aumento de la creatividad y la productividad individual.</li>
+</ul>
+<p><strong>4. Era del Cliente-Servidor (1990s):</strong></p>
+<ul>
+<li><strong>Características:</strong> Modelo de computación distribuida donde los clientes (PCs) solicitan servicios a servidores centralizados.</li>
+<li><strong>Infraestructura:</strong> Redes de área local (LAN) y aparición de Internet, permitiendo la conexión y el intercambio de información.</li>
+<li><strong>Impacto:</strong> Mayor colaboración y acceso a recursos compartidos, sentando las bases para la era de Internet.</li>
+</ul>
+<p><strong>5. Era de Internet (2000s):</strong></p>
+<ul>
+<li><strong>Características:</strong> Crecimiento exponencial de Internet, acceso a información y servicios en línea.</li>
+<li><strong>Infraestructura:</strong> Mayor conectividad, adopción de tecnologías web y aumento de la complejidad de las redes.</li>
+<li><strong>Impacto:</strong> Transformación de la comunicación, el comercio y la forma en que las empresas interactúan con sus clientes.</li>
+</ul>
+<p><strong>6. Era de la Nube y la Movilidad (2010s - presente):</strong></p>
+<ul>
+<li><strong>Características:</strong> Computación en la nube, dispositivos móviles y acceso a datos y aplicaciones desde cualquier lugar.</li>
+<li><strong>Infraestructura:</strong> Virtualización, escalabilidad, servicios bajo demanda y enfoque en la seguridad y la gestión de datos.</li>
+<li><strong>Impacto:</strong> Mayor flexibilidad, agilidad y eficiencia en las operaciones empresariales, pero también desafíos en términos de seguridad y privacidad.</li>
+</ul>
+<p><strong>El futuro:</strong></p>
+<p>La infraestructura de TI seguirá evolucionando a medida que surjan nuevas tecnologías. Algunas tendencias clave incluyen:</p>
+<ul>
+<li><strong>Inteligencia artificial y aprendizaje automático:</strong> Automatización de tareas, análisis de datos y toma de decisiones más inteligentes.</li>
+<li><strong>Edge computing:</strong> Procesamiento de datos más cerca de donde se generan, mejorando la latencia y la eficiencia.</li>
+<li><strong>Internet de las cosas (IoT):</strong> Conexión de dispositivos y sensores, generando grandes volúmenes de datos que requieren una infraestructura escalable y segura.</li>
+<li><strong>5G:</strong> Mayor velocidad y capacidad de las redes móviles, permitiendo nuevas aplicaciones y servicios.</li>
+<li><strong>Blockchain:</strong> Tecnología de registro distribuido que ofrece transparencia y seguridad en las transacciones.</li>
+</ul>
+<p>La infraestructura de TI del futuro será más ágil, flexible y adaptable, permitiendo a las empresas innovar y responder rápidamente a los cambios del mercado.</p>
+
+</body>
+</html>
