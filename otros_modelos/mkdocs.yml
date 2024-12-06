@@ -1,0 +1,5 @@
+site_name: Otros modelos
+nav:
+  - Home: index.md
+  - intro: intro.md
+  - About: about.md

@@ -1,0 +1,5 @@
+site_name: Prolog
+nav:
+  - Home: index.md
+  - Prolog: prolog.md
+  - About: about.md

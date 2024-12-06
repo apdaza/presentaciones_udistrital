@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Prolog - Prolog</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Prolog</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./" class="nav-link active" aria-current="page">Prolog</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../about/" class="nav-link">About</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href=".." class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../about/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#tutorial-de-prolog-introduccion-basica" class="nav-link">Tutorial de Prolog (Introducción Básica)</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#introduccion-a-prolog" class="nav-link">Introducción a Prolog</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#primeros-pasos-con-prolog" class="nav-link">Primeros Pasos con Prolog</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#listas-en-prolog" class="nav-link">Listas en Prolog</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#backtracking-en-prolog" class="nav-link">Backtracking en Prolog</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1-operadores-aritmeticos-y-relacionales" class="nav-link">1. Operadores Aritméticos y Relacionales</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#2-operadores-de-igualdad" class="nav-link">2. Operadores de Igualdad</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#3-listas-en-prolog" class="nav-link">3. Listas en Prolog</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#4-operaciones-aritmeticas-y-estructuras" class="nav-link">4. Operaciones Aritméticas y Estructuras</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#5-ejemplo-completo-calculando-el-porcentaje-de-ganados" class="nav-link">5. Ejemplo Completo: Calculando el Porcentaje de Ganados</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="tutorial-de-prolog-introduccion-basica">Tutorial de Prolog (Introducción Básica)</h1>
+<h2 id="introduccion-a-prolog">Introducción a Prolog</h2>
+<p>Prolog (PROgramming in LOGic) es un lenguaje de programación que se basa en la lógica de predicados de primer orden. A diferencia de los lenguajes de programación imperativos (como C o Python), en Prolog defines <strong>hechos</strong> y <strong>reglas</strong>, y el intérprete de Prolog se encarga de realizar inferencias lógicas a partir de esas definiciones para encontrar respuestas a consultas.</p>
+<h3 id="estructura-basica">Estructura Básica</h3>
+<ul>
+<li><strong>Hechos:</strong> Son afirmaciones que describen el mundo.</li>
+<li><strong>Reglas:</strong> Son condiciones que describen cómo ciertos hechos pueden derivarse de otros.</li>
+<li><strong>Consultas:</strong> Preguntas que se le hacen al sistema para obtener información basada en los hechos y reglas.</li>
+</ul>
+<h3 id="instalacion-de-swi-prolog">Instalación de SWI-Prolog</h3>
+<p>Para seguir este tutorial, necesitas instalar un entorno de desarrollo de Prolog. El más común es <strong>SWI-Prolog</strong>, que puedes descargar desde <a href="https://www.swi-prolog.org/Download.html">aquí</a>.</p>
+<hr />
+<h2 id="primeros-pasos-con-prolog">Primeros Pasos con Prolog</h2>
+<h3 id="definiendo-hechos">Definiendo Hechos</h3>
+<p>Los hechos son declaraciones simples que describen relaciones entre objetos o propiedades. En Prolog, la sintaxis es muy simple. Cada hecho se termina con un punto (<code>.</code>).</p>
+<pre><code class="language-prolog">% Sintaxis básica: relacion(objeto1, objeto2, ...).
+
+es_padre_de(juan, maria).
+es_padre_de(carlos, pedro).
+es_padre_de(ana, jose).
+</code></pre>
+<p>Aquí hemos definido la relación "es_padre_de", donde el primer argumento es el padre y el segundo es el hijo.</p>
+<h3 id="consultas-basicas">Consultas Básicas</h3>
+<p>Una vez que tienes algunos hechos definidos, puedes hacer consultas. Por ejemplo, para preguntar quién es padre de quién:</p>
+<pre><code class="language-prolog">?- es_padre_de(juan, maria).
+true.
+
+?- es_padre_de(carlos, maria).
+false.
+</code></pre>
+<p>Prolog responde con <code>true</code> si el hecho es cierto y con <code>false</code> si no lo es.</p>
+<p>También puedes hacer preguntas más generales, como pedirle a Prolog que te diga todos los padres de alguien:</p>
+<pre><code class="language-prolog">?- es_padre_de(X, maria).
+X = juan.
+</code></pre>
+<p>Aquí, <code>X</code> es una variable que Prolog intenta igualar con un valor que haga verdadera la consulta.</p>
+<h3 id="definiendo-reglas">Definiendo Reglas</h3>
+<p>Las reglas permiten definir relaciones más complejas. Una regla tiene la siguiente sintaxis:</p>
+<pre><code class="language-prolog">% Regla: conclusion :- condicion1, condicion2, ...
+es_abuelo_de(X, Y) :- es_padre_de(X, Z), es_padre_de(Z, Y).
+</code></pre>
+<p>Aquí definimos que <code>X</code> es abuelo de <code>Y</code> si <code>X</code> es padre de <code>Z</code> y <code>Z</code> es padre de <code>Y</code>.</p>
+<p>Ejemplo de consulta con reglas:</p>
+<pre><code class="language-prolog">?- es_abuelo_de(juan, jose).
+true.
+
+?- es_abuelo_de(ana, pedro).
+false.
+</code></pre>
+<h3 id="recursion-en-prolog">Recursión en Prolog</h3>
+<p>Prolog soporta recursión, lo que es muy útil para definir relaciones más complejas. Veamos un ejemplo donde definimos el concepto de ancestro.</p>
+<pre><code class="language-prolog">es_ancestro_de(X, Y) :- es_padre_de(X, Y).
+es_ancestro_de(X, Y) :- es_padre_de(X, Z), es_ancestro_de(Z, Y).
+</code></pre>
+<p>En esta regla, <code>es_ancestro_de/2</code> se define en términos de sí misma para seguir la cadena de padres.</p>
+<h3 id="consultas-complejas">Consultas Complejas</h3>
+<p>Podemos realizar consultas que involucren tanto hechos como reglas.</p>
+<pre><code class="language-prolog">?- es_ancestro_de(juan, jose).
+true.
+</code></pre>
+<p>Prolog resolverá la consulta utilizando las reglas y hechos que hemos definido.</p>
+<hr />
+<h2 id="listas-en-prolog">Listas en Prolog</h2>
+<p>Prolog tiene soporte nativo para listas, que son una estructura de datos muy útil. Las listas en Prolog se escriben entre corchetes, y pueden contener cualquier número de elementos.</p>
+<pre><code class="language-prolog">% Una lista simple
+[1, 2, 3, 4].
+
+% Una lista con variables
+[X, 2, Y].
+</code></pre>
+<p>Puedes usar listas con reglas y consultas. Por ejemplo, para definir la relación de pertenencia a una lista:</p>
+<pre><code class="language-prolog">miembro(X, [X|_]).
+miembro(X, [_|T]) :- miembro(X, T).
+</code></pre>
+<p>Esta regla dice que <code>X</code> es miembro de una lista si es el primer elemento (<code>X|_</code>) o si es miembro de la cola de la lista (<code>T</code>).</p>
+<h3 id="consultas-con-listas">Consultas con listas</h3>
+<p>Podemos hacer consultas para verificar si un elemento pertenece a una lista:</p>
+<pre><code class="language-prolog">?- miembro(2, [1, 2, 3]).
+true.
+
+?- miembro(4, [1, 2, 3]).
+false.
+</code></pre>
+<hr />
+<h2 id="backtracking-en-prolog">Backtracking en Prolog</h2>
+<p>El proceso de <strong>backtracking</strong> es central en Prolog. Cuando Prolog recibe una consulta, intenta satisfacerla probando todas las posibles soluciones. Si una solución falla, vuelve atrás (backtrack) y prueba otra posible ruta.</p>
+<h3 id="ejemplo-de-backtracking">Ejemplo de backtracking</h3>
+<p>Consideremos los siguientes hechos:</p>
+<pre><code class="language-prolog">color(rosa).
+color(azul).
+color(verde).
+</code></pre>
+<p>Si hacemos una consulta para todos los colores posibles:</p>
+<pre><code class="language-prolog">?- color(C).
+C = rosa ;
+C = azul ;
+C = verde.
+</code></pre>
+<p>Prolog va a devolver todas las posibles soluciones de una en una, permitiendo hacer backtracking con <code>;</code>.</p>
+<hr />
+<h2 id="1-operadores-aritmeticos-y-relacionales">1. Operadores Aritméticos y Relacionales</h2>
+<p>En Prolog, es posible trabajar con operadores aritméticos y relacionales como lo harías en lenguajes imperativos. Aquí están algunos de los más utilizados:</p>
+<ul>
+<li><strong>Aritméticos</strong>: <code>+, -, *, /</code></li>
+<li><code>/</code> es la división entera.</li>
+<li><code>mod</code>: módulo (resto de la división).</li>
+<li>
+<p><code>^</code>: potencia.</p>
+</li>
+<li>
+<p><strong>Relacionales</strong>: <code>&gt;, &lt;, &gt;=, &lt;=</code></p>
+</li>
+</ul>
+<h3 id="ejemplo-en-prolog">Ejemplo en Prolog:</h3>
+<pre><code class="language-prolog">?- X is 3 + 5.
+X = 8.
+
+?- 9 &gt; 7.
+true.
+</code></pre>
+<p>Recuerda que para evaluar expresiones aritméticas, debes usar el operador <strong>is</strong>. Sin <code>is</code>, Prolog simplemente tratará las expresiones como términos simbólicos.</p>
+<hr />
+<h2 id="2-operadores-de-igualdad">2. Operadores de Igualdad</h2>
+<p>Prolog tiene varios operadores de igualdad que permiten la comparación de términos:</p>
+<ul>
+<li><strong>=</strong>: unificación, verdadero si ambos operandos unifican.</li>
+<li><strong>\=</strong>: no unificación, verdadero si no unifican.</li>
+<li><strong>is</strong>: evaluación aritmética y unificación.</li>
+<li><strong>=:=</strong>: compara valores después de evaluar ambos lados de la expresión.</li>
+</ul>
+<h3 id="ejemplo-en-prolog_1">Ejemplo en Prolog:</h3>
+<pre><code class="language-prolog">?- 3 = 3.
+true.
+
+?- 3 \= 4.
+true.
+
+?- X is 3 * 5.
+X = 15.
+
+?- 3 =:= 1 + 2.
+true.
+</code></pre>
+<h3 id="casos-comunes-de-error">Casos comunes de error:</h3>
+<p>Al usar <code>is</code>, ten en cuenta que las variables a la derecha deben estar instanciadas. De lo contrario, obtendrás un error:</p>
+<pre><code class="language-prolog">?- 5 is X + 4.
+Error: X no está instanciada.
+</code></pre>
+<hr />
+<h2 id="3-listas-en-prolog">3. Listas en Prolog</h2>
+<p>Las listas en Prolog son una estructura de datos fundamental. Las listas se representan entre corchetes:</p>
+<pre><code class="language-prolog">[1, 2, 3, 4].
+[X, Y, Z].
+</code></pre>
+<h3 id="operaciones-comunes-con-listas">Operaciones comunes con listas:</h3>
+<ul>
+<li><strong>Longitud de una lista</strong>: Para calcular la longitud de una lista, usamos recursión:</li>
+</ul>
+<pre><code class="language-prolog">longitud([], 0).
+longitud([_|T], N) :- longitud(T, N0), N is N0 + 1.
+
+?- longitud([a,b,c], L).
+L = 3.
+</code></pre>
+<ul>
+<li><strong>Pertenece a una lista</strong>: Para verificar si un elemento está en una lista:</li>
+</ul>
+<pre><code class="language-prolog">pertenece(X, [X|_]).
+pertenece(X, [_|T]) :- pertenece(X, T).
+
+?- pertenece(b, [a, b, c]).
+true.
+</code></pre>
+<ul>
+<li><strong>Concatenación de listas</strong>:</li>
+</ul>
+<pre><code class="language-prolog">concatenar([], L, L).
+concatenar([X|L1], L2, [X|L3]) :- concatenar(L1, L2, L3).
+
+?- concatenar([1, 2], [3, 4], R).
+R = [1, 2, 3, 4].
+</code></pre>
+<hr />
+<h2 id="4-operaciones-aritmeticas-y-estructuras">4. Operaciones Aritméticas y Estructuras</h2>
+<p>En Prolog también puedes realizar cálculos más complejos usando funciones matemáticas:</p>
+<ul>
+<li><strong>Funciones matemáticas disponibles</strong>: <code>abs/1</code>, <code>sqrt/1</code>, <code>log/1</code>, <code>sin/1</code>, etc.</li>
+</ul>
+<pre><code class="language-prolog">?- X is sqrt(16).
+X = 4.0.
+
+?- Y is sin(1).
+Y = 0.8414709848078965.
+</code></pre>
+<p>También puedes representar datos estructurados como registros o árboles. Por ejemplo:</p>
+<pre><code class="language-prolog">persona(nombre('Juan'), apellido('Pérez'), cc(123456789)).
+</code></pre>
+<p>Para acceder a los datos:</p>
+<pre><code class="language-prolog">?- persona(nombre(X), apellido(Y), _).
+X = 'Juan', Y = 'Pérez'.
+</code></pre>
+<hr />
+<h2 id="5-ejemplo-completo-calculando-el-porcentaje-de-ganados">5. Ejemplo Completo: Calculando el Porcentaje de Ganados</h2>
+<p>Aquí está un ejemplo más avanzado, basado en el contenido del archivo que compartiste:</p>
+<p>Definimos los siguientes hechos:</p>
+<pre><code class="language-prolog">ganados(juan, 7).
+ganados(susana, 6).
+jugados(juan, 13).
+jugados(susana, 7).
+</code></pre>
+<p>Y una regla para calcular el porcentaje de juegos ganados:</p>
+<pre><code class="language-prolog">porcentaje(X, Y) :- ganados(X, Z), jugados(X, Q), Y is (Z/Q) * 100.
+
+?- porcentaje(juan, P).
+P = 53.84615384615385.
+</code></pre>
+<hr />
+<h3 id="predicados-dinamicos-en-prolog">Predicados Dinámicos en Prolog</h3>
+<p>Los <strong>predicados dinámicos</strong> en Prolog son aquellos que pueden ser modificados (añadidos o eliminados) durante la ejecución del programa. Esto es útil en aplicaciones donde los hechos o las reglas pueden cambiar a lo largo del tiempo, como en sistemas de bases de datos o en inteligencia artificial, donde los conocimientos se actualizan dinámicamente.</p>
+<p>Para declarar un predicado como dinámico, se usa la directiva <code>:- dynamic nombre_predicado/arity</code>, donde <code>arity</code> es el número de argumentos del predicado.</p>
+<h3 id="ejemplo-basico-de-predicado-dinamico">Ejemplo Básico de Predicado Dinámico</h3>
+<p>Vamos a crear un predicado dinámico que maneje una base de datos simple de amigos. Primero, declaramos que el predicado es dinámico y luego usamos las funciones <strong>asserta</strong>, <strong>assertz</strong> y <strong>retract</strong> para manipular los hechos durante la ejecución del programa.</p>
+<h4 id="declaracion-del-predicado-dinamico">Declaración del predicado dinámico</h4>
+<pre><code class="language-prolog">:- dynamic amigo/2.
+</code></pre>
+<p>Esto le dice a Prolog que el predicado <code>amigo/2</code> (que acepta dos argumentos) puede modificarse dinámicamente.</p>
+<h4 id="anadiendo-hechos-a-la-base-de-datos">Añadiendo hechos a la base de datos</h4>
+<p>Podemos añadir hechos de dos maneras: al principio de la base de datos con <strong>asserta</strong> o al final con <strong>assertz</strong>.</p>
+<pre><code class="language-prolog">?- asserta(amigo(juan, pedro)).
+true.
+
+?- assertz(amigo(ana, maria)).
+true.
+</code></pre>
+<p>Ahora hemos añadido dos hechos dinámicos. Podemos consultarlos:</p>
+<pre><code class="language-prolog">?- amigo(juan, X).
+X = pedro.
+
+?- amigo(ana, X).
+X = maria.
+</code></pre>
+<h4 id="eliminando-hechos">Eliminando hechos</h4>
+<p>Para eliminar un hecho, usamos <strong>retract</strong>.</p>
+<pre><code class="language-prolog">?- retract(amigo(juan, pedro)).
+true.
+
+?- amigo(juan, X).
+false.
+</code></pre>
+<p>En este caso, hemos eliminado el hecho <code>amigo(juan, pedro)</code>, por lo que la consulta ya no encuentra ninguna coincidencia.</p>
+<h3 id="ejemplo-completo-base-de-datos-de-estudiantes-y-notas">Ejemplo Completo: Base de Datos de Estudiantes y Notas</h3>
+<p>Vamos a crear un ejemplo más completo, donde gestionaremos una base de datos dinámica de estudiantes y sus notas.</p>
+<h4 id="declaracion-del-predicado-dinamico_1">Declaración del predicado dinámico</h4>
+<pre><code class="language-prolog">:- dynamic nota/2.
+</code></pre>
+<h4 id="anadiendo-hechos">Añadiendo hechos</h4>
+<p>Añadimos información sobre las notas de los estudiantes:</p>
+<pre><code class="language-prolog">?- assertz(nota(juan, 7)).
+true.
+
+?- assertz(nota(ana, 9)).
+true.
+</code></pre>
+<p>Ahora, tenemos dos estudiantes con sus respectivas notas.</p>
+<h4 id="consultando-las-notas">Consultando las notas</h4>
+<p>Podemos hacer una consulta para obtener la nota de un estudiante:</p>
+<pre><code class="language-prolog">?- nota(juan, N).
+N = 7.
+</code></pre>
+<h4 id="actualizando-notas">Actualizando notas</h4>
+<p>Para actualizar la nota de un estudiante, primero eliminamos la entrada existente con <strong>retract</strong> y luego añadimos la nueva con <strong>assertz</strong>:</p>
+<pre><code class="language-prolog">?- retract(nota(juan, _)).
+true.
+
+?- assertz(nota(juan, 8)).
+true.
+</code></pre>
+<p>Ahora la nota de <code>juan</code> ha sido actualizada:</p>
+<pre><code class="language-prolog">?- nota(juan, N).
+N = 8.
+</code></pre>
+<h4 id="eliminando-estudiantes">Eliminando estudiantes</h4>
+<p>Si queremos eliminar un estudiante de la base de datos:</p>
+<pre><code class="language-prolog">?- retract(nota(ana, _)).
+true.
+</code></pre>
+<p>Después de esto, la consulta no encuentra el hecho:</p>
+<pre><code class="language-prolog">?- nota(ana, N).
+false.
+</code></pre>
+<h3 id="controlando-multiples-hechos">Controlando Múltiples Hechos</h3>
+<p>Cuando usamos <strong>retract</strong> con variables, Prolog elimina el primer hecho que coincide con el patrón. Si hay varios hechos que coinciden, puedes usar <strong>retractall</strong> para eliminar todos los hechos de un tipo.</p>
+<h4 id="ejemplo-de-uso-de-retractall">Ejemplo de uso de <code>retractall</code></h4>
+<p>Si queremos eliminar todas las notas de los estudiantes, usamos:</p>
+<pre><code class="language-prolog">?- retractall(nota(_, _)).
+true.
+</code></pre>
+<p>Esto eliminará todas las entradas relacionadas con <code>nota</code>.</p>
+<hr />
+<h3 id="predicados-dinamicos-uso-en-programas-reales">Predicados Dinámicos: Uso en Programas Reales</h3>
+<p>El uso de predicados dinámicos es común en programas que deben gestionar cambios en la información a lo largo del tiempo. Estos predicados son útiles en:</p>
+<ul>
+<li><strong>Sistemas expertos</strong>: donde el conocimiento puede ser actualizado en función de nuevos datos.</li>
+<li><strong>Simulaciones</strong>: donde los hechos cambian durante la simulación.</li>
+<li><strong>Aplicaciones de bases de datos</strong>: que requieren que la información se agregue, actualice y elimine de manera dinámica.</li>
+</ul>
+<hr /></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
