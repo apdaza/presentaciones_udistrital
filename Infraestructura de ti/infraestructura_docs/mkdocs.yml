@@ -1,0 +1,7 @@
+site_name: My Docs
+nav:
+  - Home: index.md
+  - Modulo 01: modulo 01.md
+  - Modulo 02: modulo 02.md
+  - Modulo 03: modulo 03.md
+  - Modulo 04: modulo 04.md
