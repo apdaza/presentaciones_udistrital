@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Antipatrones de Diseño - Versión Ampliada (remark.js)</title>
+  <link rel="stylesheet" type="text/css" href="../estilos/estilos.css">
+  <link rel="stylesheet" href="../estilos/jqmath-0.4.3.css">
+	
+	<script src="scripts/jquery-1.4.3.min.js"></script>
+	<script src="scripts/jqmath-etc-0.4.6.min.js" charset="utf-8"></script>
+</head>
+<body>
+<textarea id="source" style="display:none;">
+title: Antipatrones de Diseño - Versión Ampliada
+name: antipatterns-extended
+class: center, middle
+
+# Antipatrones de Diseño  
+## Programación y Arquitectura de Software  
+
+**Profesor:** Alejandro Paolo Daza Corredor  
+**Universidad Distrital Francisco José de Caldas**  
+**Asignatura:** Programación y Arquitectura de Software  
+
+???
+**Notas del presentador:**
+- Introducir el tema relacionando los *patrones de diseño* como soluciones y los *antipatrones* como errores comunes.
+- Mencionar que conocerlos es fundamental para mejorar la calidad del software y reducir deuda técnica.
+
+---
+
+# ¿Qué es un Antipatrón?
+
+> Un *antipatrón* es una **solución común pero ineficaz o contraproducente** a un problema recurrente en el diseño o desarrollo de software.
+
+- Son el “lado oscuro” de los patrones de diseño.
+- Conducen a **código difícil de mantener, escalar o probar**.
+- Identificarlos permite **refactorizar el sistema**.
+
+???
+**Notas:**
+- Dar ejemplos de cómo un mal patrón puede surgir de buenas intenciones.
+- Enfatizar que la detección temprana de antipatrones ahorra costos (regla del 10x).
+
+---
+
+# Clasificación General
+
+1. **De diseño:** estructura de clases y objetos.  
+2. **De arquitectura:** decisiones globales del sistema.  
+3. **De proceso:** gestión, metodología y cultura.  
+
+- Ejemplos: 
+ - God Object (diseño)
+ - Big Ball of Mud (arquitectura)
+ - Design by Committee (proceso).
+
+???
+**Notas:**
+- Relacionar con niveles de intervención (código, arquitectura, organización).
+
+
+---
+
+# 1. Spaghetti Code 🍝
+
+**Síntomas:**
+- Código sin modularidad ni estructura.
+- Alta dependencia entre funciones.
+- Difícil de leer y mantener.
+
+**Solución:**  
+
+- Aplicar **SOLID**
+- refactorizar en **clases cohesivas** y funciones pequeñas.
+
+???
+**Notas:**
+- Mostrar ejemplo breve antes/después.
+- Conectar con métricas: complejidad ciclomática alta.
+
+---
+
+# 2. God Object 👑
+
+**Descripción:**  
+Una clase concentra demasiada lógica y responsabilidades.
+
+**Solución:**  
+Dividir responsabilidades (SRP), usar **Facade** o **Strategy** y módulos bien definidos.
+
+???
+**Notas:**
+- Preguntar quién ha visto *Manager*, *Utils* o *Service* gigantes.
+- Sugerir *bounded contexts* y límites claros.
+
+---
+
+# 3. Lava Flow 🌋
+
+**Descripción:**  
+Código obsoleto se queda "solidificado" en el repositorio.
+
+**Solución:**  
+Refactorización continua, eliminación de código muerto, feature toggles con limpieza posterior.
+
+???
+**Notas:**
+- Riesgos: miedo a borrar, falta de tests.
+- Antídoto: cobertura de pruebas y revisiones.
+
+---
+
+# 4. Golden Hammer 🔨
+
+> “Para quien solo tiene un martillo, todo parece un clavo.”
+
+**Solución:**  
+Elegir herramientas por **contexto** y **criterios de calidad**.
+
+???
+**Notas:**
+- Evitar “todo con microservicios” o “todo con NoSQL” sin análisis.
+- Introducir *Architecture Decision Records (ADR)*.
+
+---
+
+# 5. Copy-Paste Programming 📋
+
+**Síntomas:**  
+- Código duplicado.
+- Mantenimiento costoso.
+
+**Solución:**  
+Extraer lógica común, DRY, bibliotecas internas.
+
+???
+**Notas:**
+- Mostrar cómo duplicaciones divergen con el tiempo.
+- Usar linters/busca duplicados (p. ej., PMD CPD).
+
+---
+
+# 6. Magic Numbers 🪄
+
+**Síntomas:**  
+- Valores sin contexto.
+
+**Solución:**  
+Constantes con nombres descriptivos, enums, configuración.
+
+???
+**Notas:**
+- Explicar el impacto en pruebas y legibilidad.
+- Sugerir *feature flags* para parámetros experimentales.
+
+---
+
+# 7. Shotgun Surgery 💥
+
+**Descripción:**  
+Un cambio pequeño implica editar muchos módulos.
+
+**Causa:**  
+Baja cohesión, alta dispersión.
+
+**Solución:**  
+Reagrupar responsabilidades, encapsular variaciones.
+
+???
+**Notas:**
+- Conectar con *code smells* de Fowler.
+- Ejemplo: formato de fecha usado en demasiados lugares.
+
+---
+
+# 8. Feature Envy 👀
+
+**Descripción:**  
+Una clase usa excesivamente datos/métodos de otra.
+
+**Solución:**  
+*Move Method*, *Extract Class*, respetar encapsulamiento.
+
+???
+**Notas:**
+- Pregunta guía: “¿Dónde vive realmente el comportamiento?”
+- Revisar el *Law of Demeter*.
+
+---
+
+# 9. God Method ⚡
+
+**Descripción:**  
+Método enorme que hace demasiadas cosas.
+
+**Solución:**  
+*Extract Method*, *Compose Method*, early exits.
+
+???
+**Notas:**
+- Antes/después en 2–3 pasos de refactor.
+- Medir reducción de complejidad.
+
+---
+
+# 10. Poltergeist 👻
+
+**Descripción:**  
+Clases efímeras que solo delegan y desaparecen.
+
+**Solución:**  
+Eliminar intermediarios, fusionar con clases útiles.
+
+???
+**Notas:**
+- Ejemplo: *Helper* sin estado ni lógica real.
+- Aplicar *Inline Class*.
+
+---
+
+# 11. Premature Optimization ⚙️
+
+**Descripción:**  
+Optimizar antes de medir o sin necesidad real.
+
+**Solución:**  
+Perfilar primero, optimizar lo crítico, mantener claridad.
+
+???
+**Notas:**
+- Citar a Knuth: “la optimización prematura es la raíz de todo mal (en gran medida)”.
+
+---
+
+# 12. Overengineering 🏗️
+
+**Descripción:**  
+Diseñar soluciones excesivamente complejas para problemas simples.
+
+**Solución:**  
+KISS, YAGNI, iterar por valor.
+
+???
+**Notas:**
+- Señales: demasiados patrones, factory para todo, abstracciones innecesarias.
+
+---
+
+# Antipatrones de Arquitectura
+
+### 1. Big Ball of Mud 🧱  
+### 2. Reinventing the Wheel 🛞  
+### 3. Stovepipe System 🧩  
+
+???
+**Notas:**
+- Big Ball: dependencias desordenadas, módulos pegados.
+- Reinventing: costos de mantenimiento futuros.
+- Stovepipe: silos, inconsistencia de datos.
+
+---
+
+# 4. Vendor Lock-in 🔐
+
+**Descripción:**  
+Dependencia excesiva de un proveedor/servicio.
+
+**Solución:**  
+Estándares abiertos, puertos/adaptadores, abstracciones.
+
+???
+**Notas:**
+- Negociar cláusulas de salida y portabilidad de datos.
+- Usar diseño hexagonal para desacoplar.
+
+---
+
+# 5. Architecture by Accident 💣
+
+**Descripción:**  
+Arquitectura emergente sin dirección ni principios.
+
+**Solución:**  
+Guías, *guardrails*, ADRs, tech radar.
+
+???
+**Notas:**
+- Balance entre arquitectura intencional y evolución controlada.
+
+---
+
+# 6. Microservice Pinball 🎱
+
+**Descripción:**  
+Exceso de microservicios, comunicación caótica, latencias elevadas.
+
+**Solución:**  
+Reagrupar dominios, *sagas* bien definidas, observabilidad.
+
+???
+**Notas:**
+- Evaluar si un módulo puede volver a monolito modular (*modulith*).
+
+---
+
+# 7. Shared Database Antipattern 🗄️
+
+**Descripción:**  
+Múltiples servicios acoplados al mismo esquema de BD.
+
+**Solución:**  
+*Database per service*, contratos, vistas/materializaciones controladas.
+
+???
+**Notas:**
+- Riesgo de despliegues bloqueados por cambios de esquema.
+
+---
+
+# Antipatrones de Proceso
+
+### 1. Death by Planning 📉  
+### 2. Design by Committee 🗣️  
+### 3. Mushroom Management 🍄  
+
+???
+**Notas:**
+- Efectos en motivación y velocidad.
+- Medidas: *working agreements* y demos frecuentes.
+
+---
+
+# 4. Hero Syndrome 🦸‍♂️
+
+**Descripción:**  
+Dependencia de una persona “imprescindible”.
+
+**Solución:**  
+Trabajo colaborativo, rotación, *bus factor* alto.
+
+???
+**Notas:**
+- Establecer *runbooks* y *pair programming*.
+
+---
+
+# 5. Cargo Cult Programming ✈️
+
+**Descripción:**  
+Copiar prácticas/código sin comprenderlo.
+
+**Solución:**  
+Formación, revisiones de código, experimentación controlada.
+
+???
+**Notas:**
+- Contar anécdota del origen del término y el peligro de la “magia”.
+
+---
+
+# 6. Endless Refactoring Loop ♻️
+
+**Descripción:**  
+Refactorizar sin entregar valor funcional.
+
+**Solución:**  
+Hipótesis claras, límites temporales, medir impacto.
+
+???
+**Notas:**
+- Distinguir entre refactor útil y perfeccionismo.
+
+---
+
+# Buenas Prácticas para Evitarlos
+
+✅ SOLID y principios de diseño.  
+✅ Revisiones, *pair/mob programming*.  
+✅ Observabilidad y métricas.  
+✅ Refactorización guiada por pruebas (TDD).  
+✅ ADRs y arquitectura evolutiva.  
+✅ Cultura DevOps y *continuous delivery*.  
+
+???
+**Notas:**
+- Recomendar lecturas y repositorios internos de guías.
+- Conectar con objetivos de calidad institucionales.
+
+---
+
+# Conclusiones
+
+- Los antipatrones son **síntomas** de decisiones o contextos inadecuados.  
+- Reconocerlos y actuar reduce **deuda técnica** y **riesgo**.  
+- La **cultura técnica** y el **liderazgo arquitectónico** son el antídoto.
+
+???
+**Notas:**
+- Invitar a auditar un proyecto real del curso buscando antipatrones.
+
+
+</textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>
+  const slideshow = remark.create({
+    ratio: "16:9",
+    slideNumberFormat: (current, total) => `${current} / ${total}`,
+    navigation: { scroll: false, touch: true },
+    highlightLanguage: "python"
+  });
+</script>
+</body>
+</html>
